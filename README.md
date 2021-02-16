@@ -1,6 +1,6 @@
 <p align=center>
 
-  <img src="https://raw.githubusercontent.com/audioo/goseek/main/images/banner3.png" width = "550" height="150"/>
+  <img src="https://raw.githubusercontent.com/audioo/goseek/main/images/banner3.png" width = "300" height="75"/>
 
   <br>
   <span><strong>Username Lookup - Inspired by <a href="https://github.com/sherlock-project/sherlock">Sherlock</a>, Recreated in Go.</strong></span>
