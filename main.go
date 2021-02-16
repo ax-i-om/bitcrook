@@ -38,4 +38,5 @@ func main() {
 	cli.Dispban("Go-Seek Process Complete")
 	fmt.Println("")
 	fmt.Println("")
+	fmt.Scan(&userres)
 }
