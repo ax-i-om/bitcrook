@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="#sites">Sites</a>
+  <a href="https://github.com/audioo/goseek">Download</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="https://discord.gg/jnENWWp">Discord</a>
 </p>
@@ -23,10 +23,7 @@
 </p>
 
 
-## Sites
-
-`SITE COUNT: 52`
-
+<p align="center">
  - About Me
  - Bandcamp
  - Behance
@@ -79,3 +76,4 @@
  - Wattpad
  - Wikipedia
  - Wordpress
+</p>
