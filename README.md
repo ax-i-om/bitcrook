@@ -3,7 +3,7 @@
   <img src="https://raw.githubusercontent.com/audioo/goseek/main/images/banner.png"/>
 
   <br>
-  <span><strong>Username Lookup - Inspired by Sherlock, Recreated in Go.</strong></span>
+  <span><strong>Username Lookup - Inspired by <a href="https://github.com/sherlock-project/sherlock">Sherlock</a>, Recreated in Go.</strong></span>
   <br>
   <a target="_blank" href="https://golang.org/doc/go1.15" title="Go version: 1.15"><img src="https://img.shields.io/badge/Go version-1.15-blue.svg"></a>
   <a target="_blank" href="LICENSE" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
