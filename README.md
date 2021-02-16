@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="github.com/audioo/goseek/releases/latest">Download</a>
+  <a href="https://github.com/audioo/goseek/releases/latest">Download</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="https://discord.gg/jnENWWp">Discord</a>
 </p>
