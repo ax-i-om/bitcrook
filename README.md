@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/audioo/goseek">Download</a>
+  <a href="github.com/audioo/goseek/releases/latest">Download</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="https://discord.gg/jnENWWp">Discord</a>
 </p>
@@ -24,7 +24,7 @@
 
 
 <p align="center">
- - About Me
+ About Me
  - Bandcamp
  - Behance
  - Bitbucket
