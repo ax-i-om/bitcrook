@@ -11,8 +11,6 @@
 </p>
 
 <p align="center">
-  <a href="#placeholder">Placeholder</a>
-  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#sites">Sites</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="https://discord.gg/jnENWWp">Discord</a>
@@ -24,10 +22,6 @@
 </a>
 </p>
 
-
-## Placeholder
-
-THIS IS A PLACEHOLDER
 
 ## Sites
 
