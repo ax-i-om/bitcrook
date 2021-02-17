@@ -14,6 +14,8 @@
   <a href="https://github.com/audioo/goseek/releases/latest">Download</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="https://discord.gg/jnENWWp">Discord</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://tooomm.github.io/github-release-stats/?username=audioo&repository=goseek">Stats</a>
 </p>
 
 <p align="center">
