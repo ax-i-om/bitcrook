@@ -14,5 +14,9 @@
 # Text files
 *.txt
 
+# Assets
+*.png
+*.gif
+
 # Dependency directories (remove the comment below to include it)
 # vendor/
