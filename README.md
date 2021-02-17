@@ -1,7 +1,15 @@
 <p align=center>
-
-  <img src="https://raw.githubusercontent.com/audioo/goseek/main/images/banner3.png" width = "300" height="75"/>
-
+     ▄██████▄   ▄██████▄     ▄████████    ▄████████    ▄████████    ▄█   ▄█▄ <br>
+    ███    ███ ███    ███   ███    ███   ███    ███   ███    ███   ███ ▄███▀ <br>
+    ███    █▀  ███    ███   ███    █▀    ███    █▀    ███    █▀    ███▐██▀   <br>
+   ▄███        ███    ███   ███         ▄███▄▄▄      ▄███▄▄▄      ▄█████▀    <br>
+  ▀▀███ ████▄  ███    ███ ▀███████████ ▀▀███▀▀▀     ▀▀███▀▀▀     ▀▀█████▄    <br>
+    ███    ███ ███    ███          ███   ███    █▄    ███    █▄    ███▐██▄   <br>
+    ███    ███ ███    ███    ▄█    ███   ███    ███   ███    ███   ███ ▀███▄ <br>
+    ████████▀   ▀██████▀   ▄████████▀    ██████████   ██████████   ███   ▀█▀ <br>
+                                                                   ▀         <br>
+</p>
+<p align=center>
   <br>
   <span><strong>Username Lookup - Inspired by <a href="https://github.com/sherlock-project/sherlock">Sherlock</a>, Recreated in Go.</strong></span>
   <br>
