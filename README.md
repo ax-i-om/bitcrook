@@ -24,6 +24,8 @@
 
 
 <p align="center">
+  <a><strong>Sites</strong></a>
+  <br>
  About Me
  - Bandcamp
  - Behance
@@ -76,4 +78,26 @@
  - Wattpad
  - Wikipedia
  - Wordpress
+</p>
+
+
+<p align="center">
+  <a><strong>Todo</strong></a>
+ <br>
+ Instagram
+ - Twitter
+ - Youtube
+ - Google Plus
+ - Reddit
+ - Steam
+ - Imgur
+ - Mixcloud
+ - Canva
+ - Creative Market
+ - 500px
+ - Houzz
+ - Hacker News
+ - Ebay
+ - Ok Cupid
+ - Skyscanner
 </p>
