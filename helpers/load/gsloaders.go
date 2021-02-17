@@ -1,6 +1,8 @@
 package load
 
-import "github.com/audioo/goseek/helpers/ent"
+import (
+	"github.com/audioo/goseek/helpers/ent"
+)
 
 // NoRedirSites ...
 func NoRedirSites(userres string) []ent.Website {
