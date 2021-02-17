@@ -7,10 +7,8 @@
     ███    ███ ███    ███          ███   ███    █▄    ███    █▄    ███▐██▄   <br>
     ███    ███ ███    ███    ▄█    ███   ███    ███   ███    ███   ███ ▀███▄ <br>
     ████████▀   ▀██████▀   ▄████████▀    ██████████   ██████████   ███   ▀█▀ <br>
-                                                                   ▀         <br>
 </p>
 <p align=center>
-  <br>
   <span><strong>Username Lookup - Inspired by <a href="https://github.com/sherlock-project/sherlock">Sherlock</a>, Recreated in Go.</strong></span>
   <br>
   <a target="_blank" href="https://golang.org/doc/go1.15" title="Go version: 1.15"><img src="https://img.shields.io/badge/Go version-1.15-blue.svg"></a>
