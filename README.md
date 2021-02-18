@@ -10,8 +10,6 @@
 <p align="center">
   <a href="https://github.com/audioo/goseek/releases/latest">Download</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#origin">Usage</a>
-  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="https://discord.gg/jnENWWp">Discord</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="https://tooomm.github.io/github-release-stats/?username=audioo&repository=goseek">Stats</a>
@@ -29,11 +27,16 @@
 </p>
 
 <p align=center>
-     <a href="#origin"><strong>GoSeek Origin</strong></a><br>
+     <a href="#origin"><strong>Purpose</strong></a><br>
      I have always found Open-Source Intelligence to be intriguing, and have found myself using Sherlock<br> on multiple occasions.
      I started learning Golang in the beginning of February of 2021 and have been looking <br>for new projects to help strengthen my knowledge. I also wanted these
      projects to keep me engaged<br> over time and prove somewhat useful instead of making just another calculator. I hope to build on GoSeek and expand<br> it's use cases
      in a way that others can benefit.
+</p>
+
+<p align=center>
+     <a href="#origin"><strong>Usage</strong></a><br>
+  <code>     go run main.go     </code>
 </p>
 
 <p align="center">
