@@ -27,16 +27,21 @@
 </p>
 
 <p align=center>
-     <a><strong>Usage</strong></a><br>
-  <code>     go run main.go     </code>
-</p>
+     <a><strong>Installation</strong></a><br>
+Download/clone the repository:<br>
+  <code>git clone https://github.com/audioo/goseek.git</code><br><br>
+Navigate into the GoSeek directory:<br>
+  <code>cd goseek</code><br><br>
+Run main.go:<br>
+  <code>go run main.go</code>
+</p><br>
 
 <p align=center>
      <a><strong>Purpose</strong></a><br>
      I have always found Open-Source Intelligence to be intriguing, and have found myself using Sherlock<br> on multiple occasions.
      I started learning Golang in the beginning of February of 2021 and have been looking <br>for new projects to help strengthen my knowledge. I also wanted these
      projects to keep me engaged<br> over time and prove somewhat useful instead of making just another calculator. I hope to build on GoSeek and expand it's use cases in a way that others can benefit.
-</p>
+</p><br>
 
 <p align="center">
   <a><strong>Sites</strong></a>
@@ -93,7 +98,7 @@
  - Wattpad
  - Wikipedia
  - Wordpress
-</p>
+</p><br>
 
 
 <p align="center">
@@ -115,4 +120,4 @@
  - Ebay
  - Ok Cupid
  - Skyscanner
-</p>
+</p><br>
