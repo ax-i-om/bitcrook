@@ -26,11 +26,14 @@
 </p>
 
 <p align="center">
+  <a target="_blank" href="https://repl.it/github/audioo/goseek" title="Replit"><img src="https://user-images.githubusercontent.com/27065646/92304596-bf719b00-ef7f-11ea-987f-2c1f3c323088.png"></a>
+</p>
+
+<p align="center">
 <a href="">
 <img src="./images/demoFast.gif" width="600" height="350"/>
 </a>
 </p>
-
 
 <p align="center">
   <a><strong>Sites</strong></a>
