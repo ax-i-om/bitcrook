@@ -1,14 +1,4 @@
 <p align=center>
-     ▄██████▄   ▄██████▄     ▄████████    ▄████████    ▄████████    ▄█   ▄█▄ <br>
-    ███    ███ ███    ███   ███    ███   ███    ███   ███    ███   ███ ▄███▀ <br>
-    ███    █▀  ███    ███   ███    █▀    ███    █▀    ███    █▀    ███▐██▀   <br>
-   ▄███        ███    ███   ███         ▄███▄▄▄      ▄███▄▄▄      ▄█████▀    <br>
-  ▀▀███ ████▄  ███    ███ ▀███████████ ▀▀███▀▀▀     ▀▀███▀▀▀     ▀▀█████▄    <br>
-    ███    ███ ███    ███          ███   ███    █▄    ███    █▄    ███▐██▄   <br>
-    ███    ███ ███    ███    ▄█    ███   ███    ███   ███    ███   ███ ▀███▄ <br>
-    ████████▀   ▀██████▀   ▄████████▀    ██████████   ██████████   ███   ▀█▀ <br>
-</p>
-<p align=center>
   <span><strong>Username Lookup - Inspired by <a href="https://github.com/sherlock-project/sherlock">Sherlock</a>, Recreated in Go.</strong></span>
   <br>
   <a target="_blank" href="https://golang.org/doc/go1.15" title="Go version: 1.15"><img src="https://img.shields.io/badge/Go version-1.15-blue.svg"></a>
@@ -19,6 +9,8 @@
 
 <p align="center">
   <a href="https://github.com/audioo/goseek/releases/latest">Download</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#origin">Usage</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="https://discord.gg/jnENWWp">Discord</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -34,6 +26,15 @@
 <a href="">
 <img src="./images/demoFast.gif" width="600" height="350"/>
 </a>
+</p>
+
+## Origin
+<p align=center>
+     <span><strong>GoSeek Origin</strong></span><br>
+     I have always found Open-Source Intelligence to be intriguing, and have found myself using Sherlock<br> on multiple occasions.
+     I started learning Golang in the beginning of February of 2021 and have been looking <br>for new projects to help strengthen my knowledge. I also wanted these
+     projects to keep me engaged<br> over time and prove somewhat useful instead of making just another calculator. I hope to build on GoSeek and expand<br> it's use cases
+     in a way that others can benefit.
 </p>
 
 <p align="center">
