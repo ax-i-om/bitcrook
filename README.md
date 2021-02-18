@@ -27,7 +27,7 @@
 </p>
 
 <p align=center>
-     <a><strong>Installation</strong></a><br>
+     <a><strong>Installation and Usage</strong></a><br>
 Download/clone the repository:<br>
   <code>git clone https://github.com/audioo/goseek.git</code><br><br>
 Navigate into the GoSeek directory:<br>
