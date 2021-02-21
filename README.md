@@ -22,7 +22,7 @@
 
 <p align="center">
 <a href="">
-<img src="https://raw.githubusercontent.com/audioo/goseek/main/images/demoFast.gif" width="600" height="350"/>
+<img src="./images/demoPrev.gif" width="600" height="350"/>
 </a>
 </p>
 
