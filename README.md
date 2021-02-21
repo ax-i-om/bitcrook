@@ -1,7 +1,7 @@
 <p align=center>
   <span><strong>Username Lookup - Inspired by <a href="https://github.com/sherlock-project/sherlock">Sherlock</a>, Created in Go.</strong></span>
   <br>
-  <a target="_blank" href="https://golang.org/doc/go1.15" title="Go version: 1.15"><img src="https://img.shields.io/badge/Go version-1.15-blue.svg"></a>
+  <a target="_blank" href="https://golang.org/doc/go1.15" title="Go version: 1.15"><img src="https://img.shields.io/badge/Golang-1.15-blue.svg"></a>
   <a target="_blank" href="LICENSE" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-red.svg"></a>
   <a target="_blank" href="VERSION" title="Version: 1.0"><img src="https://img.shields.io/badge/Version-1.0-orange.svg"></a>
   <a target="_blank" href="https://goreportcard.com/report/github.com/audioo/goseek" title="REPORT"><img src="https://goreportcard.com/badge/github.com/audioo/goseek"></a>
