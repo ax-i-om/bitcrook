@@ -32,8 +32,8 @@ Download/clone the repository:<br>
   <code>git clone https://github.com/audioo/goseek.git</code><br><br>
 Navigate into the GoSeek directory:<br>
   <code>cd goseek</code><br><br>
-Run main.go:<br>
-  <code>go run main.go</code>
+Run main.go with flags:<br>
+  <code>go run main.go -u=username -w=write</code>
 </p><br>
 
 <p align=center>
