@@ -30,7 +30,6 @@ func main() {
 			fmt.Println("")
 		} else {
 			cli.Banner()
-			fmt.Println("True")
 			cli.Dispopg("GREEN", "ACCOUNT EXISTS")
 			cli.Dispop("RED", "ACCOUNT DOES NOT EXIST")
 			fmt.Println("")
@@ -50,7 +49,6 @@ func main() {
 			fmt.Println("")
 		} else {
 			cli.Banner()
-			fmt.Println("False")
 			cli.Dispopg("GREEN", "ACCOUNT EXISTS")
 			cli.Dispop("RED", "ACCOUNT DOES NOT EXIST")
 			fmt.Println("")
