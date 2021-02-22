@@ -33,7 +33,7 @@ func main() {
 			cli.Dispopg("GREEN", "ACCOUNT EXISTS")
 			cli.Dispop("RED", "ACCOUNT DOES NOT EXIST")
 			fmt.Println("")
-			run.SendSeeker(userres, &wg)
+			run.SendSeekerWrite(userres, &wg)
 			wg.Wait()
 			fmt.Println("")
 			cli.Dispban("Go-Seek Process Complete")
@@ -45,7 +45,7 @@ func main() {
 			fmt.Println("go run main.go -u=user -w=write")
 			fmt.Println("")
 			fmt.Println("Example:")
-			fmt.Println("go run main.go =u=audioo -w=false")
+			fmt.Println("go run main.go -u=audioo -w=false")
 			fmt.Println("")
 		} else {
 			cli.Banner()
@@ -58,21 +58,4 @@ func main() {
 			cli.Dispban("Go-Seek Process Complete")
 		}
 	}
-	/*
-		cli.Banner()
-		cli.Dispopg("GREEN", "ACCOUNT EXISTS")
-		cli.Dispop("RED", "ACCOUNT DOES NOT EXIST")
-		fmt.Println("")
-		fmt.Println("   Enter Username")
-		fmt.Print("   >> ")
-		fmt.Scan(&userres)
-		fmt.Println("")
-		run.SendSeeker(userres, &wg)
-		wg.Wait()
-		fmt.Println("")
-		cli.Dispban("Go-Seek Process Complete")
-		fmt.Println("")
-		fmt.Println("")
-		fmt.Scan(&userres)
-	*/
 }
