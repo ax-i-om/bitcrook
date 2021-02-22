@@ -26,7 +26,7 @@ func main() {
 			fmt.Println("go run main.go -u=user -w=write")
 			fmt.Println("")
 			fmt.Println("Example:")
-			fmt.Println("go run main.go =u=audioo -w=false")
+			fmt.Println("go run main.go -u=audioo -w=false")
 			fmt.Println("")
 		} else {
 			cli.Banner()
