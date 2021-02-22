@@ -1,8 +1,10 @@
 package http
 
 import (
+	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"strconv"
 	"sync"
 
@@ -42,8 +44,49 @@ func GetSCredir(title string, url string, wg *sync.WaitGroup) {
 	}
 }
 
+// GetSCredirWrite ... Automatically follows HTTP redirects.
+func GetSCredirWrite(title string, url string, wg *sync.WaitGroup, userres string) {
+	file, err := os.OpenFile(userres+".txt", os.O_RDWR|os.O_APPEND|os.O_CREATE, 0660)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	wg.Add(1)
+	defer file.Close()
+	defer wg.Done()
+	method := "GET"
+
+	client := &http.Client{}
+	req, err := http.NewRequest(method, url, nil)
+
+	if err != nil {
+		cli.Dispop(title, url)
+		return
+	}
+	res, err := client.Do(req)
+	if err != nil {
+		cli.Dispop(title, url)
+		return
+	}
+	defer res.Body.Close()
+
+	body, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		cli.Dispop(title, url)
+		return
+	}
+	strconv.AppendBool(body, true)
+	if res.StatusCode == 200 {
+		cli.Dispopg(title, url)
+		fmt.Fprintf(file, "%s\n", title+" => "+url)
+	} else {
+		cli.Dispop(title, url)
+	}
+}
+
 // GetSCnoredir ... Does not automatically follow HTTP redirects.
 func GetSCnoredir(title string, url string, wg *sync.WaitGroup) {
+
 	wg.Add(1)
 	defer wg.Done()
 	method := "GET"
@@ -74,6 +117,50 @@ func GetSCnoredir(title string, url string, wg *sync.WaitGroup) {
 	strconv.AppendBool(body, true)
 	if res.StatusCode == 200 {
 		cli.Dispopg(title, url)
+	} else {
+		cli.Dispop(title, url)
+	}
+}
+
+// GetSCnoredirWrite ... Does not automatically follow HTTP redirects.
+func GetSCnoredirWrite(title string, url string, wg *sync.WaitGroup, userres string) {
+	file, err := os.OpenFile(userres+".txt", os.O_RDWR|os.O_APPEND|os.O_CREATE, 0660)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	wg.Add(1)
+	defer file.Close()
+	defer wg.Done()
+	method := "GET"
+
+	client := &http.Client{
+		CheckRedirect: func(req *http.Request, via []*http.Request) error {
+			return http.ErrUseLastResponse
+		},
+	}
+	req, err := http.NewRequest(method, url, nil)
+
+	if err != nil {
+		cli.Dispop(title, url)
+		return
+	}
+	res, err := client.Do(req)
+	if err != nil {
+		cli.Dispop(title, url)
+		return
+	}
+	defer res.Body.Close()
+
+	body, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		cli.Dispop(title, url)
+		return
+	}
+	strconv.AppendBool(body, true)
+	if res.StatusCode == 200 {
+		cli.Dispopg(title, url)
+		fmt.Fprintf(file, "%s\n", title+" => "+url)
 	} else {
 		cli.Dispop(title, url)
 	}
