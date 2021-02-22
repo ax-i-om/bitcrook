@@ -14,8 +14,8 @@
 </p>
 
 <p align="center">
-  <a target="_blank" href="https://repl.it/github/audioo/goseek" title="GoSeek"><img src="https://user-images.githubusercontent.com/27065646/92304596-bf719b00-ef7f-11ea-987f-2c1f3c323088.png"></a>
-     <a target="_blank" href="https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/audioo/goseek&tutorial=README.md" title="GoSeek"><img src="https://user-images.githubusercontent.com/27065646/92304704-8d146d80-ef80-11ea-8c29-0deaabb1c702.png"></a>
+  <a target="_blank" href="https://repl.it/github/audioo/goseek" title="GoSeek"><img src="https://user-images.githubusercontent.com/27065646/92304596-bf719b00-ef7f-11ea-987f-2c1f3c323088.png" width="185" height="50"></a>
+     <a target="_blank" href="https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/audioo/goseek&tutorial=README.md" title="GoSeek"><img src="https://user-images.githubusercontent.com/27065646/92304704-8d146d80-ef80-11ea-8c29-0deaabb1c702.png" height="50"></a>
 </p>
 
 <p align="center">
