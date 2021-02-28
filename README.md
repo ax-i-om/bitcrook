@@ -31,7 +31,7 @@ Download/clone the repository:<br>
 Navigate into the GoSeek directory:<br>
   <code>cd goseek</code><br><br>
 Run main.go with flags:<br>
-  <code>go run main.go -u=username -w=write</code>
+  <code>go run main.go [flags] username</code>
 </p><br>
 
 <p align=center>
