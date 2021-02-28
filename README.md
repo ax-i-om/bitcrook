@@ -20,7 +20,7 @@
 
 <p align="center">
 <a href="">
-<img src="./images/demoPrev.gif" width="600" height="350"/>
+<img src="./images/demoit.gif" width="600" height="350"/>
 </a>
 </p>
 
