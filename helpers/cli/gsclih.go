@@ -40,16 +40,16 @@ func Dispban(text string) {
 }
 
 // Dispop ...
-func Dispop(key string, value string) {
+func Dispop(key string, value string) string {
 	var reset string = "\033[0m"
 	var red string = "\033[31m"
-	fmt.Println("   [ " + string(red) + key + string(reset) + " ] - " + value)
+	return fmt.Sprintf("   [ " + string(red) + key + string(reset) + " ] - " + value)
 }
 
 // Dispopg ...
-func Dispopg(key string, value string) {
+func Dispopg(key string, value string) string {
 	var reset string = "\033[0m"
 	var green string = "\033[32m"
-	fmt.Println("   [ " + string(green) + key + string(reset) + " ] - " + value)
+	return fmt.Sprintf("   [ " + string(green) + key + string(reset) + " ] - " + value)
 
 }
