@@ -36,8 +36,8 @@ func main() {
 
 	if write {
 		cli.Banner()
-		cli.Dispopg("GREEN", "ACCOUNT EXISTS")
-		cli.Dispop("RED", "ACCOUNT DOES NOT EXIST")
+		fmt.Println(cli.Dispopg("GREEN", "ACCOUNT EXISTS"))
+		fmt.Println(cli.Dispop("RED", "ACCOUNT DOES NOT EXIST"))
 		fmt.Println("")
 		run.SendSeeker(userres, &wg, true)
 		wg.Wait()
@@ -45,8 +45,8 @@ func main() {
 		cli.Dispban("Go-Seek Process Complete :: Results written to " + userres + ".txt")
 	} else {
 		cli.Banner()
-		cli.Dispopg("GREEN", "ACCOUNT EXISTS")
-		cli.Dispop("RED", "ACCOUNT DOES NOT EXIST")
+		fmt.Println(cli.Dispopg("GREEN", "ACCOUNT EXISTS"))
+		fmt.Println(cli.Dispop("RED", "ACCOUNT DOES NOT EXIST"))
 		fmt.Println("")
 		run.SendSeeker(userres, &wg, false)
 		wg.Wait()
