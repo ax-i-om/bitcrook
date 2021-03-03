@@ -8,11 +8,11 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/audioo/goseek/helpers/cli"
+	"github.com/audioo/goseek/helpers/ent"
 )
 
 // GetSCredir ... Automatically follows HTTP redirects.
-func GetSCredir(title string, url string, wg *sync.WaitGroup, userres string, write bool) string {
+func GetSCredir(title string, url string, wg *sync.WaitGroup, userres string, write bool) ent.WebsiteRes {
 	file, err := os.OpenFile(userres+".txt", os.O_RDWR|os.O_APPEND|os.O_CREATE, 0660)
 	if err != nil {
 		// fmt.Println(err)
@@ -32,31 +32,31 @@ func GetSCredir(title string, url string, wg *sync.WaitGroup, userres string, wr
 	req, err := http.NewRequest(method, url, nil)
 
 	if err != nil {
-		return cli.Dispop(title, url)
+		return ent.WebsiteRes{Title: title, Domain: url, Valid: false}
 	}
 	res, err := client.Do(req)
 	if err != nil {
-		return cli.Dispop(title, url)
+		return ent.WebsiteRes{Title: title, Domain: url, Valid: false}
 	}
 	defer res.Body.Close()
 
 	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
-		return cli.Dispop(title, url)
+		return ent.WebsiteRes{Title: title, Domain: url, Valid: false}
 	}
 	strconv.AppendBool(body, true)
 	if res.StatusCode == 200 {
 		if write {
 			fmt.Fprintf(file, "%s\n", title+" => "+url)
 		}
-		return cli.Dispopg(title, url)
+		return ent.WebsiteRes{Title: title, Domain: url, Valid: true}
 	}
-	return cli.Dispop(title, url)
+	return ent.WebsiteRes{Title: title, Domain: url, Valid: false}
 
 }
 
 // GetSCnoredir ... Does not automatically follow HTTP redirects.
-func GetSCnoredir(title string, url string, wg *sync.WaitGroup, userres string, write bool) string {
+func GetSCnoredir(title string, url string, wg *sync.WaitGroup, userres string, write bool) ent.WebsiteRes {
 	file, err := os.OpenFile(userres+".txt", os.O_RDWR|os.O_APPEND|os.O_CREATE, 0660)
 	if err != nil {
 		// fmt.Println(err)
@@ -76,24 +76,24 @@ func GetSCnoredir(title string, url string, wg *sync.WaitGroup, userres string, 
 	req, err := http.NewRequest(method, url, nil)
 
 	if err != nil {
-		return cli.Dispop(title, url)
+		return ent.WebsiteRes{Title: title, Domain: url, Valid: false}
 	}
 	res, err := client.Do(req)
 	if err != nil {
-		return cli.Dispop(title, url)
+		return ent.WebsiteRes{Title: title, Domain: url, Valid: false}
 	}
 	defer res.Body.Close()
 
 	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
-		return cli.Dispop(title, url)
+		return ent.WebsiteRes{Title: title, Domain: url, Valid: false}
 	}
 	strconv.AppendBool(body, true)
 	if res.StatusCode == 200 {
 		if write {
 			fmt.Fprintf(file, "%s\n", title+" => "+url)
 		}
-		return cli.Dispopg(title, url)
+		return ent.WebsiteRes{Title: title, Domain: url, Valid: true}
 	}
-	return cli.Dispop(title, url)
+	return ent.WebsiteRes{Title: title, Domain: url, Valid: false}
 }
