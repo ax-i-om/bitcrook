@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sync"
 
+	"github.com/audioo/goseek/helpers/cli"
 	"github.com/audioo/goseek/helpers/ent"
 	"github.com/audioo/goseek/helpers/http"
 	"github.com/audioo/goseek/helpers/load"
@@ -14,17 +15,25 @@ func SendSeeker(userres string, wg *sync.WaitGroup, write bool) {
 
 	var arrNo []ent.Website = load.NoRedirSites(userres)
 	for _, v := range arrNo {
-		fmt.Println(http.GetSCnoredir(v.Title, v.Domain, wg, userres, write))
+		if http.GetSCnoredir(v.Title, v.Domain, wg, userres, write).Valid {
+			fmt.Println(cli.Dispopg(v.Title, v.Domain))
+		} else {
+			fmt.Println(cli.Dispop(v.Title, v.Domain))
+		}
 	}
 	var arrYes []ent.Website = load.RedirSites(userres)
 	for _, v := range arrYes {
-		fmt.Println(http.GetSCredir(v.Title, v.Domain, wg, userres, write))
+		if http.GetSCredir(v.Title, v.Domain, wg, userres, write).Valid {
+			fmt.Println(cli.Dispopg(v.Title, v.Domain))
+		} else {
+			fmt.Println(cli.Dispop(v.Title, v.Domain))
+		}
 	}
 }
 
 // SendSeekerRL ... RETURNS LIST FOR ONLINE DEMO
-func SendSeekerRL(userres string, wg *sync.WaitGroup, write bool) []string {
-	var arr []string
+func SendSeekerRL(userres string, wg *sync.WaitGroup, write bool) []ent.WebsiteRes {
+	var arr []ent.WebsiteRes
 
 	var arrNo []ent.Website = load.NoRedirSites(userres)
 	for _, v := range arrNo {
