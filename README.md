@@ -10,7 +10,7 @@
 <p align="center">
   <a href="https://github.com/audioo/goseek/archive/main.zip">Download</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="https://discord.gg/jnENWWp">Discord</a>
+  <a href="mailto:hyperaudio@protonmail.com">Contact</a>
 </p>
 
 <p align="center">
