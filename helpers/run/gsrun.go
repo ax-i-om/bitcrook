@@ -11,38 +11,27 @@ import (
 )
 
 // SendSeeker ...
-func SendSeeker(userres string, wg *sync.WaitGroup, write bool) {
+func SendSeeker(userres string, write bool) {
+	var wg sync.WaitGroup
 
 	var arrNo []ent.Website = load.NoRedirSites(userres)
 	for _, v := range arrNo {
-		if http.GetSCnoredir(v.Title, v.Domain, wg, userres, write).Valid {
-			fmt.Println(cli.Dispopg(v.Title, v.Domain))
-		} else {
-			fmt.Println(cli.Dispop(v.Title, v.Domain))
-		}
+		go check(v.Title, v.Domain, userres, write, false, &wg)
 	}
 	var arrYes []ent.Website = load.RedirSites(userres)
 	for _, v := range arrYes {
-		if http.GetSCredir(v.Title, v.Domain, wg, userres, write).Valid {
-			fmt.Println(cli.Dispopg(v.Title, v.Domain))
-		} else {
-			fmt.Println(cli.Dispop(v.Title, v.Domain))
-		}
+		go check(v.Title, v.Domain, userres, write, true, &wg)
 	}
+	wg.Wait()
 }
 
-// SendSeekerRL ... RETURNS LIST FOR ONLINE DEMO
-func SendSeekerRL(userres string, wg *sync.WaitGroup, write bool) []ent.WebsiteRes {
-	var arr []ent.WebsiteRes
-
-	var arrNo []ent.Website = load.NoRedirSites(userres)
-	for _, v := range arrNo {
-		arr = append(arr, http.GetSCnoredir(v.Title, v.Domain, wg, userres, write))
+func check(title string, domain string, userres string, write bool, redirect bool, wg *sync.WaitGroup) {
+	wg.Add(1)
+	defer wg.Done()
+	x := http.GetSCredir(title, domain, userres, write, redirect).Valid
+	if x {
+		fmt.Println(cli.Dispopg(title, domain))
+	} else {
+		fmt.Println(cli.Dispop(title, domain))
 	}
-	var arrYes []ent.Website = load.RedirSites(userres)
-	for _, v := range arrYes {
-		arr = append(arr, http.GetSCredir(v.Title, v.Domain, wg, userres, write))
-	}
-
-	return arr
 }
