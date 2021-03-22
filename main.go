@@ -4,7 +4,6 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"sync"
 
 	"github.com/audioo/goseek/helpers/cli"
 	"github.com/audioo/goseek/helpers/run"
@@ -32,15 +31,12 @@ func init() {
 
 func main() {
 
-	var wg sync.WaitGroup
-
 	if write {
 		cli.Banner()
 		fmt.Println(cli.Dispopg("GREEN", "ACCOUNT EXISTS"))
 		fmt.Println(cli.Dispop("RED", "ACCOUNT DOES NOT EXIST"))
 		fmt.Println("")
-		run.SendSeeker(userres, &wg, true)
-		wg.Wait()
+		run.SendSeeker(userres, true)
 		fmt.Println("")
 		cli.Dispban("Go-Seek Process Complete :: Results written to " + userres + ".txt")
 	} else {
@@ -48,8 +44,7 @@ func main() {
 		fmt.Println(cli.Dispopg("GREEN", "ACCOUNT EXISTS"))
 		fmt.Println(cli.Dispop("RED", "ACCOUNT DOES NOT EXIST"))
 		fmt.Println("")
-		run.SendSeeker(userres, &wg, false)
-		wg.Wait()
+		run.SendSeeker(userres, false)
 		fmt.Println("")
 		cli.Dispban("Go-Seek Process Complete :: Results have not been written")
 	}
