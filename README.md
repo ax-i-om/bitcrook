@@ -27,7 +27,7 @@
      <a><strong>Installation and Usage</strong></a><br>
 Download via `go get`:<br>
   <code>go get -u github.com/audioo/goseek</code><br><br>
-Run main.go with flags:<br>
+Run in terminal<br>
   <code>goseek [flags] &lt;username&gt;</code>
 </p><br>
 
