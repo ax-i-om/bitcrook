@@ -25,12 +25,10 @@
 
 <p align=center>
      <a><strong>Installation and Usage</strong></a><br>
-Download/clone the repository:<br>
-  <code>git clone https://github.com/audioo/goseek.git</code><br><br>
-Navigate into the GoSeek directory:<br>
-  <code>cd goseek</code><br><br>
+Download via `go get`:<br>
+  <code>go get -u github.com/audioo/goseek</code><br><br>
 Run main.go with flags:<br>
-  <code>go run main.go [flags] username</code>
+  <code>goseek [flags] &lt;username&gt;</code>
 </p><br>
 
 <p align=center>
