@@ -1,47 +1,26 @@
-<p align=center>
-  <span><strong>Username Lookup - Inspired by <a href="https://github.com/sherlock-project/sherlock">Sherlock</a>, Created in Go.</strong></span>
-  <br>
-  <a target="_blank" href="https://golang.org/doc/go1.15" title="Go version: 1.15"><img src="https://img.shields.io/badge/Golang-1.15-blue.svg"></a>
-  <a target="_blank" href="LICENSE" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-red.svg"></a>
-  <a target="_blank" href="https://goreportcard.com/report/github.com/audioo/goseek" title="REPORT"><img src="https://goreportcard.com/badge/github.com/audioo/goseek"></a>
-</p>
+![s](https://goreportcard.com/badge/github.com/audioo/goseek) ![s](https://img.shields.io/badge/Golang-1.15-blue.svg) ![s](https://img.shields.io/badge/License-MIT-blue.svg) ![mailto:hyperaudio@protonmail.com](https://img.shields.io/badge/Contact-Email-blue.svg)
+# GoSeek
+Open Source Intelligence Tool
 
-<p align="center">
-  <a href="https://github.com/audioo/goseek/archive/main.zip">Download</a>
-  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="mailto:hyperaudio@protonmail.com">Contact</a>
-</p>
-
-<p align="center">
-  <a target="_blank" href="https://repl.it/github/audioo/goseek" title="GoSeek"><img src="https://user-images.githubusercontent.com/27065646/92304596-bf719b00-ef7f-11ea-987f-2c1f3c323088.png" width="185" height="50"></a>
-     <a target="_blank" href="https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/audioo/goseek&tutorial=README.md" title="GoSeek"><img src="https://user-images.githubusercontent.com/27065646/92304704-8d146d80-ef80-11ea-8c29-0deaabb1c702.png" height="50"></a>
-</p>
-
-<p align="center">
-<a href="">
-<img src="./images/demogs.gif" width="600" height="350"/>
-</a>
-</p>
+## Features
+- Username Lookup - Inspired by [Sherlock](https://github.com/sherlock-project/sherlock)
+- IP Lookup - Uses [ip-api](https://ip-api.com/)
+- Info Cull - Compile collected information
 
 <p align=center>
      <a><strong>Installation and Usage</strong></a><br>
 Download via `go get`:<br>
   <code>go get -u github.com/audioo/goseek</code><br><br>
 Run in terminal<br>
-  <code>goseek [flags] &lt;username&gt;</code>
+  <code>goseek</code>
 </p><br>
 
-<p align=center>
-     <a><strong>Purpose</strong></a><br>
-     I have always found Open-Source Intelligence to be intriguing, and have found myself using Sherlock<br> on multiple occasions.
-     I started learning Golang in the beginning of February of 2021 and have been looking <br>for new projects to help strengthen my knowledge. I also wanted these
-     projects to keep me engaged<br> over time and prove somewhat useful instead of making just another calculator. I hope to build on GoSeek and expand it's use cases in a way that others can benefit.
-</p><br>
+## Purpose
+I have always found Open-Source Intelligence to be intriguing, and have found myself using Sherlock<br> on multiple occasions. I started learning Golang in the beginning of February of 2021 and have been looking <br>for new projects to help strengthen my knowledge. I also wanted these projects to keep me engaged<br> over time and prove somewhat useful instead of making just another calculator. I hope to build on GoSeek and expand it's use cases in a way that others can benefit.
 
-<p align="center">
-  <a><strong>Sites</strong></a>
-  <br>
- About Me
+## Sites
+
+ - About Me
  - Bandcamp
  - Behance
  - Bitbucket
@@ -93,4 +72,3 @@ Run in terminal<br>
  - Wattpad
  - Wikipedia
  - Wordpress
-</p><br>
