@@ -14,6 +14,7 @@ import (
 	"github.com/audioo/goseek/helpers/userlookup/run"
 )
 
+// MainMenu ...
 func MainMenu() {
 	cli.Clear()
 	cli.Banner()
@@ -28,7 +29,6 @@ func MainMenu() {
 	fmt.Print("   >> ")
 	res := cli.ScanIt(scanner)
 	if res == "1" {
-		res = ""
 		if http.Connected() {
 			usernameLookup()
 		} else {
@@ -42,14 +42,12 @@ func MainMenu() {
 		cli.Clear()
 		cli.Banner()
 		cli.Dispban("Cull")
-		res = ""
 		cull.Run()
 		fmt.Println()
 		cli.Dispban("Press enter to return to the main menu...")
 		cli.ScanIt(scanner)
 		MainMenu()
 	} else if res == "3" {
-		res = ""
 		if http.Connected() {
 			iplookup()
 		} else {
@@ -60,7 +58,6 @@ func MainMenu() {
 			MainMenu()
 		}
 	} else if res == "X" || res == "x" {
-		res = ""
 		os.Exit(0)
 	} else {
 		MainMenu()

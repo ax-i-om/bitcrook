@@ -20,7 +20,7 @@ func Run() {
 }
 
 func generatePdf() (string, error) {
-	var res string = ""
+	var res string
 	scanner := bufio.NewScanner(os.Stdin)
 
 	pdf := gofpdf.New("P", "mm", "A4", "")

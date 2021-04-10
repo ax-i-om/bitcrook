@@ -52,12 +52,13 @@ func Dispopg(key string, value string) string {
 	return fmt.Sprintf("   [ " + string(green) + key + string(reset) + " ] - " + value)
 }
 
+// Dispopw ...
 func Dispopw(key string, value string) string {
 	return fmt.Sprintf("   [ " + key + " ] - " + value)
 
 }
 
-// Scanit ...
+// ScanIt ...
 func ScanIt(s *bufio.Scanner) string {
 	s.Scan()
 	return s.Text()
