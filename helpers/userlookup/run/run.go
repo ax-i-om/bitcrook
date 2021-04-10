@@ -7,7 +7,7 @@ import (
 	"github.com/audioo/goseek/helpers/cli"
 	"github.com/audioo/goseek/helpers/ent"
 	"github.com/audioo/goseek/helpers/http"
-	"github.com/audioo/goseek/helpers/load"
+	"github.com/audioo/goseek/helpers/userlookup/load"
 )
 
 // SendSeeker ...

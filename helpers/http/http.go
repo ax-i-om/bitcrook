@@ -14,7 +14,7 @@ import (
 func GetSCredir(title string, url string, userres string, write bool, redirect bool) ent.WebsiteRes {
 	file, err := os.OpenFile(userres+".txt", os.O_RDWR|os.O_APPEND|os.O_CREATE, 0660)
 	if err != nil {
-		// fmt.Println(err)
+		fmt.Println(err)
 	}
 	if !write {
 		file.Close()
@@ -58,4 +58,24 @@ func GetSCredir(title string, url string, userres string, write bool, redirect b
 	}
 	return ent.WebsiteRes{Title: title, Domain: url, Valid: false}
 
+}
+
+// Connected ...
+func Connected() (ok bool) {
+	_, err := http.Get("http://clients3.google.com/generate_204")
+	return err == nil
+}
+
+// GetReq ...
+func GetReq(url string) string {
+	resp, err := http.Get(url)
+	if err != nil {
+		print(err)
+	}
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		print(err)
+	}
+	return (string(body))
 }

@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 	"os/exec"
@@ -34,9 +35,7 @@ func Banner() {
 
 // Dispban ...
 func Dispban(text string) {
-	var reset string = "\033[0m"
-	var red string = "\033[31m"
-	fmt.Println("   [ " + string(red) + text + string(reset) + " ]")
+	fmt.Println("   [ " + text + " ]")
 }
 
 // Dispop ...
@@ -51,5 +50,15 @@ func Dispopg(key string, value string) string {
 	var reset string = "\033[0m"
 	var green string = "\033[32m"
 	return fmt.Sprintf("   [ " + string(green) + key + string(reset) + " ] - " + value)
+}
 
+func Dispopw(key string, value string) string {
+	return fmt.Sprintf("   [ " + key + " ] - " + value)
+
+}
+
+// Scanit ...
+func ScanIt(s *bufio.Scanner) string {
+	s.Scan()
+	return s.Text()
 }
