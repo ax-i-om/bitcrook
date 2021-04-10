@@ -154,9 +154,9 @@ func generatePdf() (string, error) {
 	res = cli.ScanIt(scanner)
 	pdf.Write(5, "Known Social Footprint: "+res+"\n")
 
-	fmt.Print("   Embarassing Data: ")
+	fmt.Print("   Embarrassing Data: ")
 	res = cli.ScanIt(scanner)
-	pdf.Write(5, "Embarassing Data: "+res+"\n")
+	pdf.Write(5, "Embarrassing Data: "+res+"\n")
 
 	fmt.Print("   Estimated Yearly Income: ")
 	res = cli.ScanIt(scanner)
