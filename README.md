@@ -7,13 +7,11 @@ Open Source Intelligence Tool
 - IP Lookup - Uses [ip-api](https://ip-api.com/)
 - Info Cull - Compile collected information
 
-<p align=center>
-     <a><strong>Installation and Usage</strong></a><br>
-Download via `go get`:<br>
-  <code>go get -u github.com/audioo/goseek</code><br><br>
-Run in terminal<br>
-  <code>goseek</code>
-</p><br>
+## Installation and Usage
+Download via 'go get':
+<code>go get -u github.com/audioo/goseek</code><br><br>
+Run in terminal
+<code>goseek</code>
 
 ## Purpose
 I have always found Open-Source Intelligence to be intriguing, and have found myself using Sherlock<br> on multiple occasions. I started learning Golang in the beginning of February of 2021 and have been looking <br>for new projects to help strengthen my knowledge. I also wanted these projects to keep me engaged<br> over time and prove somewhat useful instead of making just another calculator. I hope to build on GoSeek and expand it's use cases in a way that others can benefit.
