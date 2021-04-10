@@ -10,7 +10,7 @@ Open Source Intelligence Tool
 ## Installation and Usage
 Download via 'go get':
 <code>go get -u github.com/audioo/goseek</code><br><br>
-Run in terminal
+Run in terminal:
 <code>goseek</code>
 
 ## Purpose
