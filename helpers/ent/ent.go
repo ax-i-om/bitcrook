@@ -13,9 +13,6 @@ type WebsiteRes struct {
 	Valid  bool
 }
 
-// Printer is ...
-type Printer struct{}
-
 // IPAddress is ...
 type IPAddress struct {
 	Status     string  `json:"status"`
@@ -38,11 +35,4 @@ type IPAddress struct {
 	Proxy      bool    `json:"proxy"`
 	Hosting    bool    `json:"hosting"`
 	Query      string  `json:"query"`
-}
-
-// ScanResult is ...
-type ScanResult struct {
-	Port    string
-	State   string
-	Service string
 }
