@@ -6,16 +6,14 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"time"
 
 	"github.com/audioo/goseek/helpers/ent"
 )
 
 // GetSCredir ...
 func GetSCredir(title string, url string, userres string, write bool, redirect bool) ent.WebsiteRes {
-	file, err := os.OpenFile(userres+".txt", os.O_RDWR|os.O_APPEND|os.O_CREATE, 0660)
-	if err != nil {
-		fmt.Println(err)
-	}
+	file, _ := os.OpenFile(userres+".txt", os.O_RDWR|os.O_APPEND|os.O_CREATE, 0660)
 	if !write {
 		file.Close()
 		os.Remove(userres + ".txt")
@@ -26,12 +24,15 @@ func GetSCredir(title string, url string, userres string, write bool, redirect b
 	method := "GET"
 	var client *http.Client
 	if redirect {
-		client = &http.Client{}
+		client = &http.Client{
+			Timeout: 5 * time.Second,
+		}
 	} else {
 		client = &http.Client{
 			CheckRedirect: func(req *http.Request, via []*http.Request) error {
 				return http.ErrUseLastResponse
 			},
+			Timeout: 5 * time.Second,
 		}
 	}
 	req, err := http.NewRequest(method, url, nil)
