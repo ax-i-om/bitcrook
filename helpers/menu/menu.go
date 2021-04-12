@@ -12,6 +12,7 @@ import (
 	"github.com/audioo/goseek/helpers/ent"
 	"github.com/audioo/goseek/helpers/http"
 	"github.com/audioo/goseek/helpers/userlookup/run"
+	"github.com/audioo/goseek/helpers/vehicle"
 )
 
 // MainMenu ...
@@ -23,6 +24,8 @@ func MainMenu() {
 	fmt.Println(cli.Dispopw("1", "Username Lookup"))
 	fmt.Println(cli.Dispopw("2", "Cull"))
 	fmt.Println(cli.Dispopw("3", "IP Lookup"))
+	fmt.Println(cli.Dispopw("4", "License Plate Lookup (Coming soon...)"))
+	fmt.Println(cli.Dispopw("5", "VIN Lookup"))
 	fmt.Println(cli.Dispopw("X", "Exit"))
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Println()
@@ -50,6 +53,16 @@ func MainMenu() {
 	} else if res == "3" {
 		if http.Connected() {
 			iplookup()
+		} else {
+			fmt.Println()
+			fmt.Println("   You need to have an internet connection in order to use this function.")
+			fmt.Println("   Press enter to continue...")
+			cli.ScanIt(scanner)
+			MainMenu()
+		}
+	} else if res == "5" {
+		if http.Connected() {
+			vin()
 		} else {
 			fmt.Println()
 			fmt.Println("   You need to have an internet connection in order to use this function.")
@@ -135,6 +148,38 @@ func iplookup() {
 	fmt.Println("   Proxy: " + strconv.FormatBool(s.Proxy))
 	fmt.Println("   Hosting: " + strconv.FormatBool(s.Hosting))
 	fmt.Println("")
+	cli.Dispban("Press enter to return to the main menu...")
+	cli.ScanIt(scanner)
+	MainMenu()
+}
+
+/*
+func plate() {
+	scanner := bufio.NewScanner(os.Stdin)
+	cli.Clear()
+	cli.Banner()
+	cli.Dispban("License Plate Lookup")
+	fmt.Println("")
+	fmt.Println("   Enter License Plate")
+	fmt.Print("   >> ")
+	fmt.Println("")
+	fmt.Println("   Enter State Abbrevation (CA, NY, etc...)")
+	fmt.Print("   >> ")
+	plate := cli.ScanIt(scanner)
+}
+*/
+func vin() {
+	scanner := bufio.NewScanner(os.Stdin)
+	cli.Clear()
+	cli.Banner()
+	cli.Dispban("VIN Lookup")
+	fmt.Println("")
+	fmt.Println("   Enter VIN")
+	fmt.Print("   >> ")
+	vin := cli.ScanIt(scanner)
+	fmt.Println()
+	vehicle.VinLookup(vin, 1)
+	fmt.Println()
 	cli.Dispban("Press enter to return to the main menu...")
 	cli.ScanIt(scanner)
 	MainMenu()
