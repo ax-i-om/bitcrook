@@ -12,7 +12,7 @@ func plateToVin(plate string, state string) string {
 	if err != nil {
 		panic(err)
 	}
-	// Find all news item.
+	// Fetch VIN from page
 	vin, err := htmlquery.Query(doc, "/html/body/div/div/div[2]/div/div[2]/div[2]/text()[2]")
 	if err != nil {
 		panic(err)
