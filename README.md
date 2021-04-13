@@ -6,7 +6,7 @@ Open Source Intelligence Tool
 - Username Lookup - Inspired by [Sherlock](https://github.com/sherlock-project/sherlock)
 - IP Lookup - Uses [ip-api](https://ip-api.com/)
 - License Plate & VIN Lookup - Uses [htmlquery](https://github.com/antchfx/htmlquery)
-- Info Cull - Data Narrowing using [gofpdf](https://github.com/jung-kurt/gofpdf)
+- Info Cull - Data narrowing using [gofpdf](https://github.com/jung-kurt/gofpdf)
 
 ## Installation and Usage
 Download via 'go get':
