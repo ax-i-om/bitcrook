@@ -1,12 +1,12 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/audioo/goseek)](https://goreportcard.com/report/github.com/audioo/goseek) ![s](https://img.shields.io/badge/Golang-1.15-blue.svg) ![s](https://img.shields.io/badge/License-MIT-blue.svg) ![mailto:hyperaudio@protonmail.com](https://img.shields.io/badge/Contact-Email-blue.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/audioo/goseek)](https://goreportcard.com/report/github.com/audioo/goseek) ![s](https://img.shields.io/badge/Golang-1.15-blue.svg) ![s](https://img.shields.io/badge/License-MIT-blue.svg) [![Contact via Email](https://img.shields.io/badge/Contact-Email-blue.svg)](mailto:hyperaudio@protonmail.com)
 # GoSeek
 Open Source Intelligence Tool
 
 ## Features
 - Username Lookup - Inspired by [Sherlock](https://github.com/sherlock-project/sherlock)
 - IP Lookup - Uses [ip-api](https://ip-api.com/)
-- License Plate & VIN Lookup
-- Info Cull - Compile collected information
+- License Plate & VIN Lookup - Uses [htmlquery](https://github.com/antchfx/htmlquery)
+- Info Cull - Data Narrowing using [gofpdf](https://github.com/jung-kurt/gofpdf)
 
 ## Installation and Usage
 Download via 'go get':
