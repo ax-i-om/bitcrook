@@ -69,7 +69,7 @@ func generatePdf() (string, error) {
 
 	input("Legal Name: ", scanner, pdf)
 	input("Date of Birth: ", scanner, pdf)
-	input("Preferred Pronoun(s)", scanner, pdf)
+	input("Preferred Pronoun(s): ", scanner, pdf)
 	input("Place of Birth: ", scanner, pdf)
 	input("Usernames: ", scanner, pdf)
 	input("Passwords: ", scanner, pdf)
