@@ -5,8 +5,7 @@ Open Source Intelligence Tool
 ## Features
 - Username Lookup - Inspired by [Sherlock](https://github.com/sherlock-project/sherlock)
 - IP Lookup - Uses [ip-api](https://ip-api.com/)
-- Plate Lookup (Coming soon...)
-- VIN Lookup
+- License Plate & VIN Lookup
 - Info Cull - Compile collected information
 
 ## Installation and Usage
