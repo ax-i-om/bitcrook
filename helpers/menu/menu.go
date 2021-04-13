@@ -24,8 +24,7 @@ func MainMenu() {
 	fmt.Println(cli.Dispopw("1", "Username Lookup"))
 	fmt.Println(cli.Dispopw("2", "Cull"))
 	fmt.Println(cli.Dispopw("3", "IP Lookup"))
-	fmt.Println(cli.Dispopw("4", "License Plate Lookup (Coming soon...)"))
-	fmt.Println(cli.Dispopw("5", "VIN Lookup"))
+	fmt.Println(cli.Dispopw("4", "License Plate/VIN Lookup"))
 	fmt.Println(cli.Dispopw("X", "Exit"))
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Println()
@@ -60,9 +59,9 @@ func MainMenu() {
 			cli.ScanIt(scanner)
 			MainMenu()
 		}
-	} else if res == "5" {
+	} else if res == "4" {
 		if http.Connected() {
-			vin()
+			vinandlicense()
 		} else {
 			fmt.Println()
 			fmt.Println("   You need to have an internet connection in order to use this function.")
@@ -153,34 +152,56 @@ func iplookup() {
 	MainMenu()
 }
 
-/*
-func plate() {
+func vinandlicense() {
 	scanner := bufio.NewScanner(os.Stdin)
 	cli.Clear()
 	cli.Banner()
-	cli.Dispban("License Plate Lookup")
-	fmt.Println("")
-	fmt.Println("   Enter License Plate")
-	fmt.Print("   >> ")
-	fmt.Println("")
-	fmt.Println("   Enter State Abbrevation (CA, NY, etc...)")
-	fmt.Print("   >> ")
-	plate := cli.ScanIt(scanner)
-}
-*/
-func vin() {
-	scanner := bufio.NewScanner(os.Stdin)
-	cli.Clear()
-	cli.Banner()
-	cli.Dispban("VIN Lookup")
-	fmt.Println("")
-	fmt.Println("   Enter VIN")
+	cli.Dispban("License Plate/VIN Lookup")
+	fmt.Println()
+	fmt.Println(cli.Dispopw("1", "License Plate"))
+	fmt.Println(cli.Dispopw("2", "VIN"))
+	fmt.Println(cli.Dispopw("B", "Back"))
+	fmt.Println(cli.Dispopw("X", "Exit"))
+	fmt.Println()
 	fmt.Print("   >> ")
 	vin := cli.ScanIt(scanner)
-	fmt.Println()
-	vehicle.VinLookup(vin, 1)
-	fmt.Println()
-	cli.Dispban("Press enter to return to the main menu...")
-	cli.ScanIt(scanner)
-	MainMenu()
+	if vin == "1" {
+		cli.Clear()
+		cli.Banner()
+		cli.Dispban("License Plate Lookup")
+		fmt.Println("")
+		fmt.Println("   Enter License Plate")
+		fmt.Print("   >> ")
+		plate := cli.ScanIt(scanner)
+		fmt.Println("")
+		fmt.Println("   Enter State Abbrevation (CA, NY, etc...)")
+		fmt.Print("   >> ")
+		state := cli.ScanIt(scanner)
+		fmt.Println()
+		vehicle.VinLookup(vehicle.PlateToVin(plate, state))
+		fmt.Println()
+		cli.Dispban("Press enter to return to the main menu...")
+		cli.ScanIt(scanner)
+		MainMenu()
+	} else if vin == "2" {
+		cli.Clear()
+		cli.Banner()
+		cli.Dispban("VIN Lookup")
+		fmt.Println("")
+		fmt.Println("   Enter VIN")
+		fmt.Print("   >> ")
+		vin := cli.ScanIt(scanner)
+		fmt.Println()
+		vehicle.VinLookup(vin)
+		fmt.Println()
+		cli.Dispban("Press enter to return to the main menu...")
+		cli.ScanIt(scanner)
+		MainMenu()
+	} else if vin == "b" || vin == "B" {
+		MainMenu()
+	} else if vin == "x" || vin == "X" {
+		os.Exit(0)
+	} else {
+		vinandlicense()
+	}
 }
