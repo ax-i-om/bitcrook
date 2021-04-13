@@ -13,7 +13,7 @@ func PlateToVin(plate string, state string) string {
 	if err != nil {
 		panic(err)
 	}
-	// Fetch VIN form page
+	// Fetch VIN from page
 	b, _ := htmlquery.Query(doc, "/html/body/div/div/main/div[1]/text()[2]")
 	return b.Data
 }
