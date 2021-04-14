@@ -39,7 +39,7 @@ func generatePdf() (string, error) {
 	// ImageOptions(src, x, y, width, height, flow, options, link, linkStr)
 	pdf.ImageOptions(
 		"./images/icon.png",
-		104, 4.5,
+		100.5, 4.5,
 		10, 10,
 		false,
 		gofpdf.ImageOptions{ImageType: "PNG", ReadDpi: true},
@@ -48,7 +48,7 @@ func generatePdf() (string, error) {
 	)
 
 	// CellFormat(width, height, text, border, position after, align, fill, link, linkStr)
-	pdf.CellFormat(190, 0, "CREDCULL           RESULT", "0", 0, "CM", false, 0, "")
+	pdf.CellFormat(190, 0, "GOSEEK           RESULT", "0", 0, "CM", false, 0, "")
 	pdf.Line(0, 18, 380, 19)
 	pdf.CellFormat(190, 200, "", "0", 0, "TL", false, 0, "")
 	pdf.SetFontSize(10)
@@ -84,6 +84,7 @@ func generatePdf() (string, error) {
 	input("Personal Tragedies: ", scanner, pdf)
 	input("Relationship Status: ", scanner, pdf)
 	input("Job Information: ", scanner, pdf)
+	input("Vehicle Information: ", scanner, pdf)
 	input("Health Issues: ", scanner, pdf)
 	input("IP Addresses: ", scanner, pdf)
 	input("Embarrassing Information: ", scanner, pdf)
