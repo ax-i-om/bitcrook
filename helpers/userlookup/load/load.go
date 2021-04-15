@@ -143,7 +143,6 @@ func RedirSites(userres string) []ent.Website {
 	arr = append(arr, ent.Website{Title: "JBZD", Domain: "https://jbzd.com.pl/uzytkownik/" + userres + ""})
 	arr = append(arr, ent.Website{Title: "JeuxVideo", Domain: "http://www.jeuxvideo.com/profil/" + userres + "?mode=infos"})
 	arr = append(arr, ent.Website{Title: "Kwork", Domain: "https://kwork.ru/user/" + userres + ""})
-	arr = append(arr, ent.Website{Title: "LastFM", Domain: "https://last.fm/user/" + userres + ""})
 	arr = append(arr, ent.Website{Title: "Livelib", Domain: "https://www.livelib.ru/reader/" + userres + ""})
 	arr = append(arr, ent.Website{Title: "Moikrug", Domain: "https://moikrug.ru/" + userres + ""})
 	arr = append(arr, ent.Website{Title: "Nairaland", Domain: "https://www.nairaland.com/" + userres + ""})
