@@ -1,4 +1,4 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/audioo/goseek)](https://goreportcard.com/report/github.com/audioo/goseek) ![s](https://img.shields.io/badge/Golang-1.16-blue.svg) ![s](https://img.shields.io/badge/License-Apache&#8208;2.0-blue.svg) [![Contact via Email](https://img.shields.io/badge/Contact-Email-blue.svg)](mailto:hyperaudio@protonmail.com)
+[![Go Report Card](https://goreportcard.com/badge/github.com/audioo/goseek)](https://goreportcard.com/report/github.com/audioo/goseek) ![s](https://img.shields.io/badge/Version-2.0.0-blue.svg) ![s](https://img.shields.io/badge/Golang-1.16-blue.svg) ![s](https://img.shields.io/badge/License-Apache&#8208;2.0-blue.svg) [![Contact via Email](https://img.shields.io/badge/Contact-Email-blue.svg)](mailto:hyperaudio@protonmail.com)
 # GoSeek
 Open Source Intelligence Tool
 
