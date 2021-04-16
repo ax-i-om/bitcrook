@@ -36,3 +36,18 @@ type IPAddress struct {
 	Hosting    bool    `json:"hosting"`
 	Query      string  `json:"query"`
 }
+
+type TokenInfo struct {
+	ID            string `json:"id"`
+	Username      string `json:"username"`
+	Avatar        string `json:"avatar"`
+	Discriminator string `json:"discriminator"`
+	PublicFlags   int    `json:"public_flags"`
+	Flags         int    `json:"flags"`
+	Locale        string `json:"locale"`
+	NsfwAllowed   bool   `json:"nsfw_allowed"`
+	MfaEnabled    bool   `json:"mfa_enabled"`
+	Email         string `json:"email"`
+	Verified      bool   `json:"verified"`
+	Phone         string `json:"phone"`
+}
