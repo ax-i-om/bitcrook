@@ -37,6 +37,7 @@ type IPAddress struct {
 	Query      string  `json:"query"`
 }
 
+// TokenInfo is ...
 type TokenInfo struct {
 	ID            string `json:"id"`
 	Username      string `json:"username"`
