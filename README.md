@@ -50,10 +50,7 @@ Features:
 - [x] IP Lookup - Uses [ip-api](https://ip-api.com/)
 - [x] License Plate & VIN Lookup - Uses [htmlquery](https://github.com/antchfx/htmlquery)
 - [x] Info Cull - Data narrowing using [gofpdf](https://github.com/jung-kurt/gofpdf), inspired by [HINTS](https://github.com/jadekeys/hints)
-<<<<<<< HEAD
 - [x] Discord User - Fetch credentials via token
-=======
->>>>>>> cdc554f0bc7e9f4add5da3767f652a468a28cbca
 - [ ] Email Lookup (site associations, breaches, etc...) 
 
 <!-- USAGE EXAMPLES -->
