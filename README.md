@@ -50,7 +50,7 @@ Features:
 - [x] IP Lookup - Uses [ip-api](https://ip-api.com/)
 - [x] License Plate & VIN Lookup - Uses [htmlquery](https://github.com/antchfx/htmlquery)
 - [x] Info Cull - Data narrowing using [gofpdf](https://github.com/jung-kurt/gofpdf), inspired by [HINTS](https://github.com/jadekeys/hints)
-- [] Email Lookup (site associations, breaches, etc...) 
+- [ ] Email Lookup (site associations, breaches, etc...) 
 
 <!-- USAGE EXAMPLES -->
 ## Installation and Usage
