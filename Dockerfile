@@ -1,7 +1,7 @@
 FROM golang:1.16.3-alpine3.12
 
-LABEL author="Britton Hayes"
-LABEL github="https://github.com/brittonhayes/pillager"
+LABEL author="Audioo"
+LABEL github="https://github.com/audioo/goseek"
 
 RUN mkdir /app
 ADD . /app

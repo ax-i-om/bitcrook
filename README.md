@@ -31,7 +31,6 @@
       <a href="#about-the-project">About The Project</a>
     </li>
     <li><a href="#installation-and-usage">Installation and Usage</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -59,15 +58,3 @@ Download via 'go get':
 <code>go get -u github.com/audioo/goseek</code><br><br>
 Run in terminal:
 <code>goseek</code>
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* [Sherlock](https://github.com/sherlock-project/sherlock)
-* [HINTS](https://github.com/jadekeys/hints)
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
