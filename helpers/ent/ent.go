@@ -1,15 +1,19 @@
 package ent
 
+// Identity is ...
+type Identity struct {
+	Name     string
+	Location string
+	Dob      string
+	Username string
+	Password string
+}
+
 // Website is ...
 type Website struct {
 	Title  string
 	Domain string
-}
-
-// WebsiteRes is ...
-type WebsiteRes struct {
-	Title  string
-	Domain string
+	Delete string
 	Valid  bool
 }
 

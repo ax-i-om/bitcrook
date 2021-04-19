@@ -16,22 +16,22 @@ func SendSeeker(userres string, write bool) {
 
 	var arrNo []ent.Website = load.NoRedirSites(userres)
 	for _, v := range arrNo {
-		go check(v.Title, v.Domain, userres, write, false, &wg)
+		go check(v, userres, write, false, &wg)
 	}
 	var arrYes []ent.Website = load.RedirSites(userres)
 	for _, v := range arrYes {
-		go check(v.Title, v.Domain, userres, write, true, &wg)
+		go check(v, userres, write, true, &wg)
 	}
 	wg.Wait()
 }
 
-func check(title string, domain string, userres string, write bool, redirect bool, wg *sync.WaitGroup) {
+func check(site ent.Website, userres string, write bool, redirect bool, wg *sync.WaitGroup) {
 	wg.Add(1)
 	defer wg.Done()
-	x := http.GetSCredir(title, domain, userres, write, redirect).Valid
+	x := http.GetSCredir(site.Title, site.Domain, userres, write, redirect).Valid
 	if x {
-		fmt.Println(cli.Dispopg(title, domain))
+		fmt.Println(cli.Dispopg(site.Title, site.Domain+" | Deletion Page: "+site.Delete))
 	} else {
-		fmt.Println(cli.Dispop(title, domain))
+		fmt.Println(cli.Dispop(site.Title, site.Domain))
 	}
 }
