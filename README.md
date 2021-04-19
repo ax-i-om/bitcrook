@@ -15,7 +15,7 @@
     <a target="_blank" href="#" title="VERSION"><img src="https://img.shields.io/badge/Version-0.5.2-blue.svg"></a>
   </p>
   <p align="center">
-    OSINT & OPSEC
+    OSINT & OPSEC Multi-Tool
     <br />
     <!-- <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a> -->
     <br />
