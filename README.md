@@ -12,7 +12,7 @@
     <a target="_blank" href="https://golang.org" title="Go version: 1.16"><img src="https://img.shields.io/badge/Golang-1.16-blue.svg"></a>
     <a target="_blank" href="./LICENSE.md" title="LICENSE"><img src="https://img.shields.io/badge/License-Apache&#8208;2.0-blue.svg"></a>
     <a target="_blank" href="mailto:hyperaudio@protonmail.com" title="EMAIL"><img src="https://img.shields.io/badge/Contact-Email-blue.svg"></a>
-    <a target="_blank" href="#" title="VERSION"><img src="https://img.shields.io/badge/Version-0.5.2-blue.svg"></a>
+    <a target="_blank" href="#" title="VERSION"><img src="https://img.shields.io/badge/Version-0.5.3-blue.svg"></a>
   </p>
   <p align="center">
     OSINT & OPSEC Multi-Tool
@@ -39,7 +39,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="./images/disp.jpg"></img>
+<!--<img src="./images/disp.jpg"></img>-->
 
 **I have always found Open-Source Intelligence and Operations Security to be intriguing. I started learning Golang in the beginning of February of 2021 and have been looking for new projects to help strengthen my knowledge. I also wanted these projects to keep me engaged over time and prove somewhat useful instead of making just another calculator. I hope to build on GoSeek and expand it's use cases in a way that others can benefit**
 
