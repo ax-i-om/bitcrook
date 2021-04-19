@@ -2,6 +2,7 @@ package run
 
 import (
 	"fmt"
+	"strings"
 	"sync"
 
 	"github.com/audioo/goseek/helpers/cli"
@@ -30,8 +31,8 @@ func check(site ent.Website, userres string, write bool, redirect bool, wg *sync
 	defer wg.Done()
 	x := http.GetSCredir(site.Title, site.Domain, userres, write, redirect).Valid
 	if x {
-		fmt.Println(cli.Dispopg(site.Title, site.Domain+" | "+site.Delete))
+		fmt.Println(cli.Dispopg(strings.ToUpper(site.Title), site.Domain+" | "+site.Delete))
 	} else {
-		fmt.Println(cli.Dispop(site.Title, site.Domain+" | "+site.Delete))
+		fmt.Println(cli.Dispop(strings.ToUpper(site.Title), site.Domain+" | "+site.Delete))
 	}
 }
