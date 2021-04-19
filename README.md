@@ -7,12 +7,12 @@
 
   <h3 align="center">GoSeek</h3>
   <p align=center>
-    <a target="_blank" href="https://goreportcard.com/report/github.com/audioo/goseek" title="report"><img src="https://goreportcard.com/badge/github.com/audioo/goseek"></a>
+    <a target="_blank" href="https://goreportcard.com/report/github.com/audioo/goseek" title="report"><img src="https://img.shields.io/badge/Go&#8208;Report-A+-brightgreen.svg?style=flat-square"></a>
     <br>
-    <a target="_blank" href="https://golang.org" title="Go version: 1.16"><img src="https://img.shields.io/badge/Golang-1.16-blue.svg"></a>
-    <a target="_blank" href="./LICENSE.md" title="LICENSE"><img src="https://img.shields.io/badge/License-Apache&#8208;2.0-blue.svg"></a>
-    <a target="_blank" href="mailto:hyperaudio@protonmail.com" title="EMAIL"><img src="https://img.shields.io/badge/Contact-Email-blue.svg"></a>
-    <a target="_blank" href="#" title="VERSION"><img src="https://img.shields.io/badge/Version-0.5.3-blue.svg"></a>
+    <a target="_blank" href="https://golang.org" title="Go version: 1.16"><img src="https://img.shields.io/badge/Golang-1.16-blue.svg?style=flat-square"></a>
+    <a target="_blank" href="./LICENSE.md" title="LICENSE"><img src="https://img.shields.io/badge/License-Apache&#8208;2.0-blue.svg?style=flat-square"></a>
+    <a target="_blank" href="mailto:hyperaudio@protonmail.com" title="EMAIL"><img src="https://img.shields.io/badge/Contact-Email-blue.svg?style=flat-square"></a>
+    <a target="_blank" href="#" title="VERSION"><img src="https://img.shields.io/badge/Version-0.5.3-blue.svg?style=flat-square"></a>
   </p>
   <p align="center">
     OSINT & OPSEC Multi-Tool
