@@ -29,7 +29,8 @@ import (
 var userCmd = &cobra.Command{
 	Use:   "user [username] [write (y/n)",
 	Short: "Username Lookup",
-	Long:  `Search across 130+ sites to see if the username is associated with any of them`,
+	Long: `Search across 130+ sites to see if the username is associated with any of them and
+	their associated pages for account deletion`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) < 2 {
 			cmd.Usage()

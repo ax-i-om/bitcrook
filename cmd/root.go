@@ -32,8 +32,8 @@ var cfgFile string
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "goseek",
-	Short: "Open-Source Intelligence Tool.",
-	Long: `GoSeek is a CLI Open-Source Intelligence Tool written in Golang, tailored
+	Short: "OSINT & OPSEC",
+	Long: `GoSeek is a CLI Open-Source Intelligence and Operations Security Tool written in Golang, tailored
 	with many features that assist in collecting information on an individual.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:

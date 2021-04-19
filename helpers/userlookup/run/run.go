@@ -30,8 +30,8 @@ func check(site ent.Website, userres string, write bool, redirect bool, wg *sync
 	defer wg.Done()
 	x := http.GetSCredir(site.Title, site.Domain, userres, write, redirect).Valid
 	if x {
-		fmt.Println(cli.Dispopg(site.Title, site.Domain+" | Deletion Page: "+site.Delete))
+		fmt.Println(cli.Dispopg(site.Title, site.Domain+" | "+site.Delete))
 	} else {
-		fmt.Println(cli.Dispop(site.Title, site.Domain))
+		fmt.Println(cli.Dispop(site.Title, site.Domain+" | "+site.Delete))
 	}
 }
