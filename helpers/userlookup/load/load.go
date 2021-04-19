@@ -8,9 +8,9 @@ import (
 func NoRedirSites(userres string) []ent.Website {
 	var arr []ent.Website
 
-	arr = append(arr, ent.Website{Title: "FACEBOOK", Domain: "https://www.facebook.com/" + userres})
-	arr = append(arr, ent.Website{Title: "BLOGSPOT", Domain: "https://" + userres + ".blogspot.com"})
-	arr = append(arr, ent.Website{Title: "WORDPRESS", Domain: "https://" + userres + ".wordpress.com"})
+	arr = append(arr, ent.Website{Title: "FACEBOOK", Domain: "https://www.facebook.com/" + userres, Delete: "https://www.facebook.com/help/delete_account?rdrhc"})
+	arr = append(arr, ent.Website{Title: "BLOGSPOT", Domain: "https://" + userres + ".blogspot.com", Delete: "TODO"})
+	arr = append(arr, ent.Website{Title: "WORDPRESS", Domain: "https://" + userres + ".wordpress.com", Delete: "N/A"})
 
 	return arr
 }
