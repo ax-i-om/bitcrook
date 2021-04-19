@@ -11,29 +11,8 @@ import (
 )
 
 // GenString ...
-func GenString(length int, upper bool, lower bool, digit bool, special bool) string {
-	var chars []rune
-	spec := "~`!@#$%^&*()_-+={}[]|\\'\";:/?.>,<"
-	up := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	low := "abcdefghijklmnopqrstuvwxyz"
-	dig := "0123456789"
-	if upper && !lower && !digit {
-		chars = []rune(up)
-	} else if lower && !upper && !digit {
-		chars = []rune(low)
-	} else if digit && !upper && !lower {
-		chars = []rune(dig)
-	} else if upper && lower && !digit {
-		chars = []rune(up + low)
-	} else if upper && digit && !lower {
-		chars = []rune(up + dig)
-	} else if lower && digit && !upper {
-		chars = []rune(low + dig)
-	} else if upper && lower && digit && !special {
-		chars = []rune(up + low + dig)
-	} else if upper && lower && digit && special {
-		chars = []rune(up + low + dig + spec)
-	}
+func GenPass(length int) string {
+	var chars []rune = []rune("~`!@#$%^&*()_-+={}[]|\\'\";:/?.>,<ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789")
 	rand.Seed(time.Now().UnixNano())
 	var b strings.Builder
 	for i := 0; i < length; i++ {
@@ -75,7 +54,7 @@ func Identity(gender string) ent.Identity {
 	var username string = strings.ReplaceAll(name, " ", "") + strconv.Itoa((rand.Intn(9999-100) + 100))
 
 	// Password
-	var password string = GenString(20, true, true, true, true)
+	var password string = GenPass(20)
 
 	iden := ent.Identity{Name: name, Location: location, Dob: dob, Username: username, Password: password}
 	return iden
