@@ -12,7 +12,7 @@
     <a target="_blank" href="https://golang.org" title="Go version: 1.16"><img src="https://img.shields.io/badge/Golang-1.16-blue.svg"></a>
     <a target="_blank" href="./LICENSE.md" title="LICENSE"><img src="https://img.shields.io/badge/License-Apache&#8208;2.0-blue.svg"></a>
     <a target="_blank" href="mailto:hyperaudio@protonmail.com" title="EMAIL"><img src="https://img.shields.io/badge/Contact-Email-blue.svg"></a>
-    <a target="_blank" href="#" title="VERSION"><img src="https://img.shields.io/badge/Version-0.5.0-blue.svg"></a>
+    <a target="_blank" href="#" title="VERSION"><img src="https://img.shields.io/badge/Version-0.5.1-blue.svg"></a>
   </p>
   <p align="center">
     OSINT & OPSEC
