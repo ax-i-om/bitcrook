@@ -27,7 +27,7 @@ import (
 
 // userCmd represents the user command
 var userCmd = &cobra.Command{
-	Use:   "user [username] [write (y/n)",
+	Use:   "user [username] [write (y/n)]",
 	Short: "Username Lookup",
 	Long: `Search across 130+ sites to see if the username is associated with any of them and
 	their associated pages for account deletion`,

@@ -62,8 +62,8 @@ Run in terminal:
 <code>goseek</code>
 
 ## Running with Docker
-<code>1 - Build) docker build -t goseek . </code>
+1 - Build) <code>docker build -t goseek . </code>
 
-<code>2 - Run w/ Flags) docker run --rm -it goseek [flags] . </code>
+2 - Run w/ Flags) <code>docker run --rm -it goseek [flags] . </code>
 
-<code>3 - Example) docker run --rm -it goseek user audioo n .</code>
+3 - Example) <code>docker run --rm -it goseek user audioo n .</code>
