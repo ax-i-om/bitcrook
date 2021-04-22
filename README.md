@@ -31,6 +31,7 @@
       <a href="#about-the-project">About The Project</a>
     </li>
     <li><a href="#installation-and-usage">Installation and Usage</a></li>
+    <li><a href="#running-with-docker">Running with Docker</a></li>
   </ol>
 </details>
 
@@ -59,3 +60,10 @@ Download via 'go get':
 <code>go get -u github.com/audioo/goseek</code><br><br>
 Run in terminal:
 <code>goseek</code>
+
+## Running with Docker
+<code>1 - Build) docker build -t goseek . </code>
+
+<code>2 - Run w/ Flags) docker run --rm -it goseek [flags] . </code>
+
+<code>3 - Example) docker run --rm -it goseek user audioo n .</code>
