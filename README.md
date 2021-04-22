@@ -57,13 +57,25 @@ Features:
 ## Installation and Usage
 
 Download via 'go get':
-<code>go get -u github.com/audioo/goseek</code><br><br>
+<code>go get -u github.com/audioo/goseek</code>
+
 Run in terminal:
-<code>goseek</code>
+<code>goseek [command] [args]</code>
+
+**OR**
+
+Download via 'git clone':
+<code>git clone https://github.com/audioo/goseek.git</code>
+
+Navigate into GoSeek directory:
+<code>cd goseek</code>
+
+Run via 'go run': <code>go run main.go [command] [args]</code>
+or build: <code>go build main.go</code>
 
 ## Running with Docker
-1 - Build) <code>docker build -t goseek . </code>
+1 - Build: <code>docker build -t goseek . </code>
 
-2 - Run w/ Flags) <code>docker run --rm -it goseek [flags] . </code>
+2 - Run w/ Flags: <code>docker run --rm -it goseek [command] [args] . </code>
 
-3 - Example) <code>docker run --rm -it goseek user audioo n .</code>
+3 - Example: <code>docker run --rm -it goseek user audioo n .</code>
