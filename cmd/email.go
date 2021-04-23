@@ -18,27 +18,24 @@ limitations under the License.
 package cmd
 
 import (
-	"fmt"
-
-	"github.com/audioo/goseek/helpers/cli"
-	"github.com/audioo/goseek/helpers/cull"
+	"github.com/audioo/goseek/helpers/email"
 	"github.com/spf13/cobra"
 )
 
-// cullCmd represents the cull command
-var cullCmd = &cobra.Command{
-	Use:   "cull",
-	Short: "Information Narrowing",
-	Long:  `Compile information on an individual and output the results to a PDF file`,
+// emailCmd represents the email command
+var emailCmd = &cobra.Command{
+	Use:   "email",
+	Short: "Return email information",
+	Long:  `Return a descriptive list of information on an email address.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		cli.Clear()
-		cli.Banner()
-		cli.Dispban("Cull")
-		cull.Run()
-		fmt.Println()
+		if len(args) < 1 {
+			cmd.Usage()
+		} else {
+			email.Email(args[0])
+		}
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(cullCmd)
+	rootCmd.AddCommand(emailCmd)
 }
