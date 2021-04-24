@@ -38,9 +38,9 @@ func generatePdf() (string, error) {
 
 	// ImageOptions(src, x, y, width, height, flow, options, link, linkStr)
 	pdf.ImageOptions(
-		"./images/icon.png",
-		100.5, 4.5,
-		10, 10,
+		"./images/ico.png",
+		99, 3.3,
+		13, 13,
 		false,
 		gofpdf.ImageOptions{ImageType: "PNG", ReadDpi: true},
 		0,
