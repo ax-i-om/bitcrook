@@ -7,8 +7,8 @@ import (
 	"github.com/antchfx/htmlquery"
 )
 
-// Email ...
-func Email(email string) {
+// Email returns information on an email. This will be updated soon.
+func Email(email string) { // WORK IN PROGRESS
 	doc, err := htmlquery.LoadURL("https://thatsthem.com/email/" + email)
 	if err != nil {
 		panic(err)

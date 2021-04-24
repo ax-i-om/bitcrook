@@ -22,9 +22,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/audioo/goseek/helpers/cli"
-	"github.com/audioo/goseek/helpers/ent"
-	"github.com/audioo/goseek/helpers/http"
+	"github.com/audioo/goseek/internal/cli"
+	"github.com/audioo/goseek/internal/http"
+	"github.com/audioo/goseek/pkg/ent"
 	"github.com/spf13/cobra"
 )
 

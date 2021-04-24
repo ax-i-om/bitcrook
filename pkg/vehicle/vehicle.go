@@ -7,7 +7,7 @@ import (
 	"github.com/antchfx/htmlquery"
 )
 
-// PlateToVin ...
+// PlateToVin uses htmlquery to convert a United States license plate to a Vehicle Identification Number (VIN).
 func PlateToVin(plate string, state string) string {
 	doc, err := htmlquery.LoadURL("https://licenseplatelookup.io/lookup/" + plate + ":" + state)
 	if err != nil {
@@ -18,7 +18,8 @@ func PlateToVin(plate string, state string) string {
 	return b.Data
 }
 
-// VinLookup ...
+// VinLookup uses htmlquery to return a list of information about a vehicle using its Vehicle Identification Number (VIN).
+// This will be updated soon.
 func VinLookup(vin string) {
 
 	doc, err := htmlquery.LoadURL("https://freevinsearch.net/vin_number_results.php?vin=" + vin)

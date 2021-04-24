@@ -20,8 +20,8 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/audioo/goseek/helpers/cli"
-	"github.com/audioo/goseek/helpers/userlookup/run"
+	"github.com/audioo/goseek/internal/cli"
+	"github.com/audioo/goseek/pkg/user"
 	"github.com/spf13/cobra"
 )
 
@@ -40,21 +40,21 @@ var userCmd = &cobra.Command{
 				cli.Banner()
 				cli.Dispban("Username Lookup")
 				fmt.Println()
-				run.SendSeeker(args[0], true)
+				user.SendSeeker(args[0], true)
 				fmt.Println()
 			} else if args[1] == "n" {
 				cli.Clear()
 				cli.Banner()
 				cli.Dispban("Username Lookup")
 				fmt.Println()
-				run.SendSeeker(args[0], false)
+				user.SendSeeker(args[0], false)
 				fmt.Println()
 			} else {
 				cli.Clear()
 				cli.Banner()
 				cli.Dispban("Username Lookup")
 				fmt.Println()
-				run.SendSeeker(args[0], false)
+				user.SendSeeker(args[0], false)
 				fmt.Println()
 			}
 		}

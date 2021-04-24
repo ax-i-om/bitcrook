@@ -18,7 +18,7 @@ limitations under the License.
 package cmd
 
 import (
-	"github.com/audioo/goseek/helpers/email"
+	"github.com/audioo/goseek/pkg/email"
 	"github.com/spf13/cobra"
 )
 

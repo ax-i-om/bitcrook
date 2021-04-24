@@ -1,7 +1,7 @@
 package load
 
 import (
-	"github.com/audioo/goseek/helpers/ent"
+	"github.com/audioo/goseek/pkg/ent"
 )
 
 // NoRedirSites ...

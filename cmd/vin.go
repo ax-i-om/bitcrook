@@ -20,8 +20,8 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/audioo/goseek/helpers/cli"
-	"github.com/audioo/goseek/helpers/vehicle"
+	"github.com/audioo/goseek/internal/cli"
+	"github.com/audioo/goseek/pkg/vehicle"
 	"github.com/spf13/cobra"
 )
 

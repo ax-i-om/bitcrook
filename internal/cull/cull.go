@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/audioo/goseek/helpers/cli"
+	"github.com/audioo/goseek/internal/cli"
 	"github.com/jung-kurt/gofpdf"
 )
 

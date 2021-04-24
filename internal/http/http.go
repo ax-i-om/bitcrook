@@ -6,9 +6,12 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"strings"
+	"sync"
 	"time"
 
-	"github.com/audioo/goseek/helpers/ent"
+	"github.com/audioo/goseek/internal/cli"
+	"github.com/audioo/goseek/pkg/ent"
 )
 
 // GetSCredir ...
@@ -79,4 +82,16 @@ func GetReq(url string) string {
 		print(err)
 	}
 	return (string(body))
+}
+
+// CheckUser ...
+func CheckUser(site ent.Website, userres string, write bool, redirect bool, wg *sync.WaitGroup) {
+	wg.Add(1)
+	defer wg.Done()
+	x := GetSCredir(site.Title, site.Domain, userres, write, redirect).Valid
+	if x {
+		fmt.Println(cli.Dispopg(strings.ToUpper(site.Title), site.Domain+" | "+site.Delete))
+	} else {
+		fmt.Println(cli.Dispop(strings.ToUpper(site.Title), site.Domain+" | "+site.Delete))
+	}
 }
