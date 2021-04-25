@@ -33,7 +33,6 @@
     </li>
     <li><a href="#install-and-run">Install and Run</a></li>
     <li><a href="#running-with-docker">Running with Docker</a></li>
-    <li><a href="#usage">Usage</a></li>
   </ol>
 </details>
 
@@ -81,40 +80,3 @@ or build: <code>go build main.go</code>
 2 - Run w/ Flags: <code>docker run --rm -it goseek [command] [args] . </code>
 
 3 - Example: <code>docker run --rm -it goseek user audioo n .</code>
-
-## Usage
-
-Examples using 'go run' method...
-
-**Username Lookup:**
-<code>go run main.go user [username] [write to file (y/n)]</code>
-
-Example:
-<code>go run main.go user audioo n</code>
-
-**IP Lookup:**
-<code>go run main.go ip [ip address]</code>
-
-Example:
-<code>go run main.go ip 192.168.1.1</code>
-
-**License Plate Lookup:**
-<code>go run main.go licenseplate [license plate] [state abbrev]</code>
-
-Example:
-<code>go run main.go licenseplate ABC1234 TX</code>
-
-**VIN Lookup:**
-<code>go run main.go vin [vin]</code>
-
-Example:
-<code>go run main.go vin 1FMFU16558LA08771</code>
-
-**Info Cull:**
-<code>go run main.go cull</code>
-
-**Fake Identity Generator:**
-<code>go run main.go geniden [gender (m/f/n)]</code>
-
-Example:
-<code>go run main.go geniden f</code>
