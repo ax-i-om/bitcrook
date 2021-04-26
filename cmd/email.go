@@ -18,6 +18,7 @@ limitations under the License.
 package cmd
 
 import (
+	"github.com/audioo/goseek/internal/cli"
 	"github.com/audioo/goseek/pkg/email"
 	"github.com/spf13/cobra"
 )
@@ -29,6 +30,7 @@ var emailCmd = &cobra.Command{
 	Long:  `Return a descriptive list of information on an email address.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) < 1 {
+			cli.Banner()
 			cmd.Usage()
 		} else {
 			email.Email(args[0])

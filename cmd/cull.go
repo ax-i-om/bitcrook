@@ -31,7 +31,6 @@ var cullCmd = &cobra.Command{
 	Short: "Information Narrowing",
 	Long:  `Compile information on an individual and output the results to a PDF file`,
 	Run: func(cmd *cobra.Command, args []string) {
-		cli.Clear()
 		cli.Banner()
 		cli.Dispban("Cull")
 		cull.Run()

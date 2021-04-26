@@ -32,6 +32,7 @@ var genidenCmd = &cobra.Command{
 	Long:  `Generate a fake identity including full name, location, date of birth, username, and password.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) < 1 {
+			cli.Banner()
 			cmd.Usage()
 		} else {
 			iden := opsec.Identity(args[0])

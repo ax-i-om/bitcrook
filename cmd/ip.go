@@ -35,9 +35,9 @@ var ipCmd = &cobra.Command{
 	Long:  `Retrieve information on an IP Address`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) < 1 {
+			cli.Banner()
 			cmd.Usage()
 		} else {
-			cli.Clear()
 			cli.Banner()
 			cli.Dispban("IP Lookup")
 			fmt.Println("")

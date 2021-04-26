@@ -32,9 +32,9 @@ var licenseplateCmd = &cobra.Command{
 	Long:  `Return vehicle information using license plate and state`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) < 2 {
+			cli.Banner()
 			cmd.Usage()
 		} else {
-			cli.Clear()
 			cli.Banner()
 			cli.Dispban("License Plate Lookup")
 			fmt.Println()

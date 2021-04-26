@@ -28,9 +28,8 @@ func Banner() {
 	fmt.Println("    ███    ███ ███    ███    ▄█    ███   ███    ███   ███    ███   ███ ▀███▄ ")
 	fmt.Println("    ████████▀   ▀██████▀   ▄████████▀    ██████████   ██████████   ███   ▀█▀ ")
 	fmt.Println("                                                                   ▀         ")
-
-	fmt.Println("")
-
+	fmt.Println("                           OSINT & OPSEC Multi-Tool                          ")
+	fmt.Println()
 }
 
 // Dispban ...

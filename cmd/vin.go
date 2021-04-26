@@ -32,9 +32,9 @@ var vinCmd = &cobra.Command{
 	Long:  `Return vehicle information using its Vehicle Identification Number`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) < 1 {
+			cli.Banner()
 			cmd.Usage()
 		} else {
-			cli.Clear()
 			cli.Banner()
 			cli.Dispban("VIN Lookup")
 			fmt.Println()

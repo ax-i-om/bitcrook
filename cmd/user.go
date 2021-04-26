@@ -33,24 +33,22 @@ var userCmd = &cobra.Command{
 	their associated pages for account deletion`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) < 2 {
+			cli.Banner()
 			cmd.Usage()
 		} else {
 			if args[1] == "y" {
-				cli.Clear()
 				cli.Banner()
 				cli.Dispban("Username Lookup")
 				fmt.Println()
 				user.SendSeeker(args[0], true)
 				fmt.Println()
 			} else if args[1] == "n" {
-				cli.Clear()
 				cli.Banner()
 				cli.Dispban("Username Lookup")
 				fmt.Println()
 				user.SendSeeker(args[0], false)
 				fmt.Println()
 			} else {
-				cli.Clear()
 				cli.Banner()
 				cli.Dispban("Username Lookup")
 				fmt.Println()
