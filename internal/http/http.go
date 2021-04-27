@@ -90,8 +90,17 @@ func CheckUser(site ent.Website, userres string, write bool, redirect bool, wg *
 	defer wg.Done()
 	x := GetSCredir(site.Title, site.Domain, userres, write, redirect).Valid
 	if x {
-		fmt.Println(cli.Dispopg(strings.ToUpper(site.Title), site.Domain+" | "+site.Delete))
+		if len(site.Extra) > 0 {
+			r := cli.Dispopg(strings.ToUpper(site.Title), site.Domain) + "\n"
+			r += "      |- Deletion Site: " + site.Delete + "\n"
+			r += site.Extra
+			fmt.Println(r)
+		} else {
+			r := cli.Dispopg(strings.ToUpper(site.Title), site.Domain) + "\n"
+			r += "      |- Deletion Site: " + site.Delete
+			fmt.Println(r)
+		}
 	} else {
-		fmt.Println(cli.Dispop(strings.ToUpper(site.Title), site.Domain+" | "+site.Delete))
+		fmt.Println(cli.Dispop(strings.ToUpper(site.Title), site.Domain))
 	}
 }

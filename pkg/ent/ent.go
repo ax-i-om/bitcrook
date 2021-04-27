@@ -15,6 +15,7 @@ type Website struct {
 	Domain string
 	Delete string
 	Valid  bool
+	Extra  string
 }
 
 // IPAddress is ...

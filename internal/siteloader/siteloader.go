@@ -1,6 +1,11 @@
 package load
 
 import (
+	"encoding/json"
+	"strconv"
+	"time"
+
+	"github.com/audioo/goseek/internal/http"
 	"github.com/audioo/goseek/pkg/ent"
 )
 
@@ -20,7 +25,7 @@ func RedirSites(userres string) []ent.Website {
 	var arr []ent.Website
 
 	arr = append(arr, ent.Website{Title: "PINTEREST", Domain: "https://www.pinterest.com/" + userres, Delete: "https://pinterest.com/settings/"})
-	arr = append(arr, ent.Website{Title: "GITHUB", Domain: "https://www.github.com/" + userres, Delete: "https://github.com/settings/admin"})
+	arr = append(arr, ent.Website{Title: "GITHUB", Domain: "https://www.github.com/" + userres, Delete: "https://github.com/settings/admin", Extra: githubExtra(userres)})
 	arr = append(arr, ent.Website{Title: "TUMBLR", Domain: "https://" + userres + ".tumblr.com", Delete: "https://www.tumblr.com/account/delete"})
 	arr = append(arr, ent.Website{Title: "FLICKR", Domain: "https://www.flickr.com/people/" + userres, Delete: "http://www.flickr.com/profile_delete.gne"})
 	arr = append(arr, ent.Website{Title: "VIMEO", Domain: "https://vimeo.com/" + userres, Delete: "https://vimeo.com/settings/goodbye/forever"})
@@ -49,7 +54,7 @@ func RedirSites(userres string) []ent.Website {
 	arr = append(arr, ent.Website{Title: "CODECADEMY", Domain: "https://www.codecademy.com/profiles/" + userres, Delete: "http://help.codecademy.com/customer/portal/articles/1394081-how-do-i-delete-my-account-"})
 	arr = append(arr, ent.Website{Title: "GRAVATAR", Domain: "https://en.gravatar.com/" + userres, Delete: "N/A"})
 	arr = append(arr, ent.Website{Title: "PASTEBIN", Domain: "https://pastebin.com/u/" + userres, Delete: "N/A"})
-	arr = append(arr, ent.Website{Title: "ROBLOX", Domain: "https://www.roblox.com/user.aspx?username=" + userres, Delete: "N/A"})
+	arr = append(arr, ent.Website{Title: "ROBLOX", Domain: "https://www.roblox.com/user.aspx?username=" + userres, Delete: "N/A", Extra: robloxExtra(userres)})
 	arr = append(arr, ent.Website{Title: "GUMROAD", Domain: "https://www.gumroad.com/" + userres, Delete: "https://gumroad.com/settings"})
 	arr = append(arr, ent.Website{Title: "NEWGROUNDS", Domain: "https://" + userres + ".newgrounds.com", Delete: "TODO"})
 	arr = append(arr, ent.Website{Title: "WATTPAD", Domain: "https://www.wattpad.com/user/" + userres, Delete: "TODO"})
@@ -163,3 +168,166 @@ func RedirSites(userres string) []ent.Website {
 
 	return arr
 }
+
+/* Begin Site Response Types */
+
+type github struct {
+	Login             string    `json:"login"`
+	ID                int       `json:"id"`
+	NodeID            string    `json:"node_id"`
+	AvatarURL         string    `json:"avatar_url"`
+	GravatarID        string    `json:"gravatar_id"`
+	URL               string    `json:"url"`
+	HTMLURL           string    `json:"html_url"`
+	FollowersURL      string    `json:"followers_url"`
+	FollowingURL      string    `json:"following_url"`
+	GistsURL          string    `json:"gists_url"`
+	StarredURL        string    `json:"starred_url"`
+	SubscriptionsURL  string    `json:"subscriptions_url"`
+	OrganizationsURL  string    `json:"organizations_url"`
+	ReposURL          string    `json:"repos_url"`
+	EventsURL         string    `json:"events_url"`
+	ReceivedEventsURL string    `json:"received_events_url"`
+	Type              string    `json:"type"`
+	SiteAdmin         bool      `json:"site_admin"`
+	Name              string    `json:"name"`
+	Company           string    `json:"company"`
+	Blog              string    `json:"blog"`
+	Location          string    `json:"location"`
+	Email             string    `json:"email"`
+	Hireable          bool      `json:"hireable"`
+	Bio               string    `json:"bio"`
+	TwitterUsername   string    `json:"twitter_username"`
+	PublicRepos       int       `json:"public_repos"`
+	PublicGists       int       `json:"public_gists"`
+	Followers         int       `json:"followers"`
+	Following         int       `json:"following"`
+	CreatedAt         time.Time `json:"created_at"`
+	UpdatedAt         time.Time `json:"updated_at"`
+}
+
+func githubExtra(userres string) string {
+	var resp = http.GetReq("https://api.github.com/users/" + userres)
+	var s = new(github)
+	err := json.Unmarshal([]byte(resp), &s)
+	if err != nil {
+		return ""
+	}
+	r := "      |- ID: " + strconv.Itoa(s.ID) + "\n"
+	r += "      |- Node ID: " + s.NodeID + "\n"
+	r += "      |- Avatar URL: " + s.AvatarURL + "\n"
+	r += "      |- Gravatar ID: " + s.GravatarID + "\n"
+	r += "      |- Type: " + s.Type + "\n"
+	r += "      |- Site Admin: " + strconv.FormatBool(s.SiteAdmin) + "\n"
+	r += "      |- Name: " + s.Name + "\n"
+	r += "      |- Company: " + s.Company + "\n"
+	r += "      |- Blog: " + s.Blog + "\n"
+	r += "      |- Location: " + s.Location + "\n"
+	r += "      |- Email: " + s.Email + "\n"
+	r += "      |- Hireable: " + strconv.FormatBool(s.Hireable) + "\n"
+	r += "      |- Bio: " + s.Bio + "\n"
+	r += "      |- Twitter Username: " + s.TwitterUsername
+	return r
+}
+
+type robloxone struct {
+	ID          int         `json:"Id"`
+	Username    string      `json:"Username"`
+	Avataruri   interface{} `json:"AvatarUri"`
+	Avatarfinal bool        `json:"AvatarFinal"`
+	Isonline    bool        `json:"IsOnline"`
+}
+
+type robloxtwo struct {
+	Description string    `json:"description"`
+	Created     time.Time `json:"created"`
+	Isbanned    bool      `json:"isBanned"`
+	ID          int       `json:"id"`
+	Name        string    `json:"name"`
+	Displayname string    `json:"displayName"`
+}
+
+func robloxExtra(userres string) string {
+	var resp = http.GetReq("https://api.roblox.com/users/get-by-username?username=" + userres)
+	var spre = new(robloxone)
+	err := json.Unmarshal([]byte(resp), &spre)
+	if err != nil {
+		return ""
+	}
+	var resp2 = http.GetReq("https://users.roblox.com/v1/users/" + strconv.Itoa(spre.ID))
+	var s = new(robloxtwo)
+	err = json.Unmarshal([]byte(resp2), &s)
+	if err != nil {
+		return ""
+	}
+	r := "      |- ID: " + strconv.Itoa(s.ID) + "\n"
+	r += "      |- Creation Date: " + s.Created.String() + "\n"
+	r += "      |- Is Online: " + strconv.FormatBool(spre.Isonline) + "\n"
+	r += "      |- Is Banned: " + strconv.FormatBool(s.Isbanned) + "\n"
+	r += "      |- Description: " + s.Description + "\n"
+	r += "      |- Name: " + s.Name + "\n"
+	r += "      |- Display Name: " + s.Displayname
+	return r
+}
+
+/*
+
+TODO
+
+*/
+
+/*
+type gitlab []struct {
+	ID        int    `json:"id"`
+	Name      string `json:"name"`
+	Username  string `json:"username"`
+	State     string `json:"state"`
+	AvatarURL string `json:"avatar_url"`
+	WebURL    string `json:"web_url"`
+}
+
+func gitlabExtra(userres string) string {
+	var resp = http.GetReq("https://gitlab.com/api/v4/users?username=" + userres)
+	var s = new(gitlab)
+	err := json.Unmarshal([]byte(resp), &s)
+	if err != nil {
+		return ""
+	}
+	// r := "      |- ID: "+"\n"
+	return " "
+}
+*/
+
+/*
+type gravatar struct {
+	Entry []struct {
+		ID                string `json:"id"`
+		Hash              string `json:"hash"`
+		Requesthash       string `json:"requestHash"`
+		Profileurl        string `json:"profileUrl"`
+		Preferredusername string `json:"preferredUsername"`
+		Thumbnailurl      string `json:"thumbnailUrl"`
+		Photos            []struct {
+			Value string `json:"value"`
+			Type  string `json:"type"`
+		} `json:"photos"`
+		Displayname string        `json:"displayName"`
+		Urls        []interface{} `json:"urls"`
+	} `json:"entry"`
+}
+
+func GravatarExtra(userres string) string {
+	var resp = http.GetReq("https://en.gravatar.com/" + userres + ".json")
+	var s = new(gravatar)
+	err := json.Unmarshal([]byte(resp), &s)
+	s.Entry = append(fmt.Sprint(s.Entry))
+	if err != nil {
+		return "NIL"
+	}
+	var r string
+	r = fmt.Sprintln("      |")
+	r = fmt.Sprintln("      |- ")
+	r = fmt.Sprintln("      |- " + s.En)
+	return r
+}
+*/
