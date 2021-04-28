@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/audioo/goseek">
-    <img src="./images/ico.png" alt="Logo" width="80" height="80">
+    <img src="./assets/ico.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">GoSeek</h3>
@@ -43,7 +43,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<!--<img src="./images/disp.jpg"></img>-->
+<img src="./assets/demo.gif"></img>
 
 **I have always found Open-Source Intelligence and Operations Security to be intriguing. I started learning Golang in the beginning of February of 2021 and have been looking for new projects to help strengthen my knowledge. I also wanted these projects to keep me engaged over time and prove somewhat useful instead of making just another calculator. I hope to build on GoSeek and expand it's use cases in a way that others can benefit**
 
