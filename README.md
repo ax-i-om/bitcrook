@@ -34,7 +34,6 @@
     </li>
     <li><a href="#install-and-run">Install and Run</a></li>
     <li><a href="#running-with-docker">Running with Docker</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
   </ol>
 </details>
 
@@ -81,19 +80,3 @@ or build: <code>go build main.go</code>
 2 - Run w/ Flags: <code>docker run --rm -it goseek [command] [args] . </code>
 
 3 - Example: <code>docker run --rm -it goseek user audioo n .</code>
-
-## Roadmap
-
-- [x] Setup Username Lookup based on status code responses and optimize via goroutines
-- [x] Setup IP Lookup
-- [x] Setup re-write of HINTS (cull)
-- [x] Setup License Plate to VIN conversion using htmlquery
-- [x] Setup VIN Lookup using htmlquery
-- [x] Setup fake identity generator (name, location, dob, username, password)
-- [x] Switch to Cobra CLI
-- [x] Implement Docker
-- [x] Organize project structure
-- [x] Setup Godoc base
-- [ ] Accept more than just status code responses in Username Lookup
-- [ ] Setup proper returns in Username Lookup for third-party applications
-- [ ] Setup email lookup (site associations, breaches, etc...)
