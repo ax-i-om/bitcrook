@@ -46,13 +46,13 @@ func RedirSites(userres string) []ent.Website {
 	arr = append(arr, ent.Website{Title: "BEHANCE", Domain: "https://www.behance.net/" + userres, Delete: "http://www.behance.net/account/privacy"})
 	arr = append(arr, ent.Website{Title: "GOODREADS", Domain: "https://www.goodreads.com/" + userres, Delete: "http://www.goodreads.com/user/destroy"})
 	arr = append(arr, ent.Website{Title: "INSTRUCTABLES", Domain: "https://www.instructables.com/member/" + userres, Delete: "Email service@instructables.com"})
-	arr = append(arr, ent.Website{Title: "KEYBASE", Domain: "https://keybase.io/" + userres, Delete: "TODO"})
+	arr = append(arr, ent.Website{Title: "KEYBASE", Domain: "https://keybase.io/" + userres, Delete: "TODO", Extra: keybaseExtra(userres)})
 	arr = append(arr, ent.Website{Title: "KONGREGATE", Domain: "https://kongregate.com/accounts/" + userres, Delete: "http://www.kongregate.com/forums/7/topics/241772?page=1#posts-5207538"})
 	arr = append(arr, ent.Website{Title: "LIVEJOURNAL", Domain: "https://" + userres + ".livejournal.com", Delete: "http://www.livejournal.com/accountstatus.bml"})
 	arr = append(arr, ent.Website{Title: "LASTFM", Domain: "https://last.fm/user/" + userres, Delete: "http://www.last.fm/settings/account"})
 	arr = append(arr, ent.Website{Title: "DRIBBBLE", Domain: "https://dribbble.com/" + userres, Delete: "http://dribbble.com/account"})
 	arr = append(arr, ent.Website{Title: "CODECADEMY", Domain: "https://www.codecademy.com/profiles/" + userres, Delete: "http://help.codecademy.com/customer/portal/articles/1394081-how-do-i-delete-my-account-"})
-	arr = append(arr, ent.Website{Title: "GRAVATAR", Domain: "https://en.gravatar.com/" + userres, Delete: "N/A"})
+	arr = append(arr, ent.Website{Title: "GRAVATAR", Domain: "https://en.gravatar.com/" + userres, Delete: "N/A", Extra: gravatarExtra(userres)})
 	arr = append(arr, ent.Website{Title: "PASTEBIN", Domain: "https://pastebin.com/u/" + userres, Delete: "N/A"})
 	arr = append(arr, ent.Website{Title: "ROBLOX", Domain: "https://www.roblox.com/user.aspx?username=" + userres, Delete: "N/A", Extra: robloxExtra(userres)})
 	arr = append(arr, ent.Website{Title: "GUMROAD", Domain: "https://www.gumroad.com/" + userres, Delete: "https://gumroad.com/settings"})
@@ -96,7 +96,7 @@ func RedirSites(userres string) []ent.Website {
 	arr = append(arr, ent.Website{Title: "Hackaday", Domain: "https://hackaday.io/" + userres + "", Delete: "TODO"})
 	arr = append(arr, ent.Website{Title: "HackerOne", Domain: "https://hackerone.com/" + userres + "", Delete: "TODO"})
 	arr = append(arr, ent.Website{Title: "Houzz", Domain: "https://houzz.com/user/" + userres + "", Delete: "TODO"})
-	arr = append(arr, ent.Website{Title: "Issuu", Domain: "https://issuu.com/" + userres + "", Delete: "https://issuu.com/home/settings/billing"})
+	arr = append(arr, ent.Website{Title: "Issuu", Domain: "https://issuu.com/" + userres + "", Delete: "https://issuu.com/home/settings/billing", Extra: issuuExtra(userres)})
 	arr = append(arr, ent.Website{Title: "Itch", Domain: "https://" + userres + ".itch.io/", Delete: "TODO"})
 	arr = append(arr, ent.Website{Title: "Jimdosite", Domain: "https://" + userres + ".jimdosite.com", Delete: "TODO"})
 	arr = append(arr, ent.Website{Title: "LeetCode", Domain: "https://leetcode.com/" + userres + "", Delete: "TODO"})
@@ -169,7 +169,19 @@ func RedirSites(userres string) []ent.Website {
 	return arr
 }
 
-/* Begin Site Response Types */
+/* Begin Extras */
+
+func treeIt(r string, label string, add string, succeeded bool) (string, bool) {
+	if len(add) > 0 || add != "" {
+		if !succeeded {
+			r += label + add
+			succeeded = true
+		} else {
+			r += "\n" + label + add
+		}
+	}
+	return r, succeeded
+}
 
 type github struct {
 	Login             string    `json:"login"`
@@ -213,20 +225,22 @@ func githubExtra(userres string) string {
 	if err != nil {
 		return ""
 	}
-	r := "      |- ID: " + strconv.Itoa(s.ID) + "\n"
-	r += "      |- Node ID: " + s.NodeID + "\n"
-	r += "      |- Avatar URL: " + s.AvatarURL + "\n"
-	r += "      |- Gravatar ID: " + s.GravatarID + "\n"
-	r += "      |- Type: " + s.Type + "\n"
-	r += "      |- Site Admin: " + strconv.FormatBool(s.SiteAdmin) + "\n"
-	r += "      |- Name: " + s.Name + "\n"
-	r += "      |- Company: " + s.Company + "\n"
-	r += "      |- Blog: " + s.Blog + "\n"
-	r += "      |- Location: " + s.Location + "\n"
-	r += "      |- Email: " + s.Email + "\n"
-	r += "      |- Hireable: " + strconv.FormatBool(s.Hireable) + "\n"
-	r += "      |- Bio: " + s.Bio + "\n"
-	r += "      |- Twitter Username: " + s.TwitterUsername
+	var r string
+	firstSuccess := false
+	r, firstSuccess = treeIt(r, "      ├─ ID: ", strconv.Itoa(s.ID), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Node ID: ", s.NodeID, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Avatar URL: ", s.AvatarURL, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Gravatar ID: ", s.GravatarID, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Type: ", s.Type, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Site Admin: ", strconv.FormatBool(s.SiteAdmin), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Name: ", s.Name, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Company: ", s.Company, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Blog: ", s.Blog, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Location: ", s.Location, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Email: ", s.Email, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Hireable: ", strconv.FormatBool(s.Hireable), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Bio: ", s.Bio, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Twitter Username: ", s.TwitterUsername, firstSuccess)
 	return r
 }
 
@@ -260,13 +274,184 @@ func robloxExtra(userres string) string {
 	if err != nil {
 		return ""
 	}
-	r := "      |- ID: " + strconv.Itoa(s.ID) + "\n"
-	r += "      |- Creation Date: " + s.Created.String() + "\n"
-	r += "      |- Is Online: " + strconv.FormatBool(spre.Isonline) + "\n"
-	r += "      |- Is Banned: " + strconv.FormatBool(s.Isbanned) + "\n"
-	r += "      |- Description: " + s.Description + "\n"
-	r += "      |- Name: " + s.Name + "\n"
-	r += "      |- Display Name: " + s.Displayname
+	var r string
+	firstSuccess := false
+	r, firstSuccess = treeIt(r, "      ├─ ID: ", strconv.Itoa(s.ID), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Creation Date: ", s.Created.String(), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Is Online: ", strconv.FormatBool(spre.Isonline), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Is Banned: ", strconv.FormatBool(s.Isbanned), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Description: ", s.Description, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Name: ", s.Name, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Display Name: ", s.Displayname, firstSuccess)
+	return r
+}
+
+type gravatar struct {
+	Entry []struct {
+		ID                string `json:"id"`
+		Hash              string `json:"hash"`
+		Requesthash       string `json:"requestHash"`
+		Profileurl        string `json:"profileUrl"`
+		Preferredusername string `json:"preferredUsername"`
+		Thumbnailurl      string `json:"thumbnailUrl"`
+		Photos            []struct {
+			Value string `json:"value"`
+			Type  string `json:"type"`
+		} `json:"photos"`
+		Displayname string        `json:"displayName"`
+		Urls        []interface{} `json:"urls"`
+	} `json:"entry"`
+}
+
+func gravatarExtra(userres string) string {
+	var resp = http.GetReq("https://en.gravatar.com/" + userres + ".json")
+	var s = new(gravatar)
+	err := json.Unmarshal([]byte(resp), &s)
+	if err != nil {
+		return ""
+	}
+	var r string
+	firstSuccess := false
+	r, firstSuccess = treeIt(r, "      ├─ ID: ", s.Entry[0].ID, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Hash: ", s.Entry[0].Hash, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Request Hash: ", s.Entry[0].Requesthash, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Preferred Username: ", s.Entry[0].Preferredusername, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Thumbnail URL: ", s.Entry[0].Thumbnailurl, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Display Name: ", s.Entry[0].Displayname, firstSuccess)
+	return r
+}
+
+type keybase struct {
+	Status struct {
+		Code int    `json:"code"`
+		Name string `json:"name"`
+	} `json:"status"`
+	Them []struct {
+		ID     string `json:"id"`
+		Basics struct {
+			Username      string `json:"username"`
+			Ctime         int    `json:"ctime"`
+			Mtime         int    `json:"mtime"`
+			IDVersion     int    `json:"id_version"`
+			TrackVersion  int    `json:"track_version"`
+			LastIDChange  int    `json:"last_id_change"`
+			UsernameCased string `json:"username_cased"`
+			Status        int    `json:"status"`
+			Salt          string `json:"salt"`
+			EldestSeqno   int    `json:"eldest_seqno"`
+		} `json:"basics"`
+		PublicKeys struct {
+			AllBundles []string `json:"all_bundles"`
+			Subkeys    []string `json:"subkeys"`
+			Sibkeys    []string `json:"sibkeys"`
+			Families   struct {
+				Zero120B870B40Ba525Cc168433Bcaadcaf41904Af043455779D619C73Cd8B5A72C1De90A []string `json:"0120b870b40ba525cc168433bcaadcaf41904af043455779d619c73cd8b5a72c1de90a"`
+			} `json:"families"`
+			EldestKid            string        `json:"eldest_kid"`
+			EldestKeyFingerprint string        `json:"eldest_key_fingerprint"`
+			PgpPublicKeys        []interface{} `json:"pgp_public_keys"`
+		} `json:"public_keys"`
+		ProofsSummary struct {
+			ByPresentationGroup struct {
+			} `json:"by_presentation_group"`
+			BySigID struct {
+			} `json:"by_sig_id"`
+			All    []interface{} `json:"all"`
+			HasWeb bool          `json:"has_web"`
+		} `json:"proofs_summary"`
+		CryptocurrencyAddresses struct {
+		} `json:"cryptocurrency_addresses"`
+		Sigs struct {
+			Last struct {
+				SigID       string `json:"sig_id"`
+				Seqno       int    `json:"seqno"`
+				PayloadHash string `json:"payload_hash"`
+			} `json:"last"`
+		} `json:"sigs"`
+		Devices struct {
+			FourD3A722B4D570A437Cca9Cf4B05A0518 struct {
+				Type   string `json:"type"`
+				Ctime  int    `json:"ctime"`
+				Mtime  int    `json:"mtime"`
+				Name   string `json:"name"`
+				Status int    `json:"status"`
+				Keys   []struct {
+					Kid     string `json:"kid"`
+					KeyRole int    `json:"key_role"`
+					SigID   string `json:"sig_id"`
+				} `json:"keys"`
+			} `json:"4d3a722b4d570a437cca9cf4b05a0518"`
+		} `json:"devices"`
+		Stellar struct {
+			Hidden  bool `json:"hidden"`
+			Primary struct {
+			} `json:"primary"`
+		} `json:"stellar"`
+	} `json:"them"`
+}
+
+func keybaseExtra(userres string) string {
+	var resp = http.GetReq("https://keybase.io/_/api/1.0/user/lookup.json?usernames=" + userres)
+	var s = new(keybase)
+	err := json.Unmarshal([]byte(resp), &s)
+	if err != nil {
+		return ""
+	}
+	var r string
+	firstSuccess := false
+	r, firstSuccess = treeIt(r, "      ├─ ID: ", s.Them[0].ID, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Username: ", s.Them[0].Basics.Username, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ cTime: ", strconv.Itoa(s.Them[0].Basics.Ctime), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ mTime: ", strconv.Itoa(s.Them[0].Basics.Mtime), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ ID Version: ", strconv.Itoa(s.Them[0].Basics.IDVersion), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Track Version: ", strconv.Itoa(s.Them[0].Basics.TrackVersion), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Last ID Change: ", strconv.Itoa(s.Them[0].Basics.LastIDChange), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Username Cased: ", s.Them[0].Basics.UsernameCased, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Status: ", strconv.Itoa(s.Them[0].Basics.Status), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Salt: ", s.Them[0].Basics.Salt, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Eldest Seqno: ", strconv.Itoa(s.Them[0].Basics.EldestSeqno), firstSuccess)
+	return r
+}
+
+type issuu struct {
+	Rsp struct {
+		Content struct {
+			User struct {
+				ID                     int    `json:"id"`
+				Username               string `json:"username"`
+				Password               bool   `json:"password"`
+				Account                string `json:"account"`
+				Displayname            string `json:"displayName"`
+				Country                string `json:"country"`
+				Stackcount             int    `json:"stackCount"`
+				Stackcountpublic       int    `json:"stackCountPublic"`
+				Documentcount          int    `json:"documentCount"`
+				Subscribercount        int    `json:"subscriberCount"`
+				Subscriptioncount      int    `json:"subscriptionCount"`
+				Likeddocumentcount     int    `json:"likedDocumentCount"`
+				Clippingcount          int    `json:"clippingCount"`
+				Stacksubscriptioncount int    `json:"stackSubscriptionCount"`
+			} `json:"user"`
+		} `json:"_content"`
+		Stat string `json:"stat"`
+	} `json:"rsp"`
+}
+
+func issuuExtra(userres string) string {
+	var resp = http.GetReq("https://issuu.com/query?format=json&_=3210224608766&profileUsername=" + userres + "&action=issuu.user.get_anonymous")
+	var s = new(issuu)
+	err := json.Unmarshal([]byte(resp), &s)
+	if err != nil {
+		return ""
+	}
+	var r string
+	firstSuccess := false
+	r, firstSuccess = treeIt(r, "      ├─ ID: ", strconv.Itoa(s.Rsp.Content.User.ID), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Username: ", s.Rsp.Content.User.Username, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Password: ", strconv.FormatBool(s.Rsp.Content.User.Password), firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Account: ", s.Rsp.Content.User.Account, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Display Name: ", s.Rsp.Content.User.Displayname, firstSuccess)
+	r, firstSuccess = treeIt(r, "      ├─ Country: ", s.Rsp.Content.User.Country, firstSuccess)
 	return r
 }
 
@@ -293,41 +478,6 @@ func gitlabExtra(userres string) string {
 	if err != nil {
 		return ""
 	}
-	// r := "      |- ID: "+"\n"
-	return " "
-}
-*/
-
-/*
-type gravatar struct {
-	Entry []struct {
-		ID                string `json:"id"`
-		Hash              string `json:"hash"`
-		Requesthash       string `json:"requestHash"`
-		Profileurl        string `json:"profileUrl"`
-		Preferredusername string `json:"preferredUsername"`
-		Thumbnailurl      string `json:"thumbnailUrl"`
-		Photos            []struct {
-			Value string `json:"value"`
-			Type  string `json:"type"`
-		} `json:"photos"`
-		Displayname string        `json:"displayName"`
-		Urls        []interface{} `json:"urls"`
-	} `json:"entry"`
-}
-
-func GravatarExtra(userres string) string {
-	var resp = http.GetReq("https://en.gravatar.com/" + userres + ".json")
-	var s = new(gravatar)
-	err := json.Unmarshal([]byte(resp), &s)
-	s.Entry = append(fmt.Sprint(s.Entry))
-	if err != nil {
-		return "NIL"
-	}
-	var r string
-	r = fmt.Sprintln("      |")
-	r = fmt.Sprintln("      |- ")
-	r = fmt.Sprintln("      |- " + s.En)
+	r := "      |- ID: " +  + "\n"
 	return r
-}
-*/
+} */

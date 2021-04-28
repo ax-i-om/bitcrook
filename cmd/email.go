@@ -18,7 +18,10 @@ limitations under the License.
 package cmd
 
 import (
+	"fmt"
+
 	"github.com/audioo/goseek/internal/cli"
+	"github.com/audioo/goseek/internal/http"
 	"github.com/audioo/goseek/pkg/email"
 	"github.com/spf13/cobra"
 )
@@ -33,7 +36,15 @@ var emailCmd = &cobra.Command{
 			cli.Banner()
 			cmd.Usage()
 		} else {
-			email.Email(args[0])
+			if http.Connected() {
+				cli.Banner()
+				email.Email(args[0])
+			} else {
+				cli.Banner()
+				cmd.Usage()
+				fmt.Println()
+				fmt.Println("An internet connection is required to run this command...")
+			}
 		}
 	},
 }

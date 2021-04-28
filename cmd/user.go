@@ -21,6 +21,7 @@ import (
 	"fmt"
 
 	"github.com/audioo/goseek/internal/cli"
+	"github.com/audioo/goseek/internal/http"
 	"github.com/audioo/goseek/pkg/user"
 	"github.com/spf13/cobra"
 )
@@ -36,24 +37,28 @@ var userCmd = &cobra.Command{
 			cli.Banner()
 			cmd.Usage()
 		} else {
-			if args[1] == "y" {
-				cli.Banner()
-				cli.Dispban("Username Lookup")
-				fmt.Println()
-				user.SendSeeker(args[0], true)
-				fmt.Println()
-			} else if args[1] == "n" {
-				cli.Banner()
-				cli.Dispban("Username Lookup")
-				fmt.Println()
-				user.SendSeeker(args[0], false)
-				fmt.Println()
+			if http.Connected() {
+				if args[1] == "y" {
+					cli.Banner()
+					cli.Dispban("Username Lookup")
+					fmt.Println()
+					user.SendSeeker(args[0], true)
+					fmt.Println()
+				} else if args[1] == "n" {
+					cli.Banner()
+					cli.Dispban("Username Lookup")
+					fmt.Println()
+					user.SendSeeker(args[0], false)
+					fmt.Println()
+				} else {
+					cli.Banner()
+					cmd.Usage()
+				}
 			} else {
 				cli.Banner()
-				cli.Dispban("Username Lookup")
+				cmd.Usage()
 				fmt.Println()
-				user.SendSeeker(args[0], false)
-				fmt.Println()
+				fmt.Println("An internet connection is required to run this command...")
 			}
 		}
 	},

@@ -21,6 +21,7 @@ import (
 	"fmt"
 
 	"github.com/audioo/goseek/internal/cli"
+	"github.com/audioo/goseek/internal/http"
 	"github.com/audioo/goseek/pkg/vehicle"
 	"github.com/spf13/cobra"
 )
@@ -35,11 +36,18 @@ var licenseplateCmd = &cobra.Command{
 			cli.Banner()
 			cmd.Usage()
 		} else {
-			cli.Banner()
-			cli.Dispban("License Plate Lookup")
-			fmt.Println()
-			vehicle.VinLookup(vehicle.PlateToVin(args[0], args[1]))
-			fmt.Println()
+			if http.Connected() {
+				cli.Banner()
+				cli.Dispban("License Plate Lookup")
+				fmt.Println()
+				vehicle.VinLookup(vehicle.PlateToVin(args[0], args[1]))
+				fmt.Println()
+			} else {
+				cli.Banner()
+				cmd.Usage()
+				fmt.Println()
+				fmt.Println("An internet connection is required to run this command...")
+			}
 		}
 	},
 }

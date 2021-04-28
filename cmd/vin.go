@@ -21,6 +21,7 @@ import (
 	"fmt"
 
 	"github.com/audioo/goseek/internal/cli"
+	"github.com/audioo/goseek/internal/http"
 	"github.com/audioo/goseek/pkg/vehicle"
 	"github.com/spf13/cobra"
 )
@@ -35,11 +36,18 @@ var vinCmd = &cobra.Command{
 			cli.Banner()
 			cmd.Usage()
 		} else {
-			cli.Banner()
-			cli.Dispban("VIN Lookup")
-			fmt.Println()
-			vehicle.VinLookup(args[0])
-			fmt.Println()
+			if http.Connected() {
+				cli.Banner()
+				cli.Dispban("VIN Lookup")
+				fmt.Println()
+				vehicle.VinLookup(args[0])
+				fmt.Println()
+			} else {
+				cli.Banner()
+				cmd.Usage()
+				fmt.Println()
+				fmt.Println("An internet connection is required to run this command...")
+			}
 		}
 	},
 }

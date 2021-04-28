@@ -97,7 +97,7 @@ func CheckUser(site ent.Website, userres string, write bool, redirect bool, wg *
 			fmt.Println(r)
 		} else {
 			r := cli.Dispopg(strings.ToUpper(site.Title), site.Domain) + "\n"
-			r += "      |- Deletion Site: " + site.Delete
+			r += "      ├─ Deletion Site: " + site.Delete
 			fmt.Println(r)
 		}
 	} else {
