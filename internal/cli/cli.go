@@ -62,3 +62,16 @@ func ScanIt(s *bufio.Scanner) string {
 	s.Scan()
 	return s.Text()
 }
+
+// TreeIt ...
+func TreeIt(r string, label string, add string, succeeded bool) (string, bool) {
+	if len(add) > 0 || add != "" {
+		if !succeeded {
+			r += label + add
+			succeeded = true
+		} else {
+			r += "\n" + label + add
+		}
+	}
+	return r, succeeded
+}

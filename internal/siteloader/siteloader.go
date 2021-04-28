@@ -5,6 +5,7 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/audioo/goseek/internal/cli"
 	"github.com/audioo/goseek/internal/http"
 	"github.com/audioo/goseek/pkg/ent"
 )
@@ -171,18 +172,6 @@ func RedirSites(userres string) []ent.Website {
 
 /* Begin Extras */
 
-func treeIt(r string, label string, add string, succeeded bool) (string, bool) {
-	if len(add) > 0 || add != "" {
-		if !succeeded {
-			r += label + add
-			succeeded = true
-		} else {
-			r += "\n" + label + add
-		}
-	}
-	return r, succeeded
-}
-
 type github struct {
 	Login             string    `json:"login"`
 	ID                int       `json:"id"`
@@ -227,20 +216,20 @@ func githubExtra(userres string) string {
 	}
 	var r string
 	firstSuccess := false
-	r, firstSuccess = treeIt(r, "      ├─ ID: ", strconv.Itoa(s.ID), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Node ID: ", s.NodeID, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Avatar URL: ", s.AvatarURL, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Gravatar ID: ", s.GravatarID, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Type: ", s.Type, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Site Admin: ", strconv.FormatBool(s.SiteAdmin), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Name: ", s.Name, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Company: ", s.Company, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Blog: ", s.Blog, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Location: ", s.Location, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Email: ", s.Email, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Hireable: ", strconv.FormatBool(s.Hireable), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Bio: ", s.Bio, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Twitter Username: ", s.TwitterUsername, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ ID: ", strconv.Itoa(s.ID), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Node ID: ", s.NodeID, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Avatar URL: ", s.AvatarURL, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Gravatar ID: ", s.GravatarID, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Type: ", s.Type, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Site Admin: ", strconv.FormatBool(s.SiteAdmin), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Name: ", s.Name, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Company: ", s.Company, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Blog: ", s.Blog, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Location: ", s.Location, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Email: ", s.Email, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Hireable: ", strconv.FormatBool(s.Hireable), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Bio: ", s.Bio, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Twitter Username: ", s.TwitterUsername, firstSuccess)
 	return r
 }
 
@@ -276,13 +265,13 @@ func robloxExtra(userres string) string {
 	}
 	var r string
 	firstSuccess := false
-	r, firstSuccess = treeIt(r, "      ├─ ID: ", strconv.Itoa(s.ID), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Creation Date: ", s.Created.String(), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Is Online: ", strconv.FormatBool(spre.Isonline), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Is Banned: ", strconv.FormatBool(s.Isbanned), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Description: ", s.Description, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Name: ", s.Name, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Display Name: ", s.Displayname, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ ID: ", strconv.Itoa(s.ID), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Creation Date: ", s.Created.String(), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Is Online: ", strconv.FormatBool(spre.Isonline), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Is Banned: ", strconv.FormatBool(s.Isbanned), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Description: ", s.Description, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Name: ", s.Name, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Display Name: ", s.Displayname, firstSuccess)
 	return r
 }
 
@@ -312,12 +301,12 @@ func gravatarExtra(userres string) string {
 	}
 	var r string
 	firstSuccess := false
-	r, firstSuccess = treeIt(r, "      ├─ ID: ", s.Entry[0].ID, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Hash: ", s.Entry[0].Hash, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Request Hash: ", s.Entry[0].Requesthash, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Preferred Username: ", s.Entry[0].Preferredusername, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Thumbnail URL: ", s.Entry[0].Thumbnailurl, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Display Name: ", s.Entry[0].Displayname, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ ID: ", s.Entry[0].ID, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Hash: ", s.Entry[0].Hash, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Request Hash: ", s.Entry[0].Requesthash, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Preferred Username: ", s.Entry[0].Preferredusername, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Thumbnail URL: ", s.Entry[0].Thumbnailurl, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Display Name: ", s.Entry[0].Displayname, firstSuccess)
 	return r
 }
 
@@ -399,17 +388,17 @@ func keybaseExtra(userres string) string {
 	}
 	var r string
 	firstSuccess := false
-	r, firstSuccess = treeIt(r, "      ├─ ID: ", s.Them[0].ID, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Username: ", s.Them[0].Basics.Username, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ cTime: ", strconv.Itoa(s.Them[0].Basics.Ctime), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ mTime: ", strconv.Itoa(s.Them[0].Basics.Mtime), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ ID Version: ", strconv.Itoa(s.Them[0].Basics.IDVersion), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Track Version: ", strconv.Itoa(s.Them[0].Basics.TrackVersion), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Last ID Change: ", strconv.Itoa(s.Them[0].Basics.LastIDChange), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Username Cased: ", s.Them[0].Basics.UsernameCased, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Status: ", strconv.Itoa(s.Them[0].Basics.Status), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Salt: ", s.Them[0].Basics.Salt, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Eldest Seqno: ", strconv.Itoa(s.Them[0].Basics.EldestSeqno), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ ID: ", s.Them[0].ID, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Username: ", s.Them[0].Basics.Username, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ cTime: ", strconv.Itoa(s.Them[0].Basics.Ctime), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ mTime: ", strconv.Itoa(s.Them[0].Basics.Mtime), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ ID Version: ", strconv.Itoa(s.Them[0].Basics.IDVersion), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Track Version: ", strconv.Itoa(s.Them[0].Basics.TrackVersion), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Last ID Change: ", strconv.Itoa(s.Them[0].Basics.LastIDChange), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Username Cased: ", s.Them[0].Basics.UsernameCased, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Status: ", strconv.Itoa(s.Them[0].Basics.Status), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Salt: ", s.Them[0].Basics.Salt, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Eldest Seqno: ", strconv.Itoa(s.Them[0].Basics.EldestSeqno), firstSuccess)
 	return r
 }
 
@@ -446,12 +435,12 @@ func issuuExtra(userres string) string {
 	}
 	var r string
 	firstSuccess := false
-	r, firstSuccess = treeIt(r, "      ├─ ID: ", strconv.Itoa(s.Rsp.Content.User.ID), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Username: ", s.Rsp.Content.User.Username, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Password: ", strconv.FormatBool(s.Rsp.Content.User.Password), firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Account: ", s.Rsp.Content.User.Account, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Display Name: ", s.Rsp.Content.User.Displayname, firstSuccess)
-	r, firstSuccess = treeIt(r, "      ├─ Country: ", s.Rsp.Content.User.Country, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ ID: ", strconv.Itoa(s.Rsp.Content.User.ID), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Username: ", s.Rsp.Content.User.Username, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Password: ", strconv.FormatBool(s.Rsp.Content.User.Password), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Account: ", s.Rsp.Content.User.Account, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Display Name: ", s.Rsp.Content.User.Displayname, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Country: ", s.Rsp.Content.User.Country, firstSuccess)
 	return r
 }
 
