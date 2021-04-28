@@ -7,8 +7,9 @@
 
   <h3 align="center">GoSeek</h3>
   <p align=center>
-    <a target="_blank" href="https://goreportcard.com/report/github.com/audioo/goseek" title="report"><img src="https://img.shields.io/badge/Go&#8208;Report-A+-brightgreen.svg?style=flat-square"></a>
+    <a target="_blank" href="https://goreportcard.com/report/github.com/audioo/goseek" title="report"><img src="https://goreportcard.com/badge/github.com/audioo/goseek"></a>
     <a href="https://pkg.go.dev/github.com/audioo/goseek"><img src="https://pkg.go.dev/badge/github.com/audioo/goseek.svg" alt="Go Reference"></a>
+    <a href="https://gitpod.io/#https://github.com/audioo/goseek"><img src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod"></a>
     <br>
     <a target="_blank" href="https://golang.org" title="Go version: 1.16"><img src="https://img.shields.io/badge/Golang-1.16-blue.svg?style=flat-square"></a>
     <a target="_blank" href="./LICENSE.md" title="LICENSE"><img src="https://img.shields.io/badge/License-Apache&#8208;2.0-blue.svg?style=flat-square"></a>
