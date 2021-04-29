@@ -31,7 +31,7 @@ func RedirSites(userres string) []ent.Website {
 	arr = append(arr, ent.Website{Title: "FLICKR", Domain: "https://www.flickr.com/people/" + userres, Delete: "http://www.flickr.com/profile_delete.gne"})
 	arr = append(arr, ent.Website{Title: "VIMEO", Domain: "https://vimeo.com/" + userres, Delete: "https://vimeo.com/settings/goodbye/forever"})
 	arr = append(arr, ent.Website{Title: "SOUNDCLOUD", Domain: "https://soundcloud.com/" + userres, Delete: "http://soundcloud.com/settings/account#delete-user"})
-	arr = append(arr, ent.Website{Title: "DISQUS", Domain: "https://disqus.com/by/" + userres, Delete: "http://disqus.com/pages/dashboard/#account"})
+	arr = append(arr, ent.Website{Title: "DISQUS", Domain: "https://disqus.com/by/" + userres, Delete: "http://disqus.com/pages/dashboard/#account", Extra: disqusExtra(userres)})
 	arr = append(arr, ent.Website{Title: "MEDIUM", Domain: "https://medium.com/@" + userres, Delete: "https://medium.com/me/settings"})
 	arr = append(arr, ent.Website{Title: "DEVIANTART", Domain: "https://" + userres + ".deviantart.com", Delete: "https://www.deviantart.com/settings/deactivation"})
 	arr = append(arr, ent.Website{Title: "VK", Domain: "https://vk.com/" + userres, Delete: "http://vk.com/settings?act=deactivate"})
@@ -92,7 +92,7 @@ func RedirSites(userres string) []ent.Website {
 	arr = append(arr, ent.Website{Title: "FreeSound", Domain: "https://freesound.org/people/" + userres + "/", Delete: "http://www.freesound.org/home/delete/"})
 	arr = append(arr, ent.Website{Title: "GameSpot", Domain: "https://www.gamespot.com/profile/" + userres + "/", Delete: "TODO"})
 	arr = append(arr, ent.Website{Title: "Giphy", Domain: "https://giphy.com/" + userres + "", Delete: "TODO"})
-	arr = append(arr, ent.Website{Title: "Gitlab", Domain: "https://gitlab.com/" + userres + "", Delete: "TODO"})
+	arr = append(arr, ent.Website{Title: "Gitlab", Domain: "https://gitlab.com/" + userres + "", Delete: "TODO", Extra: gitlabExtra(userres)})
 	arr = append(arr, ent.Website{Title: "GuruShots", Domain: "https://gurushots.com/" + userres + "/photos", Delete: "TODO"})
 	arr = append(arr, ent.Website{Title: "Hackaday", Domain: "https://hackaday.io/" + userres + "", Delete: "TODO"})
 	arr = append(arr, ent.Website{Title: "HackerOne", Domain: "https://hackerone.com/" + userres + "", Delete: "TODO"})
@@ -160,7 +160,6 @@ func RedirSites(userres string) []ent.Website {
 	arr = append(arr, ent.Website{Title: "TOSTER", Domain: "https://www.toster.ru/user/" + userres + "/answers", Delete: "TODO"})
 	arr = append(arr, ent.Website{Title: "PORNHUB", Domain: "https://pornhub.com/users/" + userres})
 	arr = append(arr, ent.Website{Title: "XVIDEOS", Domain: "https://xvideos.com/profiles/" + userres})
-	arr = append(arr, ent.Website{Title: "ONLYFANS", Domain: "https://onlyfans.com/" + userres, Delete: "TODO"})
 	arr = append(arr, ent.Website{Title: "YOUPORN", Domain: "https://youporn.com/uservids/" + userres, Delete: "TODO"})
 	arr = append(arr, ent.Website{Title: "XHAMSTER", Domain: "https://xhamster.com/users/" + userres, Delete: "TODO"})
 	arr = append(arr, ent.Website{Title: "BONGACAMS", Domain: "https://pt.bongacams.com/profile/" + userres, Delete: "TODO"})
@@ -444,13 +443,71 @@ func issuuExtra(userres string) string {
 	return r
 }
 
+type disqus struct {
+	Code     int `json:"code"`
+	Response struct {
+		Disable3Rdpartytrackers bool    `json:"disable3rdPartyTrackers"`
+		Ispowercontributor      bool    `json:"isPowerContributor"`
+		Isprimary               bool    `json:"isPrimary"`
+		ID                      string  `json:"id"`
+		Numfollowers            int     `json:"numFollowers"`
+		Rep                     float64 `json:"rep"`
+		Numfollowing            int     `json:"numFollowing"`
+		Numposts                int     `json:"numPosts"`
+		Location                string  `json:"location"`
+		Isprivate               bool    `json:"isPrivate"`
+		Joinedat                string  `json:"joinedAt"`
+		Username                string  `json:"username"`
+		Numlikesreceived        int     `json:"numLikesReceived"`
+		Reputationlabel         string  `json:"reputationLabel"`
+		About                   string  `json:"about"`
+		Name                    string  `json:"name"`
+		URL                     string  `json:"url"`
+		Numforumsfollowing      int     `json:"numForumsFollowing"`
+		Profileurl              string  `json:"profileUrl"`
+		Reputation              float64 `json:"reputation"`
+		Avatar                  struct {
+			Small struct {
+				Permalink string `json:"permalink"`
+				Cache     string `json:"cache"`
+			} `json:"small"`
+			Iscustom  bool   `json:"isCustom"`
+			Permalink string `json:"permalink"`
+			Cache     string `json:"cache"`
+			Large     struct {
+				Permalink string `json:"permalink"`
+				Cache     string `json:"cache"`
+			} `json:"large"`
+		} `json:"avatar"`
+		Signedurl   string `json:"signedUrl"`
+		Isanonymous bool   `json:"isAnonymous"`
+	} `json:"response"`
+}
+
+func disqusExtra(userres string) string {
+	var resp = http.GetReq("https://disqus.com/api/3.0/users/details?user=username%3A" + userres + "&attach=userFlaggedUser&api_key=E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F")
+	var s = new(disqus)
+	err := json.Unmarshal([]byte(resp), &s)
+	if err != nil {
+		return ""
+	}
+	var r string
+	firstSuccess := false
+	r, firstSuccess = cli.TreeIt(r, "      ├─ ID: ", s.Response.ID, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Location: ", s.Response.Location, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ About: ", s.Response.About, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Name: ", s.Response.Name, firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Private: ", strconv.FormatBool(s.Response.Isprivate), firstSuccess)
+	r, firstSuccess = cli.TreeIt(r, "      ├─ Anonymous: ", strconv.FormatBool(s.Response.Isanonymous), firstSuccess)
+	return r
+}
+
 /*
 
 TODO
 
 */
 
-/*
 type gitlab []struct {
 	ID        int    `json:"id"`
 	Name      string `json:"name"`
@@ -467,6 +524,16 @@ func gitlabExtra(userres string) string {
 	if err != nil {
 		return ""
 	}
-	r := "      |- ID: " +  + "\n"
+	var r string
+	firstSuccess := false
+	for _, value := range *s {
+		r, firstSuccess = cli.TreeIt(r, "      ├─ ID: ", strconv.Itoa(value.ID), firstSuccess)
+		r, firstSuccess = cli.TreeIt(r, "      ├─ Name: ", value.Name, firstSuccess)
+		r, firstSuccess = cli.TreeIt(r, "      ├─ State: ", value.State, firstSuccess)
+		r, firstSuccess = cli.TreeIt(r, "      ├─ Avatar URL: ", value.AvatarURL, firstSuccess)
+		r, firstSuccess = cli.TreeIt(r, "      ├─ Username: ", value.Username, firstSuccess)
+		r, firstSuccess = cli.TreeIt(r, "      ├─ Web URL: ", value.WebURL, firstSuccess)
+	}
+
 	return r
-} */
+}
