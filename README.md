@@ -1,26 +1,16 @@
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
-  <a href="https://github.com/audioo/goseek">
-    <img src="./assets/ico2.png" alt="Logo" width="120" height="120">
-  </a>
 
-  <h3 align="center">GoSeek</h3>
-  <p align=center>
+# GoSeek
+![s](./assets/banner.png)
     <a target="_blank" href="https://goreportcard.com/report/github.com/audioo/goseek" title="report"><img src="https://goreportcard.com/badge/github.com/audioo/goseek"></a>
     <a href="https://pkg.go.dev/github.com/audioo/goseek"><img src="https://pkg.go.dev/badge/github.com/audioo/goseek.svg" alt="Go Reference"></a>
     <a href="https://gitpod.io/#https://github.com/audioo/goseek"><img src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod"></a>
-    <br>
     <a target="_blank" href="https://golang.org" title="Go version: 1.16"><img src="https://img.shields.io/badge/Golang-1.16-blue.svg"></a>
     <a target="_blank" href="./LICENSE.md" title="LICENSE"><img src="https://img.shields.io/badge/License-Apache&#8208;2.0-blue.svg"></a>
     <a target="_blank" href="mailto:hyperaudio@protonmail.com" title="EMAIL"><img src="https://img.shields.io/badge/Contact-Email-blue.svg"></a>
     <a target="_blank" href="#" title="VERSION"><img src="https://img.shields.io/badge/Version-0.6.2-blue.svg"></a>
-  </p>
-  <p align="center">
-    OSINT & OPSEC Multi-Tool
-    <br />
     <!-- <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a> -->
-    <br />
 </p>
 
 
@@ -80,3 +70,7 @@ or build: <code>go build main.go</code>
 2 - Run w/ Flags: <code>docker run --rm -it goseek [command] [args] . </code>
 
 3 - Example: <code>docker run --rm -it goseek user audioo n .</code>
+
+### Attributions
+
+- Icon made by [FreePik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)

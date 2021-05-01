@@ -38,7 +38,7 @@ func generatePdf() (string, error) {
 
 	// ImageOptions(src, x, y, width, height, flow, options, link, linkStr)
 	pdf.ImageOptions(
-		"./assets/ico2.png",
+		"./assets/iconnoback.png",
 		99, 3.3,
 		13, 13,
 		false,
