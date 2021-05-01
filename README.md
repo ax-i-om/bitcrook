@@ -1,6 +1,4 @@
 <!-- PROJECT LOGO -->
-<br />
-
 # GoSeek
 ![s](./assets/banner.png)
     <a target="_blank" href="https://goreportcard.com/report/github.com/audioo/goseek" title="report"><img src="https://goreportcard.com/badge/github.com/audioo/goseek"></a>
