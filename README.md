@@ -73,4 +73,4 @@ or build: <code>go build main.go</code>
 
 ### Attributions
 
-- Icon made by [FreePik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)
+- Icon made using assets by [FreePik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)
