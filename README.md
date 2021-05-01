@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/audioo/goseek">
-    <img src="./assets/ico.png" alt="Logo" width="80" height="80">
+    <img src="./assets/ico2.png" alt="Logo" width="120" height="120">
   </a>
 
   <h3 align="center">GoSeek</h3>
