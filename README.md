@@ -1,17 +1,20 @@
 <!-- PROJECT LOGO -->
-<p style="text-align: center">
-  <a><img src="./assets/banner.png"></a>
-  <a target="_blank" href="https://goreportcard.com/report/github.com/audioo/goseek" title="report"><img src="https://goreportcard.com/badge/github.com/audioo/goseek"></a>
-  <a href="https://pkg.go.dev/github.com/audioo/goseek"><img src="https://pkg.go.dev/badge/github.com/audioo/goseek.svg" alt="Go Reference"></a>
-  <a target="_blank" href="#" title="VERSION"><img src="https://img.shields.io/badge/Version-0.6.2-blue.svg"></a> <br>
-  <a href="https://audioo.github.io/goseek"><strong>Explore the docs »</strong></a><br><br>
-  <a style="text-decoration: underline; color: white"><strong>Table of Contents</strong></a><br>
-  <a href="#about-the-project">About The Project</a><br>
-  <a href="#install-and-run">Install and Run</a><br>
-  <a href="#running-with-docker">Running with Docker</a>
-  <br><br><br><br>
+<p align="center">
+  <a href="">
+    <img src="./assets/banner.png" alt="Logo">
+  </a>
+  <p align=center>
+    <a target="_blank" href="https://goreportcard.com/report/github.com/audioo/goseek" title="report"><img src="https://goreportcard.com/badge/github.com/audioo/goseek"></a>
+    <a href="https://pkg.go.dev/github.com/audioo/goseek"><img src="https://pkg.go.dev/badge/github.com/audioo/goseek.svg" alt="Go Reference"></a>
+    <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a>
+    <a target="_blank" href="#" title="VERSION"><img src="https://img.shields.io/badge/Version-0.6.2-blue.svg"></a> <br>
+  </p>
+  <p align="center">
+    Open-Source Intelligence and Operations Security Framework Written in Golang.
+    <br />
+    <a href="https://audioo.github.io/goseek"><strong>Explore the docs »</strong></a>
+    <br /><br /><br />
 </p>
-
 
 
 <!-- ABOUT THE PROJECT -->
