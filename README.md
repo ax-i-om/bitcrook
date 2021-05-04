@@ -12,7 +12,7 @@
   <p align="center">
     Open-Source Intelligence and Operations Security Framework Written in Golang.
     <br />
-    <a href="https://audioo.github.io/goseek"><strong>Explore the docs »</strong></a>
+    <a href="https://audioo.github.io/goseek"><strong>See more »</strong></a>
     <br />
 </p>
 
