@@ -1,19 +1,19 @@
 <!-- PROJECT LOGO -->
 <p align="center">
   <a href="">
-    <img src="./assets/banner.png" alt="Logo">
+    <img src="./assets/gban.png" alt="Logo">
   </a>
   <p align=center>
     <a target="_blank" href="https://goreportcard.com/report/github.com/audioo/goseek" title="report"><img src="https://goreportcard.com/badge/github.com/audioo/goseek"></a>
     <a href="https://pkg.go.dev/github.com/audioo/goseek"><img src="https://pkg.go.dev/badge/github.com/audioo/goseek.svg" alt="Go Reference"></a>
     <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a>
-    <a target="_blank" href="#" title="VERSION"><img src="https://img.shields.io/badge/Version-0.6.2-blue.svg"></a> <br>
+    <a target="_blank" href="#" title="VERSION"><img src="https://img.shields.io/badge/Version-0.6.2-blue.svg"></a>
   </p>
   <p align="center">
     Open-Source Intelligence and Operations Security Framework Written in Golang.
     <br />
     <a href="https://audioo.github.io/goseek"><strong>Explore the docs »</strong></a>
-    <br /><br /><br />
+    <br />
 </p>
 
 
