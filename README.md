@@ -1,3 +1,5 @@
+This project will no longer be maintained, as I have migrated to [Omniscient](https://github.com/audioo/omniscient)
+
 <!-- PROJECT LOGO -->
 <p align="center">
   <a href="">
