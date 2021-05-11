@@ -1,5 +1,5 @@
 /*
-Copyright © 2021 Audio <hyperaudio@protonmail.com>
+Copyright © 2021 Maraudery <maraudery@protonmail.com>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -22,9 +22,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/audioo/goseek/internal/cli"
-	"github.com/audioo/goseek/internal/http"
-	"github.com/audioo/goseek/pkg/ent"
+	"github.com/maraudery/goseek/internal/cli"
+	"github.com/maraudery/goseek/internal/http"
+	"github.com/maraudery/goseek/pkg/ent"
 	"github.com/spf13/cobra"
 )
 

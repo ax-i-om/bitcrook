@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/audioo/goseek/internal/cli"
-	"github.com/audioo/goseek/internal/http"
-	"github.com/audioo/goseek/pkg/ent"
+	"github.com/maraudery/goseek/internal/cli"
+	"github.com/maraudery/goseek/internal/http"
+	"github.com/maraudery/goseek/pkg/ent"
 )
 
 // NoRedirSites ...

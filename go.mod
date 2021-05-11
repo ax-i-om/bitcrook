@@ -1,4 +1,4 @@
-module github.com/audioo/goseek
+module github.com/maraudery/goseek
 
 go 1.16
 

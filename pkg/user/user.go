@@ -3,9 +3,9 @@ package user
 import (
 	"sync"
 
-	"github.com/audioo/goseek/internal/http"
-	load "github.com/audioo/goseek/internal/siteloader"
-	"github.com/audioo/goseek/pkg/ent"
+	"github.com/maraudery/goseek/internal/http"
+	load "github.com/maraudery/goseek/internal/siteloader"
+	"github.com/maraudery/goseek/pkg/ent"
 )
 
 // SendSeeker checks all of the websites that have been

@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/audioo/goseek/pkg/ent"
+	"github.com/maraudery/goseek/pkg/ent"
 )
 
 // GenPass returns a string consisting of the passed length of random characters.

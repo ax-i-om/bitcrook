@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/audioo/goseek/internal/cli"
 	"github.com/jung-kurt/gofpdf"
+	"github.com/maraudery/goseek/internal/cli"
 )
 
 // Run ...

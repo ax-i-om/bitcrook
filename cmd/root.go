@@ -1,5 +1,5 @@
 /*
-Copyright © 2021 Audio <hyperaudio@protonmail.com>
+Copyright © 2021 Maraudery <maraudery@protonmail.com>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

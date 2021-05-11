@@ -10,8 +10,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/audioo/goseek/internal/cli"
-	"github.com/audioo/goseek/pkg/ent"
+	"github.com/maraudery/goseek/internal/cli"
+	"github.com/maraudery/goseek/pkg/ent"
 )
 
 // GetSCredir ...

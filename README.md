@@ -1,4 +1,4 @@
-This project will no longer be maintained, as I have migrated to [Omniscient](https://github.com/audioo/omniscient)
+This project will no longer be maintained, as I have migrated to [Omniscient](https://github.com/maraudery/omniscient)
 
 <!-- PROJECT LOGO -->
 <p align="center">
@@ -6,15 +6,15 @@ This project will no longer be maintained, as I have migrated to [Omniscient](ht
     <img src="./assets/gban.png" alt="Logo">
   </a>
   <p align=center>
-    <a target="_blank" href="https://goreportcard.com/report/github.com/audioo/goseek" title="report"><img src="https://goreportcard.com/badge/github.com/audioo/goseek"></a>
-    <a href="https://pkg.go.dev/github.com/audioo/goseek"><img src="https://pkg.go.dev/badge/github.com/audioo/goseek.svg" alt="Go Reference"></a>
+    <a target="_blank" href="https://goreportcard.com/report/github.com/maraudery/goseek" title="report"><img src="https://goreportcard.com/badge/github.com/maraudery/goseek"></a>
+    <a href="https://pkg.go.dev/github.com/maraudery/goseek"><img src="https://pkg.go.dev/badge/github.com/maraudery/goseek.svg" alt="Go Reference"></a>
     <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a>
     <a target="_blank" href="#" title="VERSION"><img src="https://img.shields.io/badge/Version-0.6.2-blue.svg"></a>
   </p>
   <p align="center">
     Open-Source Intelligence and Operations Security Framework Written in Golang.
     <br />
-    <a href="https://audioo.github.io/goseek"><strong>See more »</strong></a>
+    <a href="https://maraudery.github.io/goseek"><strong>See more »</strong></a>
     <br />
 </p>
 
@@ -36,7 +36,7 @@ Features:
 ## Install and Run
 
 Download via 'go get':
-<code>go get -u github.com/audioo/goseek</code>
+<code>go get -u github.com/maraudery/goseek</code>
 
 Run in terminal:
 <code>goseek [command] [args]</code>
@@ -44,7 +44,7 @@ Run in terminal:
 **OR**
 
 Download via 'git clone':
-<code>git clone https://github.com/audioo/goseek.git</code>
+<code>git clone https://github.com/maraudery/goseek.git</code>
 
 Navigate into GoSeek directory:
 <code>cd goseek</code>
@@ -57,7 +57,7 @@ or build: <code>go build main.go</code>
 
 2 - Run w/ Flags: <code>docker run --rm -it goseek [command] [args] . </code>
 
-3 - Example: <code>docker run --rm -it goseek user audioo n .</code>
+3 - Example: <code>docker run --rm -it goseek user maraudery n .</code>
 
 ### Attributions
 
