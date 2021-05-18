@@ -1,64 +1,106 @@
-This project will no longer be maintained, as I have migrated to [Omniscient](https://github.com/maraudery/omniscient)
-
-<!-- PROJECT LOGO -->
 <p align="center">
-  <a href="">
-    <img src="./assets/gban.png" alt="Logo">
-  </a>
-  <p align=center>
-    <a target="_blank" href="https://goreportcard.com/report/github.com/maraudery/goseek" title="report"><img src="https://goreportcard.com/badge/github.com/maraudery/goseek"></a>
-    <a href="https://pkg.go.dev/github.com/maraudery/goseek"><img src="https://pkg.go.dev/badge/github.com/maraudery/goseek.svg" alt="Go Reference"></a>
-    <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a>
-    <a target="_blank" href="#" title="VERSION"><img src="https://img.shields.io/badge/Version-0.6.2-blue.svg"></a>
-  </p>
+  <a><img src="./images/omni.png" width=180 height="180"></a>
+  <h1 align="center">Omniscient - Information Gathering Apparatus</h1>
   <p align="center">
-    Open-Source Intelligence and Operations Security Framework Written in Golang.
-    <br />
-    <a href="https://maraudery.github.io/goseek"><strong>See more »</strong></a>
-    <br />
+    <a href="https://goreportcard.com/report/github.com/maraudery/omniscient"><img src="https://goreportcard.com/badge/github.com/maraudery/omniscient" alt="Go Report Card"></a>
+    <a><img src="https://img.shields.io/badge/tests-passing-brightgreen.svg" alt="s"></a>
+    <a><img src="https://img.shields.io/badge/version-0.2.6-blue.svg" alt="s"></a>
+    <a href="https://pkg.go.dev/github.com/maraudery/omniscient"><img src="https://pkg.go.dev/badge/github.com/maraudery/omniscient.svg" alt="Go Report Card"></a><br>
+    <a href="https://www.buymeacoffee.com/maraudery"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" height="40" width="170"></a>
+  </p><br>
 </p>
 
+## Table of Contents
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+- [Information](#information)
+  - [About](#about)
+  - [Installation and Usage](#installation-and-usage)
+  - [Implementation](#implementation)
+  - [Testing](#testing)
+  - [Attributions](#attributions)
+- [Package Types](#package-types) *a-z*
+  - [Court Cases](#court-cases)
+  - [Discord](#discord)
+  - [IP Address](#ip-address)
+  - [Multi-Use](#multi-use)
+  - [Username](#username)
+  - [Vehicle](#vehicle)
 
-**I have always found Open-Source Intelligence and Operations Security to be intriguing. I started learning Golang in the beginning of February of 2021 and have been looking for new projects to help strengthen my knowledge. I also wanted these projects to keep me engaged over time and prove somewhat useful instead of making just another calculator. I hope to build on GoSeek and expand it's use cases in a way that others can benefit**
 
-Features:
 
-- [x] Username Lookup - Inspired by [Sherlock](https://github.com/sherlock-project/sherlock), includes account deletion sites.
-- [x] IP Lookup - Uses [ip-api](https://ip-api.com/)
-- [x] License Plate & VIN Lookup - Uses [htmlquery](https://github.com/antchfx/htmlquery)
-- [x] Info Cull - Data narrowing using [gofpdf](https://github.com/jung-kurt/gofpdf), inspired by [HINTS](https://github.com/jadekeys/hints)
-- [x] Fake Identity Generator - Name (male, female, or gender neutral), Location, Date of Birth, Username, and Password 
+## Information
 
-<!-- USAGE EXAMPLES -->
-## Install and Run
+### About
 
-Download via 'go get':
-<code>go get -u github.com/maraudery/goseek</code>
+Omniscient, an information gathering apparatus, is a conglomerate of tools including custom algorithms, API wrappers, etc... in order to make the reconnaissance process significantly quicker. Some packages do require an authentication key and others do not. See the [Package Types](#package-types) tables for more information. Omniscient can be integrated within your application OR it can be used directly from the terminal. See [Installation and Usage](#installation-and-usage) for more information.
 
-Run in terminal:
-<code>goseek [command] [args]</code>
+### Installation and Usage
 
-**OR**
+1. Fetch the repository via 'git clone': `git clone https://github.com/maraudery/omniscient.git`
+2. Navigate into the Omniscient repository: `cd omniscient`
+3. In your preferred terminal, enter and run: `go run main.go`
+4. After running the aforementioned command, all dependencies will be installed and usage help will be printed to the console.
 
-Download via 'git clone':
-<code>git clone https://github.com/maraudery/goseek.git</code>
+### Implementation
 
-Navigate into GoSeek directory:
-<code>cd goseek</code>
+Instructions/Documentation are provided for each and every package, all you have to do is find what you need in the [Package Types](#package-types) section.
 
-Run via 'go run': <code>go run main.go [command] [args]</code>
-or build: <code>go build main.go</code>
+### Testing
 
-## Running with Docker
-1 - Build: <code>docker build -t goseek . </code>
+Omniscient is currently passing all tests; however, I have provided instructions for properly running the tests if you would like to do so.
 
-2 - Run w/ Flags: <code>docker run --rm -it goseek [command] [args] . </code>
-
-3 - Example: <code>docker run --rm -it goseek user maraudery n .</code>
+1. In the root directory of Omniscient, create a file named `keyconfig.json`
+2. In `keyconfig.json`, paste the following text:
+``` json
+{
+    "melissaKeyCred": "Paste Melissa Key with Credits Here",
+    "hibpKey": "Paste Have I Been Pwned Key Here",
+    "dataGovKey": "Paste Data.gov Key Here"
+}
+```
+3. Paste in your API keys. The test will fail without a valid API key.
+4. In your preferred terminal, enter and run `go test ./...`
 
 ### Attributions
 
-- Icon made using assets by [FreePik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)
+[Social Preview](./images/card.jpg) created by [TheOneTrueDude](https://github.com/FirstTrueDude)
+
+## Package-Types
+
+### Court Cases
+
+| Package                                                                                    | Description                                  |   Auth   |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: |
+| [Case Law](https://github.com/maraudery/omniscient/tree/main/pkg/noauth/caselaw)           | Court Case Search                            |  `none`  |
+
+### Discord
+
+| Package                                                                                    | Description                                  |   Auth   |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: |
+| [Discord Token Lookup](https://github.com/maraudery/omniscient/tree/main/pkg/noauth/discord)| Discord Token Lookup                        |  `none`  |
+
+### IP Address
+
+| Package                                                                                    | Description                                  |   Auth   |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: |
+| [IPV4 Address Lookup](https://github.com/maraudery/omniscient/tree/main/pkg/noauth/ip)     | IPV4 Address Lookup                          |  `none`  |
+
+### Multi-Use
+
+| Package                                                                                    | Description                                  |   Auth   |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: |
+| [Have I Been Pwned](https://github.com/maraudery/omniscient/tree/main/pkg/authpaid/hibp)   | Email and Password Vulnerability - (Breaches)|  `paid`  |
+| [Melissa](https://github.com/maraudery/omniscient/tree/main/pkg/authfree/melissa)          | Lookups - Email, Phone Number, IP Address    |  `free`  |
+
+
+### Username
+
+| Package                                                                                    | Description                                  |   Auth   |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: |
+| [Username Lookup](https://github.com/maraudery/omniscient/tree/main/pkg/noauth/userlookup) | Username Lookup - (Comparable to Sherlock)   |  `none`  |
+
+### Vehicle
+
+| Package                                                                                    | Description                                  |   Auth   |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: |
+| [VIN Lookup](https://github.com/maraudery/omniscient/tree/main/pkg/noauth/vin)             | Vehicle Identification Number Lookup         |  `none`  |

@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/maraudery/goseek/cmd"
+import "github.com/maraudery/omniscient/cmd"
 
 func main() {
 	cmd.Execute()

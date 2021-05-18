@@ -31,10 +31,12 @@ var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "goseek",
-	Short: "OSINT & OPSEC",
-	Long: `GoSeek is a CLI Open-Source Intelligence and Operations Security Tool written in Golang, tailored
-	with many features that assist in collecting information on an individual.`,
+	Use:   "omniscient",
+	Short: "Information Gathering Apparatus",
+	Long: `
+	Omniscient, an information gathering apparatus, 
+	is a conglomerate of tools including custom algorithms, API wrappers, etc... 
+	in order to make the reconnaissance process significantly quicker.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
@@ -53,7 +55,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.goseek.yaml)")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.omniscient.yaml)")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
@@ -70,9 +72,9 @@ func initConfig() {
 		home, err := homedir.Dir()
 		cobra.CheckErr(err)
 
-		// Search config in home directory with name ".goseek" (without extension).
+		// Search config in home directory with name ".omniscient" (without extension).
 		viper.AddConfigPath(home)
-		viper.SetConfigName(".goseek")
+		viper.SetConfigName(".omniscient")
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match
