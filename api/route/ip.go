@@ -5,7 +5,7 @@ import (
 	"github.com/maraudery/omniscient/api/handlers"
 )
 
-// Username route
+// Ip route
 func Ip(app *fiber.App) {
 	var h handlers.IpHandler
 	r := app.Group("/ip")

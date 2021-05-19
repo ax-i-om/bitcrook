@@ -14,7 +14,8 @@
 
 - [Information](#information)
   - [About](#about)
-  - [Installation and Usage](#installation-and-usage)
+  - [Installation](#installation)
+  - [Usage](#usage)
   - [Implementation](#implementation)
   - [Testing](#testing)
   - [Attributions](#attributions)
@@ -32,14 +33,23 @@
 
 ### About
 
-Omniscient, an information gathering apparatus, is a conglomerate of tools including custom algorithms, API wrappers, etc... in order to make the reconnaissance process significantly quicker. Some packages do require an authentication key and others do not. See the [Package Types](#package-types) tables for more information. Omniscient can be integrated within your application OR it can be used directly from the terminal. See [Installation and Usage](#installation-and-usage) for more information.
+Omniscient, an information gathering apparatus, is a conglomerate of tools including custom algorithms, API wrappers, etc... in order to make the reconnaissance process significantly quicker. Some packages do require an authentication key and others do not. See the [Package Types](#package-types) tables for more information. Omniscient can be integrated within your application OR it can be used directly from the terminal.
 
-### Installation and Usage
+### Installation
 
-1. Fetch the repository via 'git clone': `git clone https://github.com/maraudery/omniscient.git`
-2. Navigate into the Omniscient repository: `cd omniscient`
-3. In your preferred terminal, enter and run: `go run main.go`
-4. After running the aforementioned command, all dependencies will be installed and usage help will be printed to the console.
+ - Fetch the repository via 'git clone': `git clone https://github.com/maraudery/omniscient.git`
+
+### Usage
+
+1. Navigate into the root directory of Omniscient.
+2. In your preferred terminal, enter and run: `go run main.go`
+3. After running the aforementioned command, all dependencies will be installed and usage help will be printed to the console.
+
+*OR*
+
+1. Navigate into the api directory of Omniscient.
+2. In your preferred terminal, enter and run: `go run server.go`
+3. After running the aforementioned command, open up a web browser and navigate to `localhost:6174`
 
 ### Implementation
 
