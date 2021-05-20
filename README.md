@@ -55,7 +55,8 @@ Omniscient, an information gathering apparatus, is a conglomerate of tools inclu
 
 1. Navigate into the api directory of Omniscient.
 2. In your preferred terminal, enter and run: `go run server.go`
-3. After running the aforementioned command, open up a web browser and navigate to `localhost:6174`
+3. When prompted, allow the application communicate on your network.
+4. After doing so, open up a web browser and navigate to `localhost:6174`
 
 ### Implementation
 
