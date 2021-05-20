@@ -22,6 +22,14 @@ $('#discordsearch').on('click', () => {
     $('#discordresult').val('') 
 })
 
+$('#vinsearch').on('click', () => {
+    vin = $('#vin').val()
+    $.getJSON('http://localhost:6174/vin/' + vin, (res) => {
+        $('#vinresult').val(JSON.stringify(res, null, 4))
+    })
+    $('#vinresult').val('') 
+})
+
 $('#backtohome').on('click', () => {
     location.href = 'http://localhost:6174'
 })
