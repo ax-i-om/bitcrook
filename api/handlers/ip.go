@@ -11,7 +11,7 @@ type IpHandler struct {
 
 // Index ...
 func (h IpHandler) Index(ctx *fiber.Ctx) error {
-	return ctx.JSON(fiber.Map{"message": "404"})
+	return ctx.Status(fiber.StatusNotFound).SendFile("./views/pages/ip.html")
 }
 
 // Show user information

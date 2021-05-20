@@ -13,7 +13,7 @@ type DiscordHandler struct {
 
 // Index ...
 func (h DiscordHandler) Index(ctx *fiber.Ctx) error {
-	return ctx.JSON(fiber.Map{"message": "404"})
+	return ctx.Status(fiber.StatusNotFound).SendFile("./views/pages/discord.html")
 }
 
 // Show token information

@@ -11,7 +11,7 @@ type UsernameHandler struct {
 
 // Index ...
 func (h UsernameHandler) Index(ctx *fiber.Ctx) error {
-	return ctx.JSON(fiber.Map{"message": "404"})
+	return ctx.Status(fiber.StatusNotFound).SendFile("./views/pages/username.html")
 }
 
 // Show user information

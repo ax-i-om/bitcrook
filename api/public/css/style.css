@@ -57,6 +57,26 @@ textarea:focus {
     outline: 0
 }
 
+/* unvisited link */
+a:link {
+    color: #2ed573;
+}
+  
+  /* visited link */
+a:visited {
+    color: #2ed573;
+}
+  
+  /* mouse over link */
+a:hover {
+    color: #2ed573;
+}
+  
+  /* selected link */
+a:active {
+    color: #2ed573;
+}
+
 @media only screen and (max-width: 280px) {
 
     body,
