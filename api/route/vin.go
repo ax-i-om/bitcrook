@@ -5,7 +5,7 @@ import (
 	"github.com/maraudery/omniscient/api/handlers"
 )
 
-// Ip route
+// Vin route
 func Vin(app *fiber.App) {
 	var h handlers.VinHandler
 	r := app.Group("/vin")
