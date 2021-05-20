@@ -3,8 +3,8 @@
   <h1 align="center">Omniscient - Information Gathering Apparatus</h1>
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/maraudery/omniscient"><img src="https://goreportcard.com/badge/github.com/maraudery/omniscient" alt="Go Report Card"></a>
-    <a><img src="https://img.shields.io/badge/tests-6&#47;7-orange.svg" alt="s"></a>
-    <a><img src="https://img.shields.io/badge/version-0.3.1-blue.svg" alt="s"></a>
+    <a><img src="https://img.shields.io/badge/tests-7&#47;8-orange.svg" alt="s"></a>
+    <a><img src="https://img.shields.io/badge/version-0.3.2-blue.svg" alt="s"></a>
     <a href="https://pkg.go.dev/github.com/maraudery/omniscient"><img src="https://pkg.go.dev/badge/github.com/maraudery/omniscient.svg" alt="Go Report Card"></a><br>
     <a href="https://www.buymeacoffee.com/maraudery"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" height="40" width="170"></a>
   </p><br>
@@ -14,6 +14,7 @@
 
 - [Information](#information)
   - [About](#about)
+  - [Preview](#preview)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Implementation](#implementation)
@@ -34,6 +35,11 @@
 ### About
 
 Omniscient, an information gathering apparatus, is a conglomerate of tools including custom algorithms, API wrappers, etc... in order to make the reconnaissance process significantly quicker. Some packages do require an authentication key and others do not. See the [Package Types](#package-types) tables for more information. Omniscient can be integrated within your application OR it can be used directly from the terminal.
+
+### Preview
+
+<a><img src="./images/guiprev.png" width=280 height="360"></a>
+<a><img src="./images/cliprev.png" width=660 height="360"></a>
 
 ### Installation
 
