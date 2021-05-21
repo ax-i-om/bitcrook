@@ -14,6 +14,7 @@
 
 - [Information](#information)
   - [About](#about)
+  - [Disclaimer](#disclaimer)
   - [Preview](#preview)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -35,6 +36,10 @@
 ### About
 
 Omniscient, an information gathering apparatus, is a conglomerate of tools including custom algorithms, API wrappers, etc... in order to make the reconnaissance process significantly quicker. Some packages do require an authentication key and others do not. See the [Package Types](#package-types) tables for more information. Omniscient can be integrated within your application OR it can be used directly from the terminal.
+
+### Disclaimer
+
+It is the end user's responsibility to obey all applicable local, state, and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program. By using Omniscient, you agree to the previous statements.
 
 ### Preview
 
