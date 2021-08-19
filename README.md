@@ -50,7 +50,7 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 2. In your preferred terminal, enter and run: `go run main.go`
 3. After running the aforementioned command, all dependencies will be installed and usage help will be printed to the console.
 4. When prompted, allow the application to communicate on your network.
-5. Navigate to `http://localhost:6174/`
+5. Navigate to `http://localhost:5000/`
 
 ### Implementation
 
