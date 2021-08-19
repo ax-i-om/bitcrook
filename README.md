@@ -18,6 +18,7 @@
   - [Preview](#preview)
   - [Installation](#installation)
   - [Usage](#usage)
+  - [API](#api)
   - [Implementation](#implementation)
   - [Testing](#testing)
   - [Attributions](#attributions)
@@ -55,12 +56,13 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 2. In your preferred terminal, enter and run: `go run main.go`
 3. After running the aforementioned command, all dependencies will be installed and usage help will be printed to the console.
 
-*OR*
+### API
 
-1. Navigate into the api directory of Omniscient.
+1. Navigate into the `api` directory of Omniscient.
 2. In your preferred terminal, enter and run: `go run server.go`
-3. When prompted, allow the application communicate on your network.
-4. After doing so, open up a web browser and navigate to `localhost:6174`
+3. When prompted, allow the application to communicate on your network.
+
+*A demonstration can be accessed at `localhost:6174`*
 
 ### Implementation
 
