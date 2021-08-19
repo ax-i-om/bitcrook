@@ -1,1 +1,1 @@
-web: ./api/server.go
+web: ./api
