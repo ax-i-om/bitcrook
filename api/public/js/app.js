@@ -1,6 +1,6 @@
 $('#ipsearch').on('click', () => {
     ip = $('#ip').val()
-    $.getJSON('http://localhost:5000/ip/' + ip, (res) => {
+    $.getJSON('http://localhost:6174/ip/' + ip, (res) => {
         $('#ipresult').val(JSON.stringify(res, null, 4))
     })
     $('#ipresult').val('')
@@ -8,7 +8,7 @@ $('#ipsearch').on('click', () => {
 
 $('#usernamesearch').on('click', () => {
     username = $('#username').val()
-    $.getJSON('http://localhost:5000/username/' + username, (res) => {
+    $.getJSON('http://localhost:6174/username/' + username, (res) => {
         $('#usernameresult').val(JSON.stringify(res, null, 4))
     })
     $('#usernameresult').val('') 
@@ -16,7 +16,7 @@ $('#usernamesearch').on('click', () => {
 
 $('#discordsearch').on('click', () => {
     token = $('#token').val()
-    $.getJSON('http://localhost:5000/discord/' + token, (res) => {
+    $.getJSON('http://localhost:6174/discord/' + token, (res) => {
         $('#discordresult').val(JSON.stringify(res, null, 4))
     })
     $('#discordresult').val('') 
@@ -24,12 +24,12 @@ $('#discordsearch').on('click', () => {
 
 $('#vinsearch').on('click', () => {
     vin = $('#vin').val()
-    $.getJSON('http://localhost:5000/vin/' + vin, (res) => {
+    $.getJSON('http://localhost:6174/vin/' + vin, (res) => {
         $('#vinresult').val(JSON.stringify(res, null, 4))
     })
     $('#vinresult').val('') 
 })
 
 $('#backtohome').on('click', () => {
-    location.href = 'http://localhost:5000/tools'
+    location.href = 'http://localhost:6174/tools'
 })

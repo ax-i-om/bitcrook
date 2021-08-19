@@ -15,8 +15,10 @@
 - [Information](#information)
   - [About](#about)
   - [Disclaimer](#disclaimer)
+  - [Preview](#preview)
   - [Installation](#installation)
   - [Usage](#usage)
+  - [API](#api)
   - [Implementation](#implementation)
   - [Testing](#testing)
   - [Attributions](#attributions)
@@ -40,6 +42,10 @@ Omniscient, an information gathering apparatus, is a conglomerate of tools inclu
 
 It is the end user's responsibility to obey all applicable local, state, and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program. By using Omniscient, you agree to the previous statements.
 
+### Preview
+
+<a><img src="./images/cliprev.png" width=660 height="360"></a>
+
 ### Installation
 
  - Fetch the repository via 'git clone': `git clone https://github.com/maraudery/omniscient.git`
@@ -49,8 +55,13 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 1. Navigate into the root directory of Omniscient.
 2. In your preferred terminal, enter and run: `go run main.go`
 3. After running the aforementioned command, all dependencies will be installed and usage help will be printed to the console.
-4. When prompted, allow the application to communicate on your network.
-5. Navigate to `http://localhost:5000/`
+
+### API
+
+1. Navigate into the `api` directory of Omniscient.
+2. In your preferred terminal, enter and run: `go run server.go`
+3. When prompted, allow the application to communicate on your network.
+4. Navigate to `http://localhost:6174/`
 
 ### Implementation
 
