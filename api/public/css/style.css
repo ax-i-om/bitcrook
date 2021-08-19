@@ -1,91 +1,89 @@
-* {
-    line-height: 1.2;
-    margin: 0;
-}
-
 html {
-    color: #888;
+    color: white;
     display: table;
     font-family: sans-serif;
     height: 100%;
-    text-align: center;
     width: 100%;
-}
-
-body {
+  }
+  
+  table {
+    padding-left: 5px
+  }
+  
+  h1 {
+    padding-left: 5px
+  }
+  h2 {
+    padding-left: 5px
+  }
+  h3 {
+    padding-left: 5px
+  }
+  p {
+    padding-left: 5px
+  }
+  
+  body {
     display: table-cell;
-    vertical-align: middle;
     margin: 2em auto;
-    background-color: #2f3542;
-}
-
-h1 {
-    color: #ffffff;
-    font-size: 2em;
-    font-weight: 400;
-    margin-bottom: 20px;
-}
-
-p {
-    margin: 0 auto;
-    width: 280px;
-    color: #ffffff
-}
-
-input {
-    margin-bottom: 20px;
-    background-color: #57606f;
-    color: #ffffff;
-}
-
-textarea {
-    border: 1px solid grey;
-    border-radius: 3px;
-    padding: 5px;
-    margin: 0 auto;
-    width: 350px;
-    height: 500px;
-    overflow-y: auto;
-    display: block;
-    resize: none;
-    font-size: 12px;
-    background-color: #57606f;
-    color: #ffffff;
-}
-
-textarea:focus {
-    outline: 0
-}
-
-/* unvisited link */
-a:link {
-    color: #e84118;
-}
+    background-color: #1e272e;
+  }
   
-  /* visited link */
-a:visited {
-    color: #e84118;
-}
-  
-  /* mouse over link */
-a:hover {
-    color: #e84118;
-}
-  
-  /* selected link */
-a:active {
-    color: #e84118;
-}
+  a {
+    color: #05c46b
+  }
 
-@media only screen and (max-width: 280px) {
+  input {
+    background-color: #485460;
+    color: white;
+  }
 
-    body,
-    p {
-        width: 95%;
+  textarea {
+    background-color: #485460;
+    color: white;
+  }
+  
+  th {
+    text-align: left;
+    font-size: 150%
+  }
+  
+  button {
+    background-color: #0be881;
+    color: white;
+  }
+
+  /* Style the navigation bar */
+  .navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+  }
+  
+  /* Navbar links */
+  .navbar a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Navbar links on mouse-over */
+  .navbar a:hover {
+    background-color: #05c46b;
+  }
+  
+  /* Current/active navbar link */
+  .active {
+    background-color: #0be881;
+  }
+  
+  /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
     }
-
-    h1 {
-        font-size: 1.5em;
-        margin: 0 0 0.3em;
-    }
-}
+  }

@@ -6,17 +6,39 @@
     <title>Omniscient</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/style.css">
+    <script
+      src="https://kit.fontawesome.com/a5e895e935.js"
+      crossorigin="anonymous"
+    ></script>
 </head>
 
 <body>
+    <script type="text/javascript" src="/js/script.js"></script>
+    <script
+      data-name="BMC-Widget"
+      data-cfasync="false"
+      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+      data-id="maraudery"
+      data-description="Support me on Buy me a coffee!"
+      data-message=""
+      data-color="#0be881"
+      data-position="Right"
+      data-x_margin="18"
+      data-y_margin="18"
+    ></script>
+    <div class="navbar">
+      <a href="http://localhost:6174/"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a href="http://localhost:6174/tools"><i class="fas fa-tools"></i> Tools</a>
+      <a href="https://github.com/maraudery/omniscient"><i class="fab fa-github"></i> GitHub</a>
+      <a href="http://localhost:6174/contribute"><i class="fas fa-hand-holding-usd"></i> Contribute</a>
+    </div>
     <h1>Discord Token Lookup</h1>
     <input spellcheck="false" autocomplete="off" id="token" placeholder="Query Discord Token">
-    <button style="background-color: #e84118; color: white; font-family: Helvetica; padding: 2px" id="discordsearch">search</button>
-    <textarea id="discordresult" data-role="none" rows="15" cols="50" readonly>
-
-    </textarea>
+    <button style="font-family: Helvetica; padding: 2px" id="discordsearch">Search</button>
+    <button style="font-family: Helvetica; padding: 2px" id="backtohome">Home</button>
     <br>
-    <button style="background-color: #e84118; color: white; font-family: Helvetica; padding: 2px" id="backtohome">Home</button>
+    <textarea id="discordresult" data-role="none" rows="15" cols="50" readonly></textarea>
+    <br>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/js/app.js"></script> 
 </body>

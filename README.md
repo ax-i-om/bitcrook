@@ -4,7 +4,7 @@
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/maraudery/omniscient"><img src="https://goreportcard.com/badge/github.com/maraudery/omniscient" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-7&#47;8-orange.svg" alt="s"></a>
-    <a><img src="https://img.shields.io/badge/version-0.3.2-blue.svg" alt="s"></a>
+    <a><img src="https://img.shields.io/badge/version-0.3.3-blue.svg" alt="s"></a>
     <a href="https://pkg.go.dev/github.com/maraudery/omniscient"><img src="https://pkg.go.dev/badge/github.com/maraudery/omniscient.svg" alt="Go Report Card"></a><br>
     <a href="https://www.buymeacoffee.com/maraudery"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" height="40" width="170"></a>
   </p><br>
@@ -62,7 +62,7 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 2. In your preferred terminal, enter and run: `go run server.go`
 3. When prompted, allow the application to communicate on your network.
 
-*A demonstration can be accessed at `localhost:6174`*
+*A graphical demonstration can be accessed at `http://localhost:6174`*
 
 ### Implementation
 

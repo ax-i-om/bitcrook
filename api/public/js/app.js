@@ -31,5 +31,5 @@ $('#vinsearch').on('click', () => {
 })
 
 $('#backtohome').on('click', () => {
-    location.href = 'http://localhost:6174'
+    location.href = 'http://localhost:6174/tools'
 })

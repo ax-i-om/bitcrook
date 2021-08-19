@@ -31,6 +31,8 @@ func main() {
 	route.Discord(app)
 	route.Ip(app)
 	route.Vin(app)
+	route.Contribute(app)
+	route.Tools(app)
 
 	// Handle 404 errors
 	app.Use(handlers.NotFound("./public/404.html"))
