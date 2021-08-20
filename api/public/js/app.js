@@ -29,7 +29,3 @@ $('#vinsearch').on('click', () => {
     })
     $('#vinresult').val('') 
 })
-
-$('#backtohome').on('click', () => {
-    location.href = 'http://localhost:6174/tools'
-})
