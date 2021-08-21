@@ -1,14 +1,16 @@
 <p align="center">
   UNDER HEAVY DEVELOPMENT<br>
-  <a><img src="./images/omni.png" width=180 height="180"></a>
+  <a><img src="./images/omni2.png" width=180 height="180"></a>
   <h1 align="center">Omniscient - Information Gathering Apparatus</h1>
   <p align="center">
-    <a href="https://goreportcard.com/report/github.com/maraudery/omniscient"><img src="https://goreportcard.com/badge/github.com/maraudery/omniscient" alt="Go Report Card"></a>
-    <a><img src="https://img.shields.io/badge/tests-7&#47;8-orange.svg" alt="s"></a>
-    <a><img src="https://img.shields.io/badge/version-0.4.2-blue.svg" alt="s"></a>
-    <a href="https://pkg.go.dev/github.com/maraudery/omniscient"><img src="https://pkg.go.dev/badge/github.com/maraudery/omniscient.svg" alt="Go Doc"></a>
-    <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
-    <a href="https://www.buymeacoffee.com/maraudery"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" height="40" width="170"></a>
+    <a href="https://goreportcard.com/report/github.com/maraudery/omniscient"><img src="https://img.shields.io/badge/GoReport-A+-0be881.svg" alt="s"></a>
+    <a><img src="https://img.shields.io/badge/Tests-7&#47;8-0be881.svg" alt="s"></a>
+    <a><img src="https://img.shields.io/badge/Version-0.4.2-0be881.svg" alt="s"></a>
+    <a href="https://pkg.go.dev/github.com/maraudery/omniscient"><img src="https://img.shields.io/badge/Go-Reference-0be881.svg" alt="Go Doc"></a>
+    <a href="https://inventory.raw.pm/"><img src="https://img.shields.io/badge/RawSec-Inventoried-0be881.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
+    <a href="https://www.buymeacoffee.com/maraudery" target="_blank" rel="noreferrer nofollow">
+  <a href="https://www.buymeacoffee.com/maraudery"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=maraudery&button_colour=000000&font_colour=0be881&font_family=Poppins&outline_colour=0be881&coffee_colour=0be881"></a>
+</a>
   </p><br>
 </p>
 
