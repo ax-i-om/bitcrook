@@ -1,4 +1,5 @@
 <p align="center">
+  UNDER HEAVY DEVELOPMENT<br>
   <a><img src="./images/omni.png" width=180 height="180"></a>
   <h1 align="center">Omniscient - Information Gathering Apparatus</h1>
   <p align="center">
