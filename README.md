@@ -46,6 +46,7 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 ### Preview
 
 <a><img src="./images/cliprev.png" width=660 height="360"></a>
+<a><img src="./images/guiprev2.png" width=660 height="360"></a>
 
 ### Installation
 
