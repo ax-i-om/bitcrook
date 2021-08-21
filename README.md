@@ -4,7 +4,7 @@
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/maraudery/omniscient"><img src="https://goreportcard.com/badge/github.com/maraudery/omniscient" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-7&#47;8-orange.svg" alt="s"></a>
-    <a><img src="https://img.shields.io/badge/version-0.4.1-blue.svg" alt="s"></a>
+    <a><img src="https://img.shields.io/badge/version-0.4.2-blue.svg" alt="s"></a>
     <a href="https://pkg.go.dev/github.com/maraudery/omniscient"><img src="https://pkg.go.dev/badge/github.com/maraudery/omniscient.svg" alt="Go Doc"></a>
     <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
     <a href="https://www.buymeacoffee.com/maraudery"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" height="40" width="170"></a>

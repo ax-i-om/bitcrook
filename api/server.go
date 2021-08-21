@@ -24,7 +24,7 @@ func main() {
 	// Serve static assets
 	app.Static("/", "./public", fiber.Static{
 		Compress:      true,
-		CacheDuration: 0,
+		CacheDuration: -1,
 		MaxAge:        0, // this is redundant as 0 is the default
 	})
 
@@ -33,7 +33,6 @@ func main() {
 	route.Ip(app)
 	route.Discord(app)
 	route.Vin(app)
-	route.Contribute(app)
 
 	// Handle 404 errors
 	app.Use(handlers.NotFound("./public/404.html"))
