@@ -1,27 +1,25 @@
 $('#ipsearch').on('click', () => {
     ip = $('#ip').val()
     $.getJSON('http://localhost:6174/ip/' + ip, (res) => {
-        var obj = JSON.parse(res);
-        $('#ipresult').val("Status: " + obj.status + "\n" +
-        "Status: " + obj.status + "\n" +
-        "Continent: " + obj.continent + "\n" +
-        "Country: " + obj.country + "\n" +
-        "Region Name: " + obj.regionname + "\n" +
-        "City: " + obj.district + "\n" +
-        "District: " + obj.zip + "\n" +
-        "Zip: " + obj.lat + "\n" +
-        "Latitude: " + obj.lon + "\n" +
-        "Longitude: " + obj.timezone + "\n" +
-        "Time Zone: " + obj.currency + "\n" +
-        "Currency: " + obj.isp + "\n" +
-        "ISP: " + obj.org + "\n" +
-        "Org: " + obj.as + "\n" +
-        "As: " + obj.asname + "\n" +
-        "Asname: " + obj.reverse + "\n" +
-        "Reverse: " + obj.mobile + "\n" +
-        "Mobile: " + obj.proxy + "\n" +
-        "Proxy: " + obj.hosting + "\n" +
-        "Hosting: " + obj.query + "\n")
+        $('#ipresult').val("Status: " + res.status + "\n" +
+        "Continent: " + res.continent + "\n" +
+        "Country: " + res.country + "\n" +
+        "Region Name: " + res.regionname + "\n" +
+        "City: " + res.city + "\n" +
+        "District: " + res.district + "\n" +
+        "Zip: " + res.zip + "\n" +
+        "Latitude: " + res.lat + "\n" +
+        "Longitude: " + res.lon + "\n" +
+        "Time Zone: " + res.timezone + "\n" +
+        "Currency: " + res.currency + "\n" +
+        "ISP: " + res.isp + "\n" +
+        "Org: " + res.org + "\n" +
+        "As: " + res.as + "\n" +
+        "Asname: " + res.asname + "\n" +
+        "Reverse: " + res.reverse + "\n" +
+        "Mobile: " + res.mobile + "\n" +
+        "Proxy: " + res.proxy + "\n" +
+        "Hosting: " + res.hosting + "\n")
     })
     $('#ipresult').val('')
 })
