@@ -35,7 +35,19 @@ $('#usernamesearch').on('click', () => {
 $('#discordsearch').on('click', () => {
     token = $('#token').val()
     $.getJSON('http://localhost:6174/discord/' + token, (res) => {
-        $('#discordresult').val(JSON.stringify(res, null, 4))
+        $('#discordresult').val("ID: " + res.id + "\n" +
+        "Username: " + res.username + "\n" +
+        "Avatar: " + res.avatar + "\n" +
+        "Discriminator: " + res.discriminator + "\n" +
+        "Public Flags: " + res.public_flags + "\n" +
+        "Flags: " + res.flags + "\n" +
+        "Purchased Flags: " + res.purchased_flags + "\n" +
+        "Locale: " + res.locale + "\n" +
+        "NSFW Allowed: " + res.nsfw_allowed + "\n" +
+        "MFA Enabled: " + res.mfa_enabled + "\n" +
+        "Email: " + res.email + "\n" +
+        "Verified: " + res.verified + "\n" +
+        "Phone: " + res.phone)
     })
     $('#discordresult').val('') 
 })
@@ -43,7 +55,42 @@ $('#discordsearch').on('click', () => {
 $('#vinsearch').on('click', () => {
     vin = $('#vin').val()
     $.getJSON('http://localhost:6174/vin/' + vin, (res) => {
-        $('#vinresult').val(JSON.stringify(res, null, 4))
+        $('#vinresult').val("Vin: " + res.Vin + "\n" +
+        "Year: " + res.Year + "\n" +
+        "Make: " + res.Make + "\n" +
+        "Model: " + res.Model + "\n" +
+        "Trim: " + res.Trim + "\n" +
+        "Short Trim: " + res.ShortTrim + "\n" +
+        "Trim Variations: " + res.TrimVariations + "\n" +
+        "Made In: " + res.MadeIn + "\n" +
+        "Made In City: " + res.MadeInCity + "\n" +
+        "Vehicle Style: " + res.VehicleStyle + "\n" +
+        "Vehicle Type: " + res.VehicleType + "\n" +
+        "Vehicle Size: " + res.VehicleSize + "\n" +
+        "Vehicle Category: " + res.VehicleCategory + "\n" +
+        "Doors: " + res.Doors + "\n" +
+        "Fuel Type: " + res.FuelType + "\n" +
+        "Fuel Capacity: " + res.FuelCapacity + "\n" +
+        "City Mileage: " + res.CityMileage + "\n" +
+        "Highway Mileage: " + res.HighwayMileage + "\n" +
+        "Engine: " + res.Engine + "\n" +
+        "Engine Size: " + res.EngineSize + "\n" +
+        "Engine Cylinders: " + res.EngineCylinders + "\n" +
+        "Transmission Type: " + res.TransmissionType + "\n" +
+        "Transmission Gears: " + res.TransmissionGears + "\n" +
+        "Driven Wheels: " + res.DrivenWheels + "\n" +
+        "Anti-Brake System: " + res.AntiBrakeSystem + "\n" +
+        "Steering Type: " + res.SteeringType + "\n" +
+        "Curb Weight: " + res.CurbWeight + "\n" +
+        "Gross Weight: " + res.GrossWeight + "\n" +
+        "Overall Height: " + res.OverallHeight + "\n" +
+        "Overall Length: " + res.OverallLength + "\n" +
+        "Overall Width: " + res.OverallWidth + "\n" +
+        "Standard Seating: " + res.StandardSeating + "\n" +
+        "Optional Seating: " + res.OptionalSeating + "\n" +
+        "Invoice Price: " + res.InvoicePrice + "\n" +
+        "Delivery Charges: " + res.DeliveryCharges + "\n" +
+        "MSRP: " + res.MSRP)
     })
     $('#vinresult').val('') 
 })
