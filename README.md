@@ -8,7 +8,7 @@
     <a><img src="https://img.shields.io/badge/version-0.5.0-blue.svg" alt="s"></a>
     <a href="https://pkg.go.dev/github.com/maraudery/ra"><img src="https://pkg.go.dev/badge/github.com/maraudery/ra.svg" alt="Go Report Card"></a>
     <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
-    <a href="https://www.buymeacoffee.com/maraudery"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" height="40" width="170"></a>
+    Centralize and expedite the reconnaissance process.
 </a>
   </p><br>
 </p>
