@@ -39,7 +39,7 @@
 
 ### About
 
-RA is a conglomerate of tools including custom algorithms, API wrappers, etc... in order to make the reconnaissance process significantly quicker. Some packages do require an authentication key and others do not. See the [Package Types](#package-types) tables for more information. RA can be integrated within your application OR it can be used directly from the terminal.
+RA is a reconnaissance apparatus that aims to centralize all of the tools necessary to carry out an open-source intelligence investigation. Although investigations will still require human interaction to connect the dots, the interface can be tailored to an individual’s needs to expedite the process of due diligence. Some packages do require an authentication key and others do not. See the [Package Types](#package-types) tables for more information. RA can be integrated within your application OR it can be used directly from the [terminal/web browser.](#preview)
 
 ### Disclaimer
 
