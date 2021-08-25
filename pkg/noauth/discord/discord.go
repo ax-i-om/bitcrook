@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"log"
 
-	"github.com/maraudery/omniscient/internal/http"
+	"github.com/maraudery/ra/internal/http"
 )
 
 // DiscordTokenInfo is a represntation of a plethora of information returned by the TokenLookup() function.

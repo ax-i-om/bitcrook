@@ -22,7 +22,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/maraudery/omniscient/pkg/noauth/ip"
+	"github.com/maraudery/ra/pkg/noauth/ip"
 	"github.com/spf13/cobra"
 )
 

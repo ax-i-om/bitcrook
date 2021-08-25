@@ -22,7 +22,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/maraudery/omniscient/pkg/noauth/discord"
+	"github.com/maraudery/ra/pkg/noauth/discord"
 	"github.com/spf13/cobra"
 )
 

@@ -1,4 +1,4 @@
-# [github.com/maraudery/omniscient/pkg/noauth/ip](https://github.com/maraudery/omniscient/tree/main/pkg/noauth/ip) - no authentication required
+# [github.com/maraudery/ra/pkg/noauth/ip](https://github.com/maraudery/ra/tree/main/pkg/noauth/ip) - no authentication required
 
 
 ## Types
@@ -57,7 +57,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/maraudery/omniscient/pkg/noauth/ip"
+	"github.com/maraudery/ra/pkg/noauth/ip"
 )
 
 func main() {

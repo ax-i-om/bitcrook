@@ -4,7 +4,7 @@ import (
 	"errors"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/maraudery/omniscient/pkg/noauth/discord"
+	"github.com/maraudery/ra/pkg/noauth/discord"
 )
 
 // DiscordHandler is ...

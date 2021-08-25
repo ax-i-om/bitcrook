@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/maraudery/omniscient/internal/http"
+	"github.com/maraudery/ra/internal/http"
 )
 
 func TestTokenLookup(t *testing.T) {

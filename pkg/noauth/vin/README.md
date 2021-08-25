@@ -1,4 +1,4 @@
-# [github.com/maraudery/omniscient/noauth/vin](https://github.com/maraudery/omniscient/tree/main/noauth/vin) - no authentication required
+# [github.com/maraudery/ra/noauth/vin](https://github.com/maraudery/ra/tree/main/noauth/vin) - no authentication required
 
 
 ## Types
@@ -156,7 +156,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/maraudery/omniscient/noauth/vin"
+	"github.com/maraudery/ra/noauth/vin"
 )
 
 func main() {

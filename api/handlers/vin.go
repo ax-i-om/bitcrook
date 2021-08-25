@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	hits "github.com/maraudery/omniscient/pkg/noauth/vin"
+	hits "github.com/maraudery/ra/pkg/noauth/vin"
 )
 
 // VinHandler is ...

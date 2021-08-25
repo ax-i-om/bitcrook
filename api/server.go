@@ -5,8 +5,8 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html"
-	"github.com/maraudery/omniscient/api/handlers"
-	"github.com/maraudery/omniscient/api/route"
+	"github.com/maraudery/ra/api/handlers"
+	"github.com/maraudery/ra/api/route"
 )
 
 // Launch starts the API

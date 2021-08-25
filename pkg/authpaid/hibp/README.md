@@ -1,4 +1,4 @@
-# [github.com/maraudery/omniscient/pkg/authpaid/hibp](https://github.com/maraudery/omniscient/tree/main/pkg/authpaid/hibp) - paid authentication required
+# [github.com/maraudery/ra/pkg/authpaid/hibp](https://github.com/maraudery/ra/tree/main/pkg/authpaid/hibp) - paid authentication required
 
 
 ## Types
@@ -142,7 +142,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/maraudery/omniscient/pkg/authpaid/hibp"
+	"github.com/maraudery/ra/pkg/authpaid/hibp"
 )
 
 func main() {

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/maraudery/omniscient/internal/config"
+	"github.com/maraudery/ra/internal/config"
 )
 
 func TestGetReq(t *testing.T) {

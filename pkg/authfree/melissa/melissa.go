@@ -3,7 +3,7 @@ package melissa
 import (
 	"encoding/json"
 
-	"github.com/maraudery/omniscient/internal/http"
+	"github.com/maraudery/ra/internal/http"
 )
 
 /*

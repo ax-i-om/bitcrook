@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/maraudery/omniscient/internal/config"
-	"github.com/maraudery/omniscient/internal/http"
+	"github.com/maraudery/ra/internal/config"
+	"github.com/maraudery/ra/internal/http"
 )
 
 func TestGetBreaches(t *testing.T) {

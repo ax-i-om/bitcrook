@@ -22,7 +22,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/maraudery/omniscient/pkg/noauth/caselaw"
+	"github.com/maraudery/ra/pkg/noauth/caselaw"
 	"github.com/spf13/cobra"
 )
 

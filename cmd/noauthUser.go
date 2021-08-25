@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/maraudery/omniscient/pkg/noauth/userlookup"
+	"github.com/maraudery/ra/pkg/noauth/userlookup"
 	"github.com/spf13/cobra"
 )
 

@@ -1,7 +1,7 @@
 FROM golang:1.16.4-alpine3.12
 
 LABEL author="Maraudery"
-LABEL github="https://github.com/maraudery/omniscient"
+LABEL github="https://github.com/maraudery/ra"
 
 RUN mkdir /app
 ADD . /app

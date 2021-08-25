@@ -1,4 +1,4 @@
-# [github.com/maraudery/omniscient/pkg/noauth/caselaw](https://github.com/maraudery/omniscient/tree/main/pkg/noauth/caselaw) - no authentication required
+# [github.com/maraudery/ra/pkg/noauth/caselaw](https://github.com/maraudery/ra/tree/main/pkg/noauth/caselaw) - no authentication required
 
 
 ## Types
@@ -120,7 +120,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/maraudery/omniscient/pkg/noauth/caselaw"
+	"github.com/maraudery/ra/pkg/noauth/caselaw"
 )
 
 func main() {

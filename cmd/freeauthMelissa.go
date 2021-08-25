@@ -22,8 +22,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/maraudery/omniscient/internal/config"
-	"github.com/maraudery/omniscient/pkg/authfree/melissa"
+	"github.com/maraudery/ra/internal/config"
+	"github.com/maraudery/ra/pkg/authfree/melissa"
 	"github.com/spf13/cobra"
 )
 

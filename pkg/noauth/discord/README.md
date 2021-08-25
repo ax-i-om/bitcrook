@@ -1,4 +1,4 @@
-# [github.com/maraudery/omniscient/pkg/noauth/discord](https://github.com/maraudery/omniscient/tree/main/pkg/noauth/discord) - no authentication required
+# [github.com/maraudery/ra/pkg/noauth/discord](https://github.com/maraudery/ra/tree/main/pkg/noauth/discord) - no authentication required
 
 
 ## Types
@@ -52,7 +52,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/maraudery/omniscient/pkg/noauth/caselaw"
+	"github.com/maraudery/ra/pkg/noauth/caselaw"
 )
 
 func main() {

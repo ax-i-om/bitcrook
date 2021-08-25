@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/maraudery/omniscient/pkg/noauth/vin"
+	"github.com/maraudery/ra/pkg/noauth/vin"
 	"github.com/spf13/cobra"
 )
 
