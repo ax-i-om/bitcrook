@@ -148,7 +148,6 @@ func redirSites(userres string) []Website {
 	arr = append(arr, Website{Title: "Speedrun", Domain: "https://speedrun.com/user/" + userres + "", Delete: "TODO"})
 	arr = append(arr, Website{Title: "Roberts Space Industries", Domain: "https://robertsspaceindustries.com/citizens/" + userres + "", Delete: "TODO"})
 	arr = append(arr, Website{Title: "Tellonym", Domain: "https://tellonym.me/" + userres + "", Delete: "TODO"})
-	arr = append(arr, Website{Title: "TikTok", Domain: "https://tiktok.com/@" + userres + "", Delete: "TODO"})
 	arr = append(arr, Website{Title: "Trading View", Domain: "https://www.tradingview.com/u/" + userres + "/", Delete: "TODO"})
 	arr = append(arr, Website{Title: "Ultimate Guitar", Domain: "https://ultimate-guitar.com/u/" + userres + "", Delete: "TODO"})
 	arr = append(arr, Website{Title: "Unsplash", Domain: "https://unsplash.com/@" + userres + "", Delete: "TODO"})
