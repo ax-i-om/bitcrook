@@ -1,5 +1,6 @@
 <p align="center">
-  UNDER HEAVY DEVELOPMENT<br>
+  THIS PROJECT WILL BE ARCHIVED SOON<br>
+  Migrating to <a href="https://maraudery.github.io/omniscient/">Omniscient</a><br>
   <a><img src="./images/omni.png" width=180 height="180"></a>
   <h1 align="center">RA - Reconnaissance Apparatus</h1>
   <p align="center">
