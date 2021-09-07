@@ -89,6 +89,7 @@ Qualear is currently passing all tests; however, I have provided instructions fo
 ### Attributions
 
 [Logo](./images/qualear.png) created with and licensed by [LogoMakr CC License.](https://my.logomakr.com/cc-license/)
+
 [Card](./images/card.jpg) created with [Canva.](https://www.canva.com/)
 
 ## Package-Types
