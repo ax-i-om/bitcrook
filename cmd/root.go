@@ -34,7 +34,7 @@ var rootCmd = &cobra.Command{
 	Use:   "qualear",
 	Short: "Information Gathering Apparatus",
 	Long: `
-	Ra, an information gathering apparatus, 
+	Qualear, an information gathering apparatus, 
 	is a conglomerate of tools including custom algorithms, API wrappers, etc... 
 	in order to make the reconnaissance process significantly quicker.`,
 	// Uncomment the following line if your bare application
@@ -55,7 +55,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.ra.yaml)")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.qualear.yaml)")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
@@ -72,9 +72,9 @@ func initConfig() {
 		home, err := homedir.Dir()
 		cobra.CheckErr(err)
 
-		// Search config in home directory with name ".ra" (without extension).
+		// Search config in home directory with name ".qualear" (without extension).
 		viper.AddConfigPath(home)
-		viper.SetConfigName(".ra")
+		viper.SetConfigName(".qualear")
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match

@@ -5,8 +5,8 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html"
-	"github.com/maraudery/ra/api/handlers"
-	"github.com/maraudery/ra/api/route"
+	"github.com/maraudery/qualear/api/handlers"
+	"github.com/maraudery/qualear/api/route"
 )
 
 // Launch starts the API
@@ -31,7 +31,6 @@ func main() {
 	// Main GEO handler that is cached for 10 minutes
 	route.Username(app)
 	route.Ip(app)
-	route.Discord(app)
 	route.Vin(app)
 
 	// Handle 404 errors
