@@ -47,7 +47,7 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 ### Preview
 
 <a><img src="./images/cliprev.png" width=660 height="360"></a>
-<a><img src="./images/guiprev2.png" width=660 height="360"></a>
+<a><img src="./images/guiprev.png" width=660 height="360"></a>
 
 ### Installation
 
@@ -88,7 +88,7 @@ Qualear is currently passing all tests; however, I have provided instructions fo
 
 ### Attributions
 
-[Social Preview](./images/card.jpg) created by [TheOneTrueDude](https://github.com/FirstTrueDude)
+[Logo](./images/qualear.png) created with and licensed by [LogoMakr CC License](https://my.logomakr.com/cc-license/)
 
 ## Package-Types
 
