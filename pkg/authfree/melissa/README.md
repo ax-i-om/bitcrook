@@ -1,4 +1,4 @@
-# [github.com/maraudery/ra/pkg/authfree/melissa](https://github.com/maraudery/ra/tree/main/pkg/authfree/melissa) - free authentication required
+# [github.com/maraudery/qualear/pkg/authfree/melissa](https://github.com/maraudery/qualear/tree/main/pkg/authfree/melissa) - free authentication required
 
 
 ## Types
@@ -236,7 +236,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/maraudery/ra/pkg/authfree/melissa"
+	"github.com/maraudery/qualear/pkg/authfree/melissa"
 )
 
 func main() {

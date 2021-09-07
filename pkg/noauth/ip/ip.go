@@ -3,7 +3,7 @@ package ip
 import (
 	"encoding/json"
 
-	"github.com/maraudery/ra/internal/http"
+	"github.com/maraudery/qualear/internal/http"
 )
 
 // IPAddress is ...

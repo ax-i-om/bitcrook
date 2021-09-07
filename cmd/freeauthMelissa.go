@@ -22,8 +22,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/maraudery/ra/internal/config"
-	"github.com/maraudery/ra/pkg/authfree/melissa"
+	"github.com/maraudery/qualear/internal/config"
+	"github.com/maraudery/qualear/pkg/authfree/melissa"
 	"github.com/spf13/cobra"
 )
 

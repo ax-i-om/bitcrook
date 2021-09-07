@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/maraudery/ra/pkg/noauth/userlookup"
+	"github.com/maraudery/qualear/pkg/noauth/userlookup"
 )
 
 // UsernameHandler is ...

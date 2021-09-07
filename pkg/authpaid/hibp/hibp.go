@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/maraudery/ra/internal/http"
+	"github.com/maraudery/qualear/internal/http"
 )
 
 // BreachList is a representation of the names of site breaches returned by the GetBreaches() function.

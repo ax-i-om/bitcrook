@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/maraudery/ra/cmd"
+import "github.com/maraudery/qualear/cmd"
 
 func main() {
 	cmd.Execute()

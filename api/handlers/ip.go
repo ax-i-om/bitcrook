@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	hits "github.com/maraudery/ra/pkg/noauth/ip"
+	hits "github.com/maraudery/qualear/pkg/noauth/ip"
 )
 
 // IpHandler is ...

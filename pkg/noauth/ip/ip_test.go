@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/maraudery/ra/internal/http"
+	"github.com/maraudery/qualear/internal/http"
 )
 
 func TestIPLookup(t *testing.T) {

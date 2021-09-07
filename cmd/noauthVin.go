@@ -21,13 +21,13 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/maraudery/ra/pkg/noauth/vin"
+	"github.com/maraudery/qualear/pkg/noauth/vin"
 	"github.com/spf13/cobra"
 )
 
 // noauthVinCmd represents the noauthVin command
 var noauthVinCmd = &cobra.Command{
-	Use:   "noauthVin",
+	Use:   "noauthVin <VIN>",
 	Short: "Returns public information regarding a VIN. Auth: NONE",
 	Long:  `Returns public information regarding a VIN. Auth: NONE`,
 	Run: func(cmd *cobra.Command, args []string) {

@@ -31,7 +31,7 @@ var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "ra",
+	Use:   "qualear",
 	Short: "Information Gathering Apparatus",
 	Long: `
 	Ra, an information gathering apparatus, 
