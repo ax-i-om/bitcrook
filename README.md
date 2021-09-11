@@ -27,7 +27,6 @@
   - [Attributions](#attributions)
 - [Package Types](#package-types) *a-z*
   - [Court Cases](#court-cases)
-  - [Discord](#discord)
   - [IP Address](#ip-address)
   - [Multi-Use](#multi-use)
   - [Username](#username)
