@@ -3,7 +3,7 @@
   <h1 align="center">Qualear - Reconnaissance Apparatus</h1>
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/maraudery/qualear"><img src="https://goreportcard.com/badge/github.com/maraudery/qualear" alt="Go Report Card"></a>
-    <a><img src="https://img.shields.io/badge/tests-7&#47;8-orange.svg" alt="s"></a>
+    <a><img src="https://img.shields.io/badge/tests-6&#47;7-orange.svg" alt="s"></a>
     <a><img src="https://img.shields.io/badge/version-0.6.0-blue.svg" alt="s"></a>
     <a href="https://pkg.go.dev/github.com/maraudery/qualear"><img src="https://pkg.go.dev/badge/github.com/maraudery/qualear.svg" alt="Go Report Card"></a>
     <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
