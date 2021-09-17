@@ -3,7 +3,7 @@
   <h1 align="center">Qualear - Reconnaissance Apparatus</h1>
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/maraudery/qualear"><img src="https://goreportcard.com/badge/github.com/maraudery/qualear" alt="Go Report Card"></a>
-    <a><img src="https://img.shields.io/badge/tests-6&#47;7-orange.svg" alt="s"></a>
+    <a><img src="https://img.shields.io/badge/tests-5&#47;7-orange.svg" alt="s"></a>
     <a><img src="https://img.shields.io/badge/version-0.6.0-blue.svg" alt="s"></a>
     <a href="https://pkg.go.dev/github.com/maraudery/qualear"><img src="https://pkg.go.dev/badge/github.com/maraudery/qualear.svg" alt="Go Report Card"></a>
     <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
@@ -24,6 +24,7 @@
   - [API](#api)
   - [Implementation](#implementation)
   - [Testing](#testing)
+  - [TODO](#todo)
   - [Attributions](#attributions)
 - [Package Types](#package-types) *a-z*
   - [Court Cases](#court-cases)
@@ -85,6 +86,17 @@ Qualear is currently passing all tests; however, I have provided instructions fo
 ```
 3. Paste in your API keys. The test will fail without a valid API key.
 4. In your preferred terminal, enter and run `go test ./...`
+
+### TODO
+
+*Priority*
+- Fix VIN lookup
+
+*Not a priority*
+- Rewrite username lookup to parse more than status codes 200/404 (body response, messages, etc)
+- Add license plate lookup
+- Add Whois lookup
+- Update the GUI ()
 
 ### Attributions
 
