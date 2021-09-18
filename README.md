@@ -108,32 +108,32 @@ Qualear is currently passing all tests; however, I have provided instructions fo
 
 ### Court Cases
 
-| Package                                                                                    | Description                                  |   Auth   |
-| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: |
-| [Case Law](https://github.com/maraudery/qualear/tree/main/pkg/noauth/caselaw)           | Court Case Search                            |  `none`  |
+| Package                                                                                    | Description                                  |   Auth   | Location |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- |
+| [Case Law](https://github.com/maraudery/qualear/tree/main/pkg/noauth/caselaw)           | Court Case Search                            |  `none`  | US |
 
 ### IP Address
 
-| Package                                                                                    | Description                                  |   Auth   |
-| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: |
-| [IPV4 Address Lookup](https://github.com/maraudery/qualear/tree/main/pkg/noauth/ip)     | IPV4 Address Lookup                          |  `none`  |
+| Package                                                                                    | Description                                  |   Auth   | Location |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- |
+| [IPV4 Address Lookup](https://github.com/maraudery/qualear/tree/main/pkg/noauth/ip)     | IPV4 Address Lookup                          |  `none`  | Global |
 
 ### Multi-Use
 
-| Package                                                                                    | Description                                  |   Auth   |
-| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: |
-| [Have I Been Pwned](https://github.com/maraudery/qualear/tree/main/pkg/authpaid/hibp)   | Email and Password Vulnerability - (Breaches)|  `paid`  |
-| [Melissa](https://github.com/maraudery/qualear/tree/main/pkg/authfree/melissa)          | Lookups - Email, Phone Number, IP Address    |  `free`  |
+| Package                                                                                    | Description                                  |   Auth   | Location |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- |
+| [Have I Been Pwned](https://github.com/maraudery/qualear/tree/main/pkg/authpaid/hibp)   | Email and Password Vulnerability - (Breaches)|  `paid`  | Global |
+| [Melissa](https://github.com/maraudery/qualear/tree/main/pkg/authfree/melissa)          | Lookups - Email, Phone Number, IP Address    |  `free`  | US |
 
 
 ### Username
 
-| Package                                                                                    | Description                                  |   Auth   |
-| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: |
-| [Username Lookup](https://github.com/maraudery/qualear/tree/main/pkg/noauth/userlookup) | Username Lookup - (Comparable to Sherlock)   |  `none`  |
+| Package                                                                                    | Description                                  |   Auth   | Location |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- |
+| [Username Lookup](https://github.com/maraudery/qualear/tree/main/pkg/noauth/userlookup) | Username Lookup - (Comparable to Sherlock)   |  `none`  | Global |
 
 ### Vehicle
 
-| Package                                                                                    | Description                                  |   Auth   |
-| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: |
-| [VIN Lookup](https://github.com/maraudery/qualear/tree/main/pkg/noauth/vin)             | Vehicle Identification Number Lookup         |  `none`  |
+| Package                                                                                    | Description                                  |   Auth   | Location |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- |
+| [VIN Lookup](https://github.com/maraudery/qualear/tree/main/pkg/noauth/vin)             | Vehicle Identification Number Lookup         |  `none`  | - | 
