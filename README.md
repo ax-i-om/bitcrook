@@ -24,6 +24,7 @@
 - [Usage](#usage)
   - [Installation](#installation)
   - [CLI](#CLI)
+  - [Generate Reports](#generate-reports)
   - [GUI](#gui)
   - [Implementation](#implementation)
   - [Testing](#testing)
