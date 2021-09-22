@@ -4,7 +4,7 @@
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/maraudery/qualear"><img src="https://goreportcard.com/badge/github.com/maraudery/qualear" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-5&#47;7-orange.svg" alt="s"></a>
-    <a><img src="https://img.shields.io/badge/version-0.6.0-blue.svg" alt="s"></a>
+    <a><img src="https://img.shields.io/badge/version-0.6.1-blue.svg" alt="s"></a>
     <a href="https://pkg.go.dev/github.com/maraudery/qualear"><img src="https://pkg.go.dev/badge/github.com/maraudery/qualear.svg" alt="Go Report Card"></a>
     <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
     Centralize and expedite the reconnaissance process.<br>
@@ -19,13 +19,14 @@
   - [About](#about)
   - [Disclaimer](#disclaimer)
   - [Preview](#preview)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [API](#api)
-  - [Implementation](#implementation)
-  - [Testing](#testing)
   - [TODO](#todo)
   - [Attributions](#attributions)
+- [Usage](#usage)
+  - [Installation](#installation)
+  - [CLI](#CLI)
+  - [GUI](#gui)
+  - [Implementation](#implementation)
+  - [Testing](#testing)
 - [Package Types](#package-types) *a-z*
   - [Court Cases](#court-cases)
   - [IP Address](#ip-address)
@@ -50,17 +51,40 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 <a><img src="./images/cliprev.jpg" width=660 height="360"></a>
 <a><img src="./images/guiprev.jpg" width=660 height="360"></a>
 
+### TODO
+
+*Priority*
+- Fix VIN lookup
+
+*Not a priority*
+- Rewrite username lookup to parse more than status codes 200/404 (body response, messages, etc)
+- Add license plate lookup
+- Add Whois lookup
+- Update the GUI ()
+
+### Attributions
+
+[Logo](./images/qualear.png) created with and licensed by [LogoMakr CC License.](https://my.logomakr.com/cc-license/)
+
+[Social Preview](./images/card.jpg) created with [Canva.](https://www.canva.com/)
+
+## Usage
+
 ### Installation
 
  - Fetch the repository via 'git clone': `git clone https://github.com/maraudery/qualear.git`
 
-### Usage
+### CLI
 
 1. Navigate into the root directory of Qualear.
 2. In your preferred terminal, enter and run: `go run main.go`
 3. After running the aforementioned command, all dependencies will be installed and usage help will be printed to the console.
 
-### API
+### Generate Reports
+
+A report generation dialogue with PDF output can be launched via ```go run main.go generateReport```
+
+### GUI
 
 1. Navigate into the `api` directory of Qualear.
 2. In your preferred terminal, enter and run: `go run server.go`
@@ -86,23 +110,6 @@ Qualear is currently passing all tests; however, I have provided instructions fo
 ```
 3. Paste in your API keys. The test will fail without a valid API key.
 4. In your preferred terminal, enter and run `go test ./...`
-
-### TODO
-
-*Priority*
-- Fix VIN lookup
-
-*Not a priority*
-- Rewrite username lookup to parse more than status codes 200/404 (body response, messages, etc)
-- Add license plate lookup
-- Add Whois lookup
-- Update the GUI ()
-
-### Attributions
-
-[Logo](./images/qualear.png) created with and licensed by [LogoMakr CC License.](https://my.logomakr.com/cc-license/)
-
-[Social Preview](./images/card.jpg) created with [Canva.](https://www.canva.com/)
 
 ## Package-Types
 
