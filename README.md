@@ -82,6 +82,8 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 
 ### Generate Reports
 
+*in prototype phase*
+
 A report generation dialogue with PDF output can be launched via ```go run main.go generateReport```
 
 ### GUI
