@@ -1,4 +1,4 @@
-# [github.com/maraudery/qualear/pkg/authpaid/hibp](https://github.com/maraudery/qualear/tree/main/pkg/authpaid/hibp) - paid authentication required
+# [github.com/maraudery/goseek/pkg/authpaid/hibp](https://github.com/maraudery/goseek/tree/main/pkg/authpaid/hibp) - paid authentication required
 
 
 ## Types
@@ -142,7 +142,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/maraudery/qualear/pkg/authpaid/hibp"
+	"github.com/maraudery/goseek/pkg/authpaid/hibp"
 )
 
 func main() {

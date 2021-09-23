@@ -87,7 +87,7 @@ func generatePdf() (string, error) {
 	)
 
 	// CellFormat(width, height, text, border, position after, align, fill, link, linkStr)
-	pdf.CellFormat(190, 0, "QUALEAR          RESULT", "0", 0, "CM", false, 0, "")
+	pdf.CellFormat(190, 0, "GOSEEK          RESULT", "0", 0, "CM", false, 0, "")
 	pdf.Line(0, 18, 380, 19)
 	pdf.CellFormat(190, 200, "", "0", 0, "TL", false, 0, "")
 	pdf.SetFontSize(10)

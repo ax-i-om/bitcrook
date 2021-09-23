@@ -1,4 +1,4 @@
-# [github.com/maraudery/qualear/noauth/vin](https://github.com/maraudery/qualear/tree/main/noauth/vin) - no authentication required
+# [github.com/maraudery/goseek/noauth/vin](https://github.com/maraudery/goseek/tree/main/noauth/vin) - no authentication required
 
 
 ## Types
@@ -156,7 +156,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/maraudery/qualear/noauth/vin"
+	"github.com/maraudery/goseek/noauth/vin"
 )
 
 func main() {

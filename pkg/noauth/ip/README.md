@@ -1,4 +1,4 @@
-# [github.com/maraudery/qualear/pkg/noauth/ip](https://github.com/maraudery/qualear/tree/main/pkg/noauth/ip) - no authentication required
+# [github.com/maraudery/goseek/pkg/noauth/ip](https://github.com/maraudery/goseek/tree/main/pkg/noauth/ip) - no authentication required
 
 
 ## Types
@@ -57,7 +57,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/maraudery/qualear/pkg/noauth/ip"
+	"github.com/maraudery/goseek/pkg/noauth/ip"
 )
 
 func main() {

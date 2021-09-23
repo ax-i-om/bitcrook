@@ -1,4 +1,4 @@
-# [github.com/maraudery/qualear/pkg/noauth/userlookup](https://github.com/maraudery/qualear/tree/main/pkg/noauth/userlookup) - no authentication required
+# [github.com/maraudery/goseek/pkg/noauth/userlookup](https://github.com/maraudery/goseek/tree/main/pkg/noauth/userlookup) - no authentication required
 
 
 ## Types
@@ -44,7 +44,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/maraudery/qualear/pkg/noauth/userlookup"
+	"github.com/maraudery/goseek/pkg/noauth/userlookup"
 )
 
 func main() {

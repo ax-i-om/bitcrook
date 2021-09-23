@@ -5,8 +5,8 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html"
-	"github.com/maraudery/qualear/api/handlers"
-	"github.com/maraudery/qualear/api/route"
+	"github.com/maraudery/goseek/api/handlers"
+	"github.com/maraudery/goseek/api/route"
 )
 
 // Launch starts the API

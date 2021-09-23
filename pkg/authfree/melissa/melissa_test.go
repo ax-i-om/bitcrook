@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/maraudery/qualear/internal/config"
-	"github.com/maraudery/qualear/internal/http"
+	"github.com/maraudery/goseek/internal/config"
+	"github.com/maraudery/goseek/internal/http"
 )
 
 func TestEmailLookup(t *testing.T) {

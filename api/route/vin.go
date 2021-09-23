@@ -2,7 +2,7 @@ package route
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/maraudery/qualear/api/handlers"
+	"github.com/maraudery/goseek/api/handlers"
 )
 
 // Vin route

@@ -22,7 +22,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/maraudery/qualear/pkg/noauth/ip"
+	"github.com/maraudery/goseek/pkg/noauth/ip"
 	"github.com/spf13/cobra"
 )
 

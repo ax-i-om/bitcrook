@@ -1,4 +1,4 @@
-module github.com/maraudery/qualear
+module github.com/maraudery/goseek
 
 // +heroku goVersion go1.16
 go 1.16
