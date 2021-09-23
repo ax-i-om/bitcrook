@@ -8,7 +8,7 @@
     <a href="https://pkg.go.dev/github.com/maraudery/goseek"><img src="https://pkg.go.dev/badge/github.com/maraudery/goseek.svg" alt="Go Report Card"></a>
     <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
     Centralize and expedite the reconnaissance process.<br>
-    (Also known as Omniscient, Qualear, and RA.)
+    <i>(Also known as Omniscient, Qualear, and RA.)</i>
 </a>
   </p><br>
 </p>
