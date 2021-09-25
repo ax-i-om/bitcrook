@@ -1,6 +1,6 @@
 <p align="center">
   <a><img src="./images/goseek.png" width=180 height="180"></a>
-  <h1 align="center">GoSeek - Open-Source Intelligence Apparatus</h1>
+  <h1 align="center">GoSeek - OSINT Apparatus</h1>
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/maraudery/goseek"><img src="https://goreportcard.com/badge/github.com/maraudery/goseek" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-5&#47;7-orange.svg" alt="s"></a>
