@@ -1,13 +1,13 @@
 <p align="center">
   <a><img src="./images/goseek.png" width=180 height="180"></a>
-  <h1 align="center">GoSeek - Reconnaissance Apparatus</h1>
+  <h1 align="center">GoSeek - Open-Source Intelligence Apparatus</h1>
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/maraudery/goseek"><img src="https://goreportcard.com/badge/github.com/maraudery/goseek" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-5&#47;7-orange.svg" alt="s"></a>
     <a><img src="https://img.shields.io/badge/version-0.7.0-blue.svg" alt="s"></a>
     <a href="https://pkg.go.dev/github.com/maraudery/goseek"><img src="https://pkg.go.dev/badge/github.com/maraudery/goseek.svg" alt="Go Report Card"></a>
     <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
-    Centralize and expedite the reconnaissance process.<br>
+    Centralize and expedite OSINT investigations.<br>
     <i>(Also known as Omniscient, Qualear, and RA.)</i>
 </a>
   </p><br>
@@ -41,7 +41,7 @@
 
 ### About
 
-GoSeek is a reconnaissance apparatus that aims to centralize all of the tools necessary to carry out an open-source intelligence investigation. Although investigations will still require human interaction to connect the dots, the interface can be tailored to an individual’s needs to expedite the process of due diligence. Some packages do require an authentication key and others do not. See the [Package Types](#package-types) tables for more information. GoSeek can be integrated within your application OR it can be used directly from the [terminal/web browser.](#preview)
+GoSeek is an open-source intelligence apparatus that aims to centralize all of the tools necessary to carry out an investigation. Although investigations will still require human interaction to connect the dots, the interface can be tailored to an individual’s needs to expedite the process of due diligence. Some packages do require an authentication key and others do not. See the [Package Types](#package-types) tables for more information. GoSeek can be integrated within your application OR it can be used directly from the [terminal/web browser.](#preview)
 
 ### Disclaimer
 
