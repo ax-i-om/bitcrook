@@ -20,6 +20,10 @@ if (document.getElementsByClassName('demo').length > 0) {
             Timezone: Australia/Brisbane
             Currency: AUD
             ISP: Cloudflare, Inc
+            Org: APNIC and Cloudflare DNS Resolver project
+            As: AS13335 Cloudflare, Inc.
+            Asname: CLOUDFLARENET
+            Reverse: one.one.one.one
             ...`;
   var speed = 60;
 
