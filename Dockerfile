@@ -4,7 +4,7 @@ LABEL author="Maraudery"
 LABEL github="https://github.com/maraudery/goseek"
 
 RUN mkdir /app
-ADD . /app
+COPY . /app
 WORKDIR /app
 RUN go mod download
 RUN go build -o main .
