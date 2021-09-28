@@ -6,7 +6,7 @@ import (
 	"github.com/maraudery/goseek/internal/http"
 )
 
-// IPAddress is ...
+// IPAddress is the response type of the IPLookup() function, containing a plethora of information about the IPV4 address in question.
 type IPAddress struct {
 	Status     string  `json:"status"`
 	Continent  string  `json:"continent"`
