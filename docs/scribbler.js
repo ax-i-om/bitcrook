@@ -25,7 +25,7 @@ if (document.getElementsByClassName('demo').length > 0) {
             Asname: CLOUDFLARENET
             Reverse: one.one.one.one
             ...`;
-  var speed = 60;
+  var speed = 1;
 
   function typeItOut () {
     if (i < txt.length) {
