@@ -1,6 +1,6 @@
 $('#ipsearch').on('click', () => {
     ip = $('#ip').val()
-    $.getJSON('http://localhost:6174/ip/' + ip, (res) => {
+    $.getJSON('https://gosektest.herokuapp.com/ip/' + ip, (res) => {
         $('#ipresult').val("Status: " + res.status + "\n" +
         "Continent: " + res.continent + "\n" +
         "Country: " + res.country + "\n" +
@@ -26,35 +26,15 @@ $('#ipsearch').on('click', () => {
 
 $('#usernamesearch').on('click', () => {
     username = $('#username').val()
-    $.getJSON('http://localhost:6174/username/' + username, (res) => {
+    $.getJSON('https://gosektest.herokuapp.com/username/' + username, (res) => {
         $('#usernameresult').val(JSON.stringify(res, null, 4))
     })
     $('#usernameresult').val('') 
 })
 
-$('#discordsearch').on('click', () => {
-    token = $('#token').val()
-    $.getJSON('http://localhost:6174/discord/' + token, (res) => {
-        $('#discordresult').val("ID: " + res.id + "\n" +
-        "Username: " + res.username + "\n" +
-        "Avatar: " + res.avatar + "\n" +
-        "Discriminator: " + res.discriminator + "\n" +
-        "Public Flags: " + res.public_flags + "\n" +
-        "Flags: " + res.flags + "\n" +
-        "Purchased Flags: " + res.purchased_flags + "\n" +
-        "Locale: " + res.locale + "\n" +
-        "NSFW Allowed: " + res.nsfw_allowed + "\n" +
-        "MFA Enabled: " + res.mfa_enabled + "\n" +
-        "Email: " + res.email + "\n" +
-        "Verified: " + res.verified + "\n" +
-        "Phone: " + res.phone)
-    })
-    $('#discordresult').val('') 
-})
-
 $('#vinsearch').on('click', () => {
     vin = $('#vin').val()
-    $.getJSON('http://localhost:6174/vin/' + vin, (res) => {
+    $.getJSON('https://gosektest.herokuapp.com/vin/' + vin, (res) => {
         $('#vinresult').val("Vin: " + res.Vin + "\n" +
         "Year: " + res.Year + "\n" +
         "Make: " + res.Make + "\n" +

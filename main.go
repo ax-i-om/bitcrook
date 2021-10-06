@@ -1,22 +1,50 @@
-/*
-Copyright © 2021 Maraudery <maraudery@protonmail.com>
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 package main
 
-import "github.com/maraudery/goseek/cmd"
+import (
+	"log"
+	"os"
 
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/template/html"
+	"github.com/maraudery/goseek/handlers"
+	"github.com/maraudery/goseek/route"
+)
+
+// Launch starts the API
 func main() {
-	cmd.Execute()
+	app := fiber.New(fiber.Config{
+		// Pass view engine
+		Views: html.New("./views", ".html"),
+		// Pass global error handler
+		ErrorHandler: handlers.Errors("./public/500.html"),
+	})
+
+	// Render index template with IP input value
+	app.Get("/", handlers.Render())
+
+	// Serve static assets
+	app.Static("/", "./public", fiber.Static{
+		Compress:      true,
+		CacheDuration: -1,
+		MaxAge:        0, // this is redundant as 0 is the default
+	})
+
+	// Main GEO handler that is cached for 10 minutes
+	route.Username(app)
+	route.Ip(app)
+	route.Vin(app)
+
+	// Handle 404 errors
+	app.Use(handlers.NotFound("./public/404.html"))
+
+	// Get the PORT from heroku env
+	port := os.Getenv("PORT")
+
+	// Verify if heroku provided the port or not
+	if os.Getenv("PORT") == "" {
+		port = "3000"
+	}
+
+	// Start server on http://${heroku-url}:${port}
+	log.Fatal(app.Listen(":" + port))
 }
