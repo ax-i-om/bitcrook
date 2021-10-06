@@ -10,6 +10,12 @@
       src="https://kit.fontawesome.com/a5e895e935.js"
       crossorigin="anonymous"
     ></script>
+    <style>
+      .center-h {
+        display: flex; /* or display:grid */
+        justify-content: center;
+      }
+    </style>
 </head>
 
 <body>
@@ -29,13 +35,17 @@
     <div class="navbar">
       <a href="https://goseek.studio"><i class="fas fa-tools"></i> Tools</a>
       <a href="https://github.com/maraudery/goseek"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://maraudery.github.io/goseek"><i class="fab fa-book"></i> Documentation</a>
     </div>
     <h1 style="text-align: center; padding-left: 0px">VIN Lookup</h1>
-    <input style="width: 99%; margin: 5px; height: 5%; text-align: center; font-size: 150%" spellcheck="false" autocomplete="off" id="vin" placeholder="Query VIN">
-    <button style="font-family: Helvetica; width: 99%; margin: 5px; height: 10%; font-size: 200%" id="vinsearch">Search</button>
-    <br>
-    <textarea style="width: 99%; height: 60%; margin: 5px;" id="vinresult" data-role="none" rows="15" cols="50" readonly></textarea>
+    <div class="center-h">
+      <input style="padding: 5px; width: 50%; margin: 5px; height: 5%; text-align: center; font-size: 150%; border-radius: 25px; border-width: 0px;" spellcheck="false" autocomplete="off" id="vin" placeholder="Query VIN">
+    </div>
+    <div class="center-h">
+      <button style="font-family: Helvetica; width: 50%; margin: 5px; height: 10%; font-size: 150%; border-radius: 25px; border-width: 0px; color: black; cursor: pointer;" id="vinsearch">Search</button>
+    </div>
+    <div class="center-h">
+      <textarea style="width: 99%; height: 60%; margin: 5px;" id="vinresult" data-role="none" rows="15" cols="50" readonly></textarea>
+    </div>
     <br>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/js/app.js"></script> 
