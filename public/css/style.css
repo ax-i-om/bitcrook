@@ -9,6 +9,18 @@ html {
   table {
     padding-left: 5px
   }
+
+  .functional {
+    color: #0be881;
+  }
+
+  .indev {
+    color: #ffdd59;
+  }
+
+  .notfunctional {
+    color: #ff3f34;
+  }
   
   h1 {
     padding-left: 5px
