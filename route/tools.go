@@ -10,5 +10,4 @@ func Tools(app *fiber.App) {
 	var h handlers.ToolsHandler
 	r := app.Group("/tools")
 	r.Get("/", h.Index)
-	r.Get("/:tools", h.Show)
 }
