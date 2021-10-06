@@ -7,7 +7,7 @@ import (
 
 // Tools route
 func Tools(app *fiber.App) {
-	var h handlers.IpHandler
+	var h handlers.ToolsHandler
 	r := app.Group("/tools")
 	r.Get("/", h.Index)
 	r.Get("/:tools", h.Show)
