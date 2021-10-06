@@ -8,7 +8,7 @@
     <a href="https://pkg.go.dev/github.com/maraudery/goseek"><img src="https://pkg.go.dev/badge/github.com/maraudery/goseek.svg" alt="Go Report Card"></a>
     <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
     Centralize and expedite OSINT investigations.<br>
-    <a href="https://maraudery.github.io/goseek"><strong>Explore the docs »</strong></a>
+    <a href="https://maraudery.github.io/goseek"><strong>Explore the docs</strong></a> | <a href="https://goseek.studio"><strong>Visit the Web App</strong></a>
 </a>
   </p><br>
 </p>
@@ -24,8 +24,6 @@
 - [Usage](#usage)
   - [Installation](#installation)
   - [CLI](#CLI)
-  - [Generate Reports](#generate-reports)
-  - [GUI](#gui)
   - [Implementation](#implementation)
   - [Testing](#testing)
 - [Package Types](#package-types) *a-z*
@@ -34,8 +32,6 @@
   - [Multi-Use](#multi-use)
   - [Username](#username)
   - [Vehicle](#vehicle)
-
-
 
 ## Information
 
@@ -50,7 +46,6 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 ### Preview
 
 <a><img src="./images/cliprev.jpg" width=660 height="360"></a>
-<a><img src="./images/guiprev.jpg" width=660 height="360"></a>
 
 ### TODO
 
@@ -75,24 +70,12 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 
  - Fetch the repository via 'git clone': `git clone https://github.com/maraudery/goseek.git`
 
-### CLI
+### CLI 
 
+***Currently unavailable until further notice. Please use the web app for now. Thank you.***
 1. Navigate into the root directory of GoSeek.
 2. In your preferred terminal, enter and run: `go run main.go`
 3. After running the aforementioned command, all dependencies will be installed and usage help will be printed to the console.
-
-### Generate Reports
-
-*in prototype phase*
-
-A report generation dialogue with PDF output can be launched via ```go run main.go generateReport```
-
-### GUI
-
-1. Navigate into the `api` directory of GoSeek.
-2. In your preferred terminal, enter and run: `go run server.go`
-3. When prompted, allow the application to communicate on your network.
-4. Navigate to `http://localhost:6174/`
 
 ### Implementation
 
