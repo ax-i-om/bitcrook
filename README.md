@@ -101,32 +101,32 @@ GoSeek is currently passing all tests; however, I have provided instructions for
 
 ### Court Cases
 
-| Package                                                                                    | Description                                  |   Auth   | Location |
-| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- |
-| [Case Law](https://github.com/maraudery/goseek/tree/main/pkg/noauth/caselaw)           | Court Case Search                            |  `none`  | US |
+| Package                                                                                    | Description                                  |   Auth   | Location | Status |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
+| [Case Law](https://github.com/maraudery/goseek/tree/main/pkg/noauth/caselaw)           | Court Case Search                            |  `none`  | US | Functioning | 
 
 ### IP Address
 
-| Package                                                                                    | Description                                  |   Auth   | Location |
-| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- |
-| [IPV4 Address Lookup](https://github.com/maraudery/goseek/tree/main/pkg/noauth/ip)     | IPV4 Address Lookup                          |  `none`  | Global |
+| Package                                                                                    | Description                                  |   Auth   | Location | Status |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
+| [IPV4 Address Lookup](https://github.com/maraudery/goseek/tree/main/pkg/noauth/ip)     | IPV4 Address Lookup                          |  `none`  | Global | Functioning |
 
 ### Multi-Use
 
-| Package                                                                                    | Description                                  |   Auth   | Location |
-| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- |
-| [Have I Been Pwned](https://github.com/maraudery/goseek/tree/main/pkg/authpaid/hibp)   | Email and Password Vulnerability - (Breaches)|  `paid`  | Global |
-| [Melissa](https://github.com/maraudery/goseek/tree/main/pkg/authfree/melissa)          | Lookups - Email, Phone Number, IP Address    |  `free`  | US |
+| Package                                                                                    | Description                                  |   Auth   | Location | Status |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
+| [Have I Been Pwned](https://github.com/maraudery/goseek/tree/main/pkg/authpaid/hibp)   | Email and Password Vulnerability - (Breaches)|  `paid`  | Global | Functioning |
+| [Melissa](https://github.com/maraudery/goseek/tree/main/pkg/authfree/melissa)          | Lookups - Email, Phone Number, IP Address    |  `free`  | US | Functioning |
 
 
 ### Username
 
-| Package                                                                                    | Description                                  |   Auth   | Location |
-| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- |
-| [Username Lookup](https://github.com/maraudery/goseek/tree/main/pkg/noauth/userlookup) | Username Lookup - (Comparable to Sherlock)   |  `none`  | Global |
+| Package                                                                                    | Description                                  |   Auth   | Location | Status |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
+| [Username Lookup](https://github.com/maraudery/goseek/tree/main/pkg/noauth/userlookup) | Username Lookup - (Comparable to Sherlock)   |  `none`  | Global | Functioning |
 
 ### Vehicle
 
-| Package                                                                                    | Description                                  |   Auth   | Location |
-| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- |
-| [VIN Lookup](https://github.com/maraudery/goseek/tree/main/pkg/noauth/vin)             | Vehicle Identification Number Lookup         |  `none`  | - | 
+| Package                                                                                    | Description                                  |   Auth   | Location | Status |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
+| [VIN Lookup](https://github.com/maraudery/goseek/tree/main/pkg/noauth/vin)             | Vehicle Identification Number Lookup         |  `none`  | - | Not Functioning | 
