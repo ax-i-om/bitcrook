@@ -24,11 +24,11 @@ func UserLookup(userres string) []Website {
 	var wg sync.WaitGroup
 	var arrNo []Website = noRedirSites(userres)
 	for _, v := range arrNo {
-		go checkUser(v, userres, false, &wg)
+		go checkUser(v, false, &wg)
 	}
 	var arrYes []Website = redirSites(userres)
 	for _, v := range arrYes {
-		go checkUser(v, userres, true, &wg)
+		go checkUser(v, true, &wg)
 	}
 
 	wg.Wait()
@@ -230,7 +230,7 @@ func getSCredir(title, url string, redirect bool) Website {
 
 }
 
-func checkUser(site Website, userres string, redirect bool, wg *sync.WaitGroup) {
+func checkUser(site Website, redirect bool, wg *sync.WaitGroup) {
 	wg.Add(1)
 	defer wg.Done()
 	x := getSCredir(site.Title, site.Domain, redirect)
