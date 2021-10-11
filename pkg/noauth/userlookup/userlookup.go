@@ -191,7 +191,7 @@ func redirSites(userres string) []Website {
 	return arr
 }
 
-func getSCredir(title, url, userres string, redirect bool) Website {
+func getSCredir(title, url string, redirect bool) Website {
 
 	method := "GET"
 	var client *http.Client
@@ -233,6 +233,6 @@ func getSCredir(title, url, userres string, redirect bool) Website {
 func checkUser(site Website, userres string, redirect bool, wg *sync.WaitGroup) {
 	wg.Add(1)
 	defer wg.Done()
-	x := getSCredir(site.Title, site.Domain, userres, redirect)
+	x := getSCredir(site.Title, site.Domain, redirect)
 	results = append(results, x)
 }
