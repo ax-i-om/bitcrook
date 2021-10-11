@@ -20,7 +20,7 @@ func GetReq(url string) (string, error) {
 }
 
 // AuthGet performs a simple get request with a URL, Auth Key, and an Auth Value as its parameters and returns the response body and an error.
-func AuthGet(url string, authkey string, authval string) ([]byte, error) {
+func AuthGet(url, authkey, authval string) ([]byte, error) {
 	method := "GET"
 
 	client := &http.Client{}

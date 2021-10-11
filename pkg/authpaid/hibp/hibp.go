@@ -60,7 +60,7 @@ type AllPastes []struct {
 }
 
 // GetBreaches takes a Have I Been Pwned API key and an email as its parameters and returns a list of related breaches (if any).
-func GetBreaches(key string, email string) (*BreachList, error) {
+func GetBreaches(key, email string) (*BreachList, error) {
 	body, err := http.AuthGet("https://haveibeenpwned.com/api/v3/breachedaccount/"+email, "hibp-api-key", key)
 	if err != nil {
 		return nil, err
@@ -104,7 +104,7 @@ func GetBreachedSite(siteName string) (*BreachedSite, error) {
 
 // GetAllPastes takes an email and an API key as its parameters and returns a type *AllPastes as well as an error.
 // The return value contains all of the pastes that are associated with the email in question.
-func GetAllPastes(key string, email string) (*AllPastes, error) {
+func GetAllPastes(key, email string) (*AllPastes, error) {
 	body, err := http.AuthGet("https://haveibeenpwned.com/api/v3/pasteaccount/"+email, "hibp-api-key", key)
 	if err != nil {
 		return nil, err

@@ -192,7 +192,7 @@ type IPAddress struct {
 */
 
 // EmailLookup takes a Melissa API key and an email as its parameters which are passed through the Melissa Global Email API whose response is then represented by a *Email type.
-func EmailLookup(key string, email string) (*Email, error) {
+func EmailLookup(key, email string) (*Email, error) {
 	resp, err := http.GetReq("https://globalemail.melissadata.net/v4/WEB/GlobalEmail/doGlobalEmail?id=" + key + "&email=" + email + "&format=json")
 	if err != nil {
 		return nil, err
@@ -237,7 +237,7 @@ func EmailLookup(key string, email string) (*Email, error) {
 }
 
 // PhoneLookup takes a Melissa API key and a phone number as its parameters which are passed through the Melissa Global Phone API whose response is then represented by a *Phone type.
-func PhoneLookup(key string, phone string) (*Phone, error) {
+func PhoneLookup(key, phone string) (*Phone, error) {
 	resp, err := http.GetReq("https://globalphone.melissadata.net/v4/WEB/GlobalPhone/doGlobalPhone?id=" + key + "&phone=" + phone)
 	if err != nil {
 		return nil, err
@@ -279,7 +279,7 @@ func PhoneLookup(key string, phone string) (*Phone, error) {
 }
 
 // IPLookup takes a Melissa API key and an IPV4 address as its parameters which are passed through the Melissa Global IP API whose response is then represented by a *IPAddress type.
-func IPLookup(key string, ip string) (*IPAddress, error) {
+func IPLookup(key, ip string) (*IPAddress, error) {
 	resp, err := http.GetReq("https://globalip.melissadata.net/v4/web/iplocation/doiplocatio?id=" + key + "&ip=" + ip)
 	if err != nil {
 		return nil, err

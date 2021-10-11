@@ -191,7 +191,7 @@ func redirSites(userres string) []Website {
 	return arr
 }
 
-func getSCredir(title string, url string, userres string, redirect bool) Website {
+func getSCredir(title, url, userres string, redirect bool) Website {
 
 	method := "GET"
 	var client *http.Client
