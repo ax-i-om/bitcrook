@@ -9,6 +9,6 @@ type ToolsHandler struct {
 }
 
 // Index ...
-func (h ToolsHandler) Index(ctx *fiber.Ctx) error {
+func (ToolsHandler) Index(ctx *fiber.Ctx) error {
 	return ctx.Status(fiber.StatusNotFound).SendFile("./views/pages/tools.html")
 }

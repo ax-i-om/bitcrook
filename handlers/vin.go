@@ -10,12 +10,12 @@ type VinHandler struct {
 }
 
 // Index ...
-func (h VinHandler) Index(ctx *fiber.Ctx) error {
+func (VinHandler) Index(ctx *fiber.Ctx) error {
 	return ctx.Status(fiber.StatusNotFound).SendFile("./views/pages/vin.html")
 }
 
 // Show VIN information
-func (h VinHandler) Show(ctx *fiber.Ctx) error {
+func (VinHandler) Show(ctx *fiber.Ctx) error {
 	vin := ctx.Params("vin")
 
 	vininfo, err := hits.VinLookup(vin)

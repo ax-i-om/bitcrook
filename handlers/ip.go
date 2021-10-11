@@ -10,12 +10,12 @@ type IpHandler struct {
 }
 
 // Index ...
-func (h IpHandler) Index(ctx *fiber.Ctx) error {
+func (IpHandler) Index(ctx *fiber.Ctx) error {
 	return ctx.Status(fiber.StatusNotFound).SendFile("./views/pages/ip.html")
 }
 
 // Show user information
-func (h IpHandler) Show(ctx *fiber.Ctx) error {
+func (IpHandler) Show(ctx *fiber.Ctx) error {
 	ip := ctx.Params("ip")
 
 	ipinfo, err := hits.IPLookup(ip)

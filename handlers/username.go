@@ -10,12 +10,12 @@ type UsernameHandler struct {
 }
 
 // Index ...
-func (h UsernameHandler) Index(ctx *fiber.Ctx) error {
+func (UsernameHandler) Index(ctx *fiber.Ctx) error {
 	return ctx.Status(fiber.StatusNotFound).SendFile("./views/pages/username.html")
 }
 
 // Show user information
-func (h UsernameHandler) Show(ctx *fiber.Ctx) error {
+func (UsernameHandler) Show(ctx *fiber.Ctx) error {
 	username := ctx.Params("username")
 
 	userinfo := userlookup.UserLookup(username)
