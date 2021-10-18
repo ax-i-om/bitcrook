@@ -71,7 +71,6 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 
 ### CLI 
 
-***Currently unavailable until further notice. Please use the web app for now. Thank you.***
 1. From the root directory of GoSeek, navigate into the `cmd` directory via `cd`.
 2. In your preferred terminal, enter and run: `go run commander.go`
 3. After running the aforementioned command, all dependencies will be installed and usage help will be printed to the console.
