@@ -62,7 +62,7 @@ func scanIt(s *bufio.Scanner) string {
 func input(question string, scanner *bufio.Scanner, pdf *gofpdf.Fpdf) {
 	fmt.Print(question)
 	res := scanIt(scanner)
-	if len(res) != 0 {
+	if res != "" {
 		pdf.Write(5, question+res+"\n")
 	}
 }
