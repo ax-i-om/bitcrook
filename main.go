@@ -10,8 +10,9 @@ import (
 	"github.com/maraudery/goseek/route"
 )
 
-// Launch starts the API
+// Starting the Fiber web app
 func main() {
+	// Create new app
 	app := fiber.New(fiber.Config{
 		// Pass view engine
 		Views: html.New("./views", ".html"),
@@ -29,11 +30,12 @@ func main() {
 		MaxAge:        0, // this is redundant as 0 is the default
 	})
 
-	// Main GEO handler that is cached for 10 minutes
+	// Page routing
 	route.Username(app)
 	route.Ip(app)
 	route.Vin(app)
 	route.Tools(app)
+	route.Usage(app)
 
 	// Handle 404 errors
 	app.Use(handlers.NotFound("./public/404.html"))
@@ -41,7 +43,7 @@ func main() {
 	// Get the PORT from heroku env
 	port := os.Getenv("PORT")
 
-	// Verify if heroku provided the port or not
+	// Verify if heroku provided the port or not, set to 3000 if not
 	if os.Getenv("PORT") == "" {
 		port = "3000"
 	}
