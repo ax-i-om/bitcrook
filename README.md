@@ -56,7 +56,6 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 - Rewrite username lookup to parse more than status codes 200/404 (body response, messages, etc)
 - Add license plate lookup
 - Add Whois lookup
-- Update the GUI ()
 
 ### Attributions
 
@@ -73,8 +72,8 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 ### CLI 
 
 ***Currently unavailable until further notice. Please use the web app for now. Thank you.***
-1. Navigate into the root directory of GoSeek.
-2. In your preferred terminal, enter and run: `go run main.go`
+1. From the root directory of GoSeek, navigate into the `cmd` directory via `cd`.
+2. In your preferred terminal, enter and run: `go run commander.go`
 3. After running the aforementioned command, all dependencies will be installed and usage help will be printed to the console.
 
 ### Implementation
