@@ -1,6 +1,6 @@
 $('#ipsearch').on('click', () => {
     ip = $('#ip').val()
-    $.getJSON('https://goseek.studio/ip/' + ip, (res) => {
+    $.getJSON('http://localhost:6174/ip/' + ip, (res) => {
         $('#ipresult').val("Status: " + res.status + "\n" +
         "Continent: " + res.continent + "\n" +
         "Country: " + res.country + "\n" +
@@ -26,7 +26,7 @@ $('#ipsearch').on('click', () => {
 
 $('#usernamesearch').on('click', () => {
     username = $('#username').val()
-    $.getJSON('https://goseek.studio/username/' + username, (res) => {
+    $.getJSON('http://localhost:6174/username/' + username, (res) => {
         $('#usernameresult').val(JSON.stringify(res, null, 4))
     })
     $('#usernameresult').val('') 
@@ -34,7 +34,7 @@ $('#usernamesearch').on('click', () => {
 
 $('#vinsearch').on('click', () => {
     vin = $('#vin').val()
-    $.getJSON('https://goseek.studio/vin/' + vin, (res) => {
+    $.getJSON('http://localhost:6174/vin/' + vin, (res) => {
         $('#vinresult').val("Vin: " + res.Vin + "\n" +
         "Year: " + res.Year + "\n" +
         "Make: " + res.Make + "\n" +

@@ -2,7 +2,7 @@ package route
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/maraudery/goseek/handlers"
+	"github.com/maraudery/goseek/api/handlers"
 )
 
 // Ip route
