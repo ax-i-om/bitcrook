@@ -35,31 +35,30 @@ var noauthIpCmd = &cobra.Command{
 			x, err := ip.IPLookup(args[0])
 			if err != nil {
 				log.Panic(err)
+			}
+			if x.Status == "fail" {
+				fmt.Println("Request failed.")
 			} else {
-				if x.Status == "fail" {
-					fmt.Println("Request failed.")
-				} else {
-					fmt.Println("Status: " + x.Status)
-					fmt.Println("Continent: " + x.Continent)
-					fmt.Println("Country: " + x.Country)
-					fmt.Println("Region Name: " + x.RegionName)
-					fmt.Println("City: " + x.City)
-					fmt.Println("District: " + x.District)
-					fmt.Println("Zip: " + x.Zip)
-					fmt.Println("Latitude: " + strconv.FormatFloat(x.Lat, 'f', 5, 64))
-					fmt.Println("Longitude: " + strconv.FormatFloat(x.Lon, 'f', 5, 64))
-					fmt.Println("Timezone: " + x.Timezone)
-					fmt.Println("Currency: " + x.Currency)
-					fmt.Println("ISP: " + x.Isp)
-					fmt.Println("Org: " + x.Org)
-					fmt.Println("As: " + x.As)
-					fmt.Println("Asname: " + x.Asname)
-					fmt.Println("Reverse: " + x.Reverse)
-					fmt.Println("Mobile: " + strconv.FormatBool(x.Mobile))
-					fmt.Println("Proxy: " + strconv.FormatBool(x.Proxy))
-					fmt.Println("Hosting: " + strconv.FormatBool(x.Hosting))
-					fmt.Println("Query: " + x.Query)
-				}
+				fmt.Println("Status: " + x.Status)
+				fmt.Println("Continent: " + x.Continent)
+				fmt.Println("Country: " + x.Country)
+				fmt.Println("Region Name: " + x.RegionName)
+				fmt.Println("City: " + x.City)
+				fmt.Println("District: " + x.District)
+				fmt.Println("Zip: " + x.Zip)
+				fmt.Println("Latitude: " + strconv.FormatFloat(x.Lat, 'f', 5, 64))
+				fmt.Println("Longitude: " + strconv.FormatFloat(x.Lon, 'f', 5, 64))
+				fmt.Println("Timezone: " + x.Timezone)
+				fmt.Println("Currency: " + x.Currency)
+				fmt.Println("ISP: " + x.Isp)
+				fmt.Println("Org: " + x.Org)
+				fmt.Println("As: " + x.As)
+				fmt.Println("Asname: " + x.Asname)
+				fmt.Println("Reverse: " + x.Reverse)
+				fmt.Println("Mobile: " + strconv.FormatBool(x.Mobile))
+				fmt.Println("Proxy: " + strconv.FormatBool(x.Proxy))
+				fmt.Println("Hosting: " + strconv.FormatBool(x.Hosting))
+				fmt.Println("Query: " + x.Query)
 			}
 		}
 	},
