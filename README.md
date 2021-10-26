@@ -88,7 +88,7 @@ Instructions/Documentation are provided for each and every package, all you have
 
 ### Testing
 
-GoSeek is currently passing all tests; however, I have provided instructions for properly running the tests if you would like to do so.
+GoSeek is currently passing all tests; however, I have provided instructions for properly running the tests if you would like to do so. Some tests may not function properly without their corresponding API keys.
 
 1. In the root directory of GoSeek, create a file named `keyconfig.json`
 2. In `keyconfig.json`, paste the following text:
