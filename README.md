@@ -1,3 +1,4 @@
+**IMPORTANT: Early development stages - in need of people willing to contribute/maintain.** 
 <p align="center">
   <a><img src="./images/goseek.png" width=180 height="180"></a>
   <h1 align="center">GoSeek - OSINT Apparatus</h1>
