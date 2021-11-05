@@ -1,8 +1,8 @@
 package route
 
 import (
+	"github.com/bitcrook/goseek/api/handlers"
 	"github.com/gofiber/fiber/v2"
-	"github.com/maraudery/goseek/api/handlers"
 )
 
 // Ip route

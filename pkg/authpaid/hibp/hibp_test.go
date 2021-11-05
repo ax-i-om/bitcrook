@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/maraudery/goseek/internal/config"
-	"github.com/maraudery/goseek/internal/http"
+	"github.com/bitcrook/goseek/internal/config"
+	"github.com/bitcrook/goseek/internal/http"
 )
 
 func TestGetBreaches(t *testing.T) {

@@ -1,8 +1,8 @@
 package handlers
 
 import (
+	hits "github.com/bitcrook/goseek/pkg/noauth/vin"
 	"github.com/gofiber/fiber/v2"
-	hits "github.com/maraudery/goseek/pkg/noauth/vin"
 )
 
 // VinHandler is ...

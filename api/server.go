@@ -3,10 +3,10 @@ package main
 import (
 	"log"
 
+	"github.com/bitcrook/goseek/api/handlers"
+	"github.com/bitcrook/goseek/api/route"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html"
-	"github.com/maraudery/goseek/api/handlers"
-	"github.com/maraudery/goseek/api/route"
 )
 
 // Starting the Fiber web app

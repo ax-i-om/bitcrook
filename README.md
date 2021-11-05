@@ -3,10 +3,10 @@
   <a><img src="./images/goseek.png" width=180 height="180"></a>
   <h1 align="center">GoSeek - OSINT Apparatus</h1>
   <p align="center">
-    <a href="https://goreportcard.com/report/github.com/maraudery/goseek"><img src="https://goreportcard.com/badge/github.com/maraudery/goseek" alt="Go Report Card"></a>
+    <a href="https://goreportcard.com/report/github.com/bitcrook/goseek"><img src="https://goreportcard.com/badge/github.com/bitcrook/goseek" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-5&#47;7-orange.svg" alt="s"></a>
     <a><img src="https://img.shields.io/badge/version-0.9.1-blue.svg" alt="s"></a>
-    <a href="https://pkg.go.dev/github.com/maraudery/goseek"><img src="https://pkg.go.dev/badge/github.com/maraudery/goseek.svg" alt="Go Report Card"></a>
+    <a href="https://pkg.go.dev/github.com/bitcrook/goseek"><img src="https://pkg.go.dev/badge/github.com/bitcrook/goseek.svg" alt="Go Report Card"></a>
     <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
     Centralize and expedite OSINT investigations.<br>
 </a>
@@ -68,7 +68,7 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 
 ### Installation
 
- - Fetch the repository via 'git clone': `git clone https://github.com/maraudery/goseek.git`
+ - Fetch the repository via 'git clone': `git clone https://github.com/bitcrook/goseek.git`
 
 ### CLI 
 
@@ -109,30 +109,30 @@ GoSeek is currently passing all tests; however, I have provided instructions for
 
 | Package                                                                                    | Description                                  |   Auth   | Location | Status |
 | :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| [Case Law](https://github.com/maraudery/goseek/tree/main/pkg/noauth/caselaw)           | Court Case Search                            |  `none`  | US | Functioning | 
+| [Case Law](https://github.com/bitcrook/goseek/tree/main/pkg/noauth/caselaw)           | Court Case Search                            |  `none`  | US | Functioning | 
 
 ### IP Address
 
 | Package                                                                                    | Description                                  |   Auth   | Location | Status |
 | :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| [IPV4 Address Lookup](https://github.com/maraudery/goseek/tree/main/pkg/noauth/ip)     | IPV4 Address Lookup                          |  `none`  | Global | Functioning |
+| [IPV4 Address Lookup](https://github.com/bitcrook/goseek/tree/main/pkg/noauth/ip)     | IPV4 Address Lookup                          |  `none`  | Global | Functioning |
 
 ### Multi-Use
 
 | Package                                                                                    | Description                                  |   Auth   | Location | Status |
 | :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| [Have I Been Pwned](https://github.com/maraudery/goseek/tree/main/pkg/authpaid/hibp)   | Email and Password Vulnerability - (Breaches)|  `paid`  | Global | Functioning |
-| [Melissa](https://github.com/maraudery/goseek/tree/main/pkg/authfree/melissa)          | Lookups - Email, Phone Number, IP Address    |  `free`  | US | Functioning |
+| [Have I Been Pwned](https://github.com/bitcrook/goseek/tree/main/pkg/authpaid/hibp)   | Email and Password Vulnerability - (Breaches)|  `paid`  | Global | Functioning |
+| [Melissa](https://github.com/bitcrook/goseek/tree/main/pkg/authfree/melissa)          | Lookups - Email, Phone Number, IP Address    |  `free`  | US | Functioning |
 
 
 ### Username
 
 | Package                                                                                    | Description                                  |   Auth   | Location | Status |
 | :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| [Username Lookup](https://github.com/maraudery/goseek/tree/main/pkg/noauth/userlookup) | Username Lookup - (Comparable to Sherlock)   |  `none`  | Global | Functioning |
+| [Username Lookup](https://github.com/bitcrook/goseek/tree/main/pkg/noauth/userlookup) | Username Lookup - (Comparable to Sherlock)   |  `none`  | Global | Functioning |
 
 ### Vehicle
 
 | Package                                                                                    | Description                                  |   Auth   | Location | Status |
 | :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| [VIN Lookup](https://github.com/maraudery/goseek/tree/main/pkg/noauth/vin)             | Vehicle Identification Number Lookup         |  `none`  | - | Not Functioning | 
+| [VIN Lookup](https://github.com/bitcrook/goseek/tree/main/pkg/noauth/vin)             | Vehicle Identification Number Lookup         |  `none`  | - | Not Functioning | 

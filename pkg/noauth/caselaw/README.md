@@ -1,4 +1,4 @@
-# [github.com/maraudery/goseek/pkg/noauth/caselaw](https://github.com/maraudery/goseek/tree/main/pkg/noauth/caselaw) - no authentication required
+# [github.com/bitcrook/goseek/pkg/noauth/caselaw](https://github.com/bitcrook/goseek/tree/main/pkg/noauth/caselaw) - no authentication required
 
 
 ## Types
@@ -120,7 +120,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/maraudery/goseek/pkg/noauth/caselaw"
+	"github.com/bitcrook/goseek/pkg/noauth/caselaw"
 )
 
 func main() {

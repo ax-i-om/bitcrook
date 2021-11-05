@@ -1,4 +1,4 @@
-# [github.com/maraudery/goseek/noauth/vin](https://github.com/maraudery/goseek/tree/main/noauth/vin) - no authentication required
+# [github.com/bitcrook/goseek/noauth/vin](https://github.com/bitcrook/goseek/tree/main/noauth/vin) - no authentication required
 
 
 ## Types
@@ -156,7 +156,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/maraudery/goseek/noauth/vin"
+	"github.com/bitcrook/goseek/noauth/vin"
 )
 
 func main() {

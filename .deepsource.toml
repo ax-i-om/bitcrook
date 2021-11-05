@@ -5,7 +5,7 @@ name = "go"
 enabled = true
 
   [analyzers.meta]
-  import_root = "github.com/maraudery/goseek"
+  import_root = "github.com/bitcrook/goseek"
   dependencies_vendored = false
 
 [[analyzers]]

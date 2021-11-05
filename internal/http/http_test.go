@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/maraudery/goseek/internal/config"
+	"github.com/bitcrook/goseek/internal/config"
 )
 
 func TestGetReq(t *testing.T) {

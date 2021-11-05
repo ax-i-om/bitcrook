@@ -1,8 +1,8 @@
 package handlers
 
 import (
+	"github.com/bitcrook/goseek/pkg/noauth/userlookup"
 	"github.com/gofiber/fiber/v2"
-	"github.com/maraudery/goseek/pkg/noauth/userlookup"
 )
 
 // UsernameHandler is ...

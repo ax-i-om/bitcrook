@@ -3,7 +3,7 @@ package melissa
 import (
 	"encoding/json"
 
-	"github.com/maraudery/goseek/internal/http"
+	"github.com/bitcrook/goseek/internal/http"
 )
 
 /*
