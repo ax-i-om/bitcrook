@@ -9,6 +9,7 @@
     <a href="https://pkg.go.dev/github.com/bitcrook/goseek"><img src="https://pkg.go.dev/badge/github.com/bitcrook/goseek.svg" alt="Go Report Card"></a>
     <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
     Centralize and expedite OSINT investigations.<br>
+  <a href="https://discord.gg/uVWJUTufqf">Join the Discord</a><br>
 </a>
   </p><br>
 </p>
@@ -23,8 +24,8 @@
   - [Attributions](#attributions)
 - [Usage](#usage)
   - [Installation](#installation)
-  - [CLI](#CLI)
-  - [GUI](#GUI)
+  - [CLI](#cli)
+  - [GUI](#gui)
   - [Implementation](#implementation)
   - [Testing](#testing)
 - [Package Types](#package-types) *a-z*
