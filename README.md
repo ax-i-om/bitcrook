@@ -61,7 +61,7 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 
 ### Attributions
 
-[Logo](./images/goseek.png) created with and licensed by [LogoMakr CC License.](https://my.logomakr.com/cc-license/)
+[Logo](./images/GoSeekLogo.png) created by [TheOneTrueDude](https://github.com/FirstTrueDude).
 
 [Social Preview](./images/card.jpg) created with [Canva.](https://www.canva.com/)
 
