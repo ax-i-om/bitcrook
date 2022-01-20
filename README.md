@@ -1,7 +1,7 @@
 <p align="center">
   <a><img src="./images/GoSeekLogo.png" width=180 height="180"></a>
   <h1 align="center">GoSeek - OSINT Apparatus</h1>
-  <h2 align="center">IMPORTANT: Early development stages - in need of people willing to contribute/maintain.</h2>
+  <h2 align="center">IMPORTANT: Early development stages - in need of people willing to contribute/maintain as I am extremely occupied at this current time.</h2>
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/bitcrook/goseek"><img src="https://goreportcard.com/badge/github.com/bitcrook/goseek" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-5&#47;7-orange.svg" alt="s"></a>
