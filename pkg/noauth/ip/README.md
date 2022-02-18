@@ -1,4 +1,4 @@
-# [github.com/bitcrook/goseek/pkg/noauth/ip](https://github.com/bitcrook/goseek/tree/main/pkg/noauth/ip) - no authentication required
+# [github.com/bitcrook/cybull/pkg/noauth/ip](https://github.com/bitcrook/cybull/tree/main/pkg/noauth/ip) - no authentication required
 
 
 ## Types
@@ -57,7 +57,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/bitcrook/goseek/pkg/noauth/ip"
+	"github.com/bitcrook/cybull/pkg/noauth/ip"
 )
 
 func main() {

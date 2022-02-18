@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/bitcrook/goseek/api/handlers"
-	"github.com/bitcrook/goseek/api/route"
+	"github.com/bitcrook/cybull/api/handlers"
+	"github.com/bitcrook/cybull/api/route"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html"
 )

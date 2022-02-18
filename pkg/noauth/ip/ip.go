@@ -3,7 +3,7 @@ package ip
 import (
 	"encoding/json"
 
-	"github.com/bitcrook/goseek/internal/http"
+	"github.com/bitcrook/cybull/internal/http"
 )
 
 // IPAddress is the response type of the IPLookup() function, containing a plethora of information about the IPV4 address in question.

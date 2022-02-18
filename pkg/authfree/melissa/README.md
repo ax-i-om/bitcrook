@@ -1,4 +1,4 @@
-# [github.com/bitcrook/goseek/pkg/authfree/melissa](https://github.com/bitcrook/goseek/tree/main/pkg/authfree/melissa) - free authentication required
+# [github.com/bitcrook/cybull/pkg/authfree/melissa](https://github.com/bitcrook/cybull/tree/main/pkg/authfree/melissa) - free authentication required
 
 
 ## Types
@@ -236,7 +236,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/bitcrook/goseek/pkg/authfree/melissa"
+	"github.com/bitcrook/cybull/pkg/authfree/melissa"
 )
 
 func main() {

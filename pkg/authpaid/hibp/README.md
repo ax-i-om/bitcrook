@@ -1,4 +1,4 @@
-# [github.com/bitcrook/goseek/pkg/authpaid/hibp](https://github.com/bitcrook/goseek/tree/main/pkg/authpaid/hibp) - paid authentication required
+# [github.com/bitcrook/cybull/pkg/authpaid/hibp](https://github.com/bitcrook/cybull/tree/main/pkg/authpaid/hibp) - paid authentication required
 
 
 ## Types
@@ -142,7 +142,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/bitcrook/goseek/pkg/authpaid/hibp"
+	"github.com/bitcrook/cybull/pkg/authpaid/hibp"
 )
 
 func main() {

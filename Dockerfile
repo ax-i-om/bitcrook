@@ -1,7 +1,7 @@
 FROM golang:1.16.4-alpine3.12
 
 LABEL author="bitcrook"
-LABEL github="https://github.com/bitcrook/goseek"
+LABEL github="https://github.com/bitcrook/cybull"
 
 RUN mkdir /app
 COPY . /app

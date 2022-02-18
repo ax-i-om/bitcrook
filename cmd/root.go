@@ -28,10 +28,10 @@ var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "goseek",
+	Use:   "cybull",
 	Short: "Information Gathering Apparatus",
 	Long: `
-	GoSeek, an information gathering apparatus, 
+	Cybull, an information gathering apparatus, 
 	is a conglomerate of tools including custom algorithms, API wrappers, etc... 
 	in order to make the reconnaissance process significantly quicker.`,
 	// Uncomment the following line if your bare application
@@ -52,7 +52,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.goseek.yaml)")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cybull.yaml)")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
@@ -69,9 +69,9 @@ func initConfig() {
 		home, err := homedir.Dir()
 		cobra.CheckErr(err)
 
-		// Search config in home directory with name ".goseek" (without extension).
+		// Search config in home directory with name ".cybull" (without extension).
 		viper.AddConfigPath(home)
-		viper.SetConfigName(".goseek")
+		viper.SetConfigName(".cybull")
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match

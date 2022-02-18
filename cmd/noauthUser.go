@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/bitcrook/goseek/pkg/noauth/userlookup"
+	"github.com/bitcrook/cybull/pkg/noauth/userlookup"
 	"github.com/spf13/cobra"
 )
 
