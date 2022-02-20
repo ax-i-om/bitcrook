@@ -3,7 +3,7 @@ package melissa
 import (
 	"encoding/json"
 
-	"github.com/bitcrook/cybull/internal/http"
+	"github.com/bitcrook/cycull/internal/http"
 )
 
 /*

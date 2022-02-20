@@ -1,4 +1,4 @@
-# [github.com/bitcrook/cybull/pkg/noauth/userlookup](https://github.com/bitcrook/cybull/tree/main/pkg/noauth/userlookup) - no authentication required
+# [github.com/bitcrook/cycull/pkg/noauth/userlookup](https://github.com/bitcrook/cycull/tree/main/pkg/noauth/userlookup) - no authentication required
 
 
 ## Types
@@ -44,7 +44,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/bitcrook/cybull/pkg/noauth/userlookup"
+	"github.com/bitcrook/cycull/pkg/noauth/userlookup"
 )
 
 func main() {

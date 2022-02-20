@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/bitcrook/cybull/internal/config"
-	"github.com/bitcrook/cybull/internal/http"
+	"github.com/bitcrook/cycull/internal/config"
+	"github.com/bitcrook/cycull/internal/http"
 )
 
 func TestGetBreaches(t *testing.T) {

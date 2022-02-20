@@ -19,7 +19,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/bitcrook/cybull/pkg/noauth/caselaw"
+	"github.com/bitcrook/cycull/pkg/noauth/caselaw"
 	"github.com/spf13/cobra"
 )
 

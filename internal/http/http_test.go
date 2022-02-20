@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/bitcrook/cybull/internal/config"
+	"github.com/bitcrook/cycull/internal/config"
 )
 
 func TestGetReq(t *testing.T) {

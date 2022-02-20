@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/bitcrook/cybull/cmd"
+import "github.com/bitcrook/cycull/cmd"
 
 func main() {
 	cmd.Execute()

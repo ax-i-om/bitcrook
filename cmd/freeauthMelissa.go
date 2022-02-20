@@ -19,8 +19,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/bitcrook/cybull/internal/config"
-	"github.com/bitcrook/cybull/pkg/authfree/melissa"
+	"github.com/bitcrook/cycull/internal/config"
+	"github.com/bitcrook/cycull/pkg/authfree/melissa"
 	"github.com/spf13/cobra"
 )
 

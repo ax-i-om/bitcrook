@@ -19,7 +19,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/bitcrook/cybull/pkg/noauth/ip"
+	"github.com/bitcrook/cycull/pkg/noauth/ip"
 	"github.com/spf13/cobra"
 )
 
