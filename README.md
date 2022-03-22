@@ -9,7 +9,7 @@
     <a href="https://pkg.go.dev/github.com/audioo/bitcrook"><img src="https://pkg.go.dev/badge/github.com/audioo/bitcrook.svg" alt="Go Report Card"></a>
     <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
     Centralize and expedite OSINT investigations.<br>
-  <a href="https://discord.gg/uVWJUTufqf"></a><br>
+  <a href="https://github.com/users/audioo/projects/1">View the roadmap</a><br>
 </a>
   </p><br>
 </p>
@@ -20,7 +20,6 @@
   - [About](#about)
   - [Disclaimer](#disclaimer)
   - [Preview](#preview)
-  - [TODO](#todo)
   - [Attributions](#attributions)
 - [Usage](#usage)
   - [Installation](#installation)
@@ -48,8 +47,6 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 ### Preview
 
 <a><img src="./images/cliprev.jpg" width=660 height="360"></a>
-
-### Roadmap
 
 ### Attributions
 
