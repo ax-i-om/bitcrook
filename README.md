@@ -1,13 +1,11 @@
 <p align="center">
-  <a><img src="./images/CycullLogo.png" width=180 height="180"></a>
-  <h1 align="center">Bitcrook - OSINT Apparatus</h1>
-  <h2 align="center">IMPORTANT: Early development stages - in need of people willing to contribute/maintain as I am extremely occupied at this current time.</h2>
+  <a><img src="./images/bitcrook.png" width=180 height="180"></a>
+  <h1 align="center">Bitcrook</h1>
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/audioo/bitcrook"><img src="https://goreportcard.com/badge/github.com/audioo/bitcrook" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-5&#47;7-orange.svg" alt="s"></a>
     <a><img src="https://img.shields.io/badge/version-0.9.1-blue.svg" alt="s"></a>
-    <a href="https://pkg.go.dev/github.com/audioo/bitcrook"><img src="https://pkg.go.dev/badge/github.com/audioo/bitcrook.svg" alt="Go Report Card"></a>
-    <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
+    <a href="https://pkg.go.dev/github.com/audioo/bitcrook"><img src="https://pkg.go.dev/badge/github.com/audioo/bitcrook.svg" alt="Go Report Card"></a><br>
     Centralize and expedite OSINT investigations.<br>
   <a href="https://github.com/users/audioo/projects/1">View the roadmap</a><br>
 </a>
