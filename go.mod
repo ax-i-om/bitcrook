@@ -1,4 +1,4 @@
-module github.com/audioo/cycull
+module github.com/audioo/bitcrook
 
 // +heroku goVersion go1.17.1
 go 1.17

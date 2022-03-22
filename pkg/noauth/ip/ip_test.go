@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/audioo/cycull/internal/http"
+	"github.com/audioo/bitcrook/internal/http"
 )
 
 func TestIPLookup(t *testing.T) {

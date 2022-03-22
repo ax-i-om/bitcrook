@@ -1,4 +1,4 @@
-# [github.com/audioo/cycull/pkg/noauth/userlookup](https://github.com/audioo/cycull/tree/main/pkg/noauth/userlookup) - no authentication required
+# [github.com/audioo/bitcrook/pkg/noauth/userlookup](https://github.com/audioo/bitcrook/tree/main/pkg/noauth/userlookup) - no authentication required
 
 
 ## Types
@@ -44,7 +44,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/audioo/cycull/pkg/noauth/userlookup"
+	"github.com/audioo/bitcrook/pkg/noauth/userlookup"
 )
 
 func main() {

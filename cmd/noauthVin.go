@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/audioo/cycull/pkg/noauth/vin"
+	"github.com/audioo/bitcrook/pkg/noauth/vin"
 	"github.com/spf13/cobra"
 )
 

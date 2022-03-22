@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/audioo/cycull/cmd"
+import "github.com/audioo/bitcrook/cmd"
 
 func main() {
 	cmd.Execute()

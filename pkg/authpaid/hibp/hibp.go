@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/audioo/cycull/internal/http"
+	"github.com/audioo/bitcrook/internal/http"
 )
 
 // BreachList is a representation of the names of site breaches returned by the GetBreaches() function.

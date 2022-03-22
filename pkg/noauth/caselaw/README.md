@@ -1,4 +1,4 @@
-# [github.com/audioo/cycull/pkg/noauth/caselaw](https://github.com/audioo/cycull/tree/main/pkg/noauth/caselaw) - no authentication required
+# [github.com/audioo/bitcrook/pkg/noauth/caselaw](https://github.com/audioo/bitcrook/tree/main/pkg/noauth/caselaw) - no authentication required
 
 
 ## Types
@@ -120,7 +120,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/audioo/cycull/pkg/noauth/caselaw"
+	"github.com/audioo/bitcrook/pkg/noauth/caselaw"
 )
 
 func main() {

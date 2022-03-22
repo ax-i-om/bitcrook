@@ -19,7 +19,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/audioo/cycull/pkg/noauth/ip"
+	"github.com/audioo/bitcrook/pkg/noauth/ip"
 	"github.com/spf13/cobra"
 )
 

@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/audioo/cycull/pkg/noauth/userlookup"
+	"github.com/audioo/bitcrook/pkg/noauth/userlookup"
 	"github.com/spf13/cobra"
 )
 

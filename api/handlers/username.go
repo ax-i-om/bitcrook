@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"github.com/audioo/cycull/pkg/noauth/userlookup"
+	"github.com/audioo/bitcrook/pkg/noauth/userlookup"
 	"github.com/gofiber/fiber/v2"
 )
 

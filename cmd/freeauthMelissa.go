@@ -19,8 +19,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/audioo/cycull/internal/config"
-	"github.com/audioo/cycull/pkg/authfree/melissa"
+	"github.com/audioo/bitcrook/internal/config"
+	"github.com/audioo/bitcrook/pkg/authfree/melissa"
 	"github.com/spf13/cobra"
 )
 

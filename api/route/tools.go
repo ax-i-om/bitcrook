@@ -1,7 +1,7 @@
 package route
 
 import (
-	"github.com/audioo/cycull/api/handlers"
+	"github.com/audioo/bitcrook/api/handlers"
 	"github.com/gofiber/fiber/v2"
 )
 

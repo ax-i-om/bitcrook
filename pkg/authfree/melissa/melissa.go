@@ -3,7 +3,7 @@ package melissa
 import (
 	"encoding/json"
 
-	"github.com/audioo/cycull/internal/http"
+	"github.com/audioo/bitcrook/internal/http"
 )
 
 /*
