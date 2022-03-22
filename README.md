@@ -1,5 +1,5 @@
 <p align="center">
-  <a><img src="./images/BitcrookLogo.png" width=180 height="180"></a>
+  <a><img src="./images/CycullLogo.png" width=180 height="180"></a>
   <h1 align="center">Bitcrook - OSINT Apparatus</h1>
   <h2 align="center">IMPORTANT: Early development stages - in need of people willing to contribute/maintain as I am extremely occupied at this current time.</h2>
   <p align="center">
@@ -9,7 +9,7 @@
     <a href="https://pkg.go.dev/github.com/audioo/bitcrook"><img src="https://pkg.go.dev/badge/github.com/audioo/bitcrook.svg" alt="Go Report Card"></a>
     <a href="https://inventory.raw.pm/"><img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec&#39;s CyberSecurity Inventory"></a><br>
     Centralize and expedite OSINT investigations.<br>
-  <a href="https://discord.gg/uVWJUTufqf">Join the Discord</a><br>
+  <a href="https://discord.gg/uVWJUTufqf"></a><br>
 </a>
   </p><br>
 </p>
@@ -49,15 +49,7 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 
 <a><img src="./images/cliprev.jpg" width=660 height="360"></a>
 
-### TODO
-
-*Priority*
-- Fix VIN lookup
-
-*Not a priority*
-- Rewrite username lookup to parse more than status codes 200/404 (body response, messages, etc)
-- Add license plate lookup
-- Add Whois lookup
+### Roadmap
 
 ### Attributions
 
