@@ -1,5 +1,5 @@
 /*
-Copyright © 2021 bitcrook <bitcrook@protonmail.com>
+Copyright © 2021 audioo <audioo@protonmail.com>
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -19,8 +19,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/bitcrook/cycull/internal/config"
-	"github.com/bitcrook/cycull/pkg/authfree/melissa"
+	"github.com/audioo/cycull/internal/config"
+	"github.com/audioo/cycull/pkg/authfree/melissa"
 	"github.com/spf13/cobra"
 )
 

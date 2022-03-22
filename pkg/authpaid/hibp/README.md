@@ -1,4 +1,4 @@
-# [github.com/bitcrook/cycull/pkg/authpaid/hibp](https://github.com/bitcrook/cycull/tree/main/pkg/authpaid/hibp) - paid authentication required
+# [github.com/audioo/cycull/pkg/authpaid/hibp](https://github.com/audioo/cycull/tree/main/pkg/authpaid/hibp) - paid authentication required
 
 
 ## Types
@@ -142,7 +142,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/bitcrook/cycull/pkg/authpaid/hibp"
+	"github.com/audioo/cycull/pkg/authpaid/hibp"
 )
 
 func main() {

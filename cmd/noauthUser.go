@@ -1,5 +1,5 @@
 /*
-Copyright © 2021 Bitcrook <bitcrook@protonmail.com>
+Copyright © 2021 audioo <audioo@protonmail.com>
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/bitcrook/cycull/pkg/noauth/userlookup"
+	"github.com/audioo/cycull/pkg/noauth/userlookup"
 	"github.com/spf13/cobra"
 )
 

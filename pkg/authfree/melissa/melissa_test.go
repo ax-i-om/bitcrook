@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/bitcrook/cycull/internal/config"
-	"github.com/bitcrook/cycull/internal/http"
+	"github.com/audioo/cycull/internal/config"
+	"github.com/audioo/cycull/internal/http"
 )
 
 func TestEmailLookup(t *testing.T) {

@@ -1,4 +1,4 @@
-# [github.com/bitcrook/cycull/pkg/noauth/ip](https://github.com/bitcrook/cycull/tree/main/pkg/noauth/ip) - no authentication required
+# [github.com/audioo/cycull/pkg/noauth/ip](https://github.com/audioo/cycull/tree/main/pkg/noauth/ip) - no authentication required
 
 
 ## Types
@@ -57,7 +57,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/bitcrook/cycull/pkg/noauth/ip"
+	"github.com/audioo/cycull/pkg/noauth/ip"
 )
 
 func main() {
