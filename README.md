@@ -3,10 +3,10 @@
   <h1 align="center">Bitcrook</h1>
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/audioo/bitcrook"><img src="https://goreportcard.com/badge/github.com/audioo/bitcrook" alt="Go Report Card"></a>
-    <a><img src="https://img.shields.io/badge/tests-5&#47;7-orange.svg" alt="s"></a>
+    <a><img src="https://img.shields.io/badge/tests-5&#47;7-orange.svg" alt="Tests"></a>
     <a><img src="https://img.shields.io/badge/version-0.9.1-blue.svg" alt="s"></a>
-    <a href="https://pkg.go.dev/github.com/audioo/bitcrook"><img src="https://pkg.go.dev/badge/github.com/audioo/bitcrook.svg" alt="Go Report Card"></a><br>
-    Centralize and expedite OSINT investigations.<br>
+    <a href="https://discord.com/invite/uVWJUTufqf"><img src="https://img.shields.io/badge/discord-chat-blue.svg" alt="Discord"></a><br>
+    Centralize and expedite OSINT investigations<br>
   <a href="https://github.com/users/audioo/projects/1">View the roadmap</a><br>
 </a>
   </p><br>
