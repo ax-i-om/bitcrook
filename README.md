@@ -1,7 +1,7 @@
 <p align="center">
   <a><img src="./images/bitcrook.png" width=180 height="180"></a>
   <h1 align="center">Bitcrook</h1>
-  <h2 align="center">Important: In early development, looking for/need contributors/maintainers.</h2>
+  <h2 align="center">Important: In early development, need contributors/maintainers.</h2>
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/audioo/bitcrook"><img src="https://goreportcard.com/badge/github.com/audioo/bitcrook" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-6&#47;7-orange.svg" alt="Tests"></a>
