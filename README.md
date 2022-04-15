@@ -8,7 +8,7 @@
     <a><img src="https://img.shields.io/badge/version-0.9.2-blue.svg" alt="s"></a>
     <a href="https://discord.com/invite/uVWJUTufqf"><img src="https://img.shields.io/badge/discord-chat-blue.svg" alt="Discord"></a><br>
     Centralize and expedite OSINT investigations<br>
-  <a href="https://github.com/users/audioo/projects/1">View the roadmap</a><br>
+  <a href="https://github.com/users/audioo/projects/1">View the roadmap</a> | <a href="https://audioo.github.io">Development logs</a><br>
 </a>
   </p><br>
 </p>
@@ -49,8 +49,6 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 <a><img src="./images/guiprev.png" width=660 height="360"></a>
 
 ### Attributions
-
-[Logo](./images/BitcrookLogo.png) created by [TheOneTrueDude](https://github.com/FirstTrueDude).
 
 [Social Preview](./images/card.jpg) created with [Canva.](https://www.canva.com/)
 
