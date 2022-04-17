@@ -51,131 +51,47 @@ func VinLookup(vin string) (*VIN, error) {
 
 	// Begin scraping values via XPath and assigning them to their corresponding place within the VIN struct
 	b, err := htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[3]/div/div/div[1]/div[2]/div[2]/text()")
-	if err != nil || b == nil {
-		results.Make = "Error"
-	} else {
-		results.Make = b.Data
-	}
+	results.Make = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[3]/div/div/div[1]/div[3]/div[2]/text()")
-	if err != nil || b == nil {
-		results.Model = "Error"
-	} else {
-		results.Model = b.Data
-	}
+	results.Model = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[3]/div/div/div[1]/div[4]/div[2]/text()")
-	if err != nil || b == nil {
-		results.Year = "Error"
-	} else {
-		results.Year = b.Data
-	}
+	results.Year = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[3]/div/div/div[1]/div[5]/div[2]/text()")
-	if err != nil || b == nil {
-		results.Trim = "Error"
-	} else {
-		results.Trim = b.Data
-	}
+	results.Trim = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[3]/div/div/div[1]/div[6]/div[2]/text()")
-	if err != nil || b == nil {
-		results.Body = "Error"
-	} else {
-		results.Body = b.Data
-	}
+	results.Body = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[3]/div/div/div[1]/div[7]/div[2]/text()")
-	if err != nil || b == nil {
-		results.Engine = "Error"
-	} else {
-		results.Engine = b.Data
-	}
+	results.Engine = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[3]/div/div/div[1]/div[8]/div[2]/text()")
-	if err != nil || b == nil {
-		results.ManufacturedIn = "Error"
-	} else {
-		results.ManufacturedIn = b.Data
-	}
+	results.ManufacturedIn = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[1]/td[2]/text()")
-	if err != nil || b == nil {
-		results.TrimLevel = "Error"
-	} else {
-		results.TrimLevel = b.Data
-	}
+	results.TrimLevel = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[2]/td[2]/text()")
-	if err != nil || b == nil {
-		results.SteeringType = "Error"
-	} else {
-		results.SteeringType = b.Data
-	}
+	results.SteeringType = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[3]/td[2]/text()")
-	if err != nil || b == nil {
-		results.Abs = "Error"
-	} else {
-		results.Abs = b.Data
-	}
+	results.Abs = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[4]/td[2]/text()")
-	if err != nil || b == nil {
-		results.TankSize = "Error"
-	} else {
-		results.TankSize = b.Data
-	}
+	results.TankSize = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[5]/td[2]/text()")
-	if err != nil || b == nil {
-		results.OverallHeight = "Error"
-	} else {
-		results.OverallHeight = b.Data
-	}
+	results.OverallHeight = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[6]/td[2]/text()")
-	if err != nil || b == nil {
-		results.OverallLength = "Error"
-	} else {
-		results.OverallLength = b.Data
-	}
+	results.OverallLength = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[7]/td[2]/text()")
-	if err != nil || b == nil {
-		results.OverallWidth = "Error"
-	} else {
-		results.OverallWidth = b.Data
-	}
+	results.OverallWidth = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[8]/td[2]/text()")
-	if err != nil || b == nil {
-		results.StandardSeating = "Error"
-	} else {
-		results.StandardSeating = b.Data
-	}
+	results.StandardSeating = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[9]/td[2]/text()")
-	if err != nil || b == nil {
-		results.OptionalSeating = "Error"
-	} else {
-		results.OptionalSeating = b.Data
-	}
+	results.OptionalSeating = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[10]/td[2]/text()")
-	if err != nil || b == nil {
-		results.HighwayMileage = "Error"
-	} else {
-		results.HighwayMileage = b.Data
-	}
+	results.HighwayMileage = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[11]/td[2]/text()")
-	if err != nil || b == nil {
-		results.CityMileage = "Error"
-	} else {
-		results.CityMileage = b.Data
-	}
+	results.CityMileage = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[12]/td[2]/text()")
-	if err != nil || b == nil {
-		results.FuelType = "Error"
-	} else {
-		results.FuelType = b.Data
-	}
+	results.FuelType = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[13]/td[2]/text()")
-	if err != nil || b == nil {
-		results.DriveType = "Error"
-	} else {
-		results.DriveType = b.Data
-	}
+	results.DriveType = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[14]/td[2]/text()")
-	if err != nil || b == nil {
-		results.Transmission = "Error"
-	} else {
-		results.Transmission = b.Data
-	}
+	results.Transmission = check(b, err)
 
 	// Return the struct information
 	return results, nil

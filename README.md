@@ -5,7 +5,7 @@
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/audioo/bitcrook"><img src="https://goreportcard.com/badge/github.com/audioo/bitcrook" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-6&#47;7-orange.svg" alt="Tests"></a>
-    <a><img src="https://img.shields.io/badge/version-0.9.2-blue.svg" alt="s"></a>
+    <a><img src="https://img.shields.io/badge/version-0.9.3-blue.svg" alt="s"></a>
     <a href="https://discord.com/invite/uVWJUTufqf"><img src="https://img.shields.io/badge/discord-chat-blue.svg" alt="Discord"></a><br>
     Centralize and expedite OSINT investigations<br>
   <a href="https://github.com/users/audioo/projects/1">View the roadmap</a> | <a href="https://audioo.github.io">Development logs</a><br>
