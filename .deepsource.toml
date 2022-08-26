@@ -6,12 +6,7 @@ enabled = true
 
   [analyzers.meta]
   import_root = "github.com/audioo/bitcrook"
-  dependencies_vendored = false
 
 [[analyzers]]
-name = "docker"
-enabled = true
-
-[[analyzers]]
-name = "test-coverage"
+name = "javascript"
 enabled = true
