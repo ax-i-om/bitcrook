@@ -2,7 +2,7 @@
 # Refer to the theme docs for more details about each of these parameters.
 # https://nunocoracao.github.io/blowfish/docs/getting-started/
 
-baseURL = "https://bitcrook.github.io/"
+baseURL = "https://audioo.github.io/bitcrook/"
 defaultContentLanguage = "en"
 
 enableRobotsTXT = true
