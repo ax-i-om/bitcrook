@@ -1,7 +1,7 @@
 package userlookup
 
 import (
-	"io/ioutil"
+	"io"
 	"net/http"
 	"strconv"
 	"sync"
@@ -218,7 +218,7 @@ func getSCredir(title, url string, redirect bool) Website {
 	}
 	defer res.Body.Close()
 
-	body, err := ioutil.ReadAll(res.Body)
+	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		return Website{Title: title, Domain: url, Valid: false}
 	}
