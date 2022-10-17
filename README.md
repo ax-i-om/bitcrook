@@ -8,7 +8,7 @@
     <a><img src="https://img.shields.io/badge/version-0.9.3-blue.svg" alt="s"></a>
     <a href="https://discord.com/invite/uVWJUTufqf"><img src="https://img.shields.io/badge/discord-chat-blue.svg" alt="Discord"></a><br>
     Centralize and expedite OSINT investigations<br>
-  <a href="https://github.com/users/audioo/projects/1">View the roadmap</a> | <a href="https://audioo.github.io">Development logs</a><br>
+  <a href="https://github.com/users/audioo/projects/1">Roadmap</a> | <a href="https://bitcrook.tech">Documentation</a><br>
 </a>
   </p><br>
 </p>
