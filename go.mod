@@ -4,7 +4,7 @@ module github.com/audioo/bitcrook
 go 1.17
 
 require (
-	github.com/antchfx/htmlquery v1.2.4
+	github.com/antchfx/htmlquery v1.2.5
 	github.com/gofiber/fiber/v2 v2.19.0
 	github.com/gofiber/template v1.6.17
 	github.com/mitchellh/go-homedir v1.1.0
@@ -15,7 +15,7 @@ require (
 
 require (
 	github.com/andybalholm/brotli v1.0.2 // indirect
-	github.com/antchfx/xpath v1.2.0 // indirect
+	github.com/antchfx/xpath v1.2.1 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
