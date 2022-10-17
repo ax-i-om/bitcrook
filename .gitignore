@@ -18,3 +18,4 @@
 # vendor/
 /api/public/js/script.js.fiber.gz
 /api/public/js/app.js.fiber.gz
+/api/public/css/style.css.fiber.gz
