@@ -1,7 +1,7 @@
-let myFunction;
+const myFunction = null;
 
 myFunction = () => {
-  let tnav = document.getElementById("myTopnav");
+  const tnav = document.getElementById("myTopnav");
   if (tnav.className === "topnav") {
     tnav.className += " responsive";
   } else {
