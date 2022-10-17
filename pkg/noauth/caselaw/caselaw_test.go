@@ -12,7 +12,7 @@ func TestGetCases(t *testing.T) {
 	method := "GET"
 
 	client := &http.Client{}
-	req, err := http.NewRequest(method, url, nil)
+	req, err := http.NewRequest(method, url, http.NoBody)
 
 	if err != nil {
 		t.Error(err)
