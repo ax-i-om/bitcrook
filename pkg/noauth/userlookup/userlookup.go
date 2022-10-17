@@ -22,11 +22,11 @@ var results []Website
 // UserLookup returns a slice of type Website
 func UserLookup(userres string) []Website {
 	var wg sync.WaitGroup
-	var arrNo []Website = noRedirSites(userres)
+	var arrNo = noRedirSites(userres)
 	for _, v := range arrNo {
 		go checkUser(v, false, &wg)
 	}
-	var arrYes []Website = redirSites(userres)
+	var arrYes = redirSites(userres)
 	for _, v := range arrYes {
 		go checkUser(v, true, &wg)
 	}
