@@ -207,7 +207,7 @@ func getSCredir(title, url string, redirect bool) Website {
 			Timeout: 5 * time.Second,
 		}
 	}
-	req, err := http.NewRequest(method, url, nil)
+	req, err := http.NewRequest(method, url, http.NoBody)
 
 	if err != nil {
 		return Website{Title: title, Domain: url, Valid: false}

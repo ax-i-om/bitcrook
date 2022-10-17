@@ -31,7 +31,7 @@ func TestAuthGet(t *testing.T) {
 	method := "GET"
 
 	client := &http.Client{}
-	req, err := http.NewRequest(method, "https://haveibeenpwned.com/api/v3/breachedaccount/email@example.com", nil)
+	req, err := http.NewRequest(method, "https://haveibeenpwned.com/api/v3/breachedaccount/email@example.com", http.NoBody)
 
 	if err != nil {
 		t.Error(err)
