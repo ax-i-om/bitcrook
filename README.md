@@ -5,7 +5,7 @@
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/audioo/bitcrook"><img src="https://goreportcard.com/badge/github.com/audioo/bitcrook" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-6&#47;7-orange.svg" alt="Tests"></a>
-    <a><img src="https://img.shields.io/badge/version-0.9.6-blue.svg" alt="s"></a>
+    <a><img src="https://img.shields.io/badge/version-0.9.7-blue.svg" alt="s"></a>
     <a href="https://discord.com/invite/uVWJUTufqf"><img src="https://img.shields.io/badge/discord-chat-blue.svg" alt="Discord"></a><br>
     Centralize and expedite OSINT investigations<br>
   <a href="https://github.com/users/audioo/projects/1">Roadmap</a> | <a href="https://bitcrook.tech">Documentation</a><br>
@@ -28,6 +28,7 @@
   - [Testing](#testing)
 - [Package Types](#package-types) *a-z*
   - [Court Cases](#court-cases)
+  - [Domain](#domain)
   - [IP Address](#ip-address)
   - [Multi-Use](#multi-use)
   - [Username](#username)
@@ -98,6 +99,12 @@ Bitcrook is currently passing all tests; however, I have provided instructions f
 | Package                                                                                    | Description                                  |   Auth   | Location | Status |
 | :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
 | [Case Law](https://github.com/audioo/bitcrook/tree/main/pkg/noauth/caselaw)           | Court Case Search                            |  `none`  | US | Functioning | 
+
+### Domain
+
+| Package                                                                                    | Description                                  |   Auth   | Location | Status |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
+| [IP2WHOIS](https://github.com/audioo/bitcrook/tree/main/pkg/freeauth/ip2whois)           | Whois Lookup                            |  `free`  | - | Functioning | 
 
 ### IP Address
 
