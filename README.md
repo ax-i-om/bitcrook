@@ -104,7 +104,7 @@ Bitcrook is currently passing all tests; however, I have provided instructions f
 
 | Package                                                                                    | Description                                  |   Auth   | Location | Status |
 | :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| [IP2WHOIS](https://github.com/audioo/bitcrook/tree/main/pkg/freeauth/ip2whois)           | Whois Lookup                            |  `free`  | - | Functioning | 
+| [IP2WHOIS](https://github.com/audioo/bitcrook/tree/main/pkg/authfree/ip2whois)           | Whois Lookup                            |  `free`  | - | Functioning | 
 
 ### IP Address
 
