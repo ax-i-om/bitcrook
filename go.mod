@@ -1,7 +1,6 @@
 module github.com/audioo/bitcrook
 
-// +heroku goVersion go1.17.1
-go 1.17
+go 1.19
 
 require (
 	github.com/antchfx/htmlquery v1.2.5

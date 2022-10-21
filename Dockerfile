@@ -1,4 +1,5 @@
-FROM golang:1.16.4-alpine3.12
+#REDO
+FROM golang:1.19-alpine
 
 LABEL author="audioo"
 LABEL github="https://github.com/audioo/bitcrook"
