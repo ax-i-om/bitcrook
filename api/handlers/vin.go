@@ -11,7 +11,7 @@ type VinHandler struct {
 
 // Index ...
 func (VinHandler) Index(ctx *fiber.Ctx) error {
-	return ctx.Status(fiber.StatusNotFound).SendFile("./views/pages/vin.html")
+	return ctx.Status(fiber.StatusNotFound).SendFile("./api/views/pages/vin.html")
 }
 
 // Show VIN information

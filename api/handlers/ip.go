@@ -11,7 +11,7 @@ type IpHandler struct {
 
 // Index ...
 func (IpHandler) Index(ctx *fiber.Ctx) error {
-	return ctx.Status(fiber.StatusNotFound).SendFile("./views/pages/ip.html")
+	return ctx.Status(fiber.StatusNotFound).SendFile("./api/views/pages/ip.html")
 }
 
 // Show user information
