@@ -10,5 +10,5 @@ type ToolsHandler struct {
 
 // Index ...
 func (ToolsHandler) Index(ctx *fiber.Ctx) error {
-	return ctx.Status(fiber.StatusNotFound).SendFile("./api/views/pages/tools.html")
+	return ctx.Status(fiber.StatusNotFound).SendFile("./views/pages/tools.html")
 }
