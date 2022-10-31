@@ -7,7 +7,7 @@ require (
 	github.com/gofiber/fiber/v2 v2.39.0
 	github.com/gofiber/template v1.7.1
 	github.com/mitchellh/go-homedir v1.1.0
-	github.com/spf13/cobra v1.6.0
+	github.com/spf13/cobra v1.6.1
 	github.com/spf13/viper v1.13.0
 	golang.org/x/net v0.0.0-20220520000938-2e3eb7b945c2
 )
