@@ -19,7 +19,7 @@ import (
 	"log"
 
 	"github.com/audioo/bitcrook/internal/config"
-	"github.com/audioo/bitcrook/pkg/authfree/ip2whois"
+	"github.com/audioo/bitcrook/pkg/authfree/ip2location"
 	"github.com/spf13/cobra"
 )
 
@@ -36,7 +36,7 @@ var freeauthDomainCmd = &cobra.Command{
 			if err != nil {
 				log.Panic(err)
 			}
-			x, err := ip2whois.DomainLookup(elConf.Ip2WhoisKey, args[0])
+			x, err := ip2location.DomainLookup(elConf.Ip2LocationKey, args[0])
 			if err != nil {
 				log.Panic(err)
 			}

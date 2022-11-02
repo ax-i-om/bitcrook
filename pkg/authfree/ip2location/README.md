@@ -1,16 +1,11 @@
-package ip2whois
+# [github.com/audioo/bitcrook/pkg/authfree/ip2location](https://github.com/audioo/bitcrook/tree/main/pkg/authfree/ip2location) - free authentication required
 
-import (
-	"encoding/json"
 
-	"github.com/audioo/bitcrook/internal/http"
-)
+## Types
 
-/*
-/ BEGIN TYPES
-*/
+Type DomainData represents the results of the IP2WHOIS API.
 
-// DomainData is a type that represents the results of the IP2WHOIS API.
+``` go 
 type DomainData struct {
 	Domain   string `json:"domain"`
 	DomainID string `json:"domain_id"`
@@ -75,8 +70,12 @@ type DomainData struct {
 	} `json:"billing"`
 	Nameservers []string `json:"nameservers"`
 }
+```
 
-// DomainLookup takes an ip2whois key and a domain as its parameters which are passed through the IP2WHOIS API whose response is then represented by a *domainResponse type.
+## Functions
+
+EmailLookup takes an API Key (string) and an email (string) as its parameters and returns a type *Email and an Error.
+``` go
 func DomainLookup(key, domain string) (*DomainData, error) {
 	resp, err := http.GetReq("https://api.ip2whois.com/v2?key=" + key + "&domain=" + domain + "&format=json")
 	if err != nil {
@@ -89,3 +88,8 @@ func DomainLookup(key, domain string) (*DomainData, error) {
 	}
 	return response, nil
 }
+```
+
+## Usage
+
+To do...

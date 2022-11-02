@@ -1,11 +1,16 @@
-# [github.com/audioo/bitcrook/pkg/authfree/ip2whois](https://github.com/audioo/bitcrook/tree/main/pkg/authfree/ip2whois) - free authentication required
+package ip2location
 
+import (
+	"encoding/json"
 
-## Types
+	"github.com/audioo/bitcrook/internal/http"
+)
 
-Type DomainData represents the results of the IP2WHOIS API.
+/*
+/ BEGIN TYPES
+*/
 
-``` go 
+// DomainData is a type that represents the results of the IP2WHOIS API.
 type DomainData struct {
 	Domain   string `json:"domain"`
 	DomainID string `json:"domain_id"`
@@ -70,12 +75,23 @@ type DomainData struct {
 	} `json:"billing"`
 	Nameservers []string `json:"nameservers"`
 }
-```
 
-## Functions
+type IpData struct {
+	IP          string  `json:"ip"`
+	CountryCode string  `json:"country_code"`
+	CountryName string  `json:"country_name"`
+	RegionName  string  `json:"region_name"`
+	CityName    string  `json:"city_name"`
+	Latitude    float64 `json:"latitude"`
+	Longitude   float64 `json:"longitude"`
+	ZipCode     string  `json:"zip_code"`
+	TimeZone    string  `json:"time_zone"`
+	Asn         string  `json:"asn"`
+	As          string  `json:"as"`
+	IsProxy     bool    `json:"is_proxy"`
+}
 
-EmailLookup takes an API Key (string) and an email (string) as its parameters and returns a type *Email and an Error.
-``` go
+// DomainLookup takes an ip2location/ip2whois key and a domain as its parameters which are passed through the IP2WHOIS API whose response is then represented by a *domainResponse type.
 func DomainLookup(key, domain string) (*DomainData, error) {
 	resp, err := http.GetReq("https://api.ip2whois.com/v2?key=" + key + "&domain=" + domain + "&format=json")
 	if err != nil {
@@ -88,8 +104,17 @@ func DomainLookup(key, domain string) (*DomainData, error) {
 	}
 	return response, nil
 }
-```
 
-## Usage
-
-To do...
+// IPLookup takes an ip2location/ip2whois key and an IPV4 address as its parameters which are passed through the IP2LOCATION API whose response is then represented by a *IpData type.
+func IPLookup(key, ip string) (*IpData, error) {
+	resp, err := http.GetReq("https://api.ip2location.io/?key=" + key + "&ip=" + ip + "&format=json")
+	if err != nil {
+		return nil, err
+	}
+	response := new(IpData)
+	err = json.Unmarshal([]byte(resp), &response)
+	if err != nil {
+		return nil, err
+	}
+	return response, nil
+}

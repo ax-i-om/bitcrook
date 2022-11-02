@@ -8,10 +8,10 @@ import (
 
 // Conf is the type used for testing, which primarily contains API keys.
 type Conf struct {
-	MelissaKey  string `json:"melissaKeyCred"`
-	HibpKey     string `json:"hibpKey"`
-	DataGovKey  string `json:"dataGovKey"`
-	Ip2WhoisKey string `json:"ip2whoisKey"`
+	MelissaKey     string `json:"melissaKeyCred"`
+	HibpKey        string `json:"hibpKey"`
+	DataGovKey     string `json:"dataGovKey"`
+	Ip2LocationKey string `json:"ip2locationKey"`
 }
 
 // LoadConfig returns a type *Conf by reading and unmarshalling the JSON file found at the passed path.
