@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/antchfx/htmlquery v1.2.5
 	github.com/gofiber/fiber/v2 v2.39.0
-	github.com/gofiber/template v1.7.1
+	github.com/gofiber/template v1.7.2
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/spf13/cobra v1.6.1
 	github.com/spf13/viper v1.14.0
