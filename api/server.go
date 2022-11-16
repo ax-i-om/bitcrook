@@ -34,6 +34,7 @@ func main() {
 	route.Ip(app)
 	route.Vin(app)
 	route.Tools(app)
+	route.Domain(app)
 
 	// Handle 404 errors
 	app.Use(handlers.NotFound("./public/404.html"))

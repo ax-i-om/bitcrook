@@ -60,3 +60,65 @@ $('#vinsearch').on('click', () => {
     })
     $('#vinresult').val('') 
 })
+
+$('#domainsearch').on('click', () => {
+    domain = $('#domain').val()
+    $.getJSON('http://localhost:6174/domain/' + domain, (res) => {
+        $('#domainresult').val("Domain: " + res.domain + "\n" +
+        "Domain ID: " + res.domain_id + "\n" +
+        "Status: " + res.status + "\n" + 
+        "Domain Age: " + res.domain_age + "\n" + 
+        "WHOIS Server: " + res.whois_server + "\n\n" +
+        
+        "Registrar IANA ID: " + res.registrar.iana_id + "\n" + 
+        "Registrar Name: " + res.registrar.name + "\n" + 
+        "Registrar URL: " + res.registrar.url + "\n\n" +
+
+        "Registrant Name: " + res.registrant.name + "\n" +
+        "Registrant Organization: " + res.registrant.organization + "\n" +
+        "Registrant Street Address: " + res.registrant.street_address + "\n" +
+        "Registrant City: " + res.registrant.city + "\n" +
+        "Registrant Region: " + res.registrant.region + "\n" +
+        "Registrant Zip Code: " + res.registrant.zip_code + "\n" +
+        "Registrant Country: " + res.registrant.country + "\n" +
+        "Registrant Phone: " + res.registrant.phone + "\n" +
+        "Registrant Fax: " + res.registrant.fax + "\n" +
+        "Registrant Email: " + res.registrant.email + "\n\n" +
+
+        "Admin Name: " + res.admin.name + "\n" +
+        "Admin Organization: " + res.admin.organization + "\n" +
+        "Admin Street Address: " + res.admin.street_address + "\n" +
+        "Admin City: " + res.admin.city + "\n" +
+        "Admin Region: " + res.admin.region + "\n" +
+        "Admin Zip Code: " + res.admin.zip_code + "\n" +
+        "Admin Country: " + res.admin.country + "\n" +
+        "Admin Phone: " + res.admin.phone + "\n" +
+        "Admin Fax: " + res.admin.fax + "\n" +
+        "Admin Email: " + res.admin.email + "\n\n" +
+
+        "Tech Name: " + res.tech.name + "\n" +
+        "Tech Organization: " + res.tech.organization + "\n" +
+        "Tech Street Address: " + res.tech.street_address + "\n" +
+        "Tech City: " + res.tech.city + "\n" +
+        "Tech Region: " + res.tech.region + "\n" +
+        "Tech Zip Code: " + res.tech.zip_code + "\n" +
+        "Tech Country: " + res.tech.country + "\n" +
+        "Tech Phone: " + res.tech.phone + "\n" +
+        "Tech Fax: " + res.tech.fax + "\n" +
+        "Tech Email: " + res.tech.email + "\n\n" +
+
+        "Billing Name: " + res.billing.name + "\n" +
+        "Billing Organization: " + res.billing.organization + "\n" +
+        "Billing Street Address: " + res.billing.street_address + "\n" +
+        "Billing City: " + res.billing.city + "\n" +
+        "Billing Region: " + res.billing.region + "\n" +
+        "Billing Zip Code: " + res.billing.zip_code + "\n" +
+        "Billing Country: " + res.billing.country + "\n" +
+        "Billing Phone: " + res.billing.phone + "\n" +
+        "Billing Fax: " + res.billing.fax + "\n" +
+        "Billing Email: " + res.billing.email + "\n\n" +
+
+        "Nameservers: " + res.nameservers)
+    })
+    $('#domainresult').val('') 
+})
