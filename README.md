@@ -5,7 +5,7 @@
   <p align="center">
     <a href="https://goreportcard.com/report/github.com/audioo/bitcrook"><img src="https://goreportcard.com/badge/github.com/audioo/bitcrook" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-7&#47;8-orange.svg" alt="Tests"></a>
-    <a><img src="https://img.shields.io/badge/version-0.9.9-blue.svg" alt="s"></a>
+    <a><img src="https://img.shields.io/badge/version-0.9.10-blue.svg" alt="s"></a>
     <a href="https://discord.com/invite/uVWJUTufqf"><img src="https://img.shields.io/badge/discord-chat-blue.svg" alt="Discord"></a><br>
     Centralize and expedite OSINT investigations<br>
   <a href="https://github.com/users/audioo/projects/1">Roadmap</a> | <a href="https://bitcrook.tech">Documentation</a><br>
@@ -30,6 +30,7 @@
   - [Court Cases](#court-cases)
   - [IP Address](#ip-address)
   - [Multi-Use](#multi-use)
+  - [Tax ID](#tax-id)
   - [Username](#username)
   - [Vehicle](#vehicle)
 
@@ -112,6 +113,12 @@ Bitcrook is currently passing all tests; however, I have provided instructions f
 | [Have I Been Pwned](https://github.com/audioo/bitcrook/tree/main/pkg/authpaid/hibp)   | Email and Password Vulnerability - (Breaches)|  `paid`  | Global | Functioning |
 | [Melissa](https://github.com/audioo/bitcrook/tree/main/pkg/authfree/melissa)          | Lookups - Email, Phone Number, IP Address    |  `free`  | US | Functioning |
 | [IP2LOCATION](https://github.com/audioo/bitcrook/tree/main/pkg/authfree/ip2location)           | Whois Lookup, IP Lookup              |  `free`  | - | Functioning | 
+
+### Tax ID
+
+| Package                                                                                    | Description                                  |   Auth   | Location | Status |
+| :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
+| [Tax ID Lookup](https://github.com/audioo/bitcrook/tree/main/pkg/noauth/tin) | Returns public information regarding a Russian INN.   |  `none`  | Russia | Functioning |
 
 ### Username
 
