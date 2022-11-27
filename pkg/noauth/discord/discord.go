@@ -2,7 +2,6 @@ package discord
 
 import (
 	"encoding/json"
-	"log"
 
 	"github.com/audioo/bitcrook/internal/http"
 )
@@ -28,7 +27,7 @@ type DiscordTokenInfo struct {
 func TokenLookup(token string) (*DiscordTokenInfo, error) {
 	x, err := http.AuthGet("https://discordapp.com/api/v6/users/@me", "Authorization", token)
 	if err != nil {
-		log.Panic(err)
+		return nil, err
 	}
 	clres := new(DiscordTokenInfo)
 	err = json.Unmarshal([]byte(x), &clres)

@@ -37,21 +37,20 @@ var noauthDiscordCmd = &cobra.Command{
 			x, err := discord.TokenLookup(args[0])
 			if err != nil {
 				log.Panic(err)
-			} else {
-				fmt.Println("ID: " + x.ID)
-				fmt.Println("Username: " + x.Username)
-				fmt.Println("Avatar: " + x.Avatar)
-				fmt.Println("Discriminator: " + x.Discriminator)
-				fmt.Println("Public Flags: " + strconv.Itoa(x.PublicFlags))
-				fmt.Println("Flags: " + strconv.Itoa(x.Flags))
-				fmt.Println("Purchased Flags: " + strconv.Itoa(x.PurchasedFlags))
-				fmt.Println("Locale: " + x.Locale)
-				fmt.Println("NSFW Allowed: " + strconv.FormatBool(x.NsfwAllowed))
-				fmt.Println("MFA Enabled: " + strconv.FormatBool(x.MfaEnabled))
-				fmt.Println("Email: " + x.Email)
-				fmt.Println("Verified: " + strconv.FormatBool(x.Verified))
-				fmt.Println("Phone: " + x.Phone)
 			}
+			fmt.Println("ID: " + x.ID)
+			fmt.Println("Username: " + x.Username)
+			fmt.Println("Avatar: " + x.Avatar)
+			fmt.Println("Discriminator: " + x.Discriminator)
+			fmt.Println("Public Flags: " + strconv.Itoa(x.PublicFlags))
+			fmt.Println("Flags: " + strconv.Itoa(x.Flags))
+			fmt.Println("Purchased Flags: " + strconv.Itoa(x.PurchasedFlags))
+			fmt.Println("Locale: " + x.Locale)
+			fmt.Println("NSFW Allowed: " + strconv.FormatBool(x.NsfwAllowed))
+			fmt.Println("MFA Enabled: " + strconv.FormatBool(x.MfaEnabled))
+			fmt.Println("Email: " + x.Email)
+			fmt.Println("Verified: " + strconv.FormatBool(x.Verified))
+			fmt.Println("Phone: " + x.Phone)
 		}
 	},
 }
