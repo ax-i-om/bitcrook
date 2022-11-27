@@ -1,25 +1,27 @@
 $('#ipsearch').on('click', () => {
     ip = $('#ip').val()
     $.getJSON('http://localhost:6174/ip/' + ip, (res) => {
-        $('#ipresult').val("Status: " + res.status + "\n" +
-        "Continent: " + res.continent + "\n" +
-        "Country: " + res.country + "\n" +
-        "Region Name: " + res.regionname + "\n" +
-        "City: " + res.city + "\n" +
-        "District: " + res.district + "\n" +
-        "Zip: " + res.zip + "\n" +
-        "Latitude: " + res.lat + "\n" +
-        "Longitude: " + res.lon + "\n" +
-        "Time Zone: " + res.timezone + "\n" +
-        "Currency: " + res.currency + "\n" +
-        "ISP: " + res.isp + "\n" +
-        "Org: " + res.org + "\n" +
-        "As: " + res.as + "\n" +
-        "Asname: " + res.asname + "\n" +
-        "Reverse: " + res.reverse + "\n" +
-        "Mobile: " + res.mobile + "\n" +
-        "Proxy: " + res.proxy + "\n" +
-        "Hosting: " + res.hosting + "\n")
+        let iptable = document.getElementById('ipresult');
+        iptable.innerHTML = "";
+        iptable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Status:&nbsp;</strong>" + res.status + "</span>";
+        iptable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Continent:&nbsp;</strong>" + res.continent + "</span>";
+        iptable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Country:&nbsp;</strong>" + res.country + "</span>";
+        iptable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Region Name:&nbsp;</strong>" + res.regionname + "</span>";
+        iptable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>City:&nbsp;</strong>" + res.city + "</span>";
+        iptable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>District:&nbsp;</strong>" + res.district + "</span>";
+        iptable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Zip:&nbsp;</strong>" + res.zip + "</span>";
+        iptable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Latitude:&nbsp;</strong>" + res.lat + "</span>";
+        iptable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Longitude:&nbsp;</strong>" + res.lon + "</span>";
+        iptable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Time Zone:&nbsp;</strong>" + res.timezone + "</span>";
+        iptable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Currency:&nbsp;</strong>" + res.currency + "</span>";
+        iptable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>ISP:&nbsp;</strong>" + res.isp + "</span>";
+        iptable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Org:&nbsp;</strong>" + res.org + "</span>";
+        iptable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>As:&nbsp;</strong>" + res.as + "</span>";
+        iptable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Asname:&nbsp;</strong>" + res.asname + "</span>";
+        iptable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Reverse:&nbsp;</strong>" + res.reverse + "</span>";
+        iptable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Mobile:&nbsp;</strong>" + res.mobile + "</span>";
+        iptable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Proxy:&nbsp;</strong>" + res.proxy + "</span>";
+        iptable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Hosting:&nbsp;</strong>" + res.hosting + "</span>";
     })
     $('#ipresult').val('')
 })
@@ -64,16 +66,18 @@ $('#vinsearch').on('click', () => {
 $('#domainsearch').on('click', () => {
     domain = $('#domain').val()
     $.getJSON('http://localhost:6174/domain/' + domain, (res) => {
-        $('#domainresult').val("Domain: " + res.domain + "\n" +
-        "Domain ID: " + res.domain_id + "\n" +
-        "Status: " + res.status + "\n" + 
-        "Domain Age: " + res.domain_age + "\n" + 
-        "WHOIS Server: " + res.whois_server + "\n\n" +
+        let domaintable = document.getElementById('domainresult'); // need API key to continue testing
+        domaintable.innerHTML = "";
+        domaintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Domain:&nbsp;</strong>" + res.domain + "</span>";
+        domaintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Domain ID:&nbsp;</strong>" + res.domain_id + "</span>";
+        domaintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Status:&nbsp;</strong>" + res.status + "</span>";
+        domaintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Domain Age:&nbsp;</strong>" + res.domain_age + "</span>";
+        domaintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>WHOIS Server:&nbsp;</strong>" + res.whois_server + "</span><br><br>";
         
-        "Registrar IANA ID: " + res.registrar.iana_id + "\n" + 
-        "Registrar Name: " + res.registrar.name + "\n" + 
-        "Registrar URL: " + res.registrar.url + "\n\n" +
-
+        domaintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Registrar IANA ID:&nbsp;</strong>" + res.registrar.iana_id + "</span>";
+        domaintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Registrar Name:&nbsp;</strong>" + res.registrar.name + "</span>";
+        domaintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Registrar URL:&nbsp;</strong>" + res.registrar.url + "</span><br><br>";
+        /*
         "Registrant Name: " + res.registrant.name + "\n" +
         "Registrant Organization: " + res.registrant.organization + "\n" +
         "Registrant Street Address: " + res.registrant.street_address + "\n" +
@@ -118,7 +122,8 @@ $('#domainsearch').on('click', () => {
         "Billing Fax: " + res.billing.fax + "\n" +
         "Billing Email: " + res.billing.email + "\n\n" +
 
-        "Nameservers: " + res.nameservers)
+        "Nameservers: " + res.nameservers
+        */
     })
     $('#domainresult').val('') 
 })

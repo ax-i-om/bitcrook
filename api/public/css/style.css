@@ -1,101 +1,89 @@
 html {
-    color: white;
-    display: table;
-    font-family: sans-serif;
-    height: 100%;
-    width: 100%;
-  }
-  
-  table {
-    padding-left: 5px
-  }
-  
-  h1 {
-    padding-left: 5px
-  }
-  h2 {
-    padding-left: 5px
-  }
-  h3 {
-    padding-left: 5px
-  }
-  p {
-    padding-left: 5px
-  }
-  
-  body {
-    display: table-cell;
-    margin: 2em auto;
-    background-color: #1e272e;
-  }
-  
-  a {
-    color: #05c46b
-  }
+  color: white;
+  display: table;
+  font-family: sans-serif;
+  height: 100%;
+  width: 100%;
+}
 
-  input {
-    background-color: #485460;
-    color: white;
-    width: 50px;
-  }
+h1 {
+  padding-left: 5px
+}
 
-  textarea {
-    color: white;
-    border: none;
-    overflow: auto;
-    outline: none;
+h2 {
+  padding-left: 5px
+}
 
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+h3 {
+  padding-left: 5px
+}
 
-    resize: none; /*remove the resize handle on the bottom right*/
-    background-color: #1e272e; 
-    font-size: 200%;
-    text-align: center;
-  }
-  
-  th {
-    text-align: left;
-    font-size: 150%
-  }
-  
-  button {
-    background-color: #0be881;
-    color: white;
-  }
+p {
+  padding-left: 5px
+}
 
-  /* Style the navigation bar */
-  .navbar {
-    width: 100%;
-    background-color: #555;
-    overflow: auto;
-  }
-  
-  /* Navbar links */
+body {
+  display: table-cell;
+  margin: 2em auto;
+  background-color: #2f3640;
+}
+
+a {
+  color: #05c46b
+}
+
+input {
+  background-color: #353b48;
+  color: white;
+  width: 50px;
+}
+
+th {
+  text-align: left;
+  font-size: 150%
+}
+
+button {
+  background-color: #1dd1a1;
+  color: white;
+}
+
+button a:hover {
+  background-color: #10ac84;
+  color: white;
+}
+
+/* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: #353b48;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #10ac84;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #1dd1a1;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
   .navbar a {
-    float: left;
-    text-align: center;
-    padding: 12px;
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
+    float: none;
+    display: block;
   }
-  
-  /* Navbar links on mouse-over */
-  .navbar a:hover {
-    background-color: #05c46b;
-  }
-  
-  /* Current/active navbar link */
-  .active {
-    background-color: #0be881;
-  }
-  
-  /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-  @media screen and (max-width: 500px) {
-    .navbar a {
-      float: none;
-      display: block;
-    }
-  }
+}
