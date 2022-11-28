@@ -20,7 +20,6 @@
 
 <body>
     <script type="text/javascript" src="/js/script.js"></script>
-
     <div class="navbar">
       <a href="http://localhost:6174"><i class="fas fa-home"></i> Home</a>
       <a href="http://localhost:6174/tools"><i class="fas fa-tools"></i> Tools</a>
@@ -28,14 +27,18 @@
     </div>
     <h1 style="text-align: center; padding-left: 0px">Username Lookup</h1>
     <div class="center-h">
-      <input style="padding: 5px; width: 50%; margin: 5px; height: 5%; text-align: center; font-size: 150%; border-radius: 25px; border-width: 0px;" spellcheck="false" autocomplete="off" id="username" placeholder="Query Username">
-    </div>
+      <input style="padding: 5px; width: 50%; margin: 5px; height: 5%; text-align: center; font-size: 150%; border-width: 0px;" spellcheck="false" autocomplete="off" id="username" placeholder="Query username ...">
+    </div>  
     <div class="center-h">
-      <button style="font-family: Helvetica; width: 50%; margin: 5px; height: 10%; font-size: 150%; border-radius: 25px; border-width: 0px; color: black; cursor: pointer;" id="usernamesearch">Search</button>
-    </div>
-    <div class="center-h">
-      <textarea style="width: 99%; height: 60%; margin: 5px;" id="usernameresult" data-role="none" rows="15" cols="50" readonly></textarea>
-    </div>
+      <button style="font-family: Helvetica; width: 50%; margin: 5px; height: 10%; font-size: 150%; border-width: 0px; color: #2f3640; cursor: pointer;" id="usernamesearch">Search</button>
+    </div>  
+    <table style="width: 50%; margin: 0px auto">
+      <tr>
+        <td id="usernameresult">
+
+        </td>
+      </tr>
+    </table>
     <br>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="/js/app.js"></script>

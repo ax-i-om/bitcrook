@@ -29,7 +29,22 @@ $('#ipsearch').on('click', () => {
 $('#usernamesearch').on('click', () => {
     username = $('#username').val()
     $.getJSON('http://localhost:6174/username/' + username, (res) => {
-        $('#usernameresult').val(JSON.stringify(res, null, 4))
+        let usernametable = document.getElementById('usernameresult');
+        let recentswap = false;
+        usernametable.innerHTML = "";
+        
+        for(let i = 0; i < res.length; i++) {
+            let obj = res[i];
+            if (obj.Valid) {
+                if (recentswap) {
+                    usernametable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>" + obj.Title + ":&nbsp;</strong>" + obj.Domain + "</span>";
+                    recentswap = false;
+                } else {
+                    usernametable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>" + obj.Title + ":&nbsp;</strong>" + obj.Domain + "</span>";
+                    recentswap = true;
+                }
+            }
+        }
     })
     $('#usernameresult').val('') 
 })
@@ -37,28 +52,30 @@ $('#usernamesearch').on('click', () => {
 $('#vinsearch').on('click', () => {
     vin = $('#vin').val()
     $.getJSON('http://localhost:6174/vin/' + vin, (res) => {
-        $('#vinresult').val("Vin: " + res.Vin + "\n" +
-        "Make: " + res.Make + "\n" +
-        "Model: " + res.Model + "\n" +
-        "Year: " + res.Year + "\n" +
-        "Trim: " + res.Trim + "\n" +
-        "Body: " + res.Body + "\n" +
-        "Engine: " + res.Engine + "\n" +
-        "Manufactured In: " + res.ManufacturedIn + "\n" +
-        "Trim Level: " + res.TrimLevel + "\n" +
-        "Steering Type: " + res.SteeringType + "\n" +
-        "ABS: " + res.Abs + "\n" +
-        "Tank Size: " + res.TankSize + "\n" +
-        "Overall Height: " + res.OverallHeight + "\n" +
-        "Overall Length: " + res.OverallLength + "\n" +
-        "Overall Width: " + res.OverallWidth + "\n" +
-        "Standard Seating: " + res.StandardSeating + "\n" +
-        "Optional Seating: " + res.OptionalSeating + "\n" +
-        "Highway Mileage: " + res.HighwayMileage + "\n" +
-        "City Mileage: " + res.CityMileage + "\n" +
-        "Fuel Type: " + res.FuelType + "\n" +
-        "Drive Type: " + res.DriveType + "\n" +
-        "Transmission: " + res.Transmission)
+        let vintable = document.getElementById('vinresult');
+        vintable.innerHTML = "";
+        vintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>VIN:&nbsp;</strong>" + res.Vin + "</span>";
+        vintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Make:&nbsp;</strong>" + res.Make + "</span>";
+        vintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Model:&nbsp;</strong>" + res.Model + "</span>";
+        vintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Year:&nbsp;</strong>" + res.Year + "</span>";
+        vintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Trim:&nbsp;</strong>" + res.Trim + "</span>";
+        vintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Body:&nbsp;</strong>" + res.Body + "</span>";
+        vintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Engine:&nbsp;</strong>" + res.Engine + "</span>";
+        vintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Manufactured In:&nbsp;</strong>" + res.ManufacturedIn + "</span>";
+        vintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Trim Level:&nbsp;</strong>" + res.TrimLevel + "</span>";
+        vintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Steering Type:&nbsp;</strong>" + res.SteeringType + "</span>";
+        vintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>ABS:&nbsp;</strong>" + res.Abs + "</span>";
+        vintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Tank Size:&nbsp;</strong>" + res.TankSize + "</span>";
+        vintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Overall Height:&nbsp;</strong>" + res.OverallHeight + "</span>";
+        vintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Overall Length:&nbsp;</strong>" + res.OverallLength + "</span>";
+        vintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Overall Width:&nbsp;</strong>" + res.OverallWidth + "</span>";
+        vintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Standard Seating:&nbsp;</strong>" + res.StandardSeating + "</span>";
+        vintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Optional Seating:&nbsp;</strong>" + res.OptionalSeating + "</span>";
+        vintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Highway Mileage:&nbsp;</strong>" + res.HighwayMileage + "</span>";
+        vintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>City Mileage:&nbsp;</strong>" + res.CityMileage + "</span>";
+        vintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Fuel Type:&nbsp;</strong>" + res.FuelType + "</span>";
+        vintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Drive Type:&nbsp;</strong>" + res.DriveType + "</span>";
+        vintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Transmission:&nbsp;</strong>" + res.Transmission + "</span>";
     })
     $('#vinresult').val('') 
 })
@@ -126,4 +143,26 @@ $('#domainsearch').on('click', () => {
         */
     })
     $('#domainresult').val('') 
+})
+
+$('#discordsearch').on('click', () => {
+    discord = $('#discord').val()
+    $.getJSON('http://localhost:6174/discord/' + discord, (res) => {
+        let discordtable = document.getElementById('discordresult');
+        discordtable.innerHTML = "";
+        discordtable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>ID:&nbsp;</strong>" + res.id + "</span>";
+        discordtable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Username:&nbsp;</strong>" + res.username + "</span>";
+        discordtable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Avatar:&nbsp;</strong>" + res.avatar + "</span>";
+        discordtable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Discriminator:&nbsp;</strong>" + res.discriminator + "</span>";
+        discordtable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Public Flags:&nbsp;</strong>" + res.public_flags + "</span>";
+        discordtable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Flags:&nbsp;</strong>" + res.flags + "</span>";
+        discordtable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Purchased Flags:&nbsp;</strong>" + res.purchased_flags + "</span>";
+        discordtable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Locale:&nbsp;</strong>" + res.locale + "</span>";
+        discordtable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>NSFW Allowed:&nbsp;</strong>" + res.nsfw_allowed + "</span>";
+        discordtable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>MFA Enabled:&nbsp;</strong>" + res.mfa_enabled + "</span>";
+        discordtable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Email:&nbsp;</strong>" + res.email + "</span>";
+        discordtable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Verified:&nbsp;</strong>" + res.verified + "</span>";
+        discordtable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Phone:&nbsp;</strong>" + res.phone + "</span>";
+     })
+    $('#ipresult').val('')
 })
