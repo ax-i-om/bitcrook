@@ -21,6 +21,7 @@ var results []Website
 
 // UserLookup returns a slice of type Website
 func UserLookup(userres string) []Website {
+	results = nil
 	var wg sync.WaitGroup
 	var arrNo = noRedirSites(userres)
 	for _, v := range arrNo {
