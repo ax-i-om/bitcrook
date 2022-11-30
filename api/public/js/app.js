@@ -40,10 +40,14 @@ $('#usernamesearch').on('click', () => {
             let obj = res[i];
             if (obj.Valid) {
                 if (recentswap) {
-                    usernametable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>" + obj.Title + ":&nbsp;</strong>" + obj.Domain + "</span>";
+                    usernametable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>" + obj.Title + ":&nbsp;</strong>" + "<a>" + obj.Domain + "</a>" + "</span>";
+                    $(function(){ $('a:contains(' + obj.Domain + ')').attr("href", obj.Domain)});
+                    $(function(){ $('a:contains(' + obj.Domain + ')').attr("target", "_blank")});
                     recentswap = false;
                 } else {
-                    usernametable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>" + obj.Title + ":&nbsp;</strong>" + obj.Domain + "</span>";
+                    usernametable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>" + obj.Title + ":&nbsp;</strong>" + "<a>" + obj.Domain + "</a>" + "</span>";
+                    $(function(){ $('a:contains(' + obj.Domain + ')').attr("href", obj.Domain)});
+                    $(function(){ $('a:contains(' + obj.Domain + ')').attr("target", "_blank")});
                     recentswap = true;
                 }
             }
