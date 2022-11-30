@@ -51,11 +51,45 @@ body {
 a {
   color: #05c46b
 }
-
-input {
+.searchfield {
   background-color: #353b48;
   color: white;
-  width: 50px;
+  flex-grow: 2; 
+  width: 100%; 
+  height: 100%; 
+  text-align: left;
+  font-size: 150%; 
+  border: none; 
+  outline: none;
+}
+
+.searchbutton {
+  font-family: Helvetica; 
+  width: 25%; 
+  height: 100%; 
+  font-size: 150%; 
+  border: none; 
+  color: #2f3640;
+  cursor: pointer;
+  background-color: #1dd1a1;
+}
+
+.searchform {
+  display: flex; 
+  flex-direction: row; 
+  border: none; 
+  padding:2px;
+  width: 50%;
+  height: 100%;
+}
+
+.searchform input[type="text"] {
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+.searchform input::placeholder {
+  padding: 10px;
 }
 
 th {
@@ -63,12 +97,7 @@ th {
   font-size: 150%
 }
 
-button {
-  background-color: #1dd1a1;
-  color: white;
-}
-
-button a:hover {
+button:hover {
   background-color: #10ac84;
   color: white;
 }

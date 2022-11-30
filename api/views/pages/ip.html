@@ -26,12 +26,12 @@
       <a href="https://github.com/audioo/bitcrook"><i class="fab fa-github"></i> GitHub</a>
     </div>
     <h1 style="text-align: center; padding-left: 0px">IP Lookup</h1>
-    <div class="center-h">
-      <input style="padding: 5px; width: 50%; margin: 5px; height: 5%; text-align: center; font-size: 150%; border-width: 0px;" spellcheck="false" autocomplete="off" id="ip" placeholder="Query IP ...">
-    </div>  
-    <div class="center-h">
-      <button style="font-family: Helvetica; width: 50%; margin: 5px; height: 10%; font-size: 150%; border-width: 0px; color: #2f3640; cursor: pointer;" id="ipsearch">Search</button>
-    </div>  
+    <div class="center-h" style="height: 3em; padding-bottom: 10px;">
+      <form class="searchform">
+        <input type="text" class="searchfield" spellcheck="false" autocomplete="off" id="ip" placeholder="IP">
+        <button class="searchbutton" id="ipsearch" type="button"><img style="width: 1.5em; height: 80%; padding-top: 5px" src="/images/search.png"/></button>
+      </form>
+    </div>
     <table style="width: 50%; margin: 0px auto">
       <tr>
         <td id="ipresult">
