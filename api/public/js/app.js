@@ -1,8 +1,10 @@
 $('#ipsearch').on('click', () => {
+    $('#iploadercircle').addClass('loader');
     ip = $('#ip').val()
     $.getJSON('http://localhost:6174/ip/' + ip, (res) => {
         let iptable = document.getElementById('ipresult');
         iptable.innerHTML = "";
+        $('#iploadercircle').removeClass('loader');
         iptable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Status:&nbsp;</strong>" + res.status + "</span>";
         iptable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Continent:&nbsp;</strong>" + res.continent + "</span>";
         iptable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Country:&nbsp;</strong>" + res.country + "</span>";
@@ -27,12 +29,13 @@ $('#ipsearch').on('click', () => {
 })
 
 $('#usernamesearch').on('click', () => {
+    $('#userloadercircle').addClass('loader');
+    let usernametable = document.getElementById('usernameresult');
+    usernametable.innerHTML = "";
     username = $('#username').val()
     $.getJSON('http://localhost:6174/username/' + username, (res) => {
-        let usernametable = document.getElementById('usernameresult');
         let recentswap = false;
-        usernametable.innerHTML = "";
-        
+        $('#userloadercircle').removeClass('loader');
         for(let i = 0; i < res.length; i++) {
             let obj = res[i];
             if (obj.Valid) {
@@ -50,10 +53,12 @@ $('#usernamesearch').on('click', () => {
 })
 
 $('#vinsearch').on('click', () => {
+    $('#vinloadercircle').addClass('loader');
     vin = $('#vin').val()
     $.getJSON('http://localhost:6174/vin/' + vin, (res) => {
         let vintable = document.getElementById('vinresult');
         vintable.innerHTML = "";
+        $('#vinloadercircle').removeClass('loader');
         vintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>VIN:&nbsp;</strong>" + res.Vin + "</span>";
         vintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Make:&nbsp;</strong>" + res.Make + "</span>";
         vintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Model:&nbsp;</strong>" + res.Model + "</span>";
@@ -146,10 +151,12 @@ $('#domainsearch').on('click', () => {
 })
 
 $('#discordsearch').on('click', () => {
+    $('#discordloadercircle').addClass('loader');
     discord = $('#discord').val()
     $.getJSON('http://localhost:6174/discord/' + discord, (res) => {
         let discordtable = document.getElementById('discordresult');
         discordtable.innerHTML = "";
+        $('#discordloadercircle').removeClass('loader');
         discordtable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>ID:&nbsp;</strong>" + res.id + "</span>";
         discordtable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>Username:&nbsp;</strong>" + res.username + "</span>";
         discordtable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>Avatar:&nbsp;</strong>" + res.avatar + "</span>";
