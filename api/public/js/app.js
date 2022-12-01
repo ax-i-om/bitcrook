@@ -177,3 +177,26 @@ $('#discordsearch').on('click', () => {
      })
     $('#ipresult').val('')
 })
+
+$('#tinsearch').on('click', () => {
+    let tintable = document.getElementById('tinresult');
+    tintable.innerHTML = "";
+    $('#tinloadercircle').addClass('loader');
+    tin = $('#tin').val()
+    $.getJSON('http://localhost:6174/tin/' + tin, (res) => {
+        $('#tinloadercircle').removeClass('loader');
+        for(let i = 0; i < res.rows.length; i++) {
+            let obj = res.rows[i];
+            tintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>" + "Assignment Date" + ":&nbsp;</strong>" + "<a>" + obj.r + "</a>" + "</span>";
+            tintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>" + "Termination Date" + ":&nbsp;</strong>" + "<a>" + obj.e + "</a>" + "</span>";
+            tintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>" + "Page" + ":&nbsp;</strong>" + "<a>" + obj.pg + "</a>" + "</span>";
+            tintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>" + "Total" + ":&nbsp;</strong>" + "<a>" + obj.tot + "</a>" + "</span>";
+            tintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>" + "Count" + ":&nbsp;</strong>" + "<a>" + obj.cnt + "</a>" + "</span>";
+            tintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>" + "INN" + ":&nbsp;</strong>" + "<a>" + obj.i + "</a>" + "</span>";
+            tintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>" + "K" + ":&nbsp;</strong>" + "<a>" + obj.k + "</a>" + "</span>";
+            tintable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>" + "Name" + ":&nbsp;</strong>" + "<a>" + obj.n + "</a>" + "</span>";
+            tintable.innerHTML += "<span style='background-color: #353b48; display:flex; padding: 5px; justify-content: center'>" + "<strong>" + "OGRNIP" + ":&nbsp;</strong>" + "<a>" + obj.o + "</a>" + "</span><br><br>";    
+        }
+    })
+    $('#tinresult').val('')
+})

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bitcrook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <script
+      src="https://kit.fontawesome.com/a5e895e935.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .center-h {
+        display: flex; /* or display:grid */
+        justify-content: center;
+      }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript" src="/js/script.js"></script>
+    <div class="navbar">
+      <a href="http://localhost:6174"><i class="fas fa-home"></i> Home</a>
+      <a href="http://localhost:6174/tools"><i class="fas fa-tools"></i> Tools</a>
+      <a href="https://github.com/audioo/bitcrook"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+    <h1 style="text-align: center; padding-left: 0px">TIN Lookup</h1>
+    <div class="center-h" style="height: 3em; padding-bottom: 10px;">
+      <form class="searchform">
+        <input type="text" class="searchfield" spellcheck="false" autocomplete="off" id="tin" placeholder="TIN">
+        <button class="searchbutton" id="tinsearch" type="button"><img style="width: 1.5em; height: 80%; padding-top: 5px" src="/images/search.png"/></button>
+      </form>
+    </div>
+    <table style="width: 50%; margin: 0px auto">
+      <tr>
+        <td id="tinresult">
+
+        </td>
+      </tr>
+    </table>
+    <div class="loadercontainer">
+      <div class="" id="tinloadercircle"></div> 
+    </div>
+    <br>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="/js/app.js"></script>
+</body>
+
+</html> 
