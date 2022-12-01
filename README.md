@@ -47,8 +47,9 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 
 ### Preview
 
-<a><img src="./images/cliprev.png" width=660 height="360"></a>
-<a><img src="./images/guiprev.png" width=660 height="360"></a>
+<a><img src="./images/cliprev.png"></a>
+<a><video src="https://user-images.githubusercontent.com/57118993/205174585-d1b9501c-f346-482a-b681-b50b9685f1c7.mp4"></a>
+
 
 ### Attributions
 
