@@ -1,5 +1,5 @@
 <p align="center">
-  <a><img src="./images/bitcrook.png" width=180 height="180"></a>
+  <a><img src="./images/bitcrookvtc.png" width=180 height="180"></a>
   <h1 align="center">Bitcrook</h1>
   <h2 align="center">Important: In early development, looking for contributors/maintainers.</h2>
   <p align="center">
