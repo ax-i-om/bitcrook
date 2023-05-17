@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/audioo/bitcrook/internal/config"
-	"github.com/audioo/bitcrook/internal/http"
+	"github.com/ax-i-om/bitcrook/internal/config"
+	"github.com/ax-i-om/bitcrook/internal/http"
 )
 
 func TestEmailLookup(t *testing.T) {

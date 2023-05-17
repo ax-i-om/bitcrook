@@ -1,4 +1,4 @@
-# [github.com/audioo/bitcrook/noauth/vin](https://github.com/audioo/bitcrook/tree/main/noauth/vin) - no authentication required
+# [github.com/ax-i-om/bitcrook/noauth/vin](https://github.com/ax-i-om/bitcrook/tree/main/noauth/vin) - no authentication required
 
 
 ## Types
@@ -108,7 +108,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/audioo/bitcrook/noauth/vin"
+	"github.com/ax-i-om/bitcrook/noauth/vin"
 )
 
 func main() {

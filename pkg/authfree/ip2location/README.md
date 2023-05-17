@@ -1,4 +1,4 @@
-# [github.com/audioo/bitcrook/pkg/authfree/ip2location](https://github.com/audioo/bitcrook/tree/main/pkg/authfree/ip2location) - free authentication required
+# [github.com/ax-i-om/bitcrook/pkg/authfree/ip2location](https://github.com/ax-i-om/bitcrook/tree/main/pkg/authfree/ip2location) - free authentication required
 
 
 ## Types

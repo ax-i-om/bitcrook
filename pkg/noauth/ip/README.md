@@ -1,4 +1,4 @@
-# [github.com/audioo/bitcrook/pkg/noauth/ip](https://github.com/audioo/bitcrook/tree/main/pkg/noauth/ip) - no authentication required
+# [github.com/ax-i-om/bitcrook/pkg/noauth/ip](https://github.com/ax-i-om/bitcrook/tree/main/pkg/noauth/ip) - no authentication required
 
 
 ## Types
@@ -57,7 +57,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/audioo/bitcrook/pkg/noauth/ip"
+	"github.com/ax-i-om/bitcrook/pkg/noauth/ip"
 )
 
 func main() {

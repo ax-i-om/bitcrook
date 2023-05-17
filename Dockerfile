@@ -1,8 +1,8 @@
 #REDO
 FROM golang:1.19-alpine
 
-LABEL author="audioo"
-LABEL github="https://github.com/audioo/bitcrook"
+LABEL author="ax-i-om"
+LABEL github="https://github.com/ax-i-om/bitcrook"
 
 RUN mkdir /app
 COPY . /app

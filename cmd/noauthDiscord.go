@@ -1,5 +1,5 @@
 /*
-Copyright © 2021 audioo <contactaudio@pm.me>
+Copyright © 2021 ax-i-om <contactaudio@pm.me>
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -21,7 +21,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/audioo/bitcrook/pkg/noauth/discord"
+	"github.com/ax-i-om/bitcrook/pkg/noauth/discord"
 	"github.com/spf13/cobra"
 )
 

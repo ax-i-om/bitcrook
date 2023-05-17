@@ -3,7 +3,7 @@ package ip2location
 import (
 	"encoding/json"
 
-	"github.com/audioo/bitcrook/internal/http"
+	"github.com/ax-i-om/bitcrook/internal/http"
 )
 
 /*

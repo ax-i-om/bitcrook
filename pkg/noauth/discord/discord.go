@@ -3,7 +3,7 @@ package discord
 import (
 	"encoding/json"
 
-	"github.com/audioo/bitcrook/internal/http"
+	"github.com/ax-i-om/bitcrook/internal/http"
 )
 
 // DiscordTokenInfo is a represntation of a plethora of information returned by the TokenLookup() function.

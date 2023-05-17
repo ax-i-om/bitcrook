@@ -5,7 +5,7 @@ name = "go"
 enabled = true
 
   [analyzers.meta]
-  import_root = "github.com/audioo/bitcrook"
+  import_root = "github.com/ax-i-om/bitcrook"
 
 [[analyzers]]
 name = "javascript"

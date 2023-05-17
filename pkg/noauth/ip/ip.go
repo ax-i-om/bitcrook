@@ -3,7 +3,7 @@ package ip
 import (
 	"encoding/json"
 
-	"github.com/audioo/bitcrook/internal/http"
+	"github.com/ax-i-om/bitcrook/internal/http"
 )
 
 // IPAddress is the response type of the IPLookup() function, containing a plethora of information about the IPV4 address in question.

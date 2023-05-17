@@ -1,4 +1,4 @@
-module github.com/audioo/bitcrook
+module github.com/ax-i-om/bitcrook
 
 go 1.19
 

@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	hits "github.com/audioo/bitcrook/pkg/noauth/vin"
+	hits "github.com/ax-i-om/bitcrook/pkg/noauth/vin"
 	"github.com/gofiber/fiber/v2"
 )
 

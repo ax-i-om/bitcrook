@@ -3,12 +3,12 @@
   <h1 align="center">Bitcrook</h1>
   <h2 align="center">Important: In early development, looking for contributors/maintainers.</h2>
   <p align="center">
-    <a href="https://goreportcard.com/report/github.com/audioo/bitcrook"><img src="https://goreportcard.com/badge/github.com/audioo/bitcrook" alt="Go Report Card"></a>
+    <a href="https://goreportcard.com/report/github.com/ax-i-om/bitcrook"><img src="https://goreportcard.com/badge/github.com/ax-i-om/bitcrook" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-9&#47;10-orange.svg" alt="Tests"></a>
     <a><img src="https://img.shields.io/badge/version-0.9.14-blue.svg" alt="s"></a>
     <a href="https://discord.com/invite/uVWJUTufqf"><img src="https://img.shields.io/badge/discord-chat-blue.svg" alt="Discord"></a><br>
     Centralize and expedite OSINT investigations<br>
-  <a href="https://github.com/users/audioo/projects/1">Roadmap</a> | <a href="https://bitcrook.tech">Documentation</a><br>
+  <a href="https://github.com/users/ax-i-om/projects/1">Roadmap</a> | <a href="https://bitcrook.tech">Documentation</a><br>
 </a>
   </p><br>
 </p>
@@ -59,7 +59,7 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 
 ### Installation
 
- - Fetch the repository via 'git clone': `git clone https://github.com/audioo/bitcrook.git`
+ - Fetch the repository via 'git clone': `git clone https://github.com/ax-i-om/bitcrook.git`
 
 ### CLI 
 
@@ -100,42 +100,42 @@ Bitcrook is currently passing all tests; however, I have provided instructions f
 
 | Package                                                                                    | Description                                  |   Auth   | Location | Status |
 | :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| [Case Law](https://github.com/audioo/bitcrook/tree/main/pkg/noauth/caselaw)           | Court Case Search                            |  `none`  | US | Functioning | 
+| [Case Law](https://github.com/ax-i-om/bitcrook/tree/main/pkg/noauth/caselaw)           | Court Case Search                            |  `none`  | US | Functioning | 
 
 ### Discord
 
 | Package                                                                                    | Description                                  |   Auth   | Location | Status |
 | :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| [Discord Token Lookup](https://github.com/audioo/bitcrook/tree/main/pkg/noauth/discord)           | Returns information regarding the passed token.                            |  `none`  | Global | Functioning | 
+| [Discord Token Lookup](https://github.com/ax-i-om/bitcrook/tree/main/pkg/noauth/discord)           | Returns information regarding the passed token.                            |  `none`  | Global | Functioning | 
 
 ### IP Address
 
 | Package                                                                                    | Description                                  |   Auth   | Location | Status |
 | :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| [IPV4 Address Lookup](https://github.com/audioo/bitcrook/tree/main/pkg/noauth/ip)     | IPV4 Address Lookup                          |  `none`  | Global | Functioning |
+| [IPV4 Address Lookup](https://github.com/ax-i-om/bitcrook/tree/main/pkg/noauth/ip)     | IPV4 Address Lookup                          |  `none`  | Global | Functioning |
 
 ### Multi-Use
 
 | Package                                                                                    | Description                                  |   Auth   | Location | Status |
 | :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| [Have I Been Pwned](https://github.com/audioo/bitcrook/tree/main/pkg/authpaid/hibp)   | Email and Password Vulnerability - (Breaches)|  `paid`  | Global | Functioning |
-| [Melissa](https://github.com/audioo/bitcrook/tree/main/pkg/authfree/melissa)          | Lookups - Email, Phone Number, IP Address    |  `free`  | US | Functioning |
-| [IP2LOCATION](https://github.com/audioo/bitcrook/tree/main/pkg/authfree/ip2location)           | Whois Lookup, IP Lookup              |  `free`  | - | Functioning | 
+| [Have I Been Pwned](https://github.com/ax-i-om/bitcrook/tree/main/pkg/authpaid/hibp)   | Email and Password Vulnerability - (Breaches)|  `paid`  | Global | Functioning |
+| [Melissa](https://github.com/ax-i-om/bitcrook/tree/main/pkg/authfree/melissa)          | Lookups - Email, Phone Number, IP Address    |  `free`  | US | Functioning |
+| [IP2LOCATION](https://github.com/ax-i-om/bitcrook/tree/main/pkg/authfree/ip2location)           | Whois Lookup, IP Lookup              |  `free`  | - | Functioning | 
 
 ### Tax ID
 
 | Package                                                                                    | Description                                  |   Auth   | Location | Status |
 | :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| [Tax ID Lookup](https://github.com/audioo/bitcrook/tree/main/pkg/noauth/tin) | Returns public information regarding a Russian INN.   |  `none`  | Russia | Functioning |
+| [Tax ID Lookup](https://github.com/ax-i-om/bitcrook/tree/main/pkg/noauth/tin) | Returns public information regarding a Russian INN.   |  `none`  | Russia | Functioning |
 
 ### Username
 
 | Package                                                                                    | Description                                  |   Auth   | Location | Status |
 | :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| [Username Lookup](https://github.com/audioo/bitcrook/tree/main/pkg/noauth/userlookup) | Username Lookup - (Comparable to Sherlock)   |  `none`  | Global | Functioning |
+| [Username Lookup](https://github.com/ax-i-om/bitcrook/tree/main/pkg/noauth/userlookup) | Username Lookup - (Comparable to Sherlock)   |  `none`  | Global | Functioning |
 
 ### Vehicle
 
 | Package                                                                                    | Description                                  |   Auth   | Location | Status |
 | :----------------------------------------------------------------------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| [VIN Lookup](https://github.com/audioo/bitcrook/tree/main/pkg/noauth/vin)             | Vehicle Identification Number Lookup         |  `none`  | - | Functioning | 
+| [VIN Lookup](https://github.com/ax-i-om/bitcrook/tree/main/pkg/noauth/vin)             | Vehicle Identification Number Lookup         |  `none`  | - | Functioning | 

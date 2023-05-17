@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	hits "github.com/audioo/bitcrook/pkg/authfree/ip2location"
+	hits "github.com/ax-i-om/bitcrook/pkg/authfree/ip2location"
 	"github.com/gofiber/fiber/v2"
 )
 
