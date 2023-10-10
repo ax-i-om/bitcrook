@@ -14,23 +14,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package discord
-
-import (
-	"encoding/json"
-	"testing"
-
-	"github.com/ax-i-om/bitcrook/internal/http"
-)
-
-func TestTokenLookup(t *testing.T) {
-	x, err := http.AuthGet("https://discordapp.com/api/v6/users/@me", "Authorization", "awdawd")
-	if err != nil {
-		t.Error(err)
-	}
-	clres := new(DiscordTokenInfo)
-	err = json.Unmarshal([]byte(x), &clres)
-	if err != nil {
-		t.Error(err)
-	}
+/*eslint-disable no-unused-vars*/
+const myFunction = () => {
+  const tnav = document.getElementById("myTopnav");
+  if (tnav.className === "topnav") {
+    tnav.className += " responsive";
+  } else {
+    tnav.className = "topnav";
+  }
 }

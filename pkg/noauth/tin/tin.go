@@ -1,8 +1,26 @@
+/*
+Copyright © 2021 ax-i-om <addressaxiom@pm.me>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+// Package tin contains the types and functions used for querying for
+// information regarding a Vehicle Identification Number (VIN)
 package tin
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"strings"
 )
@@ -48,7 +66,7 @@ func TINLookup(tin string) (*TinData, error) {
 	}
 	defer resOne.Body.Close()
 
-	bodyOne, err := ioutil.ReadAll(resOne.Body)
+	bodyOne, err := io.ReadAll(resOne.Body)
 	if err != nil {
 		return nil, http.ErrAbortHandler
 	}
@@ -73,7 +91,7 @@ func TINLookup(tin string) (*TinData, error) {
 	}
 	defer resTwo.Body.Close()
 
-	bodyTwo, err := ioutil.ReadAll(resTwo.Body)
+	bodyTwo, err := io.ReadAll(resTwo.Body)
 	if err != nil {
 		return nil, err
 	}

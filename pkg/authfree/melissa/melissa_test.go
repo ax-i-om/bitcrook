@@ -1,19 +1,35 @@
+/*
+Copyright © 2021 ax-i-om <addressaxiom@pm.me>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
 package melissa
 
 import (
 	"encoding/json"
+	"os"
 	"testing"
 
-	"github.com/ax-i-om/bitcrook/internal/config"
 	"github.com/ax-i-om/bitcrook/internal/http"
 )
 
 func TestEmailLookup(t *testing.T) {
-	elConf, err := config.LoadConfig("../../../keyconfig.json")
-	if err != nil {
-		t.Error(err)
+	key1 := os.Getenv("BITCROOK_MLSA")
+	if key1 == "UNSPECIFIED" {
+		t.Error()
 	}
-	resp, err := http.GetReq("https://globalemail.melissadata.net/v4/WEB/GlobalEmail/doGlobalEmail?id=" + elConf.MelissaKey + "&email=email@example.com&format=json")
+	resp, err := http.GetReq("https://globalemail.melissadata.net/v4/WEB/GlobalEmail/doGlobalEmail?id=" + key1 + "&email=email@example.com&format=json")
 	if err != nil {
 		t.Error(err)
 	}
@@ -56,11 +72,11 @@ func TestEmailLookup(t *testing.T) {
 }
 
 func TestPhoneLookup(t *testing.T) {
-	elConf, err := config.LoadConfig("../../../keyconfig.json")
-	if err != nil {
-		t.Error(err)
+	key1 := os.Getenv("BITCROOK_MLSA")
+	if key1 == "UNSPECIFIED" {
+		t.Error()
 	}
-	resp, err := http.GetReq("https://globalphone.melissadata.net/v4/WEB/GlobalPhone/doGlobalPhone?id=" + elConf.MelissaKey + "&phone=9142329901")
+	resp, err := http.GetReq("https://globalphone.melissadata.net/v4/WEB/GlobalPhone/doGlobalPhone?id=" + key1 + "&phone=9142329901")
 	if err != nil {
 		t.Error(err)
 	}
@@ -100,11 +116,11 @@ func TestPhoneLookup(t *testing.T) {
 }
 
 func TestIPLookup(t *testing.T) {
-	elConf, err := config.LoadConfig("../../../keyconfig.json")
-	if err != nil {
-		t.Error(err)
+	key1 := os.Getenv("BITCROOK_MLSA")
+	if key1 == "UNSPECIFIED" {
+		t.Error()
 	}
-	resp, err := http.GetReq("https://globalip.melissadata.net/v4/web/iplocation/doiplocatio?id=" + elConf.MelissaKey + "&ip=1.1.1.1")
+	resp, err := http.GetReq("https://globalip.melissadata.net/v4/web/iplocation/doiplocatio?id=" + key1 + "&ip=1.1.1.1")
 	if err != nil {
 		t.Error(err)
 	}

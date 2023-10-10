@@ -1,11 +1,32 @@
+/*
+Copyright © 2021 ax-i-om <addressaxiom@pm.me>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+// Package userlookup contains the types and functions used for querying for
+// information regarding a username's validity status across websites
 package userlookup
 
 import (
+	"fmt"
 	"io"
 	"net/http"
 	"strconv"
 	"sync"
 	"time"
+
+	"github.com/TwiN/go-color"
 )
 
 // Website is used as the response type of the Se
@@ -96,4 +117,33 @@ func checkUser(site Website, redirect bool, wg *sync.WaitGroup) {
 	defer wg.Done()
 	x := getSCredir(site.Title, site.Domain, redirect)
 	results = append(results, x)
+}
+
+// CliSearch is intended to be used solely by the Bitcrook CLI.
+// It provides a more `interactive` search and prints the results
+// 1 by 1 to the terminal rather than dumping all of the results
+// at once
+func CliSearch(userres string) {
+	var wg sync.WaitGroup
+	var arrNo = noRedirSites(userres)
+	for _, v := range arrNo {
+		go cliCheck(v, false, &wg)
+	}
+	var arrYes = redirSites(userres)
+	for _, v := range arrYes {
+		go cliCheck(v, true, &wg)
+	}
+
+	wg.Wait()
+}
+
+func cliCheck(site Website, redirect bool, wg *sync.WaitGroup) {
+	wg.Add(1)
+	defer wg.Done()
+	x := getSCredir(site.Title, site.Domain, redirect)
+	if x.Valid {
+		fmt.Println("[" + color.Colorize(color.Green, "SUCCESS") + "] - " + x.Domain)
+	} else {
+		fmt.Println("[" + color.Colorize(color.Red, "FAILURE") + "] - " + x.Domain)
+	}
 }

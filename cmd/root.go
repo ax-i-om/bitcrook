@@ -1,5 +1,6 @@
 /*
-Copyright © 2021 ax-i-om <contactaudio@pm.me>
+Copyright © 2021 ax-i-om <addressaxiom@pm.me>
+
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -33,9 +34,9 @@ var rootCmd = &cobra.Command{
 	Use:   "bitcrook",
 	Short: "Information Gathering Apparatus",
 	Long: `
-	Bitcrook, an information gathering apparatus, 
-	is a conglomerate of tools including custom algorithms, API wrappers, etc... 
-	in order to make the reconnaissance process significantly quicker.`,
+Bitcrook, an information gathering apparatus, 
+is a conglomerate of tools including custom algorithms, API wrappers, etc... 
+in order to make the reconnaissance process significantly quicker.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
@@ -54,7 +55,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.bitcrook.yaml)")
+	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.bitcrook.yaml)")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.

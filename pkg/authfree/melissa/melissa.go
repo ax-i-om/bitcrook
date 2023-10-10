@@ -1,3 +1,21 @@
+/*
+Copyright © 2021 ax-i-om <addressaxiom@pm.me>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+// Package melissa contains the types and functions used for querying for
+// information through the melissa api
 package melissa
 
 import (
@@ -170,6 +188,7 @@ type IPAddress struct {
 	Connectiontype      string
 	Continent           string
 	Countryabbreviation string
+	Countryname         string
 	Domainname          string
 	Dst                 string
 	Ipaddress           string
@@ -280,7 +299,7 @@ func PhoneLookup(key, phone string) (*Phone, error) {
 
 // IPLookup takes a Melissa API key and an IPV4 address as its parameters which are passed through the Melissa Global IP API whose response is then represented by a *IPAddress type.
 func IPLookup(key, ip string) (*IPAddress, error) {
-	resp, err := http.GetReq("https://globalip.melissadata.net/v4/web/iplocation/doiplocatio?id=" + key + "&ip=" + ip)
+	resp, err := http.GetReq("https://globalip.melissadata.net/v4/web/iplocation/doiplocation?id=" + key + "&ip=" + ip)
 	if err != nil {
 		return nil, err
 	}
@@ -296,6 +315,7 @@ func IPLookup(key, ip string) (*IPAddress, error) {
 		newRes.Connectiontype = v.Connectiontype
 		newRes.Continent = v.Continent
 		newRes.Countryabbreviation = v.Countryabbreviation
+		newRes.Countryname = v.Countryname
 		newRes.Domainname = v.Domainname
 		newRes.Dst = v.Dst
 		newRes.Ipaddress = v.Ipaddress

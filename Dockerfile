@@ -1,13 +1,18 @@
-#REDO
-FROM golang:1.19-alpine
+FROM golang:1.20-alpine
 
 LABEL author="ax-i-om"
+LABEL email="addressaxiom@pm.me"
 LABEL github="https://github.com/ax-i-om/bitcrook"
 
-RUN mkdir /app
-COPY . /app
 WORKDIR /app
-RUN go mod download
-RUN go build -o main .
 
-ENTRYPOINT ["/app/main"]
+COPY go.mod ./
+COPY go.sum ./
+RUN go mod download
+COPY . ./
+
+RUN go build -o /bitcrook .
+
+EXPOSE 6174
+
+CMD [ "/bitcrook", "server" ]
