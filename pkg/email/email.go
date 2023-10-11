@@ -150,7 +150,7 @@ type breachList []struct {
 	Name string `json:"Name"`
 }
 
-// Acc is a representation of the names of site breaches returned by the HIBPLookup() function.
+// AccBreaches is a representation of the names of site breaches returned by the HIBPLookup() function.
 type AccBreaches struct {
 	Name string `json:"Name"`
 }

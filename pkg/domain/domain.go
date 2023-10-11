@@ -55,7 +55,7 @@ type HIBPSite struct {
 	IsSubscriptionFree bool      `json:"IsSubscriptionFree"`
 }
 
-// HIBP takes a domain as a parameter and returns a type *HIBP as well as an error.
+// HIBPLookup takes a domain as a parameter and returns a type *HIBP as well as an error.
 // The return value contains information about the specified site and its corresponding data breach.
 func HIBPLookup(domain string) ([]HIBPSite, error) {
 	body, err := http.GetReq("https://haveibeenpwned.com/api/v3/breaches")

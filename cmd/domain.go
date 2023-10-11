@@ -177,7 +177,7 @@ IP2LOCATION Whois API.`,
 					fmt.Println("Spam List:\t", v.IsSpamList)
 					fmt.Println("Malware:\t", v.IsMalware)
 					fmt.Println("Subscr. Free:\t", v.IsSubscriptionFree)
-					//fmt.Println("Description:\t", v.Description)
+					// fmt.Println("Description:\t", v.Description)
 					fmt.Print("Data Classes: \t ")
 					for _, v := range v.DataClasses {
 						fmt.Print(v + ", ")

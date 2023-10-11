@@ -89,7 +89,7 @@ type MelissaPhone struct {
 	Postalcode                   string
 }
 
-// PhoneLookup takes a Melissa API key and a phone number as its parameters which are passed through the Melissa Global Phone API whose response is then represented by a *MelissaPhone type.
+// MelissaLookup takes a Melissa API key and a phone number as its parameters which are passed through the Melissa Global Phone API whose response is then represented by a *MelissaPhone type.
 func MelissaLookup(key, phone string) (*MelissaPhone, error) {
 	resp, err := http.GetReq("https://globalphone.melissadata.net/v4/WEB/GlobalPhone/doGlobalPhone?id=" + key + "&phone=" + phone)
 	if err != nil {
