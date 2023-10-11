@@ -2,9 +2,11 @@
   <a><img src="./images/bitcrook.png" width=180 height="180"></a>
   <h1 align="center">Bitcrook</h1>
   <p align="center">
+    <a href="https://pkg.go.dev/github.com/ax-i-om/bitcrook"><img src="https://pkg.go.dev/badge/github.com/ax-i-om/tempest.svg" alt="Documentation"></a>
     <a href="https://goreportcard.com/report/github.com/ax-i-om/bitcrook"><img src="https://goreportcard.com/badge/github.com/ax-i-om/bitcrook" alt="Go Report Card"></a>
-    <a><img src="https://img.shields.io/badge/tests-nil&#47;nil-orange.svg" alt="Tests"></a>
-    <a><img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="v1.0.0"></a><br>
+    <a><img src="https://img.shields.io/badge/tests-8&#47;8-green.svg" alt="Tests"></a>
+    <a><img src="https://img.shields.io/badge/version-2.0.0-blue.svg" alt="v2.0.0"></a><br>
+    <a href="https://app.deepsource.com/gh/ax-i-om/bitcrook/" target="_blank"><img alt="DeepSource" title="DeepSource" src="https://app.deepsource.com/gh/ax-i-om/bitcrook.svg/?label=active+issues&show_trend=true"/></a><br>
     Centralize and expedite OSINT investigations<br>
   <a href="https://github.com/users/ax-i-om/projects/1">View the roadmap</a><br>
 </a>
@@ -25,14 +27,6 @@
   - [GUI](#gui)
   - [Docker](#docker)
   - [Authentication](#authentication)
-- [Package Types](#package-types) *a-z*
-  - [Court Cases](#court-cases)
-  - [Discord](#discord)
-  - [IP Address](#ip-address)
-  - [Multi-Use](#multi-use)
-  - [Tax ID](#tax-id)
-  - [Username](#username)
-  - [Vehicle](#vehicle)
 
 ## Information
 
@@ -46,15 +40,15 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 
 ### Changelog
 
-Bitcrook v1.0.0 has been released as of October 10, 2023! Here are some of the highlights:
+Bitcrook v2.0.0 has been released as of October 11, 2023, only one day after v1.0.0 due to some significant changes to project structure.
 
- - Switch web framework from Fiber to Go (enabled Bitcrook to be more lightweight)
- - Completely revamped the CLI output scheme
- - Switched secret configuration from .json to .env
- - Enabled API key support in web app
- - Fixed CORS error when accessing web app over LAN
- - Proper docker implementation
- - Binary release to support `go install`
+ - Username lookup command now only displays valid results
+ - Packages now grouped based on field type rather than authentication type
+ - Added HaveIBeenPwned breach check to email and domain lookup commands
+ - Altered .env support, see [Authentication](#authentication)
+ - Fixed tests and some documentation
+ - Bug fixes and general optimizations
+ - Removed Caselaw package due to instability, will replace
 
 Although this release hasn't changed much of the foundations of Bitcrook, it does illuminate
 a path of where it will be taken next.
@@ -103,58 +97,14 @@ You can also host the Bitcrook webapp via docker:
 
 ### Authentication
 
-Some packages require an API key. Bitcrook will run without specifying any API keys; however, if you would like to implement these functionalites, create a file named `.env` in the Bitcrook root directory and format it like so:
+Some packages require an API key. Bitcrook will run without specifying any API keys; however, if you would like to implement these functionalites, create a file named `.env` and format it like so:
 
 ``` conf
-BITCROOK_MLSA=UNSPECIFIED # Melissa API key
-BITCROOK_HIBP=UNSPECIFIED # HaveIBeenPwned API key
-BITCROOK_IPTL=UNSPECIFIED # IP2Location API key
+BITCROOK_MLSA=UNSPECIFIED
+BITCROOK_HIBP=UNSPECIFIED
+BITCROOK_IPTL=UNSPECIFIED
 ```
 
 Replace the instances of `UNSPECIFIED` with the corresponding API key.
 
-## Package-Types
-
-### Court Cases
-
-| Package                                                                                    | Description                                  |   Auth   | Location | Status |
-| :-----------------: | -------------------------------------------- | :------: | -------- | :----: |
-| CaseLaw             | Court Case Search                            |  `none`  | US | Functioning | 
-
-### Discord
-
-| Package                                                                                    | Description                                  |   Auth   | Location | Status |
-| :----------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| Discord Token Lookup           | Returns information regarding the passed token.                            |  `none`  | Global | Functioning | 
-
-### IP Address
-
-| Package                                                                                    | Description                                  |   Auth   | Location | Status |
-| :---------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| IPV4 Address Lookup     | IPV4 Address Lookup                          |  `none`  | Global | Functioning |
-
-### Multi-Use
-
-| Package                                                                                    | Description                                  |   Auth   | Location | Status |
-| :----------------------------: | -------------------------------------------- | :------: | -------- | :----: |
-| Have I Been Pwned              | Email and Password Vulnerability - (Breaches)|  `paid`  | Global | Functioning |
-| Melissa                        | Lookups - Email, Phone Number, IP Address    |  `free`  | US | Functioning |
-| IP2LOCATION                    | Whois Lookup, IP Lookup              |  `free`  | - | Functioning | 
-
-### Tax ID
-
-| Package                                                                                    | Description                                  |   Auth   | Location | Status |
-| :------------: | -------------------------------------------- | :------: | -------- | :----: |
-| Tax ID Lookup  | Returns public information regarding a Russian INN.   |  `none`  | Russia | Functioning |
-
-### Username
-
-| Package                                                                                    | Description                                  |   Auth   | Location | Status |
-| :-------------: | -------------------------------------------- | :------: | -------- | :----: |
-| Username Lookup | Username Lookup - (Comparable to Sherlock)   |  `none`  | Global | Functioning |
-
-### Vehicle
-
-| Package                                                                                    | Description                                  |   Auth   | Location | Status |
-| :--------------: | -------------------------------------------- | :------: | -------- | :----: |
-| VIN Lookup       | Vehicle Identification Number Lookup         |  `none`  | - | Functioning | 
+From top to bottom, these environment variables should correspond with the API keys for the services Melissa, HaveIBeenPwned, and IP2Location. Insure that the environnment variables are passed/exported after making any changes. For Docker, append `--env-file .env` to the arguments. In Linux, run the command: `export $(xargs <.env)`. Results may vary depending on your operating system/shell.

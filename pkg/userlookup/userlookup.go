@@ -73,8 +73,7 @@ func redirSites(userres string) []Website {
 	return arr
 }
 
-func getSCredir(title, url string, redirect bool) Website {
-
+func getSCredir(title, url string, redirect bool) (Website, error) {
 	method := "GET"
 	var client *http.Client
 	if redirect {
@@ -92,30 +91,29 @@ func getSCredir(title, url string, redirect bool) Website {
 	req, err := http.NewRequest(method, url, http.NoBody)
 
 	if err != nil {
-		return Website{Title: title, Domain: url, Valid: false}
+		return Website{Title: title, Domain: url, Valid: false}, err
 	}
 	res, err := client.Do(req)
 	if err != nil {
-		return Website{Title: title, Domain: url, Valid: false}
+		return Website{Title: title, Domain: url, Valid: false}, err
 	}
-	defer res.Body.Close()
 
 	body, err := io.ReadAll(res.Body)
 	if err != nil {
-		return Website{Title: title, Domain: url, Valid: false}
+		return Website{Title: title, Domain: url, Valid: false}, err
 	}
 	strconv.AppendBool(body, true)
 	if res.StatusCode == 200 {
-		return Website{Title: title, Domain: url, Valid: true}
+		return Website{Title: title, Domain: url, Valid: true}, err
 	}
-	return Website{Title: title, Domain: url, Valid: false}
+	return Website{Title: title, Domain: url, Valid: false}, res.Body.Close()
 
 }
 
 func checkUser(site Website, redirect bool, wg *sync.WaitGroup) {
 	wg.Add(1)
 	defer wg.Done()
-	x := getSCredir(site.Title, site.Domain, redirect)
+	x, _ := getSCredir(site.Title, site.Domain, redirect)
 	results = append(results, x)
 }
 
@@ -140,10 +138,8 @@ func CliSearch(userres string) {
 func cliCheck(site Website, redirect bool, wg *sync.WaitGroup) {
 	wg.Add(1)
 	defer wg.Done()
-	x := getSCredir(site.Title, site.Domain, redirect)
+	x, _ := getSCredir(site.Title, site.Domain, redirect)
 	if x.Valid {
 		fmt.Println("[" + color.Colorize(color.Green, "SUCCESS") + "] - " + x.Domain)
-	} else {
-		fmt.Println("[" + color.Colorize(color.Red, "FAILURE") + "] - " + x.Domain)
 	}
 }

@@ -14,23 +14,19 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package http
+package vin
 
 import (
-	"os"
+	"strings"
 	"testing"
 )
 
-func TestGetReq(t *testing.T) {
-	_, err := GetReq("http://azenv.net")
+func TestVFCLookup(t *testing.T) {
+	x, err := VFCLookup("1C6RD7NT7CS293032")
 	if err != nil {
 		t.Error(err)
 	}
-}
-
-func TestAuthGet(t *testing.T) {
-	_, err := AuthGet("https://haveibeenpwned.com/api/v3/breachedaccount/email@example.com", "hibp-api-key", os.Getenv("BITCROOK_HIBP"))
-	if err != nil {
-		t.Error(err)
+	if !(strings.Contains(x.Model, "1500 Laramie")) {
+		t.Error()
 	}
 }

@@ -22,7 +22,7 @@ import (
 	"os"
 
 	"github.com/TwiN/go-color"
-	"github.com/ax-i-om/bitcrook/pkg/authfree/ip2location"
+	"github.com/ax-i-om/bitcrook/pkg/domain"
 	"github.com/spf13/cobra"
 )
 
@@ -41,17 +41,16 @@ IP2LOCATION Whois API.`,
 			fmt.Println(color.Colorize(color.Blue, "[i]"), "Performing request to", color.Colorize(color.Green, "api.ip2whois.com\n"))
 
 			key1 := os.Getenv("BITCROOK_IPTL")
-			if key1 == "UNSPECIFIED" {
-				fmt.Println(color.Colorize(color.Red, "[x]"), "Failed to specify ip2location API key in .env file")
+			if key1 == "UNSPECIFIED" || key1 == "" {
+				fmt.Println(color.Colorize(color.Red, "[x]"), "Failed to specify ip2location API key in .env")
 			} else {
-				x, err := ip2location.DomainLookup(key1, args[0])
+				x, err := domain.IPTLLookup(key1, args[0])
 				if err != nil {
 					fmt.Println(color.Colorize(color.Red, "[x]"), err)
 					return
 				}
 				if x.DomainID == "" || len(x.DomainID) < 1 {
 					fmt.Println("STATUS:\t\t", color.Colorize(color.Red, "FAILURE\n"))
-					return
 				} else {
 					// const layout = "2006-Jan-02"
 					/*
@@ -147,6 +146,45 @@ IP2LOCATION Whois API.`,
 					}
 					fmt.Println()
 				}
+			}
+
+			fmt.Println(color.Colorize(color.Blue, "[i]"), "Performing request to", color.Colorize(color.Green, "haveibeenpwned.com\n"))
+
+			x, err := domain.HIBPLookup(args[0])
+			if err != nil {
+				fmt.Println(color.Colorize(color.Red, "[x]"), err)
+				return
+			}
+			if len(x) < 1 {
+				fmt.Println("STATUS:\t\t", color.Colorize(color.Red, "FAILURE\n"))
+			} else {
+				fmt.Println("STATUS:\t\t", color.Colorize(color.Green, "SUCCESS\n"))
+				fmt.Println(color.Colorize(color.Blue, "[i]"), "Discovered", color.Colorize(color.Green, len(x)), "results")
+				for i, v := range x {
+					fmt.Println(color.Colorize(color.Blue, "\n--- [ Entry #"+fmt.Sprint(i+1)+" ] ---"))
+					fmt.Println("Name:\t\t", v.Name)
+					fmt.Println("Title:\t\t", v.Title)
+					fmt.Println("Domain:\t\t", v.Domain)
+					fmt.Println("Breach Date:\t", v.BreachDate)
+					fmt.Println("Added Date:\t", v.AddedDate)
+					fmt.Println("Modified Date:\t", v.ModifiedDate)
+					fmt.Println("Pwn Count:\t", v.PwnCount)
+					fmt.Println("Logopath:\t", v.LogoPath)
+					fmt.Println("Verified:\t", v.IsVerified)
+					fmt.Println("Fabricated:\t", v.IsFabricated)
+					fmt.Println("Sensitive:\t", v.IsSensitive)
+					fmt.Println("Retired:\t", v.IsRetired)
+					fmt.Println("Spam List:\t", v.IsSpamList)
+					fmt.Println("Malware:\t", v.IsMalware)
+					fmt.Println("Subscr. Free:\t", v.IsSubscriptionFree)
+					//fmt.Println("Description:\t", v.Description)
+					fmt.Print("Data Classes: \t ")
+					for _, v := range v.DataClasses {
+						fmt.Print(v + ", ")
+					}
+					fmt.Println()
+				}
+				fmt.Println()
 			}
 		}
 	},

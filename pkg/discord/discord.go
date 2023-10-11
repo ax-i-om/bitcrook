@@ -24,21 +24,36 @@ import (
 	"github.com/ax-i-om/bitcrook/internal/http"
 )
 
+/* ///////////////////////////////////////////////////////
+
+   DiscordApp
+
+*/ ///////////////////////////////////////////////////////
+
 // DiscordTokenInfo is a represntation of a plethora of information returned by the TokenLookup() function.
 type DiscordTokenInfo struct {
-	ID             string `json:"id"`
-	Username       string `json:"username"`
-	Avatar         string `json:"avatar"`
-	Discriminator  string `json:"discriminator"`
-	PublicFlags    int    `json:"public_flags"`
-	Flags          int    `json:"flags"`
-	PurchasedFlags int    `json:"purchased_flags"`
-	Locale         string `json:"locale"`
-	NsfwAllowed    bool   `json:"nsfw_allowed"`
-	MfaEnabled     bool   `json:"mfa_enabled"`
-	Email          string `json:"email"`
-	Verified       bool   `json:"verified"`
-	Phone          string `json:"phone"`
+	ID                   string `json:"id"`
+	Username             string `json:"username"`
+	Avatar               string `json:"avatar"`
+	Discriminator        string `json:"discriminator"`
+	PublicFlags          int    `json:"public_flags"`
+	Flags                int    `json:"flags"`
+	Banner               any    `json:"banner"`
+	AccentColor          any    `json:"accent_color"`
+	GlobalName           string `json:"global_name"`
+	AvatarDecorationData any    `json:"avatar_decoration_data"`
+	BannerColor          any    `json:"banner_color"`
+	MfaEnabled           bool   `json:"mfa_enabled"`
+	Locale               string `json:"locale"`
+	PremiumType          int    `json:"premium_type"`
+	Email                string `json:"email"`
+	Verified             bool   `json:"verified"`
+	Phone                any    `json:"phone"`
+	NsfwAllowed          bool   `json:"nsfw_allowed"`
+	LinkedUsers          []any  `json:"linked_users"`
+	PurchasedFlags       int    `json:"purchased_flags"`
+	Bio                  string `json:"bio"`
+	AuthenticatorTypes   []any  `json:"authenticator_types"`
 }
 
 // TokenLookup takes a Discord account token (string) as its only parameter and returns a type of *DiscordTokenInfo and an error.

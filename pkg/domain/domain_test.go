@@ -13,43 +13,33 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-
-package caselaw
+package domain
 
 import (
-	"encoding/json"
-	"io"
-	"net/http"
+	"os"
+	"strings"
 	"testing"
 )
 
-func TestGetCases(t *testing.T) {
-	url := "https://api.case.law/v1/cases/?page_size=10&search=texas&ordering=relevance"
-	method := "GET"
-
-	client := &http.Client{}
-	req, err := http.NewRequest(method, url, http.NoBody)
-
+func TestHIBPLookup(t *testing.T) {
+	x, err := HIBPLookup("canva.com")
 	if err != nil {
 		t.Error(err)
 	}
-	req.Header.Add("Allow", "GET, HEAD, OPTIONS")
-	req.Header.Add("Content-Type", "application/json")
-	req.Header.Add("Vary", "Accept")
+	if len(x) < 1 {
+		t.Error()
+	}
+	if !strings.Contains(strings.ToLower(x[0].Name), "canva") {
+		t.Error()
+	}
+}
 
-	res, err := client.Do(req)
+func TestIPTLLookup(t *testing.T) {
+	x, err := IPTLLookup(os.Getenv("BITCROOK_IPTL"), "canva.com")
 	if err != nil {
 		t.Error(err)
 	}
-	defer res.Body.Close()
-
-	body, err := io.ReadAll(res.Body)
-	if err != nil {
-		t.Error(err)
-	}
-	clres := new(CLResponse)
-	err = json.Unmarshal([]byte(body), &clres)
-	if err != nil {
-		t.Error(err)
+	if x.Domain != "canva.com" {
+		t.Error()
 	}
 }

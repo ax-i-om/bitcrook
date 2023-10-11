@@ -23,12 +23,12 @@ import (
 	"os"
 
 	"github.com/TwiN/go-color"
-	"github.com/ax-i-om/bitcrook/pkg/authfree/ip2location"
-	"github.com/ax-i-om/bitcrook/pkg/noauth/discord"
-	"github.com/ax-i-om/bitcrook/pkg/noauth/ip"
-	"github.com/ax-i-om/bitcrook/pkg/noauth/tin"
-	"github.com/ax-i-om/bitcrook/pkg/noauth/userlookup"
-	"github.com/ax-i-om/bitcrook/pkg/noauth/vin"
+	"github.com/ax-i-om/bitcrook/pkg/discord"
+	"github.com/ax-i-om/bitcrook/pkg/domain"
+	"github.com/ax-i-om/bitcrook/pkg/ip"
+	"github.com/ax-i-om/bitcrook/pkg/tin"
+	"github.com/ax-i-om/bitcrook/pkg/userlookup"
+	"github.com/ax-i-om/bitcrook/pkg/vin"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -42,7 +42,7 @@ func StartServer() {
 	e.Use(middleware.Static("./api/static"))
 
 	e.GET("/ip/:ip", func(c echo.Context) error {
-		ipInfo, err := ip.IPLookup(c.Param("ip"))
+		ipInfo, err := ip.IPAPILookup(c.Param("ip"))
 		if err != nil {
 			return c.JSON(http.StatusInternalServerError, err)
 		}
@@ -54,7 +54,7 @@ func StartServer() {
 	})
 
 	e.GET("/vin/:vin", func(c echo.Context) error {
-		vinInfo, err := vin.VinLookup(c.Param("vin"))
+		vinInfo, err := vin.VFCLookup(c.Param("vin"))
 		if err != nil {
 			return c.JSON(http.StatusInternalServerError, err)
 		}
@@ -62,7 +62,7 @@ func StartServer() {
 	})
 
 	e.GET("/discord/:discord", func(c echo.Context) error {
-		discordInfo, err := discord.TokenLookup((c.Param("discord")))
+		discordInfo, err := discord.TokenLookup(c.Param("discord"))
 		if err != nil {
 			return c.JSON(http.StatusInternalServerError, err)
 		}
@@ -70,7 +70,7 @@ func StartServer() {
 	})
 
 	e.GET("/domain/:domain", func(c echo.Context) error {
-		domainInfo, err := ip2location.DomainLookup(os.Getenv("BITCROOK_IPTL"), c.Param("domain"))
+		domainInfo, err := domain.IPTLLookup(os.Getenv("BITCROOK_IPTL"), c.Param("domain"))
 		if err != nil {
 			return c.JSON(http.StatusInternalServerError, err)
 		}

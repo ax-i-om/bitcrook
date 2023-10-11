@@ -21,7 +21,7 @@ import (
 	"fmt"
 
 	"github.com/TwiN/go-color"
-	"github.com/ax-i-om/bitcrook/pkg/noauth/vin"
+	"github.com/ax-i-om/bitcrook/pkg/vin"
 	"github.com/spf13/cobra"
 )
 
@@ -39,7 +39,7 @@ the information provided by www.vinfreecheck.com.`,
 		} else {
 			fmt.Println(color.Colorize(color.Blue, "[i]"), "Performing request to", color.Colorize(color.Green, "www.vinfreecheck.com\n"))
 
-			r, err := vin.VinLookup(args[0])
+			r, err := vin.VFCLookup(args[0])
 			if err != nil {
 				fmt.Println(color.Colorize(color.Red, "[x]"), err)
 				return

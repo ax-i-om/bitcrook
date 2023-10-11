@@ -25,6 +25,12 @@ import (
 	"strings"
 )
 
+/* ///////////////////////////////////////////////////////
+
+   Nalog
+
+*/ ///////////////////////////////////////////////////////
+
 type postresp struct {
 	T               string `json:"t"`
 	CaptchaRequired bool   `json:"captchaRequired"`
@@ -60,13 +66,12 @@ func TINLookup(tin string) (*TinData, error) {
 	}
 	reqOne.Header.Add("Content-Type", " application/x-www-form-urlencoded; charset=UTF-8")
 
-	resOne, err := clientOne.Do(reqOne)
+	res, err := clientOne.Do(reqOne)
 	if err != nil {
 		return nil, err
 	}
-	defer resOne.Body.Close()
 
-	bodyOne, err := io.ReadAll(resOne.Body)
+	bodyOne, err := io.ReadAll(res.Body)
 	if err != nil {
 		return nil, http.ErrAbortHandler
 	}
@@ -85,13 +90,12 @@ func TINLookup(tin string) (*TinData, error) {
 	if err != nil {
 		return nil, err
 	}
-	resTwo, err := client.Do(req)
+	res, err = client.Do(req)
 	if err != nil {
 		return nil, err
 	}
-	defer resTwo.Body.Close()
 
-	bodyTwo, err := io.ReadAll(resTwo.Body)
+	bodyTwo, err := io.ReadAll(res.Body)
 	if err != nil {
 		return nil, err
 	}
@@ -101,5 +105,5 @@ func TINLookup(tin string) (*TinData, error) {
 		return nil, err
 	}
 
-	return sTwo, nil
+	return sTwo, res.Body.Close()
 }

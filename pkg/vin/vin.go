@@ -14,134 +14,114 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+// Package vin contains the types and functions used for querying for
+// information regarding a Vehicle Identification Number (VIN)
 package vin
 
 import (
-	"testing"
-
 	"github.com/antchfx/htmlquery"
+	"golang.org/x/net/html"
 )
 
-func TestVinLookup(t *testing.T) {
+/* ///////////////////////////////////////////////////////
+
+   VinFreeCheck
+
+*/ ///////////////////////////////////////////////////////
+
+// VFCInfo is the response type of the VFCLookup() function, containing a plethora of information about the vehicle in question.
+type VFCInfo struct {
+	Vin             string
+	Make            string
+	Model           string
+	Year            string
+	Trim            string
+	Body            string
+	Engine          string
+	ManufacturedIn  string
+	TrimLevel       string
+	SteeringType    string
+	Abs             string
+	TankSize        string
+	OverallHeight   string
+	OverallLength   string
+	OverallWidth    string
+	StandardSeating string
+	OptionalSeating string
+	HighwayMileage  string
+	CityMileage     string
+	FuelType        string
+	DriveType       string
+	Transmission    string
+}
+
+// VFCLookup uses htmlquery to return a type *VFCInfo containing list of information about a vehicle using its Vehicle Identification Number (VIN), as well as an error.
+func VFCLookup(vin string) (*VFCInfo, error) {
 	// Load the webpage containing the information on the passed Vehicle Identification Number (VIN)
-	doc, err := htmlquery.LoadURL("https://www.vinfreecheck.com/vin/" + "1C6RD7NT7CS293032" + "/vehicle-specification")
+	doc, err := htmlquery.LoadURL("https://www.vinfreecheck.com/vin/" + vin + "/vehicle-specification")
 	// Check for error, return if error is not equal to nil
 	if err != nil {
-		t.Error(err)
+		return nil, err
 	}
 	// Create a new VIN struct
-	results := new(VIN)
+	results := new(VFCInfo)
 
 	// Pass VIN argument to VIN.Vin value
-	results.Vin = "1C6RD7NT7CS293032"
+	results.Vin = vin
 
 	// Begin scraping values via XPath and assigning them to their corresponding place within the VIN struct
 	b, err := htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[3]/div/div/div[1]/div[2]/div[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.Make = b.Data
+	results.Make = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[3]/div/div/div[1]/div[3]/div[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.Model = b.Data
+	results.Model = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[3]/div/div/div[1]/div[4]/div[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.Year = b.Data
+	results.Year = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[3]/div/div/div[1]/div[5]/div[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.Trim = b.Data
+	results.Trim = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[3]/div/div/div[1]/div[6]/div[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.Body = b.Data
+	results.Body = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[3]/div/div/div[1]/div[7]/div[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.Engine = b.Data
+	results.Engine = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[3]/div/div/div[1]/div[8]/div[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.ManufacturedIn = b.Data
+	results.ManufacturedIn = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[1]/td[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.TrimLevel = b.Data
+	results.TrimLevel = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[2]/td[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.SteeringType = b.Data
+	results.SteeringType = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[3]/td[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.Abs = b.Data
+	results.Abs = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[4]/td[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.TankSize = b.Data
+	results.TankSize = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[5]/td[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.OverallHeight = b.Data
+	results.OverallHeight = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[6]/td[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.OverallLength = b.Data
+	results.OverallLength = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[7]/td[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.OverallWidth = b.Data
+	results.OverallWidth = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[8]/td[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.StandardSeating = b.Data
+	results.StandardSeating = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[9]/td[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.OptionalSeating = b.Data
+	results.OptionalSeating = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[10]/td[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.HighwayMileage = b.Data
+	results.HighwayMileage = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[11]/td[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.CityMileage = b.Data
+	results.CityMileage = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[12]/td[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.FuelType = b.Data
+	results.FuelType = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[13]/td[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.DriveType = b.Data
+	results.DriveType = check(b, err)
 	b, err = htmlquery.Query(doc, "/html/body/div[1]/div/div/div[1]/div[6]/div/table[2]/tbody/tr[14]/td[2]/text()")
-	if err != nil {
-		t.Error(err)
-	}
-	results.Transmission = b.Data
-	if err != nil {
-		t.Error(err)
+	results.Transmission = check(b, err)
+
+	// Return the struct information
+	return results, nil
+}
+
+// Check the scraped value
+func check(b *html.Node, err error) string {
+	if err != nil || b == nil {
+		return "Error"
+	} else {
+		return b.Data
 	}
 }

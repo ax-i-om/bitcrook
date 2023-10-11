@@ -21,7 +21,7 @@ import (
 	"fmt"
 
 	"github.com/TwiN/go-color"
-	"github.com/ax-i-om/bitcrook/pkg/noauth/tin"
+	"github.com/ax-i-om/bitcrook/pkg/tin"
 	"github.com/spf13/cobra"
 )
 

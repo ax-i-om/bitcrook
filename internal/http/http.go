@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// Package http contains internal functions for handling HTTP requests
+// Package handlers contains internal functions for handling requests
 package http
 
 import (
@@ -28,12 +28,11 @@ func GetReq(url string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return "", err
 	}
-	return (string(body)), nil
+	return string(body), resp.Body.Close()
 }
 
 // AuthGet performs a simple get request with a URL, Auth Key, and an Auth Value as its parameters and returns the response body and an error.
@@ -52,11 +51,10 @@ func AuthGet(url, authkey, authval string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer res.Body.Close()
 
 	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		return nil, err
 	}
-	return body, nil
+	return body, res.Body.Close()
 }

@@ -13,24 +13,40 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-
-package discord
+package ip
 
 import (
-	"encoding/json"
+	"os"
+	"strings"
 	"testing"
-
-	"github.com/ax-i-om/bitcrook/internal/http"
 )
 
-func TestTokenLookup(t *testing.T) {
-	x, err := http.AuthGet("https://discordapp.com/api/v6/users/@me", "Authorization", "awdawd")
+func TestIPAPILookup(t *testing.T) {
+	x, err := IPAPILookup("1.1.1.1")
 	if err != nil {
 		t.Error(err)
 	}
-	clres := new(DiscordTokenInfo)
-	err = json.Unmarshal([]byte(x), &clres)
+	if x.Proxy != false {
+		t.Error()
+	}
+}
+
+func TestIPTLLookup(t *testing.T) {
+	x, err := IPTLLookup(os.Getenv("BITCROOK_IPTL"), "1.1.1.1")
 	if err != nil {
 		t.Error(err)
+	}
+	if x.IsProxy != false {
+		t.Error()
+	}
+}
+
+func TestMelissaLookup(t *testing.T) {
+	x, err := MelissaLookup(os.Getenv("BITCROOK_MLSA"), "1.1.1.1")
+	if err != nil {
+		t.Error(err)
+	}
+	if strings.ReplaceAll(x.Proxydescription, " ", "") != "" {
+		t.Error()
 	}
 }

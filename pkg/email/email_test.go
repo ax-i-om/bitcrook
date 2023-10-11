@@ -13,18 +13,19 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package tin
+package email
 
 import (
+	"os"
 	"testing"
 )
 
-func TestTokenLookup(t *testing.T) {
-	x, err := TINLookup("300504899258")
+func TestMelissaLookup(t *testing.T) {
+	x, err := MelissaLookup(os.Getenv("BITCROOK_MLSA"), "press@google.com")
 	if err != nil {
 		t.Error(err)
 	}
-	if x.Rows[0].INN != "300504899258" {
+	if x.Emailaddress != "press@google.com" {
 		t.Error()
 	}
 }

@@ -13,28 +13,19 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-
-package ip
+package phone
 
 import (
-	"encoding/json"
+	"os"
 	"testing"
-
-	"github.com/ax-i-om/bitcrook/internal/http"
 )
 
-func TestIPLookup(t *testing.T) {
-	resp, err := http.GetReq("http://ip-api.com/json/1.1.1.1?fields=31162361")
+func TestMelissaLookup(t *testing.T) {
+	x, err := MelissaLookup(os.Getenv("BITCROOK_MLSA"), "4086474636")
 	if err != nil {
 		t.Error(err)
 	}
-	s := new(IPAddress)
-	err = json.Unmarshal([]byte(resp), &s)
-	if err != nil {
-		t.Error(err)
+	if x.Internationalphonenumber != "+14086474636" {
+		t.Error()
 	}
-	if len(s.Reverse) < 1 {
-		t.Fail()
-	}
-
 }

@@ -22,7 +22,7 @@ import (
 	"os"
 
 	"github.com/TwiN/go-color"
-	"github.com/ax-i-om/bitcrook/pkg/authfree/melissa"
+	"github.com/ax-i-om/bitcrook/pkg/phone"
 	"github.com/spf13/cobra"
 )
 
@@ -41,10 +41,10 @@ globalphone API.`,
 			fmt.Println(color.Colorize(color.Blue, "[i]"), "Performing request to", color.Colorize(color.Green, "globalphone.melissadata.net\n"))
 
 			key1 := os.Getenv("BITCROOK_MLSA")
-			if key1 == "UNSPECIFIED" {
+			if key1 == "UNSPECIFIED" || key1 == "" {
 				fmt.Println(color.Colorize(color.Red, "[x]"), "Failed to specify Melissa API key in .env file")
 			} else {
-				x, err := melissa.PhoneLookup(key1, args[0])
+				x, err := phone.MelissaLookup(key1, args[0])
 				if err != nil {
 					fmt.Println(color.Colorize(color.Red, "[x]"), err)
 					return
@@ -54,7 +54,7 @@ globalphone API.`,
 					fmt.Println("STATUS:\t\t\t", color.Colorize(color.Red, "FAILURE\n"))
 				} else {
 					fmt.Println("STATUS:\t\t\t", color.Colorize(color.Green, "SUCCESS\n"))
-					fmt.Println("Record ID:\t\t ", x.Recordid)
+					fmt.Println("Record ID:\t\t", x.Recordid)
 					fmt.Println("Results:\t\t", x.Results)
 					fmt.Println("Phone Number:\t\t", x.Phonenumber)
 					fmt.Println("Administrative Area:\t", x.Administrativearea)

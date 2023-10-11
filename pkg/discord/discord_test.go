@@ -13,24 +13,18 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-
-package http
+package discord
 
 import (
-	"os"
 	"testing"
 )
 
-func TestGetReq(t *testing.T) {
-	_, err := GetReq("http://azenv.net")
+func TestTokenLookup(t *testing.T) {
+	x, err := TokenLookup("swag")
 	if err != nil {
 		t.Error(err)
 	}
-}
-
-func TestAuthGet(t *testing.T) {
-	_, err := AuthGet("https://haveibeenpwned.com/api/v3/breachedaccount/email@example.com", "hibp-api-key", os.Getenv("BITCROOK_HIBP"))
-	if err != nil {
-		t.Error(err)
+	if x.LinkedUsers != nil {
+		t.Error()
 	}
 }

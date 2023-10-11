@@ -13,14 +13,34 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+
+/**
+ * Function to add a row of information with a light background to a results table
+ * @param table The result table where the row will be added
+ * @param key The key to be used
+ * @param value The value to be used
+ * @returns Nothing
+ */
 function addLight(table, key, value) {
-    table.innerHTML += "<span style='background-color: #4b4b4b; display:flex; padding: 5px; justify-content: center'>" + "<strong>" + key + ":&nbsp;</strong>" + value + "</span>";
+    table.innerHTML += `<span style='background-color: #4b4b4b; display:flex; padding: 5px; justify-content: center'><strong>${key}:&nbsp;</strong>${value}</span>`;
 }
 
+/**
+ * Function to add a row of information with a dark background to a results table
+ * @param table The result table where the row will be added
+ * @param key The key to be used
+ * @param value The value to be used
+ * @returns Nothing
+ */
 function addDark(table, key, value) {
-    table.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>" + key + ":&nbsp;</strong>" + value + "</span>";
+    table.innerHTML += `<span style='display:flex; padding: 5px; justify-content: center'><strong>${key}:&nbsp;</strong>${value}</span>`;
 }
 
+/**
+ * Function to a gap to a results table
+ * @param table The result table where the row will be added
+ * @returns Nothing
+ */
 function addGap(table) {
     table.innerHTML += "<br><br>"
 } 
@@ -29,8 +49,8 @@ $('#ipsearch').on('click', () => {
     ip = $('#ip').val()
     if (ip) {
         $('#iploadercircle').addClass('loader');
-        $.getJSON('/ip/' + ip, (res) => {
-            let iptable = document.getElementById('ipresult');
+        $.getJSON(`/ip/${ip}`, (res) => {
+            const iptable = document.getElementById('ipresult');
             iptable.innerHTML = "";
             $('#iploadercircle').removeClass('loader');
             addLight(iptable, "Status", res.status)
@@ -55,7 +75,7 @@ $('#ipsearch').on('click', () => {
         })
         $('#ipresult').val('')
     } else {
-        let iptable = document.getElementById('ipresult');
+        const iptable = document.getElementById('ipresult');
         iptable.innerHTML = "";
         addLight(iptable, "Error", "IP address field was left empty")
     }
@@ -65,23 +85,23 @@ $('#usernamesearch').on('click', () => {
     username = $('#username').val()
     if (username) {
         $('#userloadercircle').addClass('loader');
-        let usernametable = document.getElementById('usernameresult');
+        const usernametable = document.getElementById('usernameresult');
         usernametable.innerHTML = "";
-        $.getJSON('/username/' + username, (res) => {
+        $.getJSON(`/username/${username}`, (res) => {
             let recentswap = false;
             $('#userloadercircle').removeClass('loader');
             for(let i = 0; i < res.length; i++) {
-                let obj = res[i];
+                const obj = res[i];
                 if (obj.Valid) {
                     if (recentswap) {
-                        usernametable.innerHTML += "<span style='display:flex; padding: 5px; justify-content: center'>" + "<strong>" + obj.Title + ":&nbsp;</strong>" + "<a>" + obj.Domain + "</a>" + "</span>";
-                        $(function(){ $('a:contains(' + obj.Domain + ')').attr("href", obj.Domain)});
-                        $(function(){ $('a:contains(' + obj.Domain + ')').attr("target", "_blank")});
+                        usernametable.innerHTML += `<span style='display:flex; padding: 5px; justify-content: center'><strong>${obj.Title}:&nbsp;</strong><a>${obj.Domain}</a></span>`;
+                        $(function(){ $(`a:contains(${obj.Domain})`).attr("href", obj.Domain)});
+                        $(function(){ $(`a:contains(${obj.Domain})`).attr("target", "_blank")});
                         recentswap = false;
                     } else {
-                        usernametable.innerHTML += "<span style='background-color: #4b4b4b; display:flex; padding: 5px; justify-content: center'>" + "<strong>" + obj.Title + ":&nbsp;</strong>" + "<a>" + obj.Domain + "</a>" + "</span>";
-                        $(function(){ $('a:contains(' + obj.Domain + ')').attr("href", obj.Domain)});
-                        $(function(){ $('a:contains(' + obj.Domain + ')').attr("target", "_blank")});
+                        usernametable.innerHTML += `<span style='background-color: #4b4b4b; display:flex; padding: 5px; justify-content: center'><strong>${obj.Title}:&nbsp;</strong><a>${obj.Domain}</a></span>`;
+                        $(function(){ $(`a:contains(${obj.Domain})`).attr("href", obj.Domain)});
+                        $(function(){ $(`a:contains(${obj.Domain})`).attr("target", "_blank")});
                         recentswap = true;
                     }
                 }
@@ -89,7 +109,7 @@ $('#usernamesearch').on('click', () => {
         })
         $('#usernameresult').val('') 
     } else {
-        let usernametable = document.getElementById('usernameresult');
+        const usernametable = document.getElementById('usernameresult');
         usernametable.innerHTML = "";
         addLight(usernametable, "Error", "Username field was left empty")
     }
@@ -98,8 +118,8 @@ $('#usernamesearch').on('click', () => {
 $('#vinsearch').on('click', () => {
     $('#vinloadercircle').addClass('loader');
     vin = $('#vin').val()
-    $.getJSON('/vin/' + vin, (res) => {
-        let vintable = document.getElementById('vinresult');
+    $.getJSON(`/vin/${vin}`, (res) => {
+        const vintable = document.getElementById('vinresult');
         vintable.innerHTML = "";
         $('#vinloadercircle').removeClass('loader');
         addLight(vintable, "VIN", res.Vin)
@@ -132,9 +152,9 @@ $('#domainsearch').on('click', () => {
     domain = $('#domain').val()
     if (domain) {
         $('#domainloadercircle').addClass('loader');
-        $.getJSON('/domain/' + domain, (res) => {
+        $.getJSON(`/domain/${domain}`, (res) => {
         $('#domainloadercircle').removeClass('loader');
-        let domaintable = document.getElementById('domainresult'); 
+        const domaintable = document.getElementById('domainresult'); 
         domaintable.innerHTML = "";
         addLight(domaintable, "Domain", res.domain)
         addDark(domaintable, "Domain ID", res.domain_id)
@@ -189,7 +209,7 @@ $('#domainsearch').on('click', () => {
 
         addGap(domaintable)
 
-        addLight(domaintable, "Billing Name", res.billings.name)
+        addLight(domaintable, "Billing Name", res.billing.name)
         addDark(domaintable, "Billing Organization", res.billing.organization)
         addLight(domaintable, "Billing Street Address", res.billing.street_address)
         addDark(domaintable, "Billing City", res.billing.city)
@@ -206,7 +226,7 @@ $('#domainsearch').on('click', () => {
     })
     $('#domainresult').val('') 
     } else {
-        let domaintable = document.getElementById('domainresult');
+        const domaintable = document.getElementById('domainresult');
         domaintable.innerHTML = "";
         addLight(domaintable, "Error", "Domain field was left empty")
     }
@@ -216,8 +236,8 @@ $('#discordsearch').on('click', () => {
     discord = $('#discord').val()
     if (discord) {
         $('#discordloadercircle').addClass('loader');
-        $.getJSON('/discord/' + discord, (res) => {
-            let discordtable = document.getElementById('discordresult');
+        $.getJSON(`/discord/${discord}`, (res) => {
+            const discordtable = document.getElementById('discordresult');
             discordtable.innerHTML = "";
             $('#discordloadercircle').removeClass('loader');
             addLight(discordtable, "ID", res.id)
@@ -225,18 +245,27 @@ $('#discordsearch').on('click', () => {
             addLight(discordtable, "Avatar", res.avatar)
             addDark(discordtable, "Discriminator", res.discriminator)
             addLight(discordtable, "Public Flags", res.public_flags)
-            addDark(discordtable, "Flags", res.Flags)
-            addLight(discordtable, "Purchased Flags", res.purchased_flags)
-            addDark(discordtable, "Locale", res.locale)
-            addLight(discordtable, "NSFW Allowed", res.nsfw_allowed)
+            addDark(discordtable, "Flags", res.flags)
+            addLight(discordtable, "Banner", res.banner)
+            addDark(discordtable, "Accent Color", res.accent_color)
+            addLight(discordtable, "Global Name", res.global_name)
+            addDark(discordtable, "Avatar Decoration", res.avatar_decoration_data)
+            addLight(discordtable, "Banner Color", res.banner_color)
             addDark(discordtable, "MFA Enabled", res.mfa_enabled)
+            addLight(discordtable, "Locale", res.locale)
+            addDark(discordtable, "Premium Type", res.premium_type)
             addLight(discordtable, "Email", res.email)
             addDark(discordtable, "Verified", res.verified)
-            addLight(discordtable, "Phone", res.phone)
+            addLight(discordtable, "Phone", res.phne)
+            addDark(discordtable, "NSFW Allowed", res.nsfw_allowed)
+            addLight(discordtable, "Linked Users", res.linked_users)
+            addDark(discordtable, "Bought Flags", res.purchased_flags)
+            addLight(discordtable, "Bio", res.bio)
+            addDark(discordtable, "Auth Types", res.authenticator_types)
         })
         $('#ipresult').val('')
     } else {
-        let discordtable = document.getElementById('discordresult');
+        const discordtable = document.getElementById('discordresult');
         discordtable.innerHTML = "";
         addLight(discordtable, "Error", "Discord token field was left empty")
     }
@@ -245,13 +274,13 @@ $('#discordsearch').on('click', () => {
 $('#tinsearch').on('click', () => {
     tin = $('#tin').val()
     if (tin) {
-        let tintable = document.getElementById('tinresult');
+        const tintable = document.getElementById('tinresult');
         tintable.innerHTML = "";
         $('#tinloadercircle').addClass('loader');
-        $.getJSON('/tin/' + tin, (res) => {
+        $.getJSON(`/tin/${tin}`, (res) => {
             $('#tinloadercircle').removeClass('loader');
             for(let i = 0; i < res.rows.length; i++) {
-                let obj = res.rows[i];
+                const obj = res.rows[i];
                 addLight(tintable, "Assignment Date", obj.r)
                 addDark(tintable, "Termination Date", obj.e)
                 addLight(tintable, "Page", obj.pg)
@@ -266,7 +295,7 @@ $('#tinsearch').on('click', () => {
         })
         $('#tinresult').val('')
     } else {
-        let tintable = document.getElementById('tinresult');
+        const tintable = document.getElementById('tinresult');
         tintable.innerHTML = "";
         addLight(tintable, "Error", "TIN field was left empty")
     }

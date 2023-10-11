@@ -20,7 +20,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/ax-i-om/bitcrook/pkg/noauth/userlookup"
+	"github.com/ax-i-om/bitcrook/pkg/userlookup"
 	"github.com/spf13/cobra"
 )
 

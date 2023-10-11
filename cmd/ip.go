@@ -23,9 +23,7 @@ import (
 	"strconv"
 
 	"github.com/TwiN/go-color"
-	"github.com/ax-i-om/bitcrook/pkg/authfree/ip2location"
-	"github.com/ax-i-om/bitcrook/pkg/authfree/melissa"
-	"github.com/ax-i-om/bitcrook/pkg/noauth/ip"
+	"github.com/ax-i-om/bitcrook/pkg/ip"
 	"github.com/spf13/cobra"
 )
 
@@ -41,7 +39,7 @@ and returns any associated information that is identified.`,
 			cmd.Usage()
 		} else {
 			fmt.Println(color.Colorize(color.Blue, "[i]"), "Performing request to", color.Colorize(color.Green, "ip-api.com\n"))
-			x, err := ip.IPLookup(args[0])
+			x, err := ip.IPAPILookup(args[0])
 			if err != nil {
 				fmt.Println(color.Colorize(color.Red, "[x]"), err)
 				return
@@ -75,10 +73,10 @@ and returns any associated information that is identified.`,
 			fmt.Println(color.Colorize(color.Blue, "[i]"), "Performing request to", color.Colorize(color.Green, "api.ip2location.io\n"))
 
 			key1 := os.Getenv("BITCROOK_IPTL")
-			if key1 == "UNSPECIFIED" {
+			if key1 == "UNSPECIFIED" || key1 == "" {
 				fmt.Println(color.Colorize(color.Red, "[x]"), "Failed to specify ip2location API key in .env file")
 			} else {
-				x, err := ip2location.IPLookup(key1, args[0])
+				x, err := ip.IPTLLookup(key1, args[0])
 				if err != nil {
 					fmt.Println(color.Colorize(color.Red, "[x]"), err)
 					return
@@ -106,10 +104,10 @@ and returns any associated information that is identified.`,
 			fmt.Println(color.Colorize(color.Blue, "[i]"), "Performing request to", color.Colorize(color.Green, "globalip.melissadata.net\n"))
 
 			key2 := os.Getenv("BITCROOK_MLSA")
-			if key2 == "UNSPECIFIED" {
+			if key2 == "UNSPECIFIED" || key2 == "" {
 				fmt.Println(color.Colorize(color.Red, "[x]"), "Failed to specify Melissa API key in .env file")
 			} else {
-				x, err := melissa.IPLookup(key2, args[0])
+				x, err := ip.MelissaLookup(key2, args[0])
 				if err != nil {
 					fmt.Println(color.Colorize(color.Red, "[x]"), err)
 					return
