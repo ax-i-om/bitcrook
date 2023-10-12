@@ -46,7 +46,7 @@ function addGap(table) {
 } 
 
 $('#ipsearch').on('click', () => {
-    ip = $('#ip').val()
+    const ip = $('#ip').val()
     if (ip) {
         $('#iploadercircle').addClass('loader');
         $.getJSON(`/ip/${ip}`, (res) => {
@@ -82,7 +82,7 @@ $('#ipsearch').on('click', () => {
 })
 
 $('#usernamesearch').on('click', () => {
-    username = $('#username').val()
+    const username = $('#username').val()
     if (username) {
         $('#userloadercircle').addClass('loader');
         const usernametable = document.getElementById('usernameresult');
@@ -117,7 +117,7 @@ $('#usernamesearch').on('click', () => {
 
 $('#vinsearch').on('click', () => {
     $('#vinloadercircle').addClass('loader');
-    vin = $('#vin').val()
+    const vin = $('#vin').val()
     $.getJSON(`/vin/${vin}`, (res) => {
         const vintable = document.getElementById('vinresult');
         vintable.innerHTML = "";
@@ -149,7 +149,7 @@ $('#vinsearch').on('click', () => {
 })
 
 $('#domainsearch').on('click', () => {
-    domain = $('#domain').val()
+    const domain = $('#domain').val()
     if (domain) {
         $('#domainloadercircle').addClass('loader');
         $.getJSON(`/domain/${domain}`, (res) => {
@@ -233,7 +233,7 @@ $('#domainsearch').on('click', () => {
 })
 
 $('#discordsearch').on('click', () => {
-    discord = $('#discord').val()
+    const discord = $('#discord').val()
     if (discord) {
         $('#discordloadercircle').addClass('loader');
         $.getJSON(`/discord/${discord}`, (res) => {
@@ -272,7 +272,7 @@ $('#discordsearch').on('click', () => {
 })
 
 $('#tinsearch').on('click', () => {
-    tin = $('#tin').val()
+    const tin = $('#tin').val()
     if (tin) {
         const tintable = document.getElementById('tinresult');
         tintable.innerHTML = "";
