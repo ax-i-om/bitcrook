@@ -18,6 +18,7 @@ limitations under the License.
 package api
 
 import (
+	"embed"
 	"fmt"
 	"net/http"
 	"os"
@@ -33,13 +34,20 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 )
 
+//go:embed static
+var sFiles embed.FS
+
 func StartServer() {
 	e := echo.New()
 
 	e.HideBanner = true
 	e.HidePort = true
 
-	e.Use(middleware.Static("./api/static"))
+	e.Use(middleware.StaticWithConfig(middleware.StaticConfig{
+		Root:       "static",
+		Browse:     true,
+		Filesystem: http.FS(sFiles),
+	}))
 
 	e.GET("/ip/:ip", func(c echo.Context) error {
 		ipInfo, err := ip.IPAPILookup(c.Param("ip"))

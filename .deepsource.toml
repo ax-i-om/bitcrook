@@ -10,4 +10,6 @@ enabled = true
 [[analyzers]]
 name = "javascript"
 enabled = true
-environment = ["jquery"]
+
+  [analyzers.meta]
+  environment = ["jquery"]
