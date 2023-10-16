@@ -5,7 +5,7 @@ go 1.20
 require (
 	github.com/TwiN/go-color v1.4.1
 	github.com/antchfx/htmlquery v1.3.0
-	github.com/labstack/echo/v4 v4.11.1
+	github.com/labstack/echo/v4 v4.11.2
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/spf13/cobra v1.7.0
 	github.com/spf13/viper v1.17.0
