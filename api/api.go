@@ -26,7 +26,9 @@ import (
 	"github.com/TwiN/go-color"
 	"github.com/ax-i-om/bitcrook/pkg/discord"
 	"github.com/ax-i-om/bitcrook/pkg/domain"
+	"github.com/ax-i-om/bitcrook/pkg/email"
 	"github.com/ax-i-om/bitcrook/pkg/ip"
+	"github.com/ax-i-om/bitcrook/pkg/phone"
 	"github.com/ax-i-om/bitcrook/pkg/tin"
 	"github.com/ax-i-om/bitcrook/pkg/userlookup"
 	"github.com/ax-i-om/bitcrook/pkg/vin"
@@ -92,6 +94,23 @@ func StartServer() {
 		}
 		return c.JSON(http.StatusOK, tinInfo)
 	})
+
+	e.GET("/phone/:phone", func(c echo.Context) error {
+		phoneInfo, err := phone.MelissaLookup(os.Getenv("BITCROOK_MLSA"), c.Param("phone"))
+		if err != nil {
+			return c.JSON(http.StatusInternalServerError, err)
+		}
+		return c.JSON(http.StatusOK, phoneInfo)
+	})
+
+	e.GET("/email/:email", func(c echo.Context) error {
+		emailInfo, err := email.MelissaLookup(os.Getenv("BITCROOK_MLSA"), c.Param("email"))
+		if err != nil {
+			return c.JSON(http.StatusInternalServerError, err)
+		}
+		return c.JSON(http.StatusOK, emailInfo)
+	})
+
 	fmt.Println(color.Colorize(color.Blue, "[i]"), "HTTP server started on", color.Colorize(color.Green, "[::]:6174"))
 	fmt.Println(color.Colorize(color.Blue, "[i]"), "Access Bitcrook via", color.Colorize(color.Green, "127.0.0.1:6174"))
 	fmt.Println()

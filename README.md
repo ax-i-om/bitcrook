@@ -5,7 +5,7 @@
     <a href="https://pkg.go.dev/github.com/ax-i-om/bitcrook"><img src="https://pkg.go.dev/badge/github.com/ax-i-om/tempest.svg" alt="Documentation"></a>
     <a href="https://goreportcard.com/report/github.com/ax-i-om/bitcrook"><img src="https://goreportcard.com/badge/github.com/ax-i-om/bitcrook" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-8&#47;8-green.svg" alt="Tests"></a>
-    <a><img src="https://img.shields.io/badge/version-2.1.1-blue.svg" alt="v2.1.1"></a><br>
+    <a><img src="https://img.shields.io/badge/version-2.2.0-blue.svg" alt="v2.2.0"></a><br>
     <a href="https://app.deepsource.com/gh/ax-i-om/bitcrook/" target="_blank"><img alt="DeepSource" title="DeepSource" src="https://app.deepsource.com/gh/ax-i-om/bitcrook.svg/?label=active+issues&show_trend=true"/></a><br>
     Centralize and expedite OSINT investigations<br>
   <a href="https://github.com/users/ax-i-om/projects/1">View the roadmap</a><br>
@@ -43,7 +43,7 @@ It is the end user's responsibility to obey all applicable local, state, and fed
 Bitcrook v2.0.0 has been released as of October 11, 2023, only one day after v1.0.0 due to some significant changes to project structure. Here are some highlights of the recent changes in the v1.0.0 and v2.0.0 releases: 
 
  - Switch web framework from Fiber to Go (enabled Bitcrook to be more lightweight)
- - Completely revamped the CLI output scheme
+ - Complete CLI and GUI design overhaul
  - Proper docker implementation
  - Binary release to support `go install`
  - Switched secret configuration from .json to .env, see [Authentication](#authentication)
@@ -51,6 +51,7 @@ Bitcrook v2.0.0 has been released as of October 11, 2023, only one day after v1.
  - Fixed CORS error when accessing web app over LAN
  - Username lookup command now only displays valid results
  - Added HaveIBeenPwned breach check to email and domain lookup commands
+ - Added phone and email search to web app
  - Removed Caselaw package due to instability, will replace
  - Packages now grouped based on field type rather than authentication type
  - Fixed tests and some documentation
@@ -95,7 +96,7 @@ You can also host the Bitcrook webapp via docker:
 
 1. Navigate to the root directory of Bitcrook via `cd`
 2. Build the Docker image: `docker build -t bitcrook .`
-3. Run Bitcrook via Docker: `docker run --env-file .env --name bitcrook -d -p 6174:6174 bitcrook`
+3. Run Bitcrook via Docker: `docker run --restart always --env-file .env --name bitcrook -d -p 6174:6174 bitcrook`
 4. Access the interface via `http://127.0.0.1:6174`
 
 ### Authentication

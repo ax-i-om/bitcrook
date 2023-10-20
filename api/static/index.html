@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Bitcrook</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/style.css" />
-   
-    <style>
-        p {
-            margin: 5px;
-            margin-right: 3em;
-        }
-        h3 {
-            margin: 5px;
-        }
-    </style>
-  </head>
 
-  <body>
-    <script type="text/javascript" src="/script.js"></script>
-    <div class="navbar">
-      <a class="active" href="/">Home</a>
-      <a href="/tools.html">Tools</a>
-      <a href="https://github.com/ax-i-om/bitcrook">GitHub</a>
+<head>
+    <meta charset="utf-8">
+    <title>Bitcrook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+      .center-h {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"> 
+    </script>
+    <h1 style="text-align: center; padding-left: 0px; padding-top:3%"><img width="15%" height="15%" src="/bitcrook.png"></h1>
+    <br><br>
+    <div class="center-h" style="height: 3em; padding-bottom: 10px;">
+      <form class="searchform">
+        <select id="querytype" class="dropbutton"> 
+          <option value="discord">Discord Token</option> 
+          <option value="domain">Domain</option> 
+          <option value="email">Email</option> 
+          <option value="ip">IP</option> 
+          <option value="phone">Phone</option> 
+          <option value="tin">TIN</option> 
+          <option value="username">Username</option> 
+          <option value="vin">VIN</option> 
+      </select>
+        <input type="text" class="searchfield" spellcheck="false" autocomplete="off" id="query" placeholder="Query">
+        <button class="searchbutton" id="launchquery" type="button"><img style="width: 1.5em; height: 80%; padding-top: 5px" src="/search.png"/></button>
+      </form>
     </div>
-    
-    <h3>Disclaimer</h3>
-    <p>
-        It is the end user's responsibility to obey all applicable local, state, and federal laws. Developers assume no liability and
-        are not responsible for any misuse or damage caused by this program. By using Bitcrook, you agree to the previous statements.
-    </p>
+    <table style="width: 50%; margin: 0px auto">
+      <tr>
+        <td id="queryresult">
+
+        </td>
+      </tr>
+    </table>
+    <div class="loadercontainer">
+      <div class="" id="queryloadercircle"></div> 
+    </div>
     <br>
-    <h3>About</h3>
-    <p>
-        You are currently using a GUI/Web implementation of <a href="https://github.com/ax-i-om/bitcrook">Bitcrook</a>, an Open-Source Intelligence Apparatus.
-        Bitcrook aims to centralize and expedite the reconnaisance experience by bringing together all the tools necessary to carry out an OSINT investigation.
-        It was also written so that developers could implement Bitcrook into their applications with ease.
-    </p>
-    <br>
-  </body>
-</html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="/app.js"></script>
+</body>
+
+</html> 
