@@ -5,7 +5,7 @@
     <a href="https://pkg.go.dev/github.com/ax-i-om/bitcrook"><img src="https://pkg.go.dev/badge/github.com/ax-i-om/tempest.svg" alt="Documentation"></a>
     <a href="https://goreportcard.com/report/github.com/ax-i-om/bitcrook"><img src="https://goreportcard.com/badge/github.com/ax-i-om/bitcrook" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-8&#47;8-green.svg" alt="Tests"></a>
-    <a><img src="https://img.shields.io/badge/version-2.3.0-blue.svg" alt="v2.3.0"></a><br>
+    <a><img src="https://img.shields.io/badge/version-2.3.1-blue.svg" alt="v2.3.1"></a><br>
     <a href="https://app.deepsource.com/gh/ax-i-om/bitcrook/" target="_blank"><img alt="DeepSource" title="DeepSource" src="https://app.deepsource.com/gh/ax-i-om/bitcrook.svg/?label=active+issues&show_trend=true"/></a><br>
     Centralize and expedite OSINT investigations<br>
   <a href="https://github.com/users/ax-i-om/projects/1">View the roadmap</a><br>
