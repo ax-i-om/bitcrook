@@ -27,7 +27,7 @@ func main() {
 	fmt.Println("   ___  __________________  ____  ____  __ __")
 	fmt.Println("  / _ )/  _/_  __/ ___/ _ \\/ __ \\/ __ \\/ //_/")
 	fmt.Println(" / _  |/ /  / / / /__/ , _/ /_/ / /_/ / ,<   ")
-	fmt.Println("/____/___/ /_/  \\___/_/|_|\\____/\\____/_/|_|  " + color.Colorize(color.Green, "v2.2.0"))
+	fmt.Println("/____/___/ /_/  \\___/_/|_|\\____/\\____/_/|_|  " + color.Colorize(color.Green, "v2.3.0"))
 	fmt.Println()
 	fmt.Println("Bitcrook Copyright (C) 2021 Axiom\nThis program comes with ABSOLUTELY NO WARRANTY")
 	fmt.Println()

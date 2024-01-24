@@ -29,6 +29,7 @@ import (
 	"github.com/ax-i-om/bitcrook/pkg/email"
 	"github.com/ax-i-om/bitcrook/pkg/ip"
 	"github.com/ax-i-om/bitcrook/pkg/phone"
+	"github.com/ax-i-om/bitcrook/pkg/record"
 	"github.com/ax-i-om/bitcrook/pkg/tin"
 	"github.com/ax-i-om/bitcrook/pkg/userlookup"
 	"github.com/ax-i-om/bitcrook/pkg/vin"
@@ -101,6 +102,14 @@ func StartServer() {
 			return c.JSON(http.StatusInternalServerError, err)
 		}
 		return c.JSON(http.StatusOK, phoneInfo)
+	})
+
+	e.GET("/record/:record", func(c echo.Context) error {
+		recordInfo, err := record.CaselawLookup(c.Param("record"), 10)
+		if err != nil {
+			return c.JSON(http.StatusInternalServerError, err)
+		}
+		return c.JSON(http.StatusOK, recordInfo)
 	})
 
 	e.GET("/email/:email", func(c echo.Context) error {

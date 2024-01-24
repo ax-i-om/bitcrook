@@ -58,7 +58,8 @@ type DiscordTokenInfo struct {
 
 // TokenLookup takes a Discord account token (string) as its only parameter and returns a type of *DiscordTokenInfo and an error.
 func TokenLookup(token string) (*DiscordTokenInfo, error) {
-	x, err := http.AuthGet("https://discordapp.com/api/v6/users/@me", "Authorization", token)
+	headers := []string{"Authorization", token}
+	x, err := http.CustomGet("https://discordapp.com/api/v6/users/@me", headers)
 	if err != nil {
 		return nil, err
 	}

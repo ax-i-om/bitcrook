@@ -28,8 +28,9 @@ func TestGetReq(t *testing.T) {
 	}
 }
 
-func TestAuthGet(t *testing.T) {
-	_, err := AuthGet("https://haveibeenpwned.com/api/v3/breachedaccount/email@example.com", "hibp-api-key", os.Getenv("BITCROOK_HIBP"))
+func TestCustomGet(t *testing.T) {
+	headers := []string{"hibp-api-key", os.Getenv("BITCROOK_HIBP")}
+	_, err := CustomGet("https://haveibeenpwned.com/api/v3/breachedaccount/email@example.com", headers)
 	if err != nil {
 		t.Error(err)
 	}

@@ -5,7 +5,7 @@
     <a href="https://pkg.go.dev/github.com/ax-i-om/bitcrook"><img src="https://pkg.go.dev/badge/github.com/ax-i-om/tempest.svg" alt="Documentation"></a>
     <a href="https://goreportcard.com/report/github.com/ax-i-om/bitcrook"><img src="https://goreportcard.com/badge/github.com/ax-i-om/bitcrook" alt="Go Report Card"></a>
     <a><img src="https://img.shields.io/badge/tests-8&#47;8-green.svg" alt="Tests"></a>
-    <a><img src="https://img.shields.io/badge/version-2.2.0-blue.svg" alt="v2.2.0"></a><br>
+    <a><img src="https://img.shields.io/badge/version-2.3.0-blue.svg" alt="v2.3.0"></a><br>
     <a href="https://app.deepsource.com/gh/ax-i-om/bitcrook/" target="_blank"><img alt="DeepSource" title="DeepSource" src="https://app.deepsource.com/gh/ax-i-om/bitcrook.svg/?label=active+issues&show_trend=true"/></a><br>
     Centralize and expedite OSINT investigations<br>
   <a href="https://github.com/users/ax-i-om/projects/1">View the roadmap</a><br>
@@ -51,8 +51,9 @@ Bitcrook v2.0.0 has been released as of October 11, 2023, only one day after v1.
  - Fixed CORS error when accessing web app over LAN
  - Username lookup command now only displays valid results
  - Added HaveIBeenPwned breach check to email and domain lookup commands
+ - Added account existence check for emails (Wordpress, Gravatar, Twitter, and Pinterest so far)
  - Added phone and email search to web app
- - Removed Caselaw package due to instability, will replace
+ - Reimplemented Case.Law search (record)
  - Packages now grouped based on field type rather than authentication type
  - Fixed tests and some documentation
  - Bug fixes and general optimizations

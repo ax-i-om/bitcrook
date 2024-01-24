@@ -14,7 +14,6 @@
 # Gz files
 .gz
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
-.test.env
 dist/
+.test.env
+.env

@@ -18,6 +18,7 @@ limitations under the License.
 package http
 
 import (
+	"errors"
 	"io"
 	"net/http"
 )
@@ -35,8 +36,8 @@ func GetReq(url string) (string, error) {
 	return string(body), resp.Body.Close()
 }
 
-// AuthGet performs a simple get request with a URL, Auth Key, and an Auth Value as its parameters and returns the response body and an error.
-func AuthGet(url, authkey, authval string) ([]byte, error) {
+// CustomGet performs a simple get request with a URL and specified headers/queries
+func CustomGet(url string, headers []string) ([]byte, error) {
 	method := "GET"
 
 	client := &http.Client{}
@@ -45,7 +46,15 @@ func AuthGet(url, authkey, authval string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	req.Header.Add(authkey, authval)
+
+	if len(headers)%2 == 1 {
+		return nil, errors.New("Uneven headers")
+	}
+	count := 0
+	for count < len(headers) {
+		req.Header.Add(headers[count], headers[count+1])
+		count += 2
+	}
 
 	res, err := client.Do(req)
 	if err != nil {

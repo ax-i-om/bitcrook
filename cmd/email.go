@@ -18,6 +18,8 @@ limitations under the License.
 package cmd
 
 import (
+	"crypto/md5"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -55,81 +57,152 @@ globalemail API.`,
 		if len(args) < 1 {
 			cmd.Usage()
 		} else {
-			fmt.Println(color.Colorize(color.Blue, "[i]"), "Performing request to", color.Colorize(color.Green, "globalemail.melissadata.net\n"))
-
 			key1 := os.Getenv("BITCROOK_MLSA")
 			if key1 == "UNSPECIFIED" || key1 == "" {
 				fmt.Println(color.Colorize(color.Red, "[x]"), "Failed to specify Melissa API key in .env file")
+				fmt.Println()
 			} else {
 				x, err := email.MelissaLookup(key1, args[0])
 				if err != nil {
-					fmt.Println(color.Colorize(color.Red, "[x]"), err)
-					return
-				}
-
-				if x.Emailaddress == "" {
-					fmt.Println("STATUS:\t\t\t\t", color.Colorize(color.Red, "FAILURE\n"))
-				} else {
-					fmt.Println("STATUS:\t\t\t\t", color.Colorize(color.Green, "SUCCESS\n"))
-					fmt.Println("Record ID:\t\t\t", x.Recordid)
-					fmt.Println("Delivery Confidence Score:\t", x.Deliverabilityconfidencescore)
-					fmt.Println("Results:\t\t\t", x.Results)
-					fmt.Println("Email Address:\t\t\t", x.Emailaddress)
-					fmt.Println("Mailbox Name:\t\t\t", x.Mailboxname)
-					fmt.Println("Domain Name:\t\t\t", x.Domainname)
-					fmt.Println("Top Level Domain:\t\t", x.Topleveldomain)
-					fmt.Println("Top Level Domain Name:\t\t", x.Topleveldomainname)
-					fmt.Println("Date Checked:\t\t\t", x.Datechecked)
-					fmt.Println("Email Age Estimated:\t\t", x.Emailageestimated)
-					fmt.Println("Domain Age Estimated:\t\t", x.Domainageestimated)
-					fmt.Println("Domain Expiration Date:\t\t", x.Domainexpirationdate)
-					fmt.Println("Domain Creation Date:\t\t", x.Domaincreateddate)
-					fmt.Println("Domain Updated Date:\t\t", x.Domainupdateddate)
-					fmt.Println("Domain Email:\t", x.Domainemail)
-					fmt.Println("Domain Organization:\t\t", x.Domainorganization)
-					fmt.Println("Domain Address:\t", x.Domainaddress1)
-					fmt.Println("Domain Locality:\t", x.Domainlocality)
-					fmt.Println("Domain Administrative Area:\t", x.Domainadministrativearea)
-					fmt.Println("Domain Postal Code:\t", x.Domainpostalcode)
-					fmt.Println("Domain Country:\t\t\t", x.Domaincountry)
-					fmt.Println("Domain Availability:\t\t", x.Domainavailability)
-					fmt.Println("Domain Country Code:\t\t", x.Domaincountrycode)
-					fmt.Println("Domain Private Proxy:\t", x.Domainprivateproxy)
-					fmt.Println("Privacy Flag:\t\t\t", x.Privacyflag)
-					fmt.Println("MX Server:\t", x.Mxserver)
+					fmt.Println(color.Colorize(color.Red, "[x]"), "Melissa:", err)
 					fmt.Println()
+				} else {
+					if x.Emailaddress == "" {
+						fmt.Println("STATUS:\t\t\t\t", color.Colorize(color.Red, "FAILURE\n"))
+					} else {
+						fmt.Println("STATUS:\t\t\t\t", color.Colorize(color.Green, "SUCCESS\n"))
+						fmt.Println("Delivery Confidence Score:\t", x.Deliverabilityconfidencescore)
+						fmt.Println("Email Address:\t\t\t", x.Emailaddress)
+						fmt.Println("Mailbox Name:\t\t\t", x.Mailboxname)
+						fmt.Println("Date Checked:\t\t\t", x.Datechecked)
+						fmt.Println("Email Age Estimated:\t\t", x.Emailageestimated)
+						fmt.Println("Domain Age Estimated:\t\t", x.Domainageestimated)
+						fmt.Println("Domain Expiration Date:\t\t", x.Domainexpirationdate)
+						fmt.Println("Domain Creation Date:\t\t", x.Domaincreateddate)
+						fmt.Println("Domain Updated Date:\t\t", x.Domainupdateddate)
+						fmt.Println("Domain Email:\t", x.Domainemail)
+						fmt.Println("Domain Organization:\t\t", x.Domainorganization)
+						fmt.Println("Domain Address:\t", x.Domainaddress1)
+						fmt.Println("Domain Locality:\t", x.Domainlocality)
+						fmt.Println("Domain Administrative Area:\t", x.Domainadministrativearea)
+						fmt.Println("Domain Postal Code:\t", x.Domainpostalcode)
+						fmt.Println("Domain Country:\t\t\t", x.Domaincountry)
+						fmt.Println("Domain Availability:\t\t", x.Domainavailability)
+						fmt.Println("Domain Country Code:\t\t", x.Domaincountrycode)
+						fmt.Println("Domain Private Proxy:\t", x.Domainprivateproxy)
+						fmt.Println("Privacy Flag:\t\t\t", x.Privacyflag)
+						fmt.Println("MX Server:\t", x.Mxserver)
+						fmt.Println()
+					}
 				}
 			}
-
-			fmt.Println(color.Colorize(color.Blue, "[i]"), "Performing request to", color.Colorize(color.Green, "haveibeenpwned.com\n"))
 
 			key2 := os.Getenv("BITCROOK_HIBP")
 			if key2 == "UNSPECIFIED" || strings.ReplaceAll(key2, " ", "") == "" {
 				fmt.Println(color.Colorize(color.Red, "[x]"), "Failed to specify HaveIBeenPwned API key in .env file")
+				fmt.Println()
 			} else {
 				x, err := email.HIBPLookup(key2, args[0])
 				if err != nil {
-					fmt.Println(color.Colorize(color.Red, "[x]"), err)
-					return
-				}
-				fmt.Println("STATUS:\t\t", color.Colorize(color.Green, "SUCCESS\n"))
+					fmt.Println(color.Colorize(color.Red, "[x]"), "HaveIBeenPwned:", err)
+					fmt.Println()
+				} else {
+					fmt.Println("STATUS:\t\t", color.Colorize(color.Green, "SUCCESS\n"))
 
-				fmt.Println(color.Colorize(color.Blue, "[i]"), "Email discovered in", color.Colorize(color.Green, len(x)), "breaches")
-				fmt.Println()
-				for _, v := range x {
-					dat, err := getByName(v.Name)
-					if err != nil {
-						fmt.Println(color.Colorize(color.Red, "[x]"), err)
-						return
-					}
-					fmt.Println(color.Colorize(color.Green, v.Name+":"), dat.BreachDate)
-					for _, v := range dat.DataClasses {
-						fmt.Print(v + ", ")
-					}
+					fmt.Println(color.Colorize(color.Blue, "[i]"), "Email discovered in", color.Colorize(color.Green, len(x)), "breaches")
 					fmt.Println()
-					fmt.Println()
+					for _, v := range x {
+						dat, err := getByName(v.Name)
+						if err != nil {
+							fmt.Println(color.Colorize(color.Red, "[x]"), "HaveIBeenPwned:", err)
+							return
+						}
+						fmt.Println(color.Colorize(color.Green, v.Name+":"), dat.BreachDate)
+						for _, v := range dat.DataClasses {
+							fmt.Print(v + ", ")
+						}
+						fmt.Println()
+						fmt.Println()
+					}
 				}
 			}
+
+			pint, err := email.PinterestLookup(args[0])
+			if err != nil {
+				fmt.Println(color.Colorize(color.Red, "[x]"), "Pinterest:", err)
+				fmt.Println()
+			} else {
+				if pint.ResourceResponse.Data {
+					fmt.Println(color.Colorize(color.Green, "[+]"), "The email", color.Colorize(color.Blue, args[0]), "is linked to a Pinterest account!")
+				} else {
+					fmt.Println(color.Colorize(color.Red, "[x]"), "The email", color.Colorize(color.Blue, args[0]), "is not linked to a Pinterest account!")
+				}
+			}
+			fmt.Println()
+
+			twit, err := email.TwitterValidityLookup(args[0])
+			if err != nil {
+				fmt.Println(color.Colorize(color.Red, "[x]"), "Twitter:", err)
+				fmt.Println()
+			} else {
+				if twit.Taken {
+					fmt.Println(color.Colorize(color.Green, "[+]"), "The email", color.Colorize(color.Blue, args[0]), "is linked to a Twitter account!")
+				} else {
+					fmt.Println(color.Colorize(color.Red, "[x]"), "The email", color.Colorize(color.Blue, args[0]), "is not linked to a Twitter account!")
+				}
+			}
+			fmt.Println()
+
+			grav, err := email.GravatarLookup(args[0])
+			if err != nil {
+				if strings.Contains(err.Error(), "cannot unmarshal string into Go value of type email.GravatarResponse") {
+					fmt.Println(color.Colorize(color.Red, "[x]"), "The email", color.Colorize(color.Blue, args[0]), "is not linked to a Gravatar account!")
+				} else {
+					fmt.Println(color.Colorize(color.Red, "[x]"), "Gravatar:", err)
+					fmt.Println()
+				}
+			} else {
+				chkd := md5.Sum([]byte(args[0]))
+				if grav.Entry[0].RequestHash == hex.EncodeToString(chkd[:]) {
+					fmt.Println(color.Colorize(color.Green, "[+]"), "The email", color.Colorize(color.Blue, args[0]), "is linked to a Gravatar account!")
+					fmt.Println()
+					fmt.Println("Profile URL:\t\t", grav.Entry[0].ProfileURL)
+					fmt.Println("Name:\t\t\t", grav.Entry[0].Name.Formatted)
+
+					fmt.Println("Username:\t\t", grav.Entry[0].PreferredUsername)
+					fmt.Println("Display Name:\t\t", grav.Entry[0].DisplayName)
+					fmt.Println("Current Location:\t", grav.Entry[0].CurrentLocation)
+					fmt.Println("Phone Numbers:\t\t")
+					for _, v := range grav.Entry[0].PhoneNumbers {
+						fmt.Println("\t- ("+v.Type+"):", v.Value)
+					}
+					fmt.Println("Emails:\t\t")
+					for _, v := range grav.Entry[0].Emails {
+						fmt.Println("\t-", v.Value)
+					}
+					fmt.Println("Websites:\t\t")
+					for _, v := range grav.Entry[0].Urls {
+						fmt.Println("\t- ("+v.Title+"):", v.Value)
+					}
+				} else {
+					fmt.Println(color.Colorize(color.Red, "[x]"), "The email", color.Colorize(color.Blue, args[0]), "is not linked to a Gravatar account!")
+				}
+			}
+			fmt.Println()
+
+			word, err := email.WordpressLookup(args[0])
+			if err != nil {
+				fmt.Println(color.Colorize(color.Red, "[x]"), "Wordpress:", err)
+				fmt.Println()
+			} else {
+				if word {
+					fmt.Println(color.Colorize(color.Green, "[+]"), "The email", color.Colorize(color.Blue, args[0]), "is linked to a Wordpress account!")
+				} else {
+					fmt.Println(color.Colorize(color.Red, "[x]"), "The email", color.Colorize(color.Blue, args[0]), "is not linked to a Wordpress account!")
+				}
+			}
+			fmt.Println()
+
 		}
 	},
 }

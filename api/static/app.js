@@ -321,6 +321,20 @@ function launch() {
                 addDark(resulttable, "Timezone Name", res.Timezonename)
                 addLight(resulttable, "Postal Code", res.Postalcode)
             })
+        } else if (type === "record") {
+            $.getJSON(`/record/${query}`, (res) => {
+                $('#queryloadercircle').removeClass('loader');
+                for(let i = 0; i < res.results.length; i++) {
+                    addLight(resulttable, "Name", res.results[i].name_abbreviation)
+                    addDark(resulttable, "Decision Date", res.results[i].decision_date)
+                    addLight(resulttable, "Jurisdiction", res.results[i].jurisdiction.name_long)
+                    addDark(resulttable, "Court", res.results[i].court.name)
+                    addLight(resulttable, "Source", res.results[i].provenance.source)
+                    addDark(resulttable, "URL", res.results[i].url)
+
+                    addGap(resulttable)
+                }
+            })
         } else if (type === "tin") {
             $.getJSON(`/tin/${query}`, (res) => {
                 $('#queryloadercircle').removeClass('loader');
