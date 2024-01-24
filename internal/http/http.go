@@ -48,7 +48,7 @@ func CustomGet(url string, headers []string) ([]byte, error) {
 	}
 
 	if len(headers)%2 == 1 {
-		return nil, errors.New("Uneven headers")
+		return nil, errors.New("uneven headers")
 	}
 	count := 0
 	for count < len(headers) {

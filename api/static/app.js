@@ -14,23 +14,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-let selectList = document.querySelector("#querytype")
+const selectList = document.querySelector("#querytype")
 // get initial width of select element. 
 // we have to remember there is a dropdown arrow make it a little wider
-let initialWidth = selectList.offsetWidth
+const initialWidth = selectList.offsetWidth
 // get text content length (not a value length) of widest option. 
-let maxOptValLen = findMaxLengthOpt(selectList)
+const maxOptValLen = findMaxLengthOpt(selectList)
 // calc width of single letter 
-let letterWidth = initialWidth / maxOptValLen
-let corCoef = 4.875; // Based on visual appearance
+const letterWidth = initialWidth / maxOptValLen
+const corCoef = 4.875; // Based on visual appearance
 // console.log(initialWidth, maxOptValLen)
 
 function reSizeDrop(selist) {
-  let newOptValLen = getSelected(selist).textContent.length
-  let correction = (maxOptValLen - newOptValLen) * corCoef
-  let newValueWidth = (newOptValLen * letterWidth) + correction
+  const newOptValLen = getSelected(selist).textContent.length
+  const correction = (maxOptValLen - newOptValLen) * corCoef
+  const newValueWidth = (newOptValLen * letterWidth) + correction
   // console.log('new width', newValueWidth, 'new option len', newOptValLen)
-  selist.style.width = newValueWidth + "px"
+  selist.style.width = `${newValueWidth}px`;
 }
 
 selectList.addEventListener("change", e => {
@@ -410,7 +410,7 @@ function launch() {
 }
 
 $('#query').keypress(function (e) {                                       
-    if (e.which == 13) {
+    if (e.which === 13) {
         e.preventDefault();
         launch() 
     }

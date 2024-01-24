@@ -1,4 +1,4 @@
-FROM golang:1.20-alpine
+FROM golang:1.21-alpine
 
 LABEL author="ax-i-om"
 LABEL email="addressaxiom@pm.me"
